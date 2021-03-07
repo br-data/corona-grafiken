@@ -1,0 +1,37 @@
+{
+  "name": "corona-grafiken",
+  "version": "1.0.0",
+  "author": "Steffen Kühne",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:br-data/corona-grafiken.git"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack serve --color --progress",
+    "build": "cross-env NODE_ENV=production webpack --color --progress",
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/node": "^14.14.32",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.1",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.2.0",
+    "serve": "^11.3.2",
+    "terser-webpack-plugin": "^5.1.1",
+    "typescript": "^4.2.3",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

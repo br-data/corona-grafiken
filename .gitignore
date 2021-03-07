@@ -1,3 +1,7 @@
+
+# Project
+dist
+
 # Logs
 logs
 *.log
@@ -80,10 +84,9 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
-.cache/
+.cache
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
@@ -92,17 +95,36 @@ dist
 .vuepress/dist
 
 # Serverless directories
-.serverless/
+.serverless
 
 # FuseBox cache
-.fusebox/
+.fusebox
 
 # DynamoDB Local files
-.dynamodb/
+.dynamodb
 
 # TernJS port file
 .tern-port
 
-#IDE
+# IDE
 .idea
+.idea_modules
 .vscode
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+*.sublime-workspace
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
