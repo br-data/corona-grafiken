@@ -1,48 +1,39 @@
 import React, { useState } from 'react';
 import { Chart } from './components/chart/Chart';
-
-import { chartTypes } from './config/config';
-
-const ChartTypeSelect = ({setChartType} : any) => {
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setChartType(event.target.value);
-  };
-
-  return (
-    <select onChange={handleChange}>
-      {chartTypes.map((chartType, index) => (
-        <option value={chartType.id} key={index}>{chartType.title}</option>
-      ))}
-    </select>
-  );
-}
-
-const EndDateInput = ({setEndDate} : any) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEndDate(event.target.value);
-  };
-
-  return <input type='date' onChange={handleChange}></input>;
-}
-
-const StartDateInput = ({setStartDate} : any) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStartDate(event.target.value);
-  };
-
-  return <input type='date' onChange={handleChange}></input>;
-}
+import { Settings, ChartTypeSelect, StartDateInput, EndDateInput } from './components/settings/Settings'
 
 export default function App() {
+  const toDateString = (date: Date) => date.toISOString().split('T')[0];
+  
+  const defaultChart = 'bavaria-cases-chart';
+  const minStartDate = '2020-01-24';
+  const defaultStartDate = '2020-02-25';
+  const maxEndDate = toDateString(new Date());
+
   const [chartType, setChartType] = useState('line-chart');
-  const [endDate, setEndDate] = useState('2021-03-09');
-  const [startDate, setStartDate] = useState('2020-02-01');
+  const [startDate, setStartDate] = useState(defaultStartDate);
+  const [endDate, setEndDate] = useState(maxEndDate);
 
   return (
     <>
-      <ChartTypeSelect setChartType={setChartType} />
-      <StartDateInput setStartDate={setStartDate} />
-      <EndDateInput setEndDate={setEndDate} />
+      <Settings>
+        <ChartTypeSelect
+          setChartType={setChartType}
+          defaultChart={defaultChart}
+        />
+        <StartDateInput
+          value={startDate}
+          min={minStartDate}
+          max={maxEndDate}
+          setStartDate={setStartDate}
+        />
+        <EndDateInput
+          value={endDate}
+          min={minStartDate}
+          max={maxEndDate}
+          setEndDate={setEndDate}
+        />
+      </Settings>
       <Chart
         chartType={chartType}
         startDate={startDate}
