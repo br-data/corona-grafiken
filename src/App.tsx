@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GlobalStyle } from './styles/globalStyles';
 import { Chart } from './components/chart/Chart';
 import { Settings, ChartTypeSelect, StartDateInput, EndDateInput } from './components/settings/Settings'
 
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <>
+      <GlobalStyle />
       <Settings>
         <ChartTypeSelect
           setChartType={setChartType}
