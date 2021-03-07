@@ -1,5 +1,11 @@
 import React from 'react';
+import { Chart } from './components/chart/Chart';
 
 export default function App() {
-  return <p>App is running</p>;
+  return (
+    <div>
+      <h1>My chart</h1>
+      <Chart></Chart>
+    </div>
+  );
 }
