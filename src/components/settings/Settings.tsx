@@ -1,21 +1,22 @@
 import React from 'react';
 import { Form, Fieldset, Label, Select, Input } from './styles.Settings'
-import { chartTypes } from '../../config/config';
+import { ChartObject } from '../../config/config';
 
 export const Settings: React.FC = ({ children }) => {
   return <Form>{children}</Form>
 }
 
-export const ChartTypeSelect = ({ setChartType, defaultChart } : any) => {
+export const ChartSelect = ({ value, charts, setChart } : any) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setChartType(event.target.value);
+    const chart = charts.filter((chart: ChartObject) => chart.id === event.target.value)[0];
+    setChart(chart);
   };
 
   return (
     <Fieldset>
       <Label>Grafik auswählen: </Label>
-      <Select value={defaultChart} onChange={handleChange}>
-        {chartTypes.map((chart, index) => (
+      <Select value={value.id} onChange={handleChange}>
+        {charts.map((chart: ChartObject, index: number) => (
           <option value={chart.id} key={index}>{chart.title}</option>
         ))}
       </Select>

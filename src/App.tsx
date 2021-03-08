@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { GlobalStyle } from './styles/globalStyles';
-import { Chart } from './components/chart/Chart';
-import { Settings, ChartTypeSelect, StartDateInput, EndDateInput } from './components/settings/Settings'
+import { ChartViewer } from './components/charts/Chart';
+import { Settings, ChartSelect, StartDateInput, EndDateInput } from './components/settings/Settings'
+import { charts } from './config/config';
 
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split('T')[0];
   
-  const defaultChart = 'bavaria-cases-chart';
+  const defaultChart = charts[0];
   const minStartDate = '2020-01-24';
   const defaultStartDate = '2020-02-25';
   const maxEndDate = toDateString(new Date());
 
-  const [chartType, setChartType] = useState('line-chart');
+  const [chart, setChart] = useState(defaultChart);
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(maxEndDate);
 
@@ -19,9 +20,10 @@ export default function App() {
     <>
       <GlobalStyle />
       <Settings>
-        <ChartTypeSelect
-          setChartType={setChartType}
-          defaultChart={defaultChart}
+        <ChartSelect
+          value={chart}
+          charts={charts}
+          setChart={setChart}
         />
         <StartDateInput
           value={startDate}
@@ -36,8 +38,8 @@ export default function App() {
           setEndDate={setEndDate}
         />
       </Settings>
-      <Chart
-        chartType={chartType}
+      <ChartViewer
+        chart={chart}
         startDate={startDate}
         endDate={endDate}
       />
