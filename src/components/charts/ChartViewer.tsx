@@ -13,6 +13,8 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({ chart, startDate, endD
   const [chartData, setChartData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  console.log(chart);
+  
   useEffect(() => {
     fetch(`https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern`)
       .then(res => res.json())
