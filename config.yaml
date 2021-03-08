@@ -4,19 +4,12 @@
 
 isEnabled: false
 docker:
-  preset: "yarn"
-  preparationCommand: ""
-  imageFrom: ""
+  preset: "npm"
   ignore: "node_modules"
 build:
-  command: "yarn"
-  outputFolder: ""
-run:
-  command: "yarn start"
-  envs:
-    - name: APP_ENV
-      value: 'sm://{{.projectId}}/env'
+  command: "npm install"
+  outputFolder: "dist"
 settings:
-  isWebsite: false
+  isWebsite: true
   firestore: false
-  inSecure: false
+  inSecure: true
