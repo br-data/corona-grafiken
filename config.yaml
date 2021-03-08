@@ -2,7 +2,7 @@
 ## Cloud Build Config ##
 ########################
 
-isEnabled: false
+isEnabled: true
 docker:
   preset: "npm"
   ignore: "node_modules"
