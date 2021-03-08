@@ -1,14 +1,11 @@
 import React from 'react';
-import { ChartObject } from '../../config/config';
 
-interface ChartViewerProps {
-  chart: ChartObject;
-  startDate: string;
-  endDate: string;
+interface BarChartProps {
+  chartData: any;
 }
 
-export const ChartViewer: React.FC<ChartViewerProps> = ({ chart, startDate, endDate }) => {
-  console.log(chart);
+export const BarChart: React.FC<BarChartProps> = ({ chartData }) => {
+  console.log(chartData);
   
   const generateDataset = () => (
     Array(10).fill(0).map(() => ([
@@ -30,4 +27,4 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({ chart, startDate, endD
       ))}
     </svg>
   );
-};
+}
