@@ -7,7 +7,7 @@ docker:
   preset: "npm"
   ignore: "node_modules"
 build:
-  command: "npm install"
+  command: "npm install && npm run build"
   outputFolder: "dist"
 settings:
   isWebsite: true
