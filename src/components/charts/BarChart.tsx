@@ -5,7 +5,6 @@ interface BarChartProps {
 }
 
 export const BarChart: React.FC<BarChartProps> = ({ chartData }) => {
-  console.log(chartData);
   
   const generateDataset = () => (
     Array(10).fill(0).map(() => ([

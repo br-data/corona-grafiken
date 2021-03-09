@@ -12,29 +12,38 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({ chart, startDate, endD
   const [error, setError] = useState(null);
   const [chartData, setChartData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  console.log(chart);
   
   useEffect(() => {
-    fetch(`https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setChartData(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-  }, [])
+    const data = (() => {
+      return Promise.all(chart.data.map(async (datum) => {
+        const realUrl = datum.url
+          .replace('${startDate}', startDate)
+          .replace('${endDate}', endDate)
+        const response = await fetch(realUrl);
+        const data = await response.json();
+
+        return {
+          ...datum,
+          data
+        };
+      }));
+    })();
+
+    data.then(data => {
+      setChartData({
+        ...chart,
+        data
+      });
+    });
+  }, []);
 
   if (error) {
     return <div>Error: Chart konnte nicht geladen werden</div>;
-  } else if (!isLoaded) {
-    return <div>Lade Daten ...</div>;
+  // } else if (!isLoaded) {
+  //   return <div>Lade Daten ...</div>;
   } else {
+    console.log(chartData);
+    
     return (
       <BarChart chartData={chartData} />
     )
