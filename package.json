@@ -13,6 +13,11 @@
     "build": "cross-env NODE_ENV=production webpack --color --progress"
   },
   "dependencies": {
+    "d3-array": "^2.11.0",
+    "d3-axis": "^2.0.0",
+    "d3-scale": "^3.2.3",
+    "d3-selection": "^2.0.0",
+    "d3-shape": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
@@ -23,6 +28,11 @@
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@types/d3-array": "^2.9.0",
+    "@types/d3-axis": "^2.0.0",
+    "@types/d3-scale": "^3.2.2",
+    "@types/d3-selection": "^2.0.0",
+    "@types/d3-shape": "^2.0.0",
     "@types/node": "^14.14.32",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.1",
