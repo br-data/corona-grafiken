@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
-import { ChartObject, ChartDataObject } from "../../config/config";
+import { ChartObject, ChartDataObject } from "../config/config";
+
+export interface MultiFetchProps {
+  error: Boolean,
+  isLoaded: Boolean,
+  chartData: ChartDataObject[]
+}
 
 export const useMultiFetch = (
   chart: ChartObject,
   startDate: string,
   endDate: string
-) => {
+): MultiFetchProps => {
   const [error, setError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [chartData, setChartData] = useState<ChartDataObject[]>([]);
@@ -13,7 +19,7 @@ export const useMultiFetch = (
   useEffect(() => {
     const data = (() => {
       return Promise.all(
-        chart.data.map(async (datum) => {
+        chart.data.map(async (datum: ChartDataObject) => {
           const realUrl = datum.url
             .replace("${startDate}", startDate)
             .replace("${endDate}", endDate);
@@ -31,18 +37,25 @@ export const useMultiFetch = (
     data.then((data) => {
       const hasLoaded =
         data.length &&
-        data.reduce((acc, curr) => acc && !!curr.data.length, true);
+        data.reduce(
+          (acc, curr: ChartDataObject) => acc && !!curr.data.length,
+          true
+        );
 
       if (hasLoaded) {
-        console.log(data);
         setChartData(data);
         setIsLoaded(true);
       } else {
         setError(true);
+        setChartData([]);
         setIsLoaded(true);
       }
     });
-  }, []);
+  }, [chart, startDate, endDate]);
 
-  return [error, isLoaded, chartData];
+  return {
+    error,
+    isLoaded,
+    chartData,
+  };
 };

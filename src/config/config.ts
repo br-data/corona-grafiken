@@ -1,7 +1,7 @@
 export interface ChartDataObject {
   key: string,
   url: string,
-  data?: any 
+  data?: any
 }
 
 export interface ChartObject {
