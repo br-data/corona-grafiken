@@ -1,9 +1,15 @@
+export interface ChartDataObject {
+  key: string,
+  url: string,
+  data?: any 
+}
+
 export interface ChartObject {
   id: string,
   title: string,
   description: string,
   dataSource: string,
-  data: { key: string, url: string, data?: any }[],
+  data: ChartDataObject[],
   type: string
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart } from './BarChart'
-import { ChartObject } from '../../config/config';
+import { ChartObject, ChartDataObject } from '../../config/config';
 
 interface ChartViewerProps {
   chart: ChartObject;
@@ -9,10 +9,10 @@ interface ChartViewerProps {
 }
 
 export const ChartViewer: React.FC<ChartViewerProps> = ({ chart, startDate, endDate }) => {
-  const [error, setError] = useState(null);
-  const [chartData, setChartData] = useState([]);
+  const [error, setError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  
+  const [chartData, setChartData] = useState<ChartDataObject[]>([]);
+
   useEffect(() => {
     const data = (() => {
       return Promise.all(chart.data.map(async (datum) => {
@@ -30,20 +30,26 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({ chart, startDate, endD
     })();
 
     data.then(data => {
-      setChartData({
-        ...chart,
-        data
-      });
+      const hasLoaded = data.length && data.reduce(
+        (acc, curr) => acc && !!curr.data.length
+      , true);
+
+      if (hasLoaded) {
+        console.log(data);
+        setChartData(data);
+        setIsLoaded(true)
+      } else {
+        setError(true)
+        setIsLoaded(true)
+      }
     });
   }, []);
 
   if (error) {
     return <div>Error: Chart konnte nicht geladen werden</div>;
-  // } else if (!isLoaded) {
-  //   return <div>Lade Daten ...</div>;
+  } else if (!isLoaded) {
+    return <div>Lade Daten ...</div>;
   } else {
-    console.log(chartData);
-    
     return (
       <BarChart chartData={chartData} />
     )
