@@ -5,6 +5,7 @@ interface AxisRightProps {
   ticks: any[];
   tickFormater: any;
   showTickMarks?: boolean;
+  tickMarkLength?: number;
   transform?: string;
   stroke?: string;
   fill?: string;
@@ -15,6 +16,7 @@ export const AxisRight: React.FC<AxisRightProps>=({
   ticks,
   tickFormater = (t: any) => t,
   showTickMarks = true,
+  tickMarkLength = 5,
   transform = '',
   stroke = 'white',
   fill = 'white'
@@ -36,7 +38,7 @@ export const AxisRight: React.FC<AxisRightProps>=({
         >
           {showTickMarks &&
             <line
-              x2="6"
+              x2={tickMarkLength}
               stroke={stroke}
             />
           }

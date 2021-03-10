@@ -4,9 +4,8 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 import { line, curveMonotoneX } from 'd3-shape';
 
 import { AxisBottom } from "../chartAxes/axisBottom"
-import { AxisRight } from "../chartAxes/axisRight"
-import { AxisLeft } from "../chartAxes/axisLeft"
-import { ChartObject, ChartDataObject } from "../../config/config";
+import { AxisGrid } from "../chartAxes/axisGrid"
+import { ChartObject, ChartDataObject } from "../../config/charts";
 
 import { sma } from "../../utils/sma";
 import { germanDate, germanDateShort, dateRange } from "../../utils/date";
@@ -97,11 +96,13 @@ export const BarChart: React.FC<BarChartProps> = ({
           showTickMarks={false}
           transform={`translate(${margin.right}, ${height - margin.bottom})`}
         />
-        <AxisRight
+        <AxisGrid
           scale={y}
           ticks={yTicks}
           tickFormater={yTickFormater}
-          transform={`translate(${width - margin.right}, ${margin.top})`}
+          tickMarkLength={innerWidth}
+          stroke='#6d7182'
+          transform={`translate(${margin.left}, ${margin.top})`}
         />
       </g>
       <g className="bars" transform={`translate(${margin.right}, ${margin.top})`}>
