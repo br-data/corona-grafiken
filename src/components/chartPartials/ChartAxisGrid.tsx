@@ -1,9 +1,9 @@
 import React from "react";
 
-interface AxisBottomProps {
+interface ChartAxisGridProps {
   scale: any;
   ticks: any[];
-  tickFormater: any;
+  tickFormater?: any;
   showTickMarks?: boolean;
   tickMarkLength?: number;
   transform?: string;
@@ -11,7 +11,7 @@ interface AxisBottomProps {
   fill?: string;
 }
 
-export const AxisBottom: React.FC<AxisBottomProps>=({
+export const ChartAxisGrid: React.FC<ChartAxisGridProps>=({
   scale,
   ticks,
   tickFormater = (t: any) => t,
@@ -21,33 +21,28 @@ export const AxisBottom: React.FC<AxisBottomProps>=({
   stroke = 'white',
   fill = 'white'
 }) => {
-  const range=scale.range();
+
   
   return (
     <g transform={transform}>
-      <line
-        x1={range[0]}
-        x2={range[1]}
-        fill="none"
-        stroke={stroke}
-      />
       {ticks.map((tick: any) => (
         <g
           key={tick}
-          transform={`translate(${scale(tick)}, 0)`}
+          transform={`translate(0, ${scale(tick)})`}
         >
           {showTickMarks &&
             <line
-              y2={tickMarkLength}
+              x2={tickMarkLength}
               stroke={stroke}
             />
           }
           <text
             fill={fill} 
             fontSize="14"
-            textAnchor="middle"
-            dy={showTickMarks ? "23" : "17"}
-            >
+            textAnchor="start"
+            dx="0"
+            dy="-4"
+          >
             { tickFormater(tick) }
           </text>
         </g>

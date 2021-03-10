@@ -3,11 +3,11 @@ import { max, min } from 'd3-array';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { line, curveMonotoneX } from 'd3-shape';
 
-import { ChartHeader } from "../chartHeader/ChartHeader"
-import { ChartBackground } from "../chartBackground/ChartBackground"
-import { ChartFooter } from "../chartFooter/chartFooter"
-import { AxisBottom } from "../chartAxes/AxisBottom"
-import { AxisGrid } from "../chartAxes/AxisGrid"
+import { ChartHeader } from "../chartPartials/ChartHeader"
+import { ChartBackground } from "../chartPartials/ChartBackground"
+import { ChartFooter } from "../chartPartials/ChartFooter"
+import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom"
+import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid"
 import { ChartObject, ChartDataObject } from "../../config/charts";
 
 import { sma } from "../../utils/sma";
@@ -88,14 +88,14 @@ export const BarChart: React.FC<BarChartProps> = ({
         width={width}
         height={height}
       />
-      <AxisBottom
+      <ChartAxisBottom
         scale={x}
         ticks={xTicks}
         tickFormater={germanDateShort}
         showTickMarks={false}
         transform={`translate(${margin.right}, ${height - margin.bottom})`}
       />
-      <AxisGrid
+      <ChartAxisGrid
         scale={y}
         ticks={yTicks}
         tickFormater={yTickFormater}

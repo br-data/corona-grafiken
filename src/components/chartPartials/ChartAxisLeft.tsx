@@ -1,6 +1,6 @@
 import React from "react";
 
-interface AxisLeftProps {
+interface ChartAxisLeftProps {
   scale: any;
   ticks: any[];
   tickFormater: any;
@@ -11,7 +11,7 @@ interface AxisLeftProps {
   fill?: string;
 }
 
-export const AxisLeft: React.FC<AxisLeftProps>=({
+export const ChartAxisLeft: React.FC<ChartAxisLeftProps>=({
   scale,
   ticks,
   tickFormater = (t: any) => t,
