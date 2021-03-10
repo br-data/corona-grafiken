@@ -17,6 +17,8 @@ export const useMultiFetch = (
   const [chartData, setChartData] = useState<ChartDataObject[]>([]);
 
   useEffect(() => {
+    setIsLoaded(false);
+    setError(false);
     const data = (() => {
       return Promise.all(
         chart.data.map(async (datum: ChartDataObject) => {

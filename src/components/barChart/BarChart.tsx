@@ -41,11 +41,11 @@ export const BarChart: React.FC<BarChartProps> = ({
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
-  const xMin: Date = min(data, (d: DataObject) => new Date(d.date))!;
+  const xMin = min(data, (d: DataObject) => new Date(d.date))!;
   const xMinBracket = new Date(xMin);
   xMinBracket.setDate(xMinBracket.getDate() - 8);
 
-  const xMax: Date = max(data, (d: DataObject) => new Date(d.date))!;
+  const xMax = max(data, (d: DataObject) => new Date(d.date))!;
   const xMaxBracket = new Date(xMax);
   xMaxBracket.setDate(xMaxBracket.getDate() + 8);
 
@@ -58,7 +58,7 @@ export const BarChart: React.FC<BarChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
   
-  const yMax: number = max(data, (d: DataObject): number => d.value)!;
+  const yMax = max(data, (d: DataObject): number => d.value)!;
 
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
