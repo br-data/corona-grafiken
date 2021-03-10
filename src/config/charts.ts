@@ -1,16 +1,16 @@
 export interface ChartDataObject {
-  key: string,
-  url: string,
-  data?: any
+  key: string;
+  url: string;
+  data?: any;
 }
 
 export interface ChartObject {
-  id: string,
-  title: string,
-  description: string,
-  dataSource: string,
-  data: ChartDataObject[],
-  type: string
+  id: string;
+  title: string;
+  description: string;
+  dataSource: string;
+  data: ChartDataObject[];
+  type: string;
 }
 
 export const charts = [

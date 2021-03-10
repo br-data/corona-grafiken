@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChartObject, ChartDataObject } from "../config/config";
+import { ChartObject, ChartDataObject } from "../config/charts";
 
 export interface MultiFetchProps {
   error: Boolean,

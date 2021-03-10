@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GlobalStyle } from './styles/globalStyles';
 import { ChartViewer } from './components/chartViewer/ChartViewer';
 import { Settings, ChartSelect, StartDateInput, EndDateInput } from './components/settings/Settings'
-import { charts } from './config/config';
+import { charts } from './config/charts';
 
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split('T')[0];

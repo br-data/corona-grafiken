@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Fieldset, Label, Select, Input } from './styles.Settings'
-import { ChartObject } from '../../config/config';
+import { ChartObject } from '../../config/charts';
 
 export const Settings: React.FC = ({ children }) => {
   return <Form>{children}</Form>
@@ -8,7 +8,7 @@ export const Settings: React.FC = ({ children }) => {
 
 export const ChartSelect = ({ value, charts, setChart } : any) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const chart = charts.filter((chart: ChartObject) => chart.id === event.target.value)[0];
+    const chart = charts.find((chart: ChartObject) => chart.id === event.target.value);
     setChart(chart);
   };
 

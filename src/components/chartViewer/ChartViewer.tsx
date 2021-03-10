@@ -2,7 +2,7 @@ import React from 'react';
 import { ChartWrapper } from './styles.ChartView'
 import { BarChart } from '../barChart/BarChart'
 import { useMultiFetch, MultiFetchProps } from '../../utils/useMultiFetch'
-import { ChartObject } from '../../config/config';
+import { ChartObject } from '../../config/charts';
 
 interface ChartViewerProps {
   chart: ChartObject;
