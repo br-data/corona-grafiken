@@ -22,14 +22,47 @@ export const BarChart: React.FC<BarChartProps> = ({
   startDate,
   endDate,
 }) => {
+  const data = chartData.filter(datum => datum.key === 'cases')[0].data;
+  const smoothData = sma(data);
+
+  const margin = { top: 130, right: 25, bottom: 75, left: 25 }
+  const width = 800;
+  const height = 450;
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  const xMin: Date = min(data, (d: any) => new Date(d.date))!;
+  const xMinBracket = new Date(xMin);
+  xMinBracket.setDate(xMinBracket.getDate() - 8);
+
+  const xMax: Date = max(data, (d: any) => new Date(d.date))!;
+  const xMaxBracket = new Date(xMax);
+  xMaxBracket.setDate(xMaxBracket.getDate() + 8);
+
+  const xValues = dateRange(xMinBracket, xMaxBracket, 1);
+  const xTicks = dateRange(xMin, xMax, Math.floor(data.length / 6));
+
+  const x = scaleBand()
+    .paddingOuter(0)
+    .paddingInner(.4)
+    .domain(xValues)
+    .range([0, innerWidth]);
+  
+  // Calculate vertical scale and axis
+  const yMax: number = max(data, (d: any): number => d.value)!;
+
+  const y = scaleLinear()
+    .domain([0, yMax * 1.1])
+    .range([innerHeight, 0]);
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      viewBox="0 0 677 380.8125"
-      width="677"
-      height="380.8125"
-      id="bayern-cases-chart-2021-03-09"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      id={chart.id}
     >
       <defs>
         <radialGradient id="radial-gradient">
@@ -37,18 +70,20 @@ export const BarChart: React.FC<BarChartProps> = ({
           <stop offset="1" stopColor="#1D2029"></stop>
         </radialGradient>
       </defs>
-      <rect width="677" height="380.8125" fill="url(#radial-gradient)"></rect>
-      <g className="axes" transform="translate(25, 130)"></g>
-      <g className="bars" transform="translate(25, 130)">
-        <rect
-          x="12.743902439024389"
-          y="175.4544297352342"
-          width="0.9557926829268291"
-          height="0.35807026476578585"
-          fill="#0b9fd8"
-        ></rect>
+      <rect width={width} height={height} fill="url(#radial-gradient)"></rect>
+      <g className="axes" transform={`translate(${margin.right}, ${margin.top})`}></g>
+      <g className="bars" transform={`translate(${margin.right}, ${margin.top})`}>
+        {data.map((d: any) => (
+          <rect
+            x={x(d.date)}
+            y={y(d.value)}
+            width={x.bandwidth()}
+            height={innerHeight - y(d.value)}
+            fill="#0b9fd8"
+          ></rect>
+        ))}
       </g>
-      <g className="line" transform="translate(25, 130)">
+      <g className="line" transform={`translate(${margin.right}, ${margin.top})`}>
         <path
           d=""
           fill="none"
@@ -58,7 +93,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           strokeLinecap="round"
         ></path>
       </g>
-      <g className="header" transform="translate(25, 40)">
+      <g className="header" transform={`translate(${margin.right}, 40)`}>
         <text
           x="0"
           y="0"
@@ -111,7 +146,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           7-Tage-Mittelwert
         </text>
       </g>
-      <g className="footer" transform="translate(25, 355.8125)">
+      <g className="footer" transform={`translate(${margin.right}, ${height - 25})`}>
         <text
           fontFamily="'Open Sans', sans-serif"
           fontSize="14"

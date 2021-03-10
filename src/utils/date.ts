@@ -12,7 +12,7 @@ export const germanDateShort = (dateString: string) => {
   return date.toLocaleDateString('de-DE', options);
 }
 
-export const dateRange = (startDate: string, endDate: string, steps: number) => {
+export const dateRange = (startDate: Date | string, endDate: Date | string, steps: number) => {
   const dateArray = [];
   const currentDate = new Date(endDate);
 
