@@ -3,8 +3,11 @@ import { max, min } from 'd3-array';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { line, curveMonotoneX } from 'd3-shape';
 
-import { AxisBottom } from "../chartAxes/axisBottom"
-import { AxisGrid } from "../chartAxes/axisGrid"
+import { ChartHeader } from "../chartHeader/ChartHeader"
+import { ChartBackground } from "../chartBackground/ChartBackground"
+import { ChartFooter } from "../chartFooter/chartFooter"
+import { AxisBottom } from "../chartAxes/AxisBottom"
+import { AxisGrid } from "../chartAxes/AxisGrid"
 import { ChartObject, ChartDataObject } from "../../config/charts";
 
 import { sma } from "../../utils/sma";
@@ -81,30 +84,25 @@ export const BarChart: React.FC<BarChartProps> = ({
       height={height}
       id={chart.id}
     >
-      <defs>
-        <radialGradient id="radial-gradient">
-          <stop offset=".25" stopColor="#484B5A"></stop>
-          <stop offset="1" stopColor="#1D2029"></stop>
-        </radialGradient>
-      </defs>
-      <rect width={width} height={height} fill="url(#radial-gradient)"></rect>
-      <g className="axes">
-        <AxisBottom
-          scale={x}
-          ticks={xTicks}
-          tickFormater={germanDateShort}
-          showTickMarks={false}
-          transform={`translate(${margin.right}, ${height - margin.bottom})`}
-        />
-        <AxisGrid
-          scale={y}
-          ticks={yTicks}
-          tickFormater={yTickFormater}
-          tickMarkLength={innerWidth}
-          stroke='#6d7182'
-          transform={`translate(${margin.left}, ${margin.top})`}
-        />
-      </g>
+      <ChartBackground
+        width={width}
+        height={height}
+      />
+      <AxisBottom
+        scale={x}
+        ticks={xTicks}
+        tickFormater={germanDateShort}
+        showTickMarks={false}
+        transform={`translate(${margin.right}, ${height - margin.bottom})`}
+      />
+      <AxisGrid
+        scale={y}
+        ticks={yTicks}
+        tickFormater={yTickFormater}
+        tickMarkLength={innerWidth}
+        stroke='#6d7182'
+        transform={`translate(${margin.left}, ${margin.top})`}
+      />
       <g className="bars" transform={`translate(${margin.right}, ${margin.top})`}>
         {data.map((d: DataObject, index: number) => (
           <rect
@@ -127,28 +125,11 @@ export const BarChart: React.FC<BarChartProps> = ({
           strokeLinecap="round"
         ></path>
       </g>
-      <g className="header" transform={`translate(${margin.right}, 40)`}>
-        <text
-          x="0"
-          y="0"
-          fontFamily="'Open Sans', sans-serif"
-          fontSize="24"
-          fontWeight="600"
-          fill="#ffffff"
-        >
-          Neue Coronafälle in Bayern
-        </text>
-        <text
-          x="0"
-          y="25"
-          fontFamily="'Open Sans', sans-serif"
-          fontSize="15"
-          fontWeight="300"
-          fill="#9fa3b3"
-        >
-          Entwicklung der Neuinfektionen nach Erkrankungsdatum
-        </text>
-      </g>
+      <ChartHeader
+        title={chart.title}
+        description={chart.description}
+        transform={`translate(${margin.right}, 40)`}
+      />
       <g className="key" transform="translate(25, 90)">
         <rect x="0" y="2" width="12" height="12" fill="#0b9fd8"></rect>
         <text
@@ -180,17 +161,10 @@ export const BarChart: React.FC<BarChartProps> = ({
           7-Tage-Mittelwert
         </text>
       </g>
-      <g className="footer" transform={`translate(${margin.right}, ${height - 25})`}>
-        <text
-          fontFamily="'Open Sans', sans-serif"
-          fontSize="14"
-          fontWeight="300"
-          fill="#9fa3b3"
-        >
-          Grafik: BR, Daten: Robert Koch-Institut, BR-Analyse (Stand: 9. März
-          2021)
-        </text>
-      </g>
+      <ChartFooter
+        text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
+        transform={`translate(${margin.right}, ${height - 25})`}
+      />
     </svg>
   );
 };

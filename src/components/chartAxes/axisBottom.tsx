@@ -46,7 +46,7 @@ export const AxisBottom: React.FC<AxisBottomProps>=({
             fill={fill} 
             fontSize="14"
             textAnchor="middle"
-            dy={showTickMarks ? "20" : "15"}
+            dy={showTickMarks ? "23" : "17"}
             >
             { tickFormater(tick) }
           </text>
