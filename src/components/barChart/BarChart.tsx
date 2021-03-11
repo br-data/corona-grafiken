@@ -3,12 +3,14 @@ import { max, min } from 'd3-array';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { line, curveMonotoneX } from 'd3-shape';
 
-import { ChartHeader } from "../chartPartials/ChartHeader"
-import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend"
-import { ChartBackground } from "../chartPartials/ChartBackground"
-import { ChartFooter } from "../chartPartials/ChartFooter"
-import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom"
-import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid"
+import { ChartSvg } from "../chartPartials/ChartSvg";
+import { ChartGroup } from "../chartPartials/ChartGroup";
+import { ChartHeader } from "../chartPartials/ChartHeader";
+import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend";
+import { ChartBackground } from "../chartPartials/ChartBackground";
+import { ChartFooter } from "../chartPartials/ChartFooter";
+import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom";
+import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
 
 import { ChartObject, ChartDataObject } from "../../config/charts";
 import { chartColors } from "../../config/colors";
@@ -80,13 +82,10 @@ export const BarChart: React.FC<BarChartProps> = ({
     .curve(curveMonotoneX);
 
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid"
-      viewBox={`0 0 ${width} ${height}`}
+    <ChartSvg
+      id={chart.id}
       width={width}
       height={height}
-      id={chart.id}
     >
       <ChartBackground
         width={width}
@@ -107,7 +106,7 @@ export const BarChart: React.FC<BarChartProps> = ({
         stroke={chartColors.lineSecondary}
         transform={`translate(${margin.left}, ${margin.top})`}
       />
-      <g className="bars" transform={`translate(${margin.right}, ${margin.top})`}>
+      <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         {data.map((d: DataObject, index: number) => (
           <rect
             key={index}
@@ -118,8 +117,8 @@ export const BarChart: React.FC<BarChartProps> = ({
             fill={chartColors.blue}
           ></rect>
         ))}
-      </g>
-      <g className="line" transform={`translate(${margin.right}, ${margin.top})`}>
+      </ChartGroup>
+      <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
           // @ts-ignore: Library types don't match
           d={lineConstructor(smoothData)}
@@ -129,7 +128,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           strokeDasharray="10,10"
           strokeLinecap="round"
         ></path>
-      </g>
+      </ChartGroup>
       <ChartHeader
         title={chart.title}
         description={chart.description}
@@ -153,6 +152,6 @@ export const BarChart: React.FC<BarChartProps> = ({
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
         transform={`translate(${margin.right}, ${height - 25})`}
       />
-    </svg>
+    </ChartSvg>
   );
 };
