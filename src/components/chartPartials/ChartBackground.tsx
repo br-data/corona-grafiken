@@ -1,15 +1,15 @@
 import React from "react";
 
-import { chartColors } from '../../config/colors';
+import { chartColors } from "../../config/colors";
 
 interface ChartBackgroundProps {
   width: number;
   height: number;
 }
 
-export const ChartBackground: React.FC<ChartBackgroundProps>=({
+export const ChartBackground: React.FC<ChartBackgroundProps> = ({
   width,
-  height
+  height,
 }) => {
   return (
     <>
@@ -19,7 +19,12 @@ export const ChartBackground: React.FC<ChartBackgroundProps>=({
           <stop offset="1" stopColor={chartColors.backgroundSecondary}></stop>
         </radialGradient>
       </defs>
-      <rect width={width} height={height} fill="url(#radial-gradient)"></rect>
+      <rect
+        className="background"
+        width={width}
+        height={height}
+        fill="url(#radial-gradient)"
+      ></rect>
     </>
-  )
+  );
 };

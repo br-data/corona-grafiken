@@ -1,7 +1,7 @@
 import React from "react";
-import { max, min } from 'd3-array';
-import { scaleLinear, scaleBand } from 'd3-scale';
-import { line, curveMonotoneX } from 'd3-shape';
+import { max, min } from "d3-array";
+import { scaleLinear, scaleBand } from "d3-scale";
+import { line, curveMonotoneX } from "d3-shape";
 
 import { ChartSvg } from "../chartPartials/ChartSvg";
 import { ChartGroup } from "../chartPartials/ChartGroup";
@@ -34,12 +34,13 @@ export const BarChart: React.FC<BarChartProps> = ({
   chart,
   chartData,
   startDate,
-  endDate
+  endDate,
 }) => {
-  const data: DataObject[] = chartData.find(datum => datum.key === 'cases')?.data;
+  const data: DataObject[] = chartData.find((datum) => datum.key === "cases")
+    ?.data;
   const smoothData: DataObject[] = sma(data);
 
-  const margin = { top: 130, right: 25, bottom: 75, left: 25 }
+  const margin = { top: 130, right: 25, bottom: 75, left: 25 };
   const width = 800;
   const height = 450;
   const innerWidth = width - margin.left - margin.right;
@@ -48,60 +49,46 @@ export const BarChart: React.FC<BarChartProps> = ({
   const xMin = min(data, (d: DataObject) => new Date(d.date))!;
   const xMinBracket = new Date(xMin);
   xMinBracket.setDate(xMinBracket.getDate() - 8);
-
   const xMax = max(data, (d: DataObject) => new Date(d.date))!;
   const xMaxBracket = new Date(xMax);
   xMaxBracket.setDate(xMaxBracket.getDate() + 8);
-
   const xValues = dateRange(xMinBracket, xMaxBracket, 1);
   const xTicks = dateRange(xMin, xMax, Math.floor(data.length / 6));
-
   const x = scaleBand()
     .paddingOuter(0)
-    .paddingInner(.4)
+    .paddingInner(0.4)
     .domain(xValues)
     .range([0, innerWidth]);
-  
-  const yMax = max(data, (d: DataObject): number => d.value)!;
 
+  const yMax = max(data, (d: DataObject): number => d.value)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
+  const yTicks = y.copy().nice().ticks(5);
 
-  const yTicks = y.copy()
-    .nice()
-    .ticks(5);
-
-  const yTickFormater = (value: number) => value.toLocaleString('de-DE');
+  const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
   const lineConstructor = line()
     // @ts-ignore: Library types don't match
-    .x(d => x(d.date) + (x.bandwidth() / 2))
+    .x((d) => x(d.date) + x.bandwidth() / 2)
     // @ts-ignore: Library types don't match
-    .y(d => y(d.value))
+    .y((d) => y(d.value))
     .curve(curveMonotoneX);
 
   return (
-    <ChartSvg
-      id={chart.id}
-      width={width}
-      height={height}
-    >
-      <ChartBackground
-        width={width}
-        height={height}
-      />
+    <ChartSvg id={chart.id} width={width} height={height}>
+      <ChartBackground width={width} height={height} />
       <ChartAxisBottom
         scale={x}
         ticks={xTicks}
-        tickFormater={germanDateShort}
+        tickFormatter={germanDateShort}
         showTickMarks={false}
         transform={`translate(${margin.right}, ${height - margin.bottom})`}
       />
       <ChartAxisGrid
         scale={y}
         ticks={yTicks}
-        tickFormater={yTickFormater}
+        tickFormatter={germanNumber}
         tickMarkLength={innerWidth}
         stroke={chartColors.lineSecondary}
         transform={`translate(${margin.left}, ${margin.top})`}

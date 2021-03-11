@@ -44,27 +44,39 @@ export const ChartKey: React.FC<ChartKeyProps> = ({
 }) => {
   return (
     <g transform={transform}>
-      {symbol === "square" &&
-        <SymbolSquare size={symbolSize} fill={symbolFill} stroke={symbolStroke} />
-      }
-      {symbol === "circle" &&
-        <SymbolCircle size={symbolSize} fill={symbolFill} stroke={symbolStroke} />
-      }
-      {symbol === "line" &&
+      {symbol === "square" && (
+        <SymbolSquare
+          size={symbolSize}
+          fill={symbolFill}
+          stroke={symbolStroke}
+        />
+      )}
+      {symbol === "circle" && (
+        <SymbolCircle
+          size={symbolSize}
+          fill={symbolFill}
+          stroke={symbolStroke}
+        />
+      )}
+      {symbol === "line" && (
         <SymbolLine size={symbolSize} fill={symbolFill} stroke={symbolStroke} />
-      }
-      {symbol === "dashed-line" &&
-        <SymbolDashedLine size={symbolSize} fill={symbolFill} stroke={symbolStroke} />
-      }
+      )}
+      {symbol === "dashed-line" && (
+        <SymbolDashedLine
+          size={symbolSize}
+          fill={symbolFill}
+          stroke={symbolStroke}
+        />
+      )}
       <text
-        x={symbol ? (symbolSize + 7) : 0}
+        x={symbol ? symbolSize + 7 : 0}
         dominantBaseline="hanging"
         fontFamily="'Open Sans', sans-serif"
         fontSize="15"
         fontWeight="300"
         fill={textFill}
       >
-        { text }
+        {text}
       </text>
     </g>
   );
@@ -73,40 +85,25 @@ export const ChartKey: React.FC<ChartKeyProps> = ({
 const SymbolSquare: React.FC<SymbolProps> = ({
   size,
   fill = "white",
-  stroke = "none"
+  stroke = "none",
 }) => {
   return (
-    <rect
-      x="0"
-      y="2"
-      width={size}
-      height={size}
-      fill={fill}
-      stroke={stroke}
-    />
-  )
-}
+    <rect x="0" y="2" width={size} height={size} fill={fill} stroke={stroke} />
+  );
+};
 
 const SymbolCircle: React.FC<SymbolProps> = ({
   size,
   fill = "white",
-  stroke = "none"
+  stroke = "none",
 }) => {
-  return (
-    <circle
-      r={size}
-      cx={size}
-      cy="10"
-      fill={fill}
-      stroke={stroke}
-    />
-  )
-}
+  return <circle r={size} cx={size} cy="10" fill={fill} stroke={stroke} />;
+};
 
 const SymbolLine: React.FC<SymbolProps> = ({
   size,
   fill = "none",
-  stroke = ciColors.white
+  stroke = ciColors.white,
 }) => {
   return (
     <path
@@ -116,13 +113,13 @@ const SymbolLine: React.FC<SymbolProps> = ({
       strokeWidth="3"
       strokeLinecap="round"
     />
-  )
-}
+  );
+};
 
 const SymbolDashedLine: React.FC<SymbolProps> = ({
   size,
   fill = "none",
-  stroke = ciColors.white
+  stroke = ciColors.white,
 }) => {
   return (
     <path
@@ -133,5 +130,5 @@ const SymbolDashedLine: React.FC<SymbolProps> = ({
       strokeDasharray="5,5"
       strokeLinecap="round"
     />
-  )
-}
+  );
+};

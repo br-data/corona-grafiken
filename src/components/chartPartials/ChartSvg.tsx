@@ -5,7 +5,7 @@ import { chartColors, ciColors } from "../../config/colors";
 interface ChartSvgProps {
   id?: string;
   width?: number;
-  height?: number; 
+  height?: number;
 }
 
 export const ChartSvg: React.FC<ChartSvgProps> = ({
@@ -21,7 +21,8 @@ export const ChartSvg: React.FC<ChartSvgProps> = ({
       viewBox={`0 0 ${width} ${height}`}
       width={width}
       height={height}
-      id={id}>
+      id={id}
+    >
       {children}
     </svg>
   );

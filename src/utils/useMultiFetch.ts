@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { ChartObject, ChartDataObject } from "../config/charts";
 
 export interface MultiFetchProps {
-  error: Boolean,
-  isLoaded: Boolean,
-  chartData: ChartDataObject[]
+  error: Boolean;
+  isLoaded: Boolean;
+  chartData: ChartDataObject[];
 }
 
 export const useMultiFetch = (

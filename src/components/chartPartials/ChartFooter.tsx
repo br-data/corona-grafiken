@@ -1,15 +1,15 @@
 import React from "react";
 
-import { chartColors } from '../../config/colors';
+import { chartColors } from "../../config/colors";
 
 interface ChartFooterProps {
   text: string;
   transform: string;
 }
 
-export const ChartFooter: React.FC<ChartFooterProps>=({
+export const ChartFooter: React.FC<ChartFooterProps> = ({
   text,
-  transform = ''
+  transform = "",
 }) => {
   return (
     <g className="footer" transform={transform}>
@@ -22,5 +22,5 @@ export const ChartFooter: React.FC<ChartFooterProps>=({
         {text}
       </text>
     </g>
-  )
+  );
 };

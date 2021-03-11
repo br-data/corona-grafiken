@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import { GlobalStyle } from './styles/globalStyles';
-import { ChartViewer } from './components/chartViewer/ChartViewer';
-import { Settings, ChartSelect, StartDateInput, EndDateInput } from './components/settings/Settings'
-import { charts } from './config/charts';
+import React, { useState } from "react";
+import { GlobalStyle } from "./styles/globalStyles";
+import { ChartViewer } from "./components/chartViewer/ChartViewer";
+import {
+  Settings,
+  ChartSelect,
+  StartDateInput,
+  EndDateInput,
+} from "./components/settings/Settings";
+import { charts } from "./config/charts";
 
 export default function App() {
-  const toDateString = (date: Date) => date.toISOString().split('T')[0];
-  
+  const toDateString = (date: Date) => date.toISOString().split("T")[0];
+
   const defaultChart = charts[1];
-  const minStartDate = '2020-01-24';
-  const defaultStartDate = '2020-02-25';
+  const minStartDate = "2020-01-24";
+  const defaultStartDate = "2020-02-25";
   const maxEndDate = toDateString(new Date());
 
   const [chart, setChart] = useState(defaultChart);
@@ -20,11 +25,7 @@ export default function App() {
     <>
       <GlobalStyle />
       <Settings>
-        <ChartSelect
-          value={chart}
-          charts={charts}
-          setChart={setChart}
-        />
+        <ChartSelect value={chart} charts={charts} setChart={setChart} />
         <StartDateInput
           value={startDate}
           min={minStartDate}
@@ -38,11 +39,7 @@ export default function App() {
           setEndDate={setEndDate}
         />
       </Settings>
-      <ChartViewer
-        chart={chart}
-        startDate={startDate}
-        endDate={endDate}
-      />
+      <ChartViewer chart={chart} startDate={startDate} endDate={endDate} />
     </>
   );
 }

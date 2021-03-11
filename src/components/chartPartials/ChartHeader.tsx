@@ -1,19 +1,18 @@
 import React from "react";
 
-import { chartColors } from '../../config/colors';
+import { chartColors } from "../../config/colors";
 
 interface ChartHeaderProps {
   title: string;
   description: string;
-  transform?: string
+  transform?: string;
 }
 
-export const ChartHeader: React.FC<ChartHeaderProps>=({
+export const ChartHeader: React.FC<ChartHeaderProps> = ({
   title,
   description,
-  transform
+  transform,
 }) => {
-
   return (
     <g className="header" transform={transform}>
       <text
@@ -37,5 +36,5 @@ export const ChartHeader: React.FC<ChartHeaderProps>=({
         {description}
       </text>
     </g>
-  )
+  );
 };
