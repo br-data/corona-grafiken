@@ -1,5 +1,7 @@
 import React from "react";
 
+import { chartColors } from '../../config/colors';
+
 interface ChartAxisRightProps {
   scale: any;
   ticks: any[];
@@ -18,8 +20,8 @@ export const ChartAxisRight: React.FC<ChartAxisRightProps>=({
   showTickMarks = true,
   tickMarkLength = 5,
   transform = '',
-  stroke = 'white',
-  fill = 'white'
+  stroke = chartColors.linePrimary,
+  fill = chartColors.fontPrimary
 }) => {
   const range=scale.range();
   
@@ -43,8 +45,9 @@ export const ChartAxisRight: React.FC<ChartAxisRightProps>=({
             />
           }
           <text
-            fill={fill} 
             fontSize="14"
+            fontFamily="'Open Sans', OpenSans, sans-serif"
+            fill={fill} 
             textAnchor="start"
             dx={showTickMarks ? "10" : "5"}
             dy="5"

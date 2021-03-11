@@ -1,5 +1,7 @@
 import React from "react";
 
+import { chartColors } from '../../config/colors';
+
 interface ChartAxisBottomProps {
   scale: any;
   ticks: any[];
@@ -18,8 +20,8 @@ export const ChartAxisBottom: React.FC<ChartAxisBottomProps>=({
   showTickMarks = true,
   tickMarkLength = 5,
   transform = '',
-  stroke = 'white',
-  fill = 'white'
+  stroke = chartColors.linePrimary,
+  fill = chartColors.fontPrimary
 }) => {
   const range=scale.range();
   
@@ -43,8 +45,9 @@ export const ChartAxisBottom: React.FC<ChartAxisBottomProps>=({
             />
           }
           <text
-            fill={fill} 
+            fontFamily="'Open Sans', OpenSans, sans-serif"
             fontSize="14"
+            fill={fill}
             textAnchor="middle"
             dy={showTickMarks ? "23" : "17"}
             >

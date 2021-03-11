@@ -8,8 +8,9 @@ import { ChartBackground } from "../chartPartials/ChartBackground"
 import { ChartFooter } from "../chartPartials/ChartFooter"
 import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom"
 import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid"
-import { ChartObject, ChartDataObject } from "../../config/charts";
 
+import { ChartObject, ChartDataObject } from "../../config/charts";
+import { chartColors } from "../../config/colors";
 import { sma } from "../../utils/sma";
 import { germanDate, germanDateShort, dateRange } from "../../utils/date";
 
@@ -21,7 +22,7 @@ interface BarChartProps {
 }
 
 interface DataObject {
-  date: Date;
+  date: string;
   value: number;
   [key: string]: any;
 }
@@ -71,7 +72,9 @@ export const BarChart: React.FC<BarChartProps> = ({
   const yTickFormater = (value: number) => value.toLocaleString('de-DE');
 
   const lineConstructor = line()
+    // @ts-ignore: Library types don't match
     .x(d => x(d.date) + (x.bandwidth() / 2))
+    // @ts-ignore: Library types don't match
     .y(d => y(d.value))
     .curve(curveMonotoneX);
 
@@ -100,7 +103,7 @@ export const BarChart: React.FC<BarChartProps> = ({
         ticks={yTicks}
         tickFormater={yTickFormater}
         tickMarkLength={innerWidth}
-        stroke='#6d7182'
+        stroke={chartColors.lineSecondary}
         transform={`translate(${margin.left}, ${margin.top})`}
       />
       <g className="bars" transform={`translate(${margin.right}, ${margin.top})`}>
@@ -111,15 +114,16 @@ export const BarChart: React.FC<BarChartProps> = ({
             y={y(d.value)}
             width={x.bandwidth()}
             height={innerHeight - y(d.value)}
-            fill="#0b9fd8"
+            fill={chartColors.blue}
           ></rect>
         ))}
       </g>
       <g className="line" transform={`translate(${margin.right}, ${margin.top})`}>
         <path
+          // @ts-ignore: Library types don't match
           d={lineConstructor(smoothData)}
           fill="none"
-          stroke="#ffffff"
+          stroke={chartColors.white}
           strokeWidth="3"
           strokeDasharray="10,10"
           strokeLinecap="round"
@@ -131,21 +135,21 @@ export const BarChart: React.FC<BarChartProps> = ({
         transform={`translate(${margin.right}, 40)`}
       />
       <g className="key" transform="translate(25, 90)">
-        <rect x="0" y="2" width="12" height="12" fill="#0b9fd8"></rect>
+        <rect x="0" y="2" width="12" height="12" fill={chartColors.blue}></rect>
         <text
           x="20"
           dominantBaseline="hanging"
           fontFamily="'Open Sans', sans-serif"
           fontSize="15"
           fontWeight="300"
-          fill="#ffffff"
+          fill={chartColors.white}
         >
           Neuinfektionen
         </text>
         <path
           d="M 155 8 L 185 8"
           fill="none"
-          stroke="#ffffff"
+          stroke={chartColors.white}
           strokeWidth="3"
           strokeDasharray="5,5"
           strokeLinecap="round"
@@ -156,7 +160,7 @@ export const BarChart: React.FC<BarChartProps> = ({
           fontFamily="'Open Sans', sans-serif"
           fontSize="15"
           fontWeight="300"
-          fill="#ffffff"
+          fill={chartColors.white}
         >
           7-Tage-Mittelwert
         </text>

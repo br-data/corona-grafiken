@@ -1,5 +1,7 @@
 import React from "react";
 
+import { chartColors } from '../../config/colors';
+
 interface ChartAxisGridProps {
   scale: any;
   ticks: any[];
@@ -18,8 +20,8 @@ export const ChartAxisGrid: React.FC<ChartAxisGridProps>=({
   showTickMarks = true,
   tickMarkLength = 5,
   transform = '',
-  stroke = 'white',
-  fill = 'white'
+  stroke = chartColors.linePrimary,
+  fill = chartColors.fontPrimary
 }) => {
 
   
@@ -37,8 +39,9 @@ export const ChartAxisGrid: React.FC<ChartAxisGridProps>=({
             />
           }
           <text
-            fill={fill} 
+            fontFamily="'Open Sans', OpenSans, sans-serif"
             fontSize="14"
+            fill={fill} 
             textAnchor="start"
             dx="0"
             dy="-4"
