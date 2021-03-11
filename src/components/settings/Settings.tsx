@@ -2,11 +2,27 @@ import React from "react";
 import { Form, Fieldset, Label, Select, Input } from "./styles.Settings";
 import { ChartObject } from "../../config/charts";
 
+interface DateInputProps {
+  label: string;
+  value: string;
+  min: string;
+  max: string;
+  setDate: any;
+}
+
+interface NumberInputProps {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  setNumber: any;
+}
+
 export const Settings: React.FC = ({ children }) => {
   return <Form>{children}</Form>;
 };
 
-export const ChartSelect = ({ value, charts, setChart }: any) => {
+export const ChartSelect = ({ label, value, charts, setChart }: any) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const chart = charts.find(
       (chart: ChartObject) => chart.id === event.target.value
@@ -16,7 +32,7 @@ export const ChartSelect = ({ value, charts, setChart }: any) => {
 
   return (
     <Fieldset>
-      <Label>Grafik auswählen: </Label>
+      <Label>{label}: </Label>
       <Select value={value.id} onChange={handleChange}>
         {charts.map((chart: ChartObject, index: number) => (
           <option value={chart.id} key={index}>
@@ -28,14 +44,20 @@ export const ChartSelect = ({ value, charts, setChart }: any) => {
   );
 };
 
-export const StartDateInput = ({ value, min, max, setStartDate }: any) => {
+export const DateInput = ({
+  label,
+  value,
+  min,
+  max,
+  setDate,
+}: DateInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStartDate(event.target.value);
+    setDate(event.target.value);
   };
 
   return (
     <Fieldset>
-      <Label>Startdatum: </Label>
+      <Label>{label}: </Label>
       <Input
         type="date"
         value={value}
@@ -47,16 +69,22 @@ export const StartDateInput = ({ value, min, max, setStartDate }: any) => {
   );
 };
 
-export const EndDateInput = ({ value, min, max, setEndDate }: any) => {
+export const NumberInput = ({
+  label,
+  value,
+  min,
+  max,
+  setNumber,
+}: NumberInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEndDate(event.target.value);
+    setNumber(event.target.value);
   };
 
   return (
     <Fieldset>
-      <Label>Enddatum: </Label>
+      <Label>{label}: </Label>
       <Input
-        type="date"
+        type="number"
         value={value}
         min={min}
         max={max}

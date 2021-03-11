@@ -4,8 +4,8 @@ import { ChartViewer } from "./components/chartViewer/ChartViewer";
 import {
   Settings,
   ChartSelect,
-  StartDateInput,
-  EndDateInput,
+  DateInput,
+  NumberInput,
 } from "./components/settings/Settings";
 import { charts } from "./config/charts";
 
@@ -16,30 +16,61 @@ export default function App() {
   const minStartDate = "2020-01-24";
   const defaultStartDate = "2020-02-25";
   const maxEndDate = toDateString(new Date());
+  const defaultWidth = 800;
+  const defaultHeight = 800;
 
   const [chart, setChart] = useState(defaultChart);
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(maxEndDate);
+  const [width, setWidth] = useState(defaultWidth);
+  const [height, setHeight] = useState(defaultHeight);
 
   return (
     <>
       <GlobalStyle />
       <Settings>
-        <ChartSelect value={chart} charts={charts} setChart={setChart} />
-        <StartDateInput
+        <ChartSelect
+          label="Grafik auswählen"
+          value={chart}
+          charts={charts}
+          setChart={setChart}
+        />
+        <DateInput
+          label="Startdatum"
           value={startDate}
           min={minStartDate}
           max={maxEndDate}
-          setStartDate={setStartDate}
+          setDate={setStartDate}
         />
-        <EndDateInput
+        <DateInput
+          label="Enddatum"
           value={endDate}
           min={minStartDate}
           max={maxEndDate}
-          setEndDate={setEndDate}
+          setDate={setEndDate}
+        />
+        <NumberInput
+          label="Breite"
+          value={width}
+          min={0}
+          max={2560}
+          setNumber={setWidth}
+        />
+        <NumberInput
+          label="Höhe"
+          value={height}
+          min={0}
+          max={1440}
+          setNumber={setHeight}
         />
       </Settings>
-      <ChartViewer chart={chart} startDate={startDate} endDate={endDate} />
+      <ChartViewer
+        chart={chart}
+        startDate={startDate}
+        endDate={endDate}
+        width={width}
+        height={height}
+      />
     </>
   );
 }

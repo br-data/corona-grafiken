@@ -22,6 +22,8 @@ interface BarChartProps {
   chartData: ChartDataObject[];
   startDate: string;
   endDate: string;
+  width: number;
+  height: number;
 }
 
 interface DataObject {
@@ -35,14 +37,14 @@ export const BarChart: React.FC<BarChartProps> = ({
   chartData,
   startDate,
   endDate,
+  width,
+  height,
 }) => {
   const data: DataObject[] = chartData.find((datum) => datum.key === "cases")
     ?.data;
   const smoothData: DataObject[] = sma(data);
 
   const margin = { top: 130, right: 25, bottom: 75, left: 25 };
-  const width = 800;
-  const height = 450;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 

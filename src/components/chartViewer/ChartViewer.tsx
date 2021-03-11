@@ -8,12 +8,16 @@ interface ChartViewerProps {
   chart: ChartObject;
   startDate: string;
   endDate: string;
+  width: number;
+  height: number;
 }
 
 export const ChartViewer: React.FC<ChartViewerProps> = ({
   chart,
   startDate,
   endDate,
+  width,
+  height,
 }) => {
   const { error, isLoaded, chartData }: MultiFetchProps = useMultiFetch(
     chart,
@@ -22,10 +26,15 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
   );
 
   useEffect(() => {
-    console.log(chart);
-    console.log(chartData);
+    console.log(isLoaded);
   }, [isLoaded]);
 
+  // useEffect(() => {
+  //   console.log(width, height);
+  // }, [width, height]);
+
+  // console.log(isLoaded);
+  
   if (error) {
     return (
       <ChartWrapper>
@@ -46,6 +55,8 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
           chartData={chartData}
           startDate={startDate}
           endDate={endDate}
+          width={width}
+          height={height}
         />
       </ChartWrapper>
     );
