@@ -4,6 +4,7 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 import { line, curveMonotoneX } from 'd3-shape';
 
 import { ChartHeader } from "../chartPartials/ChartHeader"
+import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend"
 import { ChartBackground } from "../chartPartials/ChartBackground"
 import { ChartFooter } from "../chartPartials/ChartFooter"
 import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom"
@@ -134,37 +135,20 @@ export const BarChart: React.FC<BarChartProps> = ({
         description={chart.description}
         transform={`translate(${margin.right}, 40)`}
       />
-      <g className="key" transform="translate(25, 90)">
-        <rect x="0" y="2" width="12" height="12" fill={chartColors.blue}></rect>
-        <text
-          x="20"
-          dominantBaseline="hanging"
-          fontFamily="'Open Sans', sans-serif"
-          fontSize="15"
-          fontWeight="300"
-          fill={chartColors.white}
-        >
-          Neuinfektionen
-        </text>
-        <path
-          d="M 155 8 L 185 8"
-          fill="none"
-          stroke={chartColors.white}
-          strokeWidth="3"
-          strokeDasharray="5,5"
-          strokeLinecap="round"
-        ></path>
-        <text
-          x="190"
-          dominantBaseline="hanging"
-          fontFamily="'Open Sans', sans-serif"
-          fontSize="15"
-          fontWeight="300"
-          fill={chartColors.white}
-        >
-          7-Tage-Mittelwert
-        </text>
-      </g>
+      <ChartLegend transform={`translate(25, 90)`}>
+        <ChartKey
+          text="Neuinfektionen"
+          symbol="square"
+          symbolFill={chartColors.blue}
+        />
+        <ChartKey
+          transform={`translate(150, 0)`}
+          text="7-Tage-Mittelwert"
+          symbol="dashed-line"
+          symbolStroke={chartColors.white}
+          symbolSize={30}
+        />
+      </ChartLegend>
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
         transform={`translate(${margin.right}, ${height - 25})`}
