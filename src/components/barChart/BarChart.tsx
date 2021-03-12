@@ -9,6 +9,7 @@ import { ChartHeader } from "../chartPartials/ChartHeader";
 import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend";
 import { ChartBackground } from "../chartPartials/ChartBackground";
 import { ChartFooter } from "../chartPartials/ChartFooter";
+import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
 import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom";
 import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
 
@@ -24,6 +25,7 @@ interface BarChartProps {
   endDate: string;
   width: number;
   height: number;
+  hasLogo: boolean;
 }
 
 interface DataObject {
@@ -39,12 +41,19 @@ export const BarChart: React.FC<BarChartProps> = ({
   endDate,
   width,
   height,
+  hasLogo,
 }) => {
   const data: DataObject[] = chartData.find((datum) => datum.key === "cases")
     ?.data;
   const smoothData: DataObject[] = sma(data);
 
-  const margin = { top: 130, right: 25, bottom: 75, left: 25 };
+  const margin = {
+    top: 130,
+    right: 25,
+    bottom: hasLogo ? chartLogoSize + 60 : 75,
+    left: 25,
+  };
+  const padding = 25;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -139,8 +148,18 @@ export const BarChart: React.FC<BarChartProps> = ({
       </ChartLegend>
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
-        transform={`translate(${margin.right}, ${height - 25})`}
+        transform={`translate(${
+          hasLogo ? width - margin.right : margin.right
+        }, ${height - padding})`}
+        alignRight={hasLogo}
       />
+      {hasLogo && (
+        <ChartLogo
+          transform={`translate(${margin.right}, ${
+            height - chartLogoSize - padding + 5
+          })`}
+        />
+      )}
     </ChartSvg>
   );
 };

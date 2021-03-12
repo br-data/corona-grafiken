@@ -5,11 +5,13 @@ import { chartColors } from "../../config/colors";
 interface ChartFooterProps {
   text: string;
   transform: string;
+  alignRight: boolean;
 }
 
 export const ChartFooter: React.FC<ChartFooterProps> = ({
   text,
   transform = "",
+  alignRight = false,
 }) => {
   return (
     <g className="footer" transform={transform}>
@@ -17,6 +19,7 @@ export const ChartFooter: React.FC<ChartFooterProps> = ({
         fontFamily="'Open Sans', OpenSans, sans-serif"
         fontSize="14"
         fontWeight="300"
+        textAnchor={alignRight ? 'end' : 'start'}
         fill={chartColors.fontSecondary}
       >
         {text}

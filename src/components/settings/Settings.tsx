@@ -18,6 +18,12 @@ interface NumberInputProps {
   setNumber: any;
 }
 
+interface CheckboxInputProps {
+  label: string;
+  isChecked: boolean;
+  setIsChecked: any;
+}
+
 export const Settings: React.FC = ({ children }) => {
   return <Form>{children}</Form>;
 };
@@ -90,6 +96,23 @@ export const NumberInput = ({
         max={max}
         onChange={handleChange}
       ></Input>
+    </Fieldset>
+  );
+};
+
+export const CheckboxInput = ({
+  label,
+  isChecked,
+  setIsChecked,
+}: CheckboxInputProps) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
+
+  return (
+    <Fieldset>
+      <input type="checkbox" checked={isChecked} onChange={handleChange} />
+      <label> {label}</label>
     </Fieldset>
   );
 };

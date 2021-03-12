@@ -10,6 +10,7 @@ interface ChartViewerProps {
   endDate: string;
   width: number;
   height: number;
+  hasLogo: boolean;
 }
 
 export const ChartViewer: React.FC<ChartViewerProps> = ({
@@ -18,6 +19,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
   endDate,
   width,
   height,
+  hasLogo
 }) => {
   const { error, isLoaded, chartData }: MultiFetchProps = useMultiFetch(
     chart,
@@ -57,6 +59,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
           endDate={endDate}
           width={width}
           height={height}
+          hasLogo={hasLogo}
         />
       </ChartWrapper>
     );

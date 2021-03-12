@@ -6,6 +6,7 @@ import {
   ChartSelect,
   DateInput,
   NumberInput,
+  CheckboxInput,
 } from "./components/settings/Settings";
 import { charts } from "./config/charts";
 
@@ -24,6 +25,7 @@ export default function App() {
   const [endDate, setEndDate] = useState(maxEndDate);
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
+  const [hasLogo, setHasLogo] = useState(true);
 
   return (
     <>
@@ -63,6 +65,11 @@ export default function App() {
           max={1440}
           setNumber={setHeight}
         />
+        <CheckboxInput
+          label="BR24-Logo anzeigen"
+          isChecked={hasLogo}
+          setIsChecked={setHasLogo}
+        />
       </Settings>
       <ChartViewer
         chart={chart}
@@ -70,6 +77,7 @@ export default function App() {
         endDate={endDate}
         width={width}
         height={height}
+        hasLogo={hasLogo}
       />
     </>
   );
