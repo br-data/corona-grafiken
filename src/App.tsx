@@ -18,14 +18,15 @@ export default function App() {
   const defaultStartDate = "2020-02-25";
   const maxEndDate = toDateString(new Date());
   const defaultWidth = 800;
-  const defaultHeight = 800;
+  const defaultHeight = 450;
+  const defaultLogoVisibility = false;
 
   const [chart, setChart] = useState(defaultChart);
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(maxEndDate);
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
-  const [hasLogo, setHasLogo] = useState(true);
+  const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
 
   return (
     <>
