@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BarChart } from "../barChart/BarChart";
 import { LineChart } from "../lineChart/LineChart";
 import { AreaChart } from "../areaChart/AreaChart";
+import { Map } from "../map/Map";
 import { ChartWrapper } from "./styles.ChartView";
 
 import { ChartObject } from "../../config/charts";
@@ -76,6 +77,17 @@ const [chartState, setChartState] = useState(chart.id);
         }
         { chart.type === 'area-chart' &&        
           <AreaChart
+            chart={chart}
+            chartData={chartData}
+            startDate={startDate}
+            endDate={endDate}
+            width={width}
+            height={height}
+            hasLogo={hasLogo}
+          />
+        }
+        { chart.type === 'map' &&        
+          <Map
             chart={chart}
             chartData={chartData}
             startDate={startDate}

@@ -69,7 +69,7 @@ export const ChartKey: React.FC<ChartKeyProps> = ({
         />
       )}
       <text
-        x={symbol ? symbolSize + 7 : 0}
+        x={symbol ? (symbol === "circle" ? symbolSize * 2 : symbolSize) + 7 : 0}
         dominantBaseline="hanging"
         fontFamily="'Open Sans', sans-serif"
         fontSize="15"
@@ -97,7 +97,7 @@ const SymbolCircle: React.FC<SymbolProps> = ({
   fill = "white",
   stroke = "none",
 }) => {
-  return <circle r={size} cx={size} cy="10" fill={fill} stroke={stroke} />;
+  return <circle r={size} cx={size} cy="7" fill={fill} stroke={stroke} />;
 };
 
 const SymbolLine: React.FC<SymbolProps> = ({
