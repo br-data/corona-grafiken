@@ -1,0 +1,4122 @@
+[
+  {
+    "name": "Flensburg",
+    "rkiName": "SK Flensburg",
+    "type": "Stadt",
+    "state": "Schleswig-Holstein",
+    "ags": "01001",
+    "lat": 54.785119,
+    "long": 9.4323687,
+    "pop": 90164
+  },
+  {
+    "name": "Kiel",
+    "rkiName": "SK Kiel",
+    "type": "Stadt",
+    "state": "Schleswig-Holstein",
+    "ags": "01002",
+    "lat": 54.329759,
+    "long": 10.130283,
+    "pop": 246794
+  },
+  {
+    "name": "Lübeck",
+    "rkiName": "SK Lübeck",
+    "type": "Stadt",
+    "state": "Schleswig-Holstein",
+    "ags": "01003",
+    "lat": 53.875705,
+    "long": 10.723051,
+    "pop": 216530
+  },
+  {
+    "name": "Neumünster",
+    "rkiName": "SK Neumünster",
+    "type": "Stadt",
+    "state": "Schleswig-Holstein",
+    "ags": "01004",
+    "lat": 54.088042,
+    "long": 9.9835962,
+    "pop": 80196
+  },
+  {
+    "name": "Dithmarschen",
+    "rkiName": "LK Dithmarschen",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01051",
+    "lat": 54.133993,
+    "long": 9.1096773,
+    "pop": 133193
+  },
+  {
+    "name": "Herzogtum Lauenburg",
+    "rkiName": "LK Herzogtum Lauenburg",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01053",
+    "lat": 53.596434,
+    "long": 10.608184,
+    "pop": 198019
+  },
+  {
+    "name": "Nordfriesland",
+    "rkiName": "LK Nordfriesland",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01054",
+    "lat": 54.611088,
+    "long": 9.0649543,
+    "pop": 165951
+  },
+  {
+    "name": "Ostholstein",
+    "rkiName": "LK Ostholstein",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01055",
+    "lat": 54.211782,
+    "long": 10.86662,
+    "pop": 200539
+  },
+  {
+    "name": "Pinneberg",
+    "rkiName": "LK Pinneberg",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01056",
+    "lat": 53.723182,
+    "long": 9.7371433,
+    "pop": 316103
+  },
+  {
+    "name": "Plön",
+    "rkiName": "LK Plön",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01057",
+    "lat": 54.245729,
+    "long": 10.363199,
+    "pop": 128686
+  },
+  {
+    "name": "Rendsburg-Eckernförde",
+    "rkiName": "LK Rendsburg-Eckernförde",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01058",
+    "lat": 54.29215,
+    "long": 9.7793856,
+    "pop": 274098
+  },
+  {
+    "name": "Schleswig-Flensburg",
+    "rkiName": "LK Schleswig-Flensburg",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01059",
+    "lat": 54.616026,
+    "long": 9.5509886,
+    "pop": 201156
+  },
+  {
+    "name": "Segeberg",
+    "rkiName": "LK Segeberg",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01060",
+    "lat": 53.926779,
+    "long": 10.142052,
+    "pop": 277175
+  },
+  {
+    "name": "Steinburg",
+    "rkiName": "LK Steinburg",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01061",
+    "lat": 53.930387,
+    "long": 9.5111518,
+    "pop": 131013
+  },
+  {
+    "name": "Stormarn",
+    "rkiName": "LK Stormarn",
+    "type": "Kreis",
+    "state": "Schleswig-Holstein",
+    "ags": "01062",
+    "lat": 53.728387,
+    "long": 10.336683,
+    "pop": 244156
+  },
+  {
+    "name": "Hamburg",
+    "rkiName": "SK Hamburg",
+    "type": "Stadt",
+    "state": "Hamburg",
+    "ags": "02000",
+    "lat": 53.553616,
+    "long": 10.027361,
+    "pop": 1847253
+  },
+  {
+    "name": "Braunschweig",
+    "rkiName": "SK Braunschweig",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03101",
+    "lat": 52.280839,
+    "long": 10.526347,
+    "pop": 249406
+  },
+  {
+    "name": "Salzgitter",
+    "rkiName": "SK Salzgitter",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03102",
+    "lat": 52.129678,
+    "long": 10.370679,
+    "pop": 104291
+  },
+  {
+    "name": "Wolfsburg",
+    "rkiName": "SK Wolfsburg",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03103",
+    "lat": 52.411138,
+    "long": 10.785036,
+    "pop": 124371
+  },
+  {
+    "name": "Gifhorn",
+    "rkiName": "LK Gifhorn",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03151",
+    "lat": 52.586249,
+    "long": 10.607222,
+    "pop": 176523
+  },
+  {
+    "name": "Goslar",
+    "rkiName": "LK Goslar",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03153",
+    "lat": 51.876084,
+    "long": 10.401684,
+    "pop": 136292
+  },
+  {
+    "name": "Helmstedt",
+    "rkiName": "LK Helmstedt",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03154",
+    "lat": 52.260419,
+    "long": 10.894027,
+    "pop": 91297
+  },
+  {
+    "name": "Northeim",
+    "rkiName": "LK Northeim",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03155",
+    "lat": 51.74463,
+    "long": 9.8518887,
+    "pop": 132285
+  },
+  {
+    "name": "Peine",
+    "rkiName": "LK Peine",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03157",
+    "lat": 52.308055,
+    "long": 10.256622,
+    "pop": 134801
+  },
+  {
+    "name": "Wolfenbüttel",
+    "rkiName": "LK Wolfenbüttel",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03158",
+    "lat": 52.137751,
+    "long": 10.648905,
+    "pop": 119622
+  },
+  {
+    "name": "Göttingen",
+    "rkiName": "LK Göttingen",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03159",
+    "lat": 51.500939,
+    "long": 9.9321137,
+    "pop": 326041
+  },
+  {
+    "name": "Region Hannover",
+    "rkiName": "Region Hannover",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03241",
+    "lat": 52.424603,
+    "long": 9.720613,
+    "pop": 1157115
+  },
+  {
+    "name": "Diepholz",
+    "rkiName": "LK Diepholz",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03251",
+    "lat": 52.730353,
+    "long": 8.7019864,
+    "pop": 217089
+  },
+  {
+    "name": "Hameln-Pyrmont",
+    "rkiName": "LK Hameln-Pyrmont",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03252",
+    "lat": 52.094196,
+    "long": 9.3932046,
+    "pop": 148549
+  },
+  {
+    "name": "Hildesheim",
+    "rkiName": "LK Hildesheim",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03254",
+    "lat": 52.091993,
+    "long": 9.9453013,
+    "pop": 275817
+  },
+  {
+    "name": "Holzminden",
+    "rkiName": "LK Holzminden",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03255",
+    "lat": 51.881129,
+    "long": 9.5553908,
+    "pop": 70458
+  },
+  {
+    "name": "Nienburg (Weser)",
+    "rkiName": "LK Nienburg (Weser)",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03256",
+    "lat": 52.611395,
+    "long": 9.113799,
+    "pop": 121390
+  },
+  {
+    "name": "Schaumburg",
+    "rkiName": "LK Schaumburg",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03257",
+    "lat": 52.292013,
+    "long": 9.2066986,
+    "pop": 157820
+  },
+  {
+    "name": "Celle",
+    "rkiName": "LK Celle",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03351",
+    "lat": 52.719791,
+    "long": 10.10555,
+    "pop": 179011
+  },
+  {
+    "name": "Cuxhaven",
+    "rkiName": "LK Cuxhaven",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03352",
+    "lat": 53.618225,
+    "long": 8.8035629,
+    "pop": 198038
+  },
+  {
+    "name": "Harburg",
+    "rkiName": "LK Harburg",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03353",
+    "lat": 53.325053,
+    "long": 9.9641457,
+    "pop": 254431
+  },
+  {
+    "name": "Lüchow-Dannenberg",
+    "rkiName": "LK Lüchow-Dannenberg",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03354",
+    "lat": 53.017929,
+    "long": 11.129626,
+    "pop": 48412
+  },
+  {
+    "name": "Lüneburg",
+    "rkiName": "LK Lüneburg",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03355",
+    "lat": 53.240413,
+    "long": 10.577257,
+    "pop": 184139
+  },
+  {
+    "name": "Osterholz",
+    "rkiName": "LK Osterholz",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03356",
+    "lat": 53.255484,
+    "long": 8.8106144,
+    "pop": 113928
+  },
+  {
+    "name": "Rotenburg (Wümme)",
+    "rkiName": "LK Rotenburg (Wümme)",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03357",
+    "lat": 53.25506,
+    "long": 9.3050983,
+    "pop": 163782
+  },
+  {
+    "name": "Heidekreis",
+    "rkiName": "LK Heidekreis",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03358",
+    "lat": 52.934247,
+    "long": 9.7706982,
+    "pop": 140673
+  },
+  {
+    "name": "Stade",
+    "rkiName": "LK Stade",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03359",
+    "lat": 53.59498,
+    "long": 9.4166249,
+    "pop": 204512
+  },
+  {
+    "name": "Uelzen",
+    "rkiName": "LK Uelzen",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03360",
+    "lat": 52.993539,
+    "long": 10.549805,
+    "pop": 92389
+  },
+  {
+    "name": "Verden",
+    "rkiName": "LK Verden",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03361",
+    "lat": 52.976043,
+    "long": 9.173881,
+    "pop": 137133
+  },
+  {
+    "name": "Delmenhorst",
+    "rkiName": "SK Delmenhorst",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03401",
+    "lat": 53.046392,
+    "long": 8.6438715,
+    "pop": 77559
+  },
+  {
+    "name": "Emden",
+    "rkiName": "SK Emden",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03402",
+    "lat": 53.350019,
+    "long": 7.241668,
+    "pop": 49913
+  },
+  {
+    "name": "Oldenburg (Oldb)",
+    "rkiName": "SK Oldenburg",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03403",
+    "lat": 53.144113,
+    "long": 8.2360934,
+    "pop": 169077
+  },
+  {
+    "name": "Osnabrück",
+    "rkiName": "SK Osnabrück",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03404",
+    "lat": 52.279483,
+    "long": 8.046646,
+    "pop": 165251
+  },
+  {
+    "name": "Wilhelmshaven",
+    "rkiName": "SK Wilhelmshaven",
+    "type": "Stadt",
+    "state": "Niedersachsen",
+    "ags": "03405",
+    "lat": 53.566003,
+    "long": 8.0892718,
+    "pop": 76089
+  },
+  {
+    "name": "Ammerland",
+    "rkiName": "LK Ammerland",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03451",
+    "lat": 53.212532,
+    "long": 8.0321495,
+    "pop": 124859
+  },
+  {
+    "name": "Aurich",
+    "rkiName": "LK Aurich",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03452",
+    "lat": 53.481904,
+    "long": 7.3903033,
+    "pop": 189694
+  },
+  {
+    "name": "Cloppenburg",
+    "rkiName": "LK Cloppenburg",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03453",
+    "lat": 52.905073,
+    "long": 7.9209102,
+    "pop": 170682
+  },
+  {
+    "name": "Emsland",
+    "rkiName": "LK Emsland",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03454",
+    "lat": 52.730863,
+    "long": 7.4190007,
+    "pop": 326954
+  },
+  {
+    "name": "Friesland",
+    "rkiName": "LK Friesland",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03455",
+    "lat": 53.39451,
+    "long": 8.0467827,
+    "pop": 98704
+  },
+  {
+    "name": "Grafschaft Bentheim",
+    "rkiName": "LK Grafschaft Bentheim",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03456",
+    "lat": 52.47913,
+    "long": 7.0249016,
+    "pop": 137162
+  },
+  {
+    "name": "Leer",
+    "rkiName": "LK Leer",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03457",
+    "lat": 53.217026,
+    "long": 7.5350353,
+    "pop": 170756
+  },
+  {
+    "name": "Oldenburg",
+    "rkiName": "LK Oldenburg",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03458",
+    "lat": 52.992398,
+    "long": 8.408599,
+    "pop": 130890
+  },
+  {
+    "name": "Osnabrück",
+    "rkiName": "LK Osnabrück",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03459",
+    "lat": 52.505597,
+    "long": 7.8413453,
+    "pop": 358080
+  },
+  {
+    "name": "Vechta",
+    "rkiName": "LK Vechta",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03460",
+    "lat": 52.663086,
+    "long": 8.2271335,
+    "pop": 142814
+  },
+  {
+    "name": "Wesermarsch",
+    "rkiName": "LK Wesermarsch",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03461",
+    "lat": 53.357849,
+    "long": 8.3931147,
+    "pop": 88583
+  },
+  {
+    "name": "Wittmund",
+    "rkiName": "LK Wittmund",
+    "type": "Landkreis",
+    "state": "Niedersachsen",
+    "ags": "03462",
+    "lat": 53.594498,
+    "long": 7.7199505,
+    "pop": 56926
+  },
+  {
+    "name": "Bremen",
+    "rkiName": "SK Bremen",
+    "type": "Stadt",
+    "state": "Bremen",
+    "ags": "04011",
+    "lat": 53.11115,
+    "long": 8.7890014,
+    "pop": 567559
+  },
+  {
+    "name": "Bremerhaven",
+    "rkiName": "SK Bremerhaven",
+    "type": "Stadt",
+    "state": "Bremen",
+    "ags": "04012",
+    "lat": 53.535877,
+    "long": 8.5847177,
+    "pop": 113643
+  },
+  {
+    "name": "Düsseldorf",
+    "rkiName": "SK Düsseldorf",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05111",
+    "lat": 51.232947,
+    "long": 6.8174691,
+    "pop": 621877
+  },
+  {
+    "name": "Duisburg",
+    "rkiName": "SK Duisburg",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05112",
+    "lat": 51.439338,
+    "long": 6.7426703,
+    "pop": 498686
+  },
+  {
+    "name": "Essen",
+    "rkiName": "SK Essen",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05113",
+    "lat": 51.429552,
+    "long": 7.0247831,
+    "pop": 582760
+  },
+  {
+    "name": "Krefeld",
+    "rkiName": "SK Krefeld",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05114",
+    "lat": 51.344702,
+    "long": 6.5885164,
+    "pop": 227417
+  },
+  {
+    "name": "Mönchengladbach",
+    "rkiName": "SK Mönchengladbach",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05116",
+    "lat": 51.170067,
+    "long": 6.4214464,
+    "pop": 261034
+  },
+  {
+    "name": "Mülheim an der Ruhr",
+    "rkiName": "SK Mülheim a.d.Ruhr",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05117",
+    "lat": 51.410975,
+    "long": 6.8861611,
+    "pop": 170632
+  },
+  {
+    "name": "Oberhausen",
+    "rkiName": "SK Oberhausen",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05119",
+    "lat": 51.509803,
+    "long": 6.8562311,
+    "pop": 210764
+  },
+  {
+    "name": "Remscheid",
+    "rkiName": "SK Remscheid",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05120",
+    "lat": 51.179955,
+    "long": 7.2230811,
+    "pop": 111338
+  },
+  {
+    "name": "Solingen",
+    "rkiName": "SK Solingen",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05122",
+    "lat": 51.158614,
+    "long": 7.0692269,
+    "pop": 159245
+  },
+  {
+    "name": "Wuppertal",
+    "rkiName": "SK Wuppertal",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05124",
+    "lat": 51.247065,
+    "long": 7.1677703,
+    "pop": 355100
+  },
+  {
+    "name": "Kleve",
+    "rkiName": "LK Kleve",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05154",
+    "lat": 51.654129,
+    "long": 6.2676332,
+    "pop": 312465
+  },
+  {
+    "name": "Mettmann",
+    "rkiName": "LK Mettmann",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05158",
+    "lat": 51.293695,
+    "long": 7.0111103,
+    "pop": 485570
+  },
+  {
+    "name": "Rhein-Kreis Neuss",
+    "rkiName": "LK Rhein-Kreis Neuss",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05162",
+    "lat": 51.141915,
+    "long": 6.6543443,
+    "pop": 451730
+  },
+  {
+    "name": "Viersen",
+    "rkiName": "LK Viersen",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05166",
+    "lat": 51.286061,
+    "long": 6.3305124,
+    "pop": 298863
+  },
+  {
+    "name": "Wesel",
+    "rkiName": "LK Wesel",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05170",
+    "lat": 51.627207,
+    "long": 6.626953,
+    "pop": 459976
+  },
+  {
+    "name": "Bonn",
+    "rkiName": "SK Bonn",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05314",
+    "lat": 50.699837,
+    "long": 7.1159508,
+    "pop": 329673
+  },
+  {
+    "name": "Köln",
+    "rkiName": "SK Köln",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05315",
+    "lat": 50.941508,
+    "long": 6.9777146,
+    "pop": 1087863
+  },
+  {
+    "name": "Leverkusen",
+    "rkiName": "SK Leverkusen",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05316",
+    "lat": 51.048871,
+    "long": 7.0177991,
+    "pop": 163729
+  },
+  {
+    "name": "Städteregion Aachen",
+    "rkiName": "StadtRegion Aachen",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05334",
+    "lat": 50.756428,
+    "long": 6.1032996,
+    "pop": 557026
+  },
+  {
+    "name": "Düren",
+    "rkiName": "LK Düren",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05358",
+    "lat": 50.817006,
+    "long": 6.4476606,
+    "pop": 264638
+  },
+  {
+    "name": "Rhein-Erft-Kreis",
+    "rkiName": "LK Rhein-Erft-Kreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05362",
+    "lat": 50.901271,
+    "long": 6.7226709,
+    "pop": 470615
+  },
+  {
+    "name": "Euskirchen",
+    "rkiName": "LK Euskirchen",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05366",
+    "lat": 50.529011,
+    "long": 6.6453886,
+    "pop": 193656
+  },
+  {
+    "name": "Heinsberg",
+    "rkiName": "LK Heinsberg",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05370",
+    "lat": 51.052035,
+    "long": 6.1709684,
+    "pop": 255555
+  },
+  {
+    "name": "Oberbergischer Kreis",
+    "rkiName": "LK Oberbergischer Kreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05374",
+    "lat": 51.010967,
+    "long": 7.5172785,
+    "pop": 272057
+  },
+  {
+    "name": "Rheinisch-Bergischer Kreis",
+    "rkiName": "LK Rheinisch-Bergischer Kreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05378",
+    "lat": 51.019601,
+    "long": 7.1958983,
+    "pop": 283271
+  },
+  {
+    "name": "Rhein-Sieg-Kreis",
+    "rkiName": "LK Rhein-Sieg-Kreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05382",
+    "lat": 50.755877,
+    "long": 7.2402531,
+    "pop": 600764
+  },
+  {
+    "name": "Bottrop",
+    "rkiName": "SK Bottrop",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05512",
+    "lat": 51.594362,
+    "long": 6.9159912,
+    "pop": 117565
+  },
+  {
+    "name": "Gelsenkirchen",
+    "rkiName": "SK Gelsenkirchen",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05513",
+    "lat": 51.549491,
+    "long": 7.0817139,
+    "pop": 259645
+  },
+  {
+    "name": "Münster",
+    "rkiName": "SK Münster",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05515",
+    "lat": 51.952438,
+    "long": 7.6264618,
+    "pop": 315293
+  },
+  {
+    "name": "Borken",
+    "rkiName": "LK Borken",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05554",
+    "lat": 51.962198,
+    "long": 6.9097557,
+    "pop": 371339
+  },
+  {
+    "name": "Coesfeld",
+    "rkiName": "LK Coesfeld",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05558",
+    "lat": 51.864443,
+    "long": 7.3713157,
+    "pop": 220586
+  },
+  {
+    "name": "Recklinghausen",
+    "rkiName": "LK Recklinghausen",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05562",
+    "lat": 51.669264,
+    "long": 7.165792,
+    "pop": 614137
+  },
+  {
+    "name": "Steinfurt",
+    "rkiName": "LK Steinfurt",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05566",
+    "lat": 52.2116,
+    "long": 7.581675,
+    "pop": 448220
+  },
+  {
+    "name": "Warendorf",
+    "rkiName": "LK Warendorf",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05570",
+    "lat": 51.86986,
+    "long": 7.9598364,
+    "pop": 277840
+  },
+  {
+    "name": "Bielefeld",
+    "rkiName": "SK Bielefeld",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05711",
+    "lat": 52.011184,
+    "long": 8.543212,
+    "pop": 334195
+  },
+  {
+    "name": "Gütersloh",
+    "rkiName": "LK Gütersloh",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05754",
+    "lat": 51.931784,
+    "long": 8.3548388,
+    "pop": 364938
+  },
+  {
+    "name": "Herford",
+    "rkiName": "LK Herford",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05758",
+    "lat": 52.168789,
+    "long": 8.6427584,
+    "pop": 250578
+  },
+  {
+    "name": "Höxter",
+    "rkiName": "LK Höxter",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05762",
+    "lat": 51.685478,
+    "long": 9.1884029,
+    "pop": 140251
+  },
+  {
+    "name": "Lippe",
+    "rkiName": "LK Lippe",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05766",
+    "lat": 51.981325,
+    "long": 8.9548684,
+    "pop": 347514
+  },
+  {
+    "name": "Minden-Lübbecke",
+    "rkiName": "LK Minden-Lübbecke",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05770",
+    "lat": 52.352474,
+    "long": 8.740944,
+    "pop": 310409
+  },
+  {
+    "name": "Paderborn",
+    "rkiName": "LK Paderborn",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05774",
+    "lat": 51.662547,
+    "long": 8.7303579,
+    "pop": 307839
+  },
+  {
+    "name": "Bochum",
+    "rkiName": "SK Bochum",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05911",
+    "lat": 51.465371,
+    "long": 7.2285467,
+    "pop": 365587
+  },
+  {
+    "name": "Dortmund",
+    "rkiName": "SK Dortmund",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05913",
+    "lat": 51.512061,
+    "long": 7.4796919,
+    "pop": 588250
+  },
+  {
+    "name": "Hagen",
+    "rkiName": "SK Hagen",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05914",
+    "lat": 51.347057,
+    "long": 7.4970114,
+    "pop": 188686
+  },
+  {
+    "name": "Hamm",
+    "rkiName": "SK Hamm",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05915",
+    "lat": 51.66249,
+    "long": 7.8263982,
+    "pop": 179916
+  },
+  {
+    "name": "Herne",
+    "rkiName": "SK Herne",
+    "type": "Stadt",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05916",
+    "lat": 51.533785,
+    "long": 7.2159088,
+    "pop": 156449
+  },
+  {
+    "name": "Ennepe-Ruhr-Kreis",
+    "rkiName": "LK Ennepe-Ruhr-Kreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05954",
+    "lat": 51.34186,
+    "long": 7.3263007,
+    "pop": 324106
+  },
+  {
+    "name": "Hochsauerlandkreis",
+    "rkiName": "LK Hochsauerlandkreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05958",
+    "lat": 51.305556,
+    "long": 8.3972543,
+    "pop": 259777
+  },
+  {
+    "name": "Märkischer Kreis",
+    "rkiName": "LK Märkischer Kreis",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05962",
+    "lat": 51.260696,
+    "long": 7.7139345,
+    "pop": 410222
+  },
+  {
+    "name": "Olpe",
+    "rkiName": "LK Olpe",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05966",
+    "lat": 51.087234,
+    "long": 7.9812283,
+    "pop": 133955
+  },
+  {
+    "name": "Siegen-Wittgenstein",
+    "rkiName": "LK Siegen-Wittgenstein",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05970",
+    "lat": 50.937992,
+    "long": 8.2058809,
+    "pop": 276944
+  },
+  {
+    "name": "Soest",
+    "rkiName": "LK Soest",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05974",
+    "lat": 51.5647,
+    "long": 8.2236358,
+    "pop": 301785
+  },
+  {
+    "name": "Unna",
+    "rkiName": "LK Unna",
+    "type": "Kreis",
+    "state": "Nordrhein-Westfalen",
+    "ags": "05978",
+    "lat": 51.575208,
+    "long": 7.6417082,
+    "pop": 394891
+  },
+  {
+    "name": "Darmstadt",
+    "rkiName": "SK Darmstadt",
+    "type": "Stadt",
+    "state": "Hessen",
+    "ags": "06411",
+    "lat": 49.882743,
+    "long": 8.6752367,
+    "pop": 159878
+  },
+  {
+    "name": "Frankfurt am Main",
+    "rkiName": "SK Frankfurt am Main",
+    "type": "Stadt",
+    "state": "Hessen",
+    "ags": "06412",
+    "lat": 50.116773,
+    "long": 8.6598981,
+    "pop": 763380
+  },
+  {
+    "name": "Offenbach am Main",
+    "rkiName": "SK Offenbach",
+    "type": "Stadt",
+    "state": "Hessen",
+    "ags": "06413",
+    "lat": 50.089561,
+    "long": 8.7984841,
+    "pop": 130280
+  },
+  {
+    "name": "Wiesbaden",
+    "rkiName": "SK Wiesbaden",
+    "type": "Stadt",
+    "state": "Hessen",
+    "ags": "06414",
+    "lat": 50.076486,
+    "long": 8.2738994,
+    "pop": 278474
+  },
+  {
+    "name": "Bergstraße",
+    "rkiName": "LK Bergstraße",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06431",
+    "lat": 49.669855,
+    "long": 8.6318551,
+    "pop": 270340
+  },
+  {
+    "name": "Darmstadt-Dieburg",
+    "rkiName": "LK Darmstadt-Dieburg",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06432",
+    "lat": 49.855994,
+    "long": 8.8061081,
+    "pop": 297844
+  },
+  {
+    "name": "Groß-Gerau",
+    "rkiName": "LK Groß-Gerau",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06433",
+    "lat": 49.902901,
+    "long": 8.4812779,
+    "pop": 275726
+  },
+  {
+    "name": "Hochtaunuskreis",
+    "rkiName": "LK Hochtaunuskreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06434",
+    "lat": 50.27895,
+    "long": 8.5206755,
+    "pop": 236914
+  },
+  {
+    "name": "Main-Kinzig-Kreis",
+    "rkiName": "LK Main-Kinzig-Kreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06435",
+    "lat": 50.243344,
+    "long": 9.2931037,
+    "pop": 420552
+  },
+  {
+    "name": "Main-Taunus-Kreis",
+    "rkiName": "LK Main-Taunus-Kreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06436",
+    "lat": 50.097876,
+    "long": 8.4478967,
+    "pop": 238558
+  },
+  {
+    "name": "Odenwaldkreis",
+    "rkiName": "LK Odenwaldkreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06437",
+    "lat": 49.675058,
+    "long": 8.988983,
+    "pop": 96703
+  },
+  {
+    "name": "Offenbach",
+    "rkiName": "LK Offenbach",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06438",
+    "lat": 50.022103,
+    "long": 8.8260025,
+    "pop": 355813
+  },
+  {
+    "name": "Rheingau-Taunus-Kreis",
+    "rkiName": "LK Rheingau-Taunus-Kreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06439",
+    "lat": 50.139484,
+    "long": 8.0949772,
+    "pop": 187160
+  },
+  {
+    "name": "Wetteraukreis",
+    "rkiName": "LK Wetteraukreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06440",
+    "lat": 50.352779,
+    "long": 8.9212263,
+    "pop": 308339
+  },
+  {
+    "name": "Gießen",
+    "rkiName": "LK Gießen",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06531",
+    "lat": 50.566243,
+    "long": 8.8206054,
+    "pop": 270688
+  },
+  {
+    "name": "Lahn-Dill-Kreis",
+    "rkiName": "LK Lahn-Dill-Kreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06532",
+    "lat": 50.648039,
+    "long": 8.3791535,
+    "pop": 253319
+  },
+  {
+    "name": "Limburg-Weilburg",
+    "rkiName": "LK Limburg-Weilburg",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06533",
+    "lat": 50.427262,
+    "long": 8.2174087,
+    "pop": 171912
+  },
+  {
+    "name": "Marburg-Biedenkopf",
+    "rkiName": "LK Marburg-Biedenkopf",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06534",
+    "lat": 50.83295,
+    "long": 8.7522191,
+    "pop": 247084
+  },
+  {
+    "name": "Vogelsbergkreis",
+    "rkiName": "LK Vogelsbergkreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06535",
+    "lat": 50.638109,
+    "long": 9.2796685,
+    "pop": 105643
+  },
+  {
+    "name": "Kassel",
+    "rkiName": "SK Kassel",
+    "type": "Stadt",
+    "state": "Hessen",
+    "ags": "06611",
+    "lat": 51.313095,
+    "long": 9.4655528,
+    "pop": 202137
+  },
+  {
+    "name": "Fulda",
+    "rkiName": "LK Fulda",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06631",
+    "lat": 50.564394,
+    "long": 9.7600374,
+    "pop": 223145
+  },
+  {
+    "name": "Hersfeld-Rotenburg",
+    "rkiName": "LK Hersfeld-Rotenburg",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06632",
+    "lat": 50.909447,
+    "long": 9.755943,
+    "pop": 120719
+  },
+  {
+    "name": "Kassel",
+    "rkiName": "LK Kassel",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06633",
+    "lat": 51.482179,
+    "long": 9.4568303,
+    "pop": 236764
+  },
+  {
+    "name": "Schwalm-Eder-Kreis",
+    "rkiName": "LK Schwalm-Eder-Kreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06634",
+    "lat": 51.023792,
+    "long": 9.3816677,
+    "pop": 179673
+  },
+  {
+    "name": "Waldeck-Frankenberg",
+    "rkiName": "LK Waldeck-Frankenberg",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06635",
+    "lat": 51.188851,
+    "long": 8.9051729,
+    "pop": 156406
+  },
+  {
+    "name": "Werra-Meißner-Kreis",
+    "rkiName": "LK Werra-Meißner-Kreis",
+    "type": "Landkreis",
+    "state": "Hessen",
+    "ags": "06636",
+    "lat": 51.192965,
+    "long": 9.9315409,
+    "pop": 100629
+  },
+  {
+    "name": "Koblenz",
+    "rkiName": "SK Koblenz",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07111",
+    "lat": 50.34527,
+    "long": 7.5872981,
+    "pop": 114052
+  },
+  {
+    "name": "Ahrweiler",
+    "rkiName": "LK Ahrweiler",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07131",
+    "lat": 50.461821,
+    "long": 7.0515366,
+    "pop": 130086
+  },
+  {
+    "name": "Altenkirchen (Westerwald)",
+    "rkiName": "LK Altenkirchen",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07132",
+    "lat": 50.751529,
+    "long": 7.7516687,
+    "pop": 128805
+  },
+  {
+    "name": "Bad Kreuznach",
+    "rkiName": "LK Bad Kreuznach",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07133",
+    "lat": 49.825742,
+    "long": 7.6943427,
+    "pop": 158345
+  },
+  {
+    "name": "Birkenfeld",
+    "rkiName": "LK Birkenfeld",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07134",
+    "lat": 49.717299,
+    "long": 7.2890031,
+    "pop": 80951
+  },
+  {
+    "name": "Cochem-Zell",
+    "rkiName": "LK Cochem-Zell",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07135",
+    "lat": 50.131267,
+    "long": 7.1864285,
+    "pop": 61375
+  },
+  {
+    "name": "Mayen-Koblenz",
+    "rkiName": "LK Mayen-Koblenz",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07137",
+    "lat": 50.32879,
+    "long": 7.3401513,
+    "pop": 214434
+  },
+  {
+    "name": "Neuwied",
+    "rkiName": "LK Neuwied",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07138",
+    "lat": 50.555697,
+    "long": 7.4755532,
+    "pop": 182811
+  },
+  {
+    "name": "Rhein-Hunsrück-Kreis",
+    "rkiName": "LK Rhein-Hunsrück-Kreis",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07140",
+    "lat": 50.045793,
+    "long": 7.5144261,
+    "pop": 103163
+  },
+  {
+    "name": "Rhein-Lahn-Kreis",
+    "rkiName": "LK Rhein-Lahn-Kreis",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07141",
+    "lat": 50.263929,
+    "long": 7.8582581,
+    "pop": 122297
+  },
+  {
+    "name": "Westerwaldkreis",
+    "rkiName": "LK Westerwaldkreis",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07143",
+    "lat": 50.551418,
+    "long": 7.8785675,
+    "pop": 201904
+  },
+  {
+    "name": "Trier",
+    "rkiName": "SK Trier",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07211",
+    "lat": 49.763893,
+    "long": 6.6508604,
+    "pop": 111528
+  },
+  {
+    "name": "Bernkastel-Wittlich",
+    "rkiName": "LK Bernkastel-Wittlich",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07231",
+    "lat": 49.925053,
+    "long": 6.9707499,
+    "pop": 112483
+  },
+  {
+    "name": "Eifelkreis Bitburg-Prüm",
+    "rkiName": "LK Bitburg-Prüm",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07232",
+    "lat": 50.062123,
+    "long": 6.4072307,
+    "pop": 99058
+  },
+  {
+    "name": "Vulkaneifel",
+    "rkiName": "LK Vulkaneifel",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07233",
+    "lat": 50.232909,
+    "long": 6.7528997,
+    "pop": 60646
+  },
+  {
+    "name": "Trier-Saarburg",
+    "rkiName": "LK Trier-Saarburg",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07235",
+    "lat": 49.685867,
+    "long": 6.83965,
+    "pop": 149398
+  },
+  {
+    "name": "Frankenthal (Pfalz)",
+    "rkiName": "SK Frankenthal",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07311",
+    "lat": 49.533715,
+    "long": 8.3608617,
+    "pop": 48762
+  },
+  {
+    "name": "Kaiserslautern",
+    "rkiName": "SK Kaiserslautern",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07312",
+    "lat": 49.434653,
+    "long": 7.768566,
+    "pop": 100030
+  },
+  {
+    "name": "Landau in der Pfalz",
+    "rkiName": "SK Landau i.d.Pfalz",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07313",
+    "lat": 49.197801,
+    "long": 8.1146145,
+    "pop": 46881
+  },
+  {
+    "name": "Ludwigshafen am Rhein",
+    "rkiName": "SK Ludwigshafen",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07314",
+    "lat": 49.482783,
+    "long": 8.4034095,
+    "pop": 172253
+  },
+  {
+    "name": "Mainz",
+    "rkiName": "SK Mainz",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07315",
+    "lat": 49.971827,
+    "long": 8.2525017,
+    "pop": 218578
+  },
+  {
+    "name": "Neustadt an der Weinstraße",
+    "rkiName": "SK Neustadt a.d.Weinstraße",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07316",
+    "lat": 49.343502,
+    "long": 8.151743,
+    "pop": 53264
+  },
+  {
+    "name": "Pirmasens",
+    "rkiName": "SK Pirmasens",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07317",
+    "lat": 49.19548,
+    "long": 7.5914822,
+    "pop": 40231
+  },
+  {
+    "name": "Speyer",
+    "rkiName": "SK Speyer",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07318",
+    "lat": 49.33493,
+    "long": 8.4349693,
+    "pop": 50561
+  },
+  {
+    "name": "Worms",
+    "rkiName": "SK Worms",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07319",
+    "lat": 49.649206,
+    "long": 8.3292565,
+    "pop": 83542
+  },
+  {
+    "name": "Zweibrücken",
+    "rkiName": "SK Zweibrücken",
+    "type": "Stadt",
+    "state": "Rheinland-Pfalz",
+    "ags": "07320",
+    "lat": 49.25695,
+    "long": 7.3706429,
+    "pop": 34193
+  },
+  {
+    "name": "Alzey-Worms",
+    "rkiName": "LK Alzey-Worms",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07331",
+    "lat": 49.756662,
+    "long": 8.163596,
+    "pop": 129687
+  },
+  {
+    "name": "Bad Dürkheim",
+    "rkiName": "LK Bad Dürkheim",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07332",
+    "lat": 49.453295,
+    "long": 8.1148562,
+    "pop": 132671
+  },
+  {
+    "name": "Donnersbergkreis",
+    "rkiName": "LK Donnersbergkreis",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07333",
+    "lat": 49.629734,
+    "long": 7.9227696,
+    "pop": 75325
+  },
+  {
+    "name": "Germersheim",
+    "rkiName": "LK Germersheim",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07334",
+    "lat": 49.118287,
+    "long": 8.2496793,
+    "pop": 129013
+  },
+  {
+    "name": "Kaiserslautern",
+    "rkiName": "LK Kaiserslautern",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07335",
+    "lat": 49.419772,
+    "long": 7.5305697,
+    "pop": 105979
+  },
+  {
+    "name": "Kusel",
+    "rkiName": "LK Kusel",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07336",
+    "lat": 49.551705,
+    "long": 7.4827308,
+    "pop": 70219
+  },
+  {
+    "name": "Südliche Weinstraße",
+    "rkiName": "LK Südliche Weinstraße",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07337",
+    "lat": 49.118284,
+    "long": 8.0029424,
+    "pop": 110521
+  },
+  {
+    "name": "Rhein-Pfalz-Kreis",
+    "rkiName": "LK Rhein-Pfalz-Kreis",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07338",
+    "lat": 49.418276,
+    "long": 8.3627468,
+    "pop": 154609
+  },
+  {
+    "name": "Mainz-Bingen",
+    "rkiName": "LK Mainz-Bingen",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07339",
+    "lat": 49.917976,
+    "long": 8.0895077,
+    "pop": 211417
+  },
+  {
+    "name": "Südwestpfalz",
+    "rkiName": "LK Südwestpfalz",
+    "type": "Landkreis",
+    "state": "Rheinland-Pfalz",
+    "ags": "07340",
+    "lat": 49.209205,
+    "long": 7.6577925,
+    "pop": 94831
+  },
+  {
+    "name": "Stuttgart",
+    "rkiName": "SK Stuttgart",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08111",
+    "lat": 48.776237,
+    "long": 9.1728399,
+    "pop": 635911
+  },
+  {
+    "name": "Böblingen",
+    "rkiName": "LK Böblingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08115",
+    "lat": 48.67877,
+    "long": 8.9426598,
+    "pop": 392807
+  },
+  {
+    "name": "Esslingen",
+    "rkiName": "LK Esslingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08116",
+    "lat": 48.648305,
+    "long": 9.3692627,
+    "pop": 535024
+  },
+  {
+    "name": "Göppingen",
+    "rkiName": "LK Göppingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08117",
+    "lat": 48.664115,
+    "long": 9.7216924,
+    "pop": 258145
+  },
+  {
+    "name": "Ludwigsburg",
+    "rkiName": "LK Ludwigsburg",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08118",
+    "lat": 48.940047,
+    "long": 9.1232145,
+    "pop": 545423
+  },
+  {
+    "name": "Rems-Murr-Kreis",
+    "rkiName": "LK Rems-Murr-Kreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08119",
+    "lat": 48.897605,
+    "long": 9.5033594,
+    "pop": 427248
+  },
+  {
+    "name": "Heilbronn",
+    "rkiName": "SK Heilbronn",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08121",
+    "lat": 49.152943,
+    "long": 9.1862714,
+    "pop": 126592
+  },
+  {
+    "name": "Heilbronn",
+    "rkiName": "LK Heilbronn",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08125",
+    "lat": 49.251142,
+    "long": 9.3064101,
+    "pop": 344456
+  },
+  {
+    "name": "Hohenlohekreis",
+    "rkiName": "LK Hohenlohekreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08126",
+    "lat": 49.267073,
+    "long": 9.6237602,
+    "pop": 112655
+  },
+  {
+    "name": "Schwäbisch Hall",
+    "rkiName": "LK Schwäbisch Hall",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08127",
+    "lat": 49.142524,
+    "long": 9.9177417,
+    "pop": 196761
+  },
+  {
+    "name": "Main-Tauber-Kreis",
+    "rkiName": "LK Main-Tauber-Kreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08128",
+    "lat": 49.558019,
+    "long": 9.7317661,
+    "pop": 132399
+  },
+  {
+    "name": "Heidenheim",
+    "rkiName": "LK Heidenheim",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08135",
+    "lat": 48.666696,
+    "long": 10.18807,
+    "pop": 132777
+  },
+  {
+    "name": "Ostalbkreis",
+    "rkiName": "LK Ostalbkreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08136",
+    "lat": 48.879565,
+    "long": 10.099291,
+    "pop": 314025
+  },
+  {
+    "name": "Baden-Baden",
+    "rkiName": "SK Baden-Baden",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08211",
+    "lat": 48.748736,
+    "long": 8.2360311,
+    "pop": 55185
+  },
+  {
+    "name": "Karlsruhe",
+    "rkiName": "SK Karlsruhe",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08212",
+    "lat": 49.015061,
+    "long": 8.4138363,
+    "pop": 312060
+  },
+  {
+    "name": "Karlsruhe",
+    "rkiName": "LK Karlsruhe",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08215",
+    "lat": 48.909521,
+    "long": 8.4076825,
+    "pop": 445101
+  },
+  {
+    "name": "Rastatt",
+    "rkiName": "LK Rastatt",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08216",
+    "lat": 48.882138,
+    "long": 8.2248732,
+    "pop": 231420
+  },
+  {
+    "name": "Heidelberg",
+    "rkiName": "SK Heidelberg",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08221",
+    "lat": 49.412503,
+    "long": 8.6951968,
+    "pop": 161485
+  },
+  {
+    "name": "Mannheim",
+    "rkiName": "SK Mannheim",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08222",
+    "lat": 49.501151,
+    "long": 8.5037233,
+    "pop": 310658
+  },
+  {
+    "name": "Neckar-Odenwald-Kreis",
+    "rkiName": "LK Neckar-Odenwald-Kreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08225",
+    "lat": 49.46632,
+    "long": 9.2861412,
+    "pop": 143633
+  },
+  {
+    "name": "Rhein-Neckar-Kreis",
+    "rkiName": "LK Rhein-Neckar-Kreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08226",
+    "lat": 49.30138,
+    "long": 8.8351919,
+    "pop": 548355
+  },
+  {
+    "name": "Pforzheim",
+    "rkiName": "SK Pforzheim",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08231",
+    "lat": 48.879669,
+    "long": 8.7136825,
+    "pop": 125957
+  },
+  {
+    "name": "Calw",
+    "rkiName": "LK Calw",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08235",
+    "lat": 48.678608,
+    "long": 8.6359698,
+    "pop": 159201
+  },
+  {
+    "name": "Enzkreis",
+    "rkiName": "LK Enzkreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08236",
+    "lat": 48.970536,
+    "long": 8.8293892,
+    "pop": 199556
+  },
+  {
+    "name": "Freudenstadt",
+    "rkiName": "LK Freudenstadt",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08237",
+    "lat": 48.47664,
+    "long": 8.4627154,
+    "pop": 118243
+  },
+  {
+    "name": "Freiburg im Breisgau",
+    "rkiName": "SK Freiburg i.Breisgau",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08311",
+    "lat": 47.995554,
+    "long": 7.8181515,
+    "pop": 231195
+  },
+  {
+    "name": "Breisgau-Hochschwarzwald",
+    "rkiName": "LK Breisgau-Hochschwarzwald",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08315",
+    "lat": 47.927627,
+    "long": 8.0907884,
+    "pop": 263601
+  },
+  {
+    "name": "Emmendingen",
+    "rkiName": "LK Emmendingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08316",
+    "lat": 48.151376,
+    "long": 7.9001308,
+    "pop": 166408
+  },
+  {
+    "name": "Ortenaukreis",
+    "rkiName": "LK Ortenaukreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08317",
+    "lat": 48.423722,
+    "long": 8.0146389,
+    "pop": 430953
+  },
+  {
+    "name": "Rottweil",
+    "rkiName": "LK Rottweil",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08325",
+    "lat": 48.259118,
+    "long": 8.5273592,
+    "pop": 139878
+  },
+  {
+    "name": "Schwarzwald-Baar-Kreis",
+    "rkiName": "LK Schwarzwald-Baar-Kreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08326",
+    "lat": 48.023167,
+    "long": 8.4060389,
+    "pop": 212506
+  },
+  {
+    "name": "Tuttlingen",
+    "rkiName": "LK Tuttlingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08327",
+    "lat": 48.015076,
+    "long": 8.7866082,
+    "pop": 140766
+  },
+  {
+    "name": "Konstanz",
+    "rkiName": "LK Konstanz",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08335",
+    "lat": 47.803101,
+    "long": 8.9125795,
+    "pop": 286305
+  },
+  {
+    "name": "Lörrach",
+    "rkiName": "LK Lörrach",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08336",
+    "lat": 47.708577,
+    "long": 7.7690697,
+    "pop": 228736
+  },
+  {
+    "name": "Waldshut",
+    "rkiName": "LK Waldshut",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08337",
+    "lat": 47.700909,
+    "long": 8.2182879,
+    "pop": 171003
+  },
+  {
+    "name": "Reutlingen",
+    "rkiName": "LK Reutlingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08415",
+    "lat": 48.407201,
+    "long": 9.3681294,
+    "pop": 287034
+  },
+  {
+    "name": "Tübingen",
+    "rkiName": "LK Tübingen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08416",
+    "lat": 48.482492,
+    "long": 8.9878408,
+    "pop": 228678
+  },
+  {
+    "name": "Zollernalbkreis",
+    "rkiName": "LK Zollernalbkreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08417",
+    "lat": 48.268438,
+    "long": 8.9325354,
+    "pop": 189363
+  },
+  {
+    "name": "Ulm",
+    "rkiName": "SK Ulm",
+    "type": "Stadtkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08421",
+    "lat": 48.393934,
+    "long": 9.9530146,
+    "pop": 126790
+  },
+  {
+    "name": "Alb-Donau-Kreis",
+    "rkiName": "LK Alb-Donau-Kreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08425",
+    "lat": 48.294959,
+    "long": 9.6984361,
+    "pop": 197076
+  },
+  {
+    "name": "Biberach",
+    "rkiName": "LK Biberach",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08426",
+    "lat": 48.110471,
+    "long": 9.7758573,
+    "pop": 201282
+  },
+  {
+    "name": "Bodenseekreis",
+    "rkiName": "LK Bodenseekreis",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08435",
+    "lat": 47.736322,
+    "long": 9.4051731,
+    "pop": 217470
+  },
+  {
+    "name": "Ravensburg",
+    "rkiName": "LK Ravensburg",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08436",
+    "lat": 47.827299,
+    "long": 9.780134,
+    "pop": 285424
+  },
+  {
+    "name": "Sigmaringen",
+    "rkiName": "LK Sigmaringen",
+    "type": "Landkreis",
+    "state": "Baden-Württemberg",
+    "ags": "08437",
+    "lat": 48.042245,
+    "long": 9.2369418,
+    "pop": 130849
+  },
+  {
+    "name": "Ingolstadt",
+    "rkiName": "SK Ingolstadt",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09161",
+    "lat": 48.751672,
+    "long": 11.402123,
+    "pop": 137392
+  },
+  {
+    "name": "München",
+    "rkiName": "SK München",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09162",
+    "lat": 48.14924,
+    "long": 11.550583,
+    "pop": 1484226
+  },
+  {
+    "name": "Rosenheim",
+    "rkiName": "SK Rosenheim",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09163",
+    "lat": 47.843242,
+    "long": 12.113999,
+    "pop": 63551
+  },
+  {
+    "name": "Altötting",
+    "rkiName": "LK Altötting",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09171",
+    "lat": 48.214904,
+    "long": 12.710466,
+    "pop": 111516
+  },
+  {
+    "name": "Berchtesgadener Land",
+    "rkiName": "LK Berchtesgadener Land",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09172",
+    "lat": 47.689,
+    "long": 12.887468,
+    "pop": 105929
+  },
+  {
+    "name": "Bad Tölz-Wolfratshausen",
+    "rkiName": "LK Bad Tölz-Wolfratshausen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09173",
+    "lat": 47.724822,
+    "long": 11.488162,
+    "pop": 127917
+  },
+  {
+    "name": "Dachau",
+    "rkiName": "LK Dachau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09174",
+    "lat": 48.330886,
+    "long": 11.361832,
+    "pop": 154899
+  },
+  {
+    "name": "Ebersberg",
+    "rkiName": "LK Ebersberg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09175",
+    "lat": 48.072971,
+    "long": 11.916733,
+    "pop": 143649
+  },
+  {
+    "name": "Eichstätt",
+    "rkiName": "LK Eichstätt",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09176",
+    "lat": 48.894676,
+    "long": 11.377377,
+    "pop": 132881
+  },
+  {
+    "name": "Erding",
+    "rkiName": "LK Erding",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09177",
+    "lat": 48.298097,
+    "long": 12.003207,
+    "pop": 138182
+  },
+  {
+    "name": "Freising",
+    "rkiName": "LK Freising",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09178",
+    "lat": 48.445509,
+    "long": 11.744176,
+    "pop": 180007
+  },
+  {
+    "name": "Fürstenfeldbruck",
+    "rkiName": "LK Fürstenfeldbruck",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09179",
+    "lat": 48.184625,
+    "long": 11.20652,
+    "pop": 219311
+  },
+  {
+    "name": "Garmisch-Partenkirchen",
+    "rkiName": "LK Garmisch-Partenkirchen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09180",
+    "lat": 47.556054,
+    "long": 11.128266,
+    "pop": 88424
+  },
+  {
+    "name": "Landsberg am Lech",
+    "rkiName": "LK Landsberg a.Lech",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09181",
+    "lat": 48.024573,
+    "long": 10.954265,
+    "pop": 120302
+  },
+  {
+    "name": "Miesbach",
+    "rkiName": "LK Miesbach",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09182",
+    "lat": 47.74006,
+    "long": 11.815808,
+    "pop": 100010
+  },
+  {
+    "name": "Mühldorf a. Inn",
+    "rkiName": "LK Mühldorf a.Inn",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09183",
+    "lat": 48.241361,
+    "long": 12.386674,
+    "pop": 115872
+  },
+  {
+    "name": "München",
+    "rkiName": "LK München",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09184",
+    "lat": 48.00965,
+    "long": 11.655151,
+    "pop": 350473
+  },
+  {
+    "name": "Neuburg-Schrobenhausen",
+    "rkiName": "LK Neuburg-Schrobenhausen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09185",
+    "lat": 48.660193,
+    "long": 11.202207,
+    "pop": 97303
+  },
+  {
+    "name": "Pfaffenhofen a.d. Ilm",
+    "rkiName": "LK Pfaffenhofen a.d.Ilm",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09186",
+    "lat": 48.593412,
+    "long": 11.526963,
+    "pop": 128227
+  },
+  {
+    "name": "Rosenheim",
+    "rkiName": "LK Rosenheim",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09187",
+    "lat": 47.946992,
+    "long": 12.201827,
+    "pop": 261330
+  },
+  {
+    "name": "Starnberg",
+    "rkiName": "LK Starnberg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09188",
+    "lat": 48.002201,
+    "long": 11.287519,
+    "pop": 136667
+  },
+  {
+    "name": "Traunstein",
+    "rkiName": "LK Traunstein",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09189",
+    "lat": 47.89873,
+    "long": 12.582843,
+    "pop": 177319
+  },
+  {
+    "name": "Weilheim-Schongau",
+    "rkiName": "LK Weilheim-Schongau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09190",
+    "lat": 47.787291,
+    "long": 11.053654,
+    "pop": 135478
+  },
+  {
+    "name": "Landshut",
+    "rkiName": "SK Landshut",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09261",
+    "lat": 48.543948,
+    "long": 12.160501,
+    "pop": 73411
+  },
+  {
+    "name": "Passau",
+    "rkiName": "SK Passau",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09262",
+    "lat": 48.586691,
+    "long": 13.415058,
+    "pop": 52803
+  },
+  {
+    "name": "Straubing",
+    "rkiName": "SK Straubing",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09263",
+    "lat": 48.884215,
+    "long": 12.574082,
+    "pop": 47791
+  },
+  {
+    "name": "Deggendorf",
+    "rkiName": "LK Deggendorf",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09271",
+    "lat": 48.784508,
+    "long": 13.005449,
+    "pop": 119478
+  },
+  {
+    "name": "Freyung-Grafenau",
+    "rkiName": "LK Freyung-Grafenau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09272",
+    "lat": 48.829498,
+    "long": 13.515194,
+    "pop": 78362
+  },
+  {
+    "name": "Kelheim",
+    "rkiName": "LK Kelheim",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09273",
+    "lat": 48.823577,
+    "long": 11.859606,
+    "pop": 123058
+  },
+  {
+    "name": "Landshut",
+    "rkiName": "LK Landshut",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09274",
+    "lat": 48.660179,
+    "long": 12.07862,
+    "pop": 159895
+  },
+  {
+    "name": "Passau",
+    "rkiName": "LK Passau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09275",
+    "lat": 48.483276,
+    "long": 13.260599,
+    "pop": 192656
+  },
+  {
+    "name": "Regen",
+    "rkiName": "LK Regen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09276",
+    "lat": 49.02731,
+    "long": 13.102578,
+    "pop": 77410
+  },
+  {
+    "name": "Rottal-Inn",
+    "rkiName": "LK Rottal-Inn",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09277",
+    "lat": 48.431852,
+    "long": 12.871481,
+    "pop": 121502
+  },
+  {
+    "name": "Straubing-Bogen",
+    "rkiName": "LK Straubing-Bogen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09278",
+    "lat": 49.006714,
+    "long": 12.696094,
+    "pop": 101120
+  },
+  {
+    "name": "Dingolfing-Landau",
+    "rkiName": "LK Dingolfing-Landau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09279",
+    "lat": 48.645574,
+    "long": 12.614768,
+    "pop": 96683
+  },
+  {
+    "name": "Amberg",
+    "rkiName": "SK Amberg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09361",
+    "lat": 49.453399,
+    "long": 11.849567,
+    "pop": 42207
+  },
+  {
+    "name": "Regensburg",
+    "rkiName": "SK Regensburg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09362",
+    "lat": 49.013426,
+    "long": 12.115815,
+    "pop": 153094
+  },
+  {
+    "name": "Weiden i.d. OPf.",
+    "rkiName": "SK Weiden i.d.OPf.",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09363",
+    "lat": 49.668596,
+    "long": 12.160877,
+    "pop": 42743
+  },
+  {
+    "name": "Amberg-Sulzbach",
+    "rkiName": "LK Amberg-Sulzbach",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09371",
+    "lat": 49.552624,
+    "long": 11.731463,
+    "pop": 103049
+  },
+  {
+    "name": "Cham",
+    "rkiName": "LK Cham",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09372",
+    "lat": 49.24159,
+    "long": 12.699762,
+    "pop": 127998
+  },
+  {
+    "name": "Neumarkt i.d. OPf.",
+    "rkiName": "LK Neumarkt i.d.OPf.",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09373",
+    "lat": 49.215729,
+    "long": 11.568611,
+    "pop": 134573
+  },
+  {
+    "name": "Neustadt a.d. Waldnaab",
+    "rkiName": "LK Neustadt a.d.Waldnaab",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09374",
+    "lat": 49.728007,
+    "long": 11.892742,
+    "pop": 94450
+  },
+  {
+    "name": "Regensburg",
+    "rkiName": "LK Regensburg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09375",
+    "lat": 49.094466,
+    "long": 11.917086,
+    "pop": 194070
+  },
+  {
+    "name": "Schwandorf",
+    "rkiName": "LK Schwandorf",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09376",
+    "lat": 49.36972,
+    "long": 12.254654,
+    "pop": 147872
+  },
+  {
+    "name": "Tirschenreuth",
+    "rkiName": "LK Tirschenreuth",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09377",
+    "lat": 49.900466,
+    "long": 12.204166,
+    "pop": 72046
+  },
+  {
+    "name": "Bamberg",
+    "rkiName": "SK Bamberg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09461",
+    "lat": 49.884114,
+    "long": 10.904317,
+    "pop": 77373
+  },
+  {
+    "name": "Bayreuth",
+    "rkiName": "SK Bayreuth",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09462",
+    "lat": 49.936515,
+    "long": 11.58837,
+    "pop": 74783
+  },
+  {
+    "name": "Coburg",
+    "rkiName": "SK Coburg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09463",
+    "lat": 50.259816,
+    "long": 10.964065,
+    "pop": 41072
+  },
+  {
+    "name": "Hof",
+    "rkiName": "SK Hof",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09464",
+    "lat": 50.315974,
+    "long": 11.897202,
+    "pop": 45825
+  },
+  {
+    "name": "Bamberg",
+    "rkiName": "LK Bamberg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09471",
+    "lat": 49.943897,
+    "long": 11.112155,
+    "pop": 147163
+  },
+  {
+    "name": "Bayreuth",
+    "rkiName": "LK Bayreuth",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09472",
+    "lat": 49.803643,
+    "long": 11.487996,
+    "pop": 103664
+  },
+  {
+    "name": "Coburg",
+    "rkiName": "LK Coburg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09473",
+    "lat": 50.333655,
+    "long": 10.880832,
+    "pop": 86747
+  },
+  {
+    "name": "Forchheim",
+    "rkiName": "LK Forchheim",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09474",
+    "lat": 49.721287,
+    "long": 11.181625,
+    "pop": 116203
+  },
+  {
+    "name": "Hof",
+    "rkiName": "LK Hof",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09475",
+    "lat": 50.21569,
+    "long": 11.789149,
+    "pop": 94801
+  },
+  {
+    "name": "Kronach",
+    "rkiName": "LK Kronach",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09476",
+    "lat": 50.326531,
+    "long": 11.37212,
+    "pop": 66743
+  },
+  {
+    "name": "Kulmbach",
+    "rkiName": "LK Kulmbach",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09477",
+    "lat": 50.101067,
+    "long": 11.484014,
+    "pop": 71566
+  },
+  {
+    "name": "Lichtenfels",
+    "rkiName": "LK Lichtenfels",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09478",
+    "lat": 50.10915,
+    "long": 11.120815,
+    "pop": 66776
+  },
+  {
+    "name": "Wunsiedel i. Fichtelgebirge",
+    "rkiName": "LK Wunsiedel i.Fichtelgebirge",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09479",
+    "lat": 50.09149,
+    "long": 12.041012,
+    "pop": 72655
+  },
+  {
+    "name": "Ansbach",
+    "rkiName": "SK Ansbach",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09561",
+    "lat": 49.289653,
+    "long": 10.573355,
+    "pop": 41798
+  },
+  {
+    "name": "Erlangen",
+    "rkiName": "SK Erlangen",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09562",
+    "lat": 49.581177,
+    "long": 10.985761,
+    "pop": 112528
+  },
+  {
+    "name": "Fürth",
+    "rkiName": "SK Fürth",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09563",
+    "lat": 49.488147,
+    "long": 10.973388,
+    "pop": 128497
+  },
+  {
+    "name": "Nürnberg",
+    "rkiName": "SK Nürnberg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09564",
+    "lat": 49.435679,
+    "long": 11.086215,
+    "pop": 518370
+  },
+  {
+    "name": "Schwabach",
+    "rkiName": "SK Schwabach",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09565",
+    "lat": 49.33246,
+    "long": 11.031057,
+    "pop": 40981
+  },
+  {
+    "name": "Ansbach",
+    "rkiName": "LK Ansbach",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09571",
+    "lat": 49.160088,
+    "long": 10.430621,
+    "pop": 184591
+  },
+  {
+    "name": "Erlangen-Höchstadt",
+    "rkiName": "LK Erlangen-Höchstadt",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09572",
+    "lat": 49.677346,
+    "long": 10.848502,
+    "pop": 137262
+  },
+  {
+    "name": "Fürth",
+    "rkiName": "LK Fürth",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09573",
+    "lat": 49.443756,
+    "long": 10.857838,
+    "pop": 117853
+  },
+  {
+    "name": "Nürnberger Land",
+    "rkiName": "LK Nürnberger Land",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09574",
+    "lat": 49.490782,
+    "long": 11.373909,
+    "pop": 170792
+  },
+  {
+    "name": "Neustadt a.d. Aisch-Bad Windsheim",
+    "rkiName": "LK Neustadt a.d.Aisch-Bad Windsheim",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09575",
+    "lat": 49.566294,
+    "long": 10.472122,
+    "pop": 101014
+  },
+  {
+    "name": "Roth",
+    "rkiName": "LK Roth",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09576",
+    "lat": 49.198729,
+    "long": 11.130104,
+    "pop": 126749
+  },
+  {
+    "name": "Weißenburg-Gunzenhausen",
+    "rkiName": "LK Weißenburg-Gunzenhausen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09577",
+    "lat": 49.029091,
+    "long": 10.903037,
+    "pop": 94734
+  },
+  {
+    "name": "Aschaffenburg",
+    "rkiName": "SK Aschaffenburg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09661",
+    "lat": 49.965224,
+    "long": 9.1598653,
+    "pop": 71002
+  },
+  {
+    "name": "Schweinfurt",
+    "rkiName": "SK Schweinfurt",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09662",
+    "lat": 50.042317,
+    "long": 10.223202,
+    "pop": 53426
+  },
+  {
+    "name": "Würzburg",
+    "rkiName": "SK Würzburg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09663",
+    "lat": 49.780016,
+    "long": 9.9449642,
+    "pop": 127934
+  },
+  {
+    "name": "Aschaffenburg",
+    "rkiName": "LK Aschaffenburg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09671",
+    "lat": 50.0068,
+    "long": 9.2512234,
+    "pop": 174200
+  },
+  {
+    "name": "Bad Kissingen",
+    "rkiName": "LK Bad Kissingen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09672",
+    "lat": 50.221197,
+    "long": 9.9643468,
+    "pop": 103235
+  },
+  {
+    "name": "Rhön-Grabfeld",
+    "rkiName": "LK Rhön-Grabfeld",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09673",
+    "lat": 50.369698,
+    "long": 10.257982,
+    "pop": 79635
+  },
+  {
+    "name": "Haßberge",
+    "rkiName": "LK Haßberge",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09674",
+    "lat": 50.058476,
+    "long": 10.610977,
+    "pop": 84384
+  },
+  {
+    "name": "Kitzingen",
+    "rkiName": "LK Kitzingen",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09675",
+    "lat": 49.748753,
+    "long": 10.260365,
+    "pop": 91155
+  },
+  {
+    "name": "Miltenberg",
+    "rkiName": "LK Miltenberg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09676",
+    "lat": 49.756799,
+    "long": 9.2445054,
+    "pop": 128743
+  },
+  {
+    "name": "Main-Spessart",
+    "rkiName": "LK Main-Spessart",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09677",
+    "lat": 49.991344,
+    "long": 9.6680921,
+    "pop": 126158
+  },
+  {
+    "name": "Schweinfurt",
+    "rkiName": "LK Schweinfurt",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09678",
+    "lat": 49.935132,
+    "long": 10.346527,
+    "pop": 115445
+  },
+  {
+    "name": "Würzburg",
+    "rkiName": "LK Würzburg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09679",
+    "lat": 49.618894,
+    "long": 10.001447,
+    "pop": 162302
+  },
+  {
+    "name": "Augsburg",
+    "rkiName": "SK Augsburg",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09761",
+    "lat": 48.341627,
+    "long": 10.892835,
+    "pop": 296582
+  },
+  {
+    "name": "Kaufbeuren",
+    "rkiName": "SK Kaufbeuren",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09762",
+    "lat": 47.884084,
+    "long": 10.617797,
+    "pop": 44398
+  },
+  {
+    "name": "Kempten (Allgäu)",
+    "rkiName": "SK Kempten",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09763",
+    "lat": 47.739602,
+    "long": 10.30596,
+    "pop": 69151
+  },
+  {
+    "name": "Memmingen",
+    "rkiName": "SK Memmingen",
+    "type": "Stadt",
+    "state": "Bayern",
+    "ags": "09764",
+    "lat": 47.987559,
+    "long": 10.162409,
+    "pop": 44100
+  },
+  {
+    "name": "Aichach-Friedberg",
+    "rkiName": "LK Aichach-Friedberg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09771",
+    "lat": 48.426496,
+    "long": 11.058273,
+    "pop": 134655
+  },
+  {
+    "name": "Augsburg",
+    "rkiName": "LK Augsburg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09772",
+    "lat": 48.396895,
+    "long": 10.685283,
+    "pop": 253468
+  },
+  {
+    "name": "Dillingen a.d. Donau",
+    "rkiName": "LK Dillingen a.d.Donau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09773",
+    "lat": 48.599273,
+    "long": 10.535961,
+    "pop": 96562
+  },
+  {
+    "name": "Günzburg",
+    "rkiName": "LK Günzburg",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09774",
+    "lat": 48.35839,
+    "long": 10.385559,
+    "pop": 127027
+  },
+  {
+    "name": "Neu-Ulm",
+    "rkiName": "LK Neu-Ulm",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09775",
+    "lat": 48.302863,
+    "long": 10.142761,
+    "pop": 175204
+  },
+  {
+    "name": "Lindau (Bodensee)",
+    "rkiName": "LK Lindau",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09776",
+    "lat": 47.607267,
+    "long": 9.885544,
+    "pop": 81981
+  },
+  {
+    "name": "Ostallgäu",
+    "rkiName": "LK Ostallgäu",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09777",
+    "lat": 47.69976,
+    "long": 10.63783,
+    "pop": 141182
+  },
+  {
+    "name": "Unterallgäu",
+    "rkiName": "LK Unterallgäu",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09778",
+    "lat": 48.043666,
+    "long": 10.394069,
+    "pop": 145341
+  },
+  {
+    "name": "Donau-Ries",
+    "rkiName": "LK Donau-Ries",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09779",
+    "lat": 48.805268,
+    "long": 10.72336,
+    "pop": 133783
+  },
+  {
+    "name": "Oberallgäu",
+    "rkiName": "LK Oberallgäu",
+    "type": "Landkreis",
+    "state": "Bayern",
+    "ags": "09780",
+    "lat": 47.514561,
+    "long": 10.255646,
+    "pop": 156008
+  },
+  {
+    "name": "Regionalverband Saarbrücken",
+    "rkiName": "LK Stadtverband Saarbrücken",
+    "type": "Landkreis",
+    "state": "Saarland",
+    "ags": "10041",
+    "lat": 49.254221,
+    "long": 6.9624581,
+    "pop": 328714
+  },
+  {
+    "name": "Merzig-Wadern",
+    "rkiName": "LK Merzig-Wadern",
+    "type": "Landkreis",
+    "state": "Saarland",
+    "ags": "10042",
+    "lat": 49.497743,
+    "long": 6.6812872,
+    "pop": 103243
+  },
+  {
+    "name": "Neunkirchen",
+    "rkiName": "LK Neunkirchen",
+    "type": "Landkreis",
+    "state": "Saarland",
+    "ags": "10043",
+    "lat": 49.382253,
+    "long": 7.1228489,
+    "pop": 131408
+  },
+  {
+    "name": "Saarlouis",
+    "rkiName": "LK Saarlouis",
+    "type": "Landkreis",
+    "state": "Saarland",
+    "ags": "10044",
+    "lat": 49.357861,
+    "long": 6.7777539,
+    "pop": 194319
+  },
+  {
+    "name": "Saarpfalz-Kreis",
+    "rkiName": "LK Saarpfalz-Kreis",
+    "type": "Landkreis",
+    "state": "Saarland",
+    "ags": "10045",
+    "lat": 49.250003,
+    "long": 7.2453135,
+    "pop": 142196
+  },
+  {
+    "name": "St. Wendel",
+    "rkiName": "LK Sankt Wendel",
+    "type": "Landkreis",
+    "state": "Saarland",
+    "ags": "10046",
+    "lat": 49.527195,
+    "long": 7.105983,
+    "pop": 87007
+  },
+  {
+    "name": "Berlin Mitte",
+    "rkiName": "SK Berlin Mitte",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 375238
+  },
+  {
+    "name": "Berlin Charlottenburg-Wilmersdorf",
+    "rkiName": "SK Berlin Charlottenburg-Wilmersdorf",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 334401
+  },
+  {
+    "name": "Berlin Neukölln",
+    "rkiName": "SK Berlin Neukölln",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 321123
+  },
+  {
+    "name": "Berlin Tempelhof-Schöneberg",
+    "rkiName": "SK Berlin Tempelhof-Schöneberg",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 341772
+  },
+  {
+    "name": "Berlin Pankow",
+    "rkiName": "SK Berlin Pankow",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 398036
+  },
+  {
+    "name": "Berlin Steglitz-Zehlendorf",
+    "rkiName": "SK Berlin Steglitz-Zehlendorf",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 302177
+  },
+  {
+    "name": "Berlin Friedrichshain-Kreuzberg",
+    "rkiName": "SK Berlin Friedrichshain-Kreuzberg",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 282059
+  },
+  {
+    "name": "Berlin Reinickendorf",
+    "rkiName": "SK Berlin Reinickendorf",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 259689
+  },
+  {
+    "name": "Berlin Treptow-Köpenick",
+    "rkiName": "SK Berlin Treptow-Köpenick",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 266488
+  },
+  {
+    "name": "Berlin Spandau",
+    "rkiName": "SK Berlin Spandau",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 239019
+  },
+  {
+    "name": "Berlin Marzahn-Hellersdorf",
+    "rkiName": "SK Berlin Marzahn-Hellersdorf",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 262967
+  },
+  {
+    "name": "Berlin Lichtenberg",
+    "rkiName": "SK Berlin Lichtenberg",
+    "type": "Stadt",
+    "state": "Berlin",
+    "ags": "11000",
+    "lat": 52.502759,
+    "long": 13.399375,
+    "pop": 286522
+  },
+  {
+    "name": "Brandenburg an der Havel",
+    "rkiName": "SK Brandenburg a.d.Havel",
+    "type": "Stadt",
+    "state": "Brandenburg",
+    "ags": "12051",
+    "lat": 52.393582,
+    "long": 12.513434,
+    "pop": 72184
+  },
+  {
+    "name": "Cottbus",
+    "rkiName": "SK Cottbus",
+    "type": "Stadt",
+    "state": "Brandenburg",
+    "ags": "12052",
+    "lat": 51.773461,
+    "long": 14.379693,
+    "pop": 99678
+  },
+  {
+    "name": "Frankfurt (Oder)",
+    "rkiName": "SK Frankfurt (Oder)",
+    "type": "Stadt",
+    "state": "Brandenburg",
+    "ags": "12053",
+    "lat": 52.326169,
+    "long": 14.488103,
+    "pop": 57751
+  },
+  {
+    "name": "Potsdam",
+    "rkiName": "SK Potsdam",
+    "type": "Stadt",
+    "state": "Brandenburg",
+    "ags": "12054",
+    "lat": 52.396134,
+    "long": 13.05742,
+    "pop": 180334
+  },
+  {
+    "name": "Barnim",
+    "rkiName": "LK Barnim",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12060",
+    "lat": 52.82132,
+    "long": 13.711743,
+    "pop": 185244
+  },
+  {
+    "name": "Dahme-Spreewald",
+    "rkiName": "LK Dahme-Spreewald",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12061",
+    "lat": 52.044154,
+    "long": 13.829476,
+    "pop": 170791
+  },
+  {
+    "name": "Elbe-Elster",
+    "rkiName": "LK Elbe-Elster",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12062",
+    "lat": 51.613588,
+    "long": 13.476273,
+    "pop": 101827
+  },
+  {
+    "name": "Havelland",
+    "rkiName": "LK Havelland",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12063",
+    "lat": 52.616959,
+    "long": 12.632832,
+    "pop": 162996
+  },
+  {
+    "name": "Märkisch-Oderland",
+    "rkiName": "LK Märkisch-Oderland",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12064",
+    "lat": 52.606125,
+    "long": 14.148876,
+    "pop": 195751
+  },
+  {
+    "name": "Oberhavel",
+    "rkiName": "LK Oberhavel",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12065",
+    "lat": 52.903092,
+    "long": 13.210681,
+    "pop": 212914
+  },
+  {
+    "name": "Oberspreewald-Lausitz",
+    "rkiName": "LK Oberspreewald-Lausitz",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12066",
+    "lat": 51.618423,
+    "long": 13.959035,
+    "pop": 109371
+  },
+  {
+    "name": "Oder-Spree",
+    "rkiName": "LK Oder-Spree",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12067",
+    "lat": 52.246749,
+    "long": 14.218978,
+    "pop": 178803
+  },
+  {
+    "name": "Ostprignitz-Ruppin",
+    "rkiName": "LK Ostprignitz-Ruppin",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12068",
+    "lat": 52.986298,
+    "long": 12.642753,
+    "pop": 98861
+  },
+  {
+    "name": "Potsdam-Mittelmark",
+    "rkiName": "LK Potsdam-Mittelmark",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12069",
+    "lat": 52.251067,
+    "long": 12.708471,
+    "pop": 216566
+  },
+  {
+    "name": "Prignitz",
+    "rkiName": "LK Prignitz",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12070",
+    "lat": 53.104582,
+    "long": 11.968515,
+    "pop": 76158
+  },
+  {
+    "name": "Spree-Neiße",
+    "rkiName": "LK Spree-Neiße",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12071",
+    "lat": 51.622702,
+    "long": 14.370469,
+    "pop": 113720
+  },
+  {
+    "name": "Teltow-Fläming",
+    "rkiName": "LK Teltow-Fläming",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12072",
+    "lat": 52.072272,
+    "long": 13.287821,
+    "pop": 169997
+  },
+  {
+    "name": "Uckermark",
+    "rkiName": "LK Uckermark",
+    "type": "Landkreis",
+    "state": "Brandenburg",
+    "ags": "12073",
+    "lat": 53.204681,
+    "long": 13.861258,
+    "pop": 118947
+  },
+  {
+    "name": "Rostock",
+    "rkiName": "SK Rostock",
+    "type": "Stadt",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13003",
+    "lat": 54.15084,
+    "long": 12.150236,
+    "pop": 209191
+  },
+  {
+    "name": "Schwerin",
+    "rkiName": "SK Schwerin",
+    "type": "Stadt",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13004",
+    "lat": 53.621983,
+    "long": 11.419816,
+    "pop": 95653
+  },
+  {
+    "name": "Mecklenburgische Seenplatte",
+    "rkiName": "LK Mecklenburgische Seenplatte",
+    "type": "Landkreis",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13071",
+    "lat": 53.544128,
+    "long": 13.002276,
+    "pop": 258074
+  },
+  {
+    "name": "Rostock",
+    "rkiName": "LK Rostock",
+    "type": "Landkreis",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13072",
+    "lat": 53.911856,
+    "long": 12.22239,
+    "pop": 215794
+  },
+  {
+    "name": "Vorpommern-Rügen",
+    "rkiName": "LK Vorpommern-Rügen",
+    "type": "Landkreis",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13073",
+    "lat": 54.247992,
+    "long": 12.898721,
+    "pop": 224702
+  },
+  {
+    "name": "Nordwestmecklenburg",
+    "rkiName": "LK Nordwestmecklenburg",
+    "type": "Landkreis",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13074",
+    "lat": 53.820465,
+    "long": 11.250093,
+    "pop": 157322
+  },
+  {
+    "name": "Vorpommern-Greifswald",
+    "rkiName": "LK Vorpommern-Greifswald",
+    "type": "Landkreis",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13075",
+    "lat": 53.769177,
+    "long": 13.75855,
+    "pop": 235623
+  },
+  {
+    "name": "Ludwigslust-Parchim",
+    "rkiName": "LK Ludwigslust-Parchim",
+    "type": "Landkreis",
+    "state": "Mecklenburg-Vorpommern",
+    "ags": "13076",
+    "lat": 53.450094,
+    "long": 11.534177,
+    "pop": 211779
+  },
+  {
+    "name": "Chemnitz",
+    "rkiName": "SK Chemnitz",
+    "type": "Stadt",
+    "state": "Sachsen",
+    "ags": "14511",
+    "lat": 50.83261,
+    "long": 12.939141,
+    "pop": 246334
+  },
+  {
+    "name": "Erzgebirgskreis",
+    "rkiName": "LK Erzgebirgskreis",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14521",
+    "lat": 50.609375,
+    "long": 12.945301,
+    "pop": 334948
+  },
+  {
+    "name": "Mittelsachsen",
+    "rkiName": "LK Mittelsachsen",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14522",
+    "lat": 50.956407,
+    "long": 13.137541,
+    "pop": 304099
+  },
+  {
+    "name": "Vogtlandkreis",
+    "rkiName": "LK Vogtlandkreis",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14523",
+    "lat": 50.404913,
+    "long": 12.338026,
+    "pop": 225997
+  },
+  {
+    "name": "Zwickau",
+    "rkiName": "LK Zwickau",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14524",
+    "lat": 50.72636,
+    "long": 12.498494,
+    "pop": 315002
+  },
+  {
+    "name": "Dresden",
+    "rkiName": "SK Dresden",
+    "type": "Stadt",
+    "state": "Sachsen",
+    "ags": "14612",
+    "lat": 51.100169,
+    "long": 13.799476,
+    "pop": 556780
+  },
+  {
+    "name": "Bautzen",
+    "rkiName": "LK Bautzen",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14625",
+    "lat": 51.172049,
+    "long": 14.3838,
+    "pop": 299758
+  },
+  {
+    "name": "Görlitz",
+    "rkiName": "LK Görlitz",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14626",
+    "lat": 51.13691,
+    "long": 14.961263,
+    "pop": 252725
+  },
+  {
+    "name": "Meißen",
+    "rkiName": "LK Meißen",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14627",
+    "lat": 51.136632,
+    "long": 13.434262,
+    "pop": 241717
+  },
+  {
+    "name": "Sächsische Schweiz-Osterzgebirge",
+    "rkiName": "LK Sächsische Schweiz-Osterzgebirge",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14628",
+    "lat": 50.917266,
+    "long": 13.871576,
+    "pop": 245586
+  },
+  {
+    "name": "Leipzig",
+    "rkiName": "SK Leipzig",
+    "type": "Stadt",
+    "state": "Sachsen",
+    "ags": "14713",
+    "lat": 51.333118,
+    "long": 12.376875,
+    "pop": 593145
+  },
+  {
+    "name": "Leipzig",
+    "rkiName": "LK Leipzig",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14729",
+    "lat": 51.203509,
+    "long": 12.439818,
+    "pop": 258139
+  },
+  {
+    "name": "Nordsachsen",
+    "rkiName": "LK Nordsachsen",
+    "type": "Landkreis",
+    "state": "Sachsen",
+    "ags": "14730",
+    "lat": 51.472542,
+    "long": 12.779554,
+    "pop": 197741
+  },
+  {
+    "name": "Dessau-Roßlau",
+    "rkiName": "SK Dessau-Roßlau",
+    "type": "Stadt",
+    "state": "Sachsen-Anhalt",
+    "ags": "15001",
+    "lat": 51.813909,
+    "long": 12.241279,
+    "pop": 80103
+  },
+  {
+    "name": "Halle (Saale)",
+    "rkiName": "SK Halle",
+    "type": "Stadt",
+    "state": "Sachsen-Anhalt",
+    "ags": "15002",
+    "lat": 51.4803,
+    "long": 11.974528,
+    "pop": 238762
+  },
+  {
+    "name": "Magdeburg",
+    "rkiName": "SK Magdeburg",
+    "type": "Stadt",
+    "state": "Sachsen-Anhalt",
+    "ags": "15003",
+    "lat": 52.115977,
+    "long": 11.648383,
+    "pop": 237565
+  },
+  {
+    "name": "Altmarkkreis Salzwedel",
+    "rkiName": "LK Altmarkkreis Salzwedel",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15081",
+    "lat": 52.676729,
+    "long": 11.229724,
+    "pop": 83173
+  },
+  {
+    "name": "Anhalt-Bitterfeld",
+    "rkiName": "LK Anhalt-Bitterfeld",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15082",
+    "lat": 51.647049,
+    "long": 12.299255,
+    "pop": 158486
+  },
+  {
+    "name": "Börde",
+    "rkiName": "LK Börde",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15083",
+    "lat": 52.059045,
+    "long": 11.284423,
+    "pop": 170923
+  },
+  {
+    "name": "Burgenlandkreis",
+    "rkiName": "LK Burgenlandkreis",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15084",
+    "lat": 51.134376,
+    "long": 11.83389,
+    "pop": 178846
+  },
+  {
+    "name": "Harz",
+    "rkiName": "LK Harz",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15085",
+    "lat": 51.822351,
+    "long": 10.95932,
+    "pop": 213310
+  },
+  {
+    "name": "Jerichower Land",
+    "rkiName": "LK Jerichower Land",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15086",
+    "lat": 52.287454,
+    "long": 12.029403,
+    "pop": 89589
+  },
+  {
+    "name": "Mansfeld-Südharz",
+    "rkiName": "LK Mansfeld-Südharz",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15087",
+    "lat": 51.535322,
+    "long": 11.354395,
+    "pop": 134942
+  },
+  {
+    "name": "Saalekreis",
+    "rkiName": "LK Saalekreis",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15088",
+    "lat": 51.363372,
+    "long": 11.798382,
+    "pop": 183815
+  },
+  {
+    "name": "Salzlandkreis",
+    "rkiName": "LK Salzlandkreis",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15089",
+    "lat": 51.851445,
+    "long": 11.641005,
+    "pop": 189125
+  },
+  {
+    "name": "Stendal",
+    "rkiName": "LK Stendal",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15090",
+    "lat": 52.693177,
+    "long": 11.845665,
+    "pop": 111190
+  },
+  {
+    "name": "Wittenberg",
+    "rkiName": "LK Wittenberg",
+    "type": "Landkreis",
+    "state": "Sachsen-Anhalt",
+    "ags": "15091",
+    "lat": 51.791391,
+    "long": 12.791179,
+    "pop": 124953
+  },
+  {
+    "name": "Erfurt",
+    "rkiName": "SK Erfurt",
+    "type": "Stadt",
+    "state": "Thüringen",
+    "ags": "16051",
+    "lat": 50.982466,
+    "long": 11.020683,
+    "pop": 213981
+  },
+  {
+    "name": "Gera",
+    "rkiName": "SK Gera",
+    "type": "Stadt",
+    "state": "Thüringen",
+    "ags": "16052",
+    "lat": 50.90074,
+    "long": 12.093004,
+    "pop": 93125
+  },
+  {
+    "name": "Jena",
+    "rkiName": "SK Jena",
+    "type": "Stadt",
+    "state": "Thüringen",
+    "ags": "16053",
+    "lat": 50.92588,
+    "long": 11.591162,
+    "pop": 111343
+  },
+  {
+    "name": "Suhl",
+    "rkiName": "SK Suhl",
+    "type": "Stadt",
+    "state": "Thüringen",
+    "ags": "16054",
+    "lat": 50.608361,
+    "long": 10.693465,
+    "pop": 36789
+  },
+  {
+    "name": "Weimar",
+    "rkiName": "SK Weimar",
+    "type": "Stadt",
+    "state": "Thüringen",
+    "ags": "16055",
+    "lat": 50.977554,
+    "long": 11.31781,
+    "pop": 65228
+  },
+  {
+    "name": "Eisenach",
+    "rkiName": "SK Eisenach",
+    "type": "Stadt",
+    "state": "Thüringen",
+    "ags": "16056",
+    "lat": 50.990569,
+    "long": 10.296955,
+    "pop": 42250
+  },
+  {
+    "name": "Eichsfeld",
+    "rkiName": "LK Eichsfeld",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16061",
+    "lat": 51.38163,
+    "long": 10.257459,
+    "pop": 100006
+  },
+  {
+    "name": "Nordhausen",
+    "rkiName": "LK Nordhausen",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16062",
+    "lat": 51.501566,
+    "long": 10.73279,
+    "pop": 83416
+  },
+  {
+    "name": "Wartburgkreis",
+    "rkiName": "LK Wartburgkreis",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16063",
+    "lat": 50.892774,
+    "long": 10.217819,
+    "pop": 118974
+  },
+  {
+    "name": "Unstrut-Hainich-Kreis",
+    "rkiName": "LK Unstrut-Hainich-Kreis",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16064",
+    "lat": 51.182695,
+    "long": 10.555401,
+    "pop": 102232
+  },
+  {
+    "name": "Kyffhäuserkreis",
+    "rkiName": "LK Kyffhäuserkreis",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16065",
+    "lat": 51.323188,
+    "long": 10.989641,
+    "pop": 74212
+  },
+  {
+    "name": "Schmalkalden-Meiningen",
+    "rkiName": "LK Schmalkalden-Meiningen",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16066",
+    "lat": 50.628856,
+    "long": 10.407442,
+    "pop": 124916
+  },
+  {
+    "name": "Gotha",
+    "rkiName": "LK Gotha",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16067",
+    "lat": 50.907203,
+    "long": 10.696255,
+    "pop": 134908
+  },
+  {
+    "name": "Sömmerda",
+    "rkiName": "LK Sömmerda",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16068",
+    "lat": 51.156333,
+    "long": 11.156919,
+    "pop": 69427
+  },
+  {
+    "name": "Hildburghausen",
+    "rkiName": "LK Hildburghausen",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16069",
+    "lat": 50.431086,
+    "long": 10.737739,
+    "pop": 63197
+  },
+  {
+    "name": "Ilm-Kreis",
+    "rkiName": "LK Ilm-Kreis",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16070",
+    "lat": 50.736692,
+    "long": 10.968152,
+    "pop": 106249
+  },
+  {
+    "name": "Weimarer Land",
+    "rkiName": "LK Weimarer Land",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16071",
+    "lat": 51.032264,
+    "long": 11.507425,
+    "pop": 82156
+  },
+  {
+    "name": "Sonneberg",
+    "rkiName": "LK Sonneberg",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16072",
+    "lat": 50.413317,
+    "long": 11.133108,
+    "pop": 57717
+  },
+  {
+    "name": "Saalfeld-Rudolstadt",
+    "rkiName": "LK Saalfeld-Rudolstadt",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16073",
+    "lat": 50.638271,
+    "long": 11.311129,
+    "pop": 103199
+  },
+  {
+    "name": "Saale-Holzland-Kreis",
+    "rkiName": "LK Saale-Holzland-Kreis",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16074",
+    "lat": 50.905491,
+    "long": 11.735917,
+    "pop": 82950
+  },
+  {
+    "name": "Saale-Orla-Kreis",
+    "rkiName": "LK Saale-Orla-Kreis",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16075",
+    "lat": 50.582527,
+    "long": 11.713913,
+    "pop": 80312
+  },
+  {
+    "name": "Greiz",
+    "rkiName": "LK Greiz",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16076",
+    "lat": 50.753331,
+    "long": 12.084158,
+    "pop": 97398
+  },
+  {
+    "name": "Altenburger Land",
+    "rkiName": "LK Altenburger Land",
+    "type": "Landkreis",
+    "state": "Thüringen",
+    "ags": "16077",
+    "lat": 50.961288,
+    "long": 12.410718,
+    "pop": 89393
+  }
+]

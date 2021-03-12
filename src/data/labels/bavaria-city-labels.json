@@ -1,0 +1,92 @@
+[
+  {
+    "name": "München",
+    "district": "Oberbayern",
+    "lat": 48.152126,
+    "long": 11.544467
+  },
+  {
+    "name": "Nürnberg",
+    "district": "Mittelfranken",
+    "lat": 49.446007,
+    "long": 11.07977
+  },
+  {
+    "name": "Regensburg",
+    "district": "Oberpfalz",
+    "lat": 49.0125808663994,
+    "long": 12.1107803618816
+  },
+  {
+    "name": "Bayreuth",
+    "district": "Oberfranken",
+    "lat": 49.945412,
+    "long": 11.584207
+  },
+  {
+    "name": "Würzburg",
+    "district": "Unterfranken",
+    "lat": 49.784984,
+    "long": 9.941828
+  },
+  {
+    "name": "Augsburg",
+    "district": "Schwaben",
+    "lat": 48.3493839375923,
+    "long": 10.8923259074874
+  },
+  {
+    "name": "Passau",
+    "district": "Niederbayern",
+    "lat": 48.57819474681,
+    "long": 13.4197243205251
+  },
+  {
+    "name": "Bamberg",
+    "district": "Oberfranken",
+    "lat": 49.895431,
+    "long": 10.897137
+  },
+  {
+    "name": "Ingolstadt",
+    "district": "Oberbayern",
+    "lat": 48.7562808207919,
+    "long": 11.4088936188915
+  },
+  {
+    "name": "Kempten",
+    "district": "Schwaben",
+    "lat": 47.7374364383967,
+    "long": 10.3157889217496
+  },
+  {
+    "name": "Rosenheim",
+    "district": "Oberbayern",
+    "lat": 47.8440398976524,
+    "long": 12.1099878481968
+  },
+  {
+    "name": "Landshut",
+    "district": "Niederbayern",
+    "lat": 48.533862,
+    "long": 12.148372
+  },
+  {
+    "name": "Weiden",
+    "district": "Oberpfalz",
+    "lat": 49.673149,
+    "long": 12.137639
+  },
+  {
+    "name": "Coburg",
+    "district": "Oberfranken",
+    "lat": 50.258998,
+    "long": 10.961291
+  },
+  {
+    "name": "Ansbach",
+    "district": "Mittelfranken",
+    "lat": 49.2917917,
+    "long": 10.5691214
+  }
+]
