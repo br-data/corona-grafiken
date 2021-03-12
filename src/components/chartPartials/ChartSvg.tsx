@@ -1,7 +1,5 @@
 import React from "react";
 
-import { chartColors, ciColors } from "../../config/colors";
-
 interface ChartSvgProps {
   id?: string;
   width?: number;
