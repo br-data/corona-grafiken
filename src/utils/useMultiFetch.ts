@@ -12,15 +12,17 @@ export const useMultiFetch = (
   startDate: string,
   endDate: string
 ): MultiFetchProps => {
-  const [error, setError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [chartData, setChartData] = useState<ChartDataObject[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
+    setChartData([]);
     setIsLoaded(false);
     setError(false);
-    const data = (() => {
-      return Promise.all(
+
+    (async () => {
+      const data = await Promise.all(
         chart.data.map(async (datum: ChartDataObject) => {
           const realUrl = datum.url
             .replace("${startDate}", startDate)
@@ -34,9 +36,7 @@ export const useMultiFetch = (
           };
         })
       );
-    })();
 
-    data.then((data) => {
       const hasLoaded =
         data.length &&
         data.reduce(
@@ -44,15 +44,10 @@ export const useMultiFetch = (
           true
         );
 
-      if (hasLoaded) {
-        setChartData(data);
-        setIsLoaded(true);
-      } else {
-        setError(true);
-        setChartData([]);
-        setIsLoaded(true);
-      }
-    });
+      setChartData(hasLoaded ? data : []);
+      setIsLoaded(!!hasLoaded);
+      setError(!hasLoaded);
+    })();
   }, [chart, startDate, endDate]);
 
   return {
