@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { BarChart } from "../barChart/BarChart";
-import { LineChart } from "../LineChart/LineChart";
+import { LineChart } from "../lineChart/LineChart";
+import { AreaChart } from "../areaChart/AreaChart";
 import { ChartWrapper } from "./styles.ChartView";
 
 import { ChartObject } from "../../config/charts";
@@ -64,6 +65,17 @@ const [chartState, setChartState] = useState(chart.id);
         }
         { chart.type === 'line-chart' &&        
           <LineChart
+            chart={chart}
+            chartData={chartData}
+            startDate={startDate}
+            endDate={endDate}
+            width={width}
+            height={height}
+            hasLogo={hasLogo}
+          />
+        }
+        { chart.type === 'area-chart' &&        
+          <AreaChart
             chart={chart}
             chartData={chartData}
             startDate={startDate}
