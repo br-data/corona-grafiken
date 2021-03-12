@@ -1,7 +1,7 @@
 import React from "react";
 import { max, min } from "d3-array";
 import { scaleLinear, scaleBand } from "d3-scale";
-import { line, curveMonotoneX } from "d3-shape";
+import { line, area, curveMonotoneX } from "d3-shape";
 
 import { ChartSvg } from "../chartPartials/ChartSvg";
 import { ChartGroup } from "../chartPartials/ChartGroup";
@@ -15,10 +15,9 @@ import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
 
 import { ChartObject, ChartDataObject } from "../../config/charts";
 import { chartColors } from "../../config/colors";
-import { sma } from "../../utils/sma";
 import { germanDate, germanDateShort, dateRange } from "../../utils/date";
 
-interface BarChartProps {
+interface LineChartProps {
   chart: ChartObject;
   chartData: ChartDataObject[];
   startDate: string;
@@ -34,7 +33,7 @@ interface DataObject {
   [key: string]: any;
 }
 
-export const BarChart: React.FC<BarChartProps> = ({
+export const LineChart: React.FC<LineChartProps> = ({
   chart,
   chartData,
   startDate,
@@ -43,9 +42,8 @@ export const BarChart: React.FC<BarChartProps> = ({
   height,
   hasLogo,
 }) => {
-  const data: DataObject[] = chartData.find((datum) => datum.key === "cases")
+  const data: DataObject[] = chartData.find((datum) => datum.key === "patients")
     ?.data;
-  const smoothData: DataObject[] = sma(data);
 
   const margin = {
     top: 140,
@@ -71,7 +69,7 @@ export const BarChart: React.FC<BarChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
 
-  const yMax = max(data, (d: DataObject): number => d.value)!;
+  const yMax = max(data, (d: DataObject): number => d.faelleCovidAktuell)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
@@ -79,11 +77,22 @@ export const BarChart: React.FC<BarChartProps> = ({
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
+  // @ts-ignore: Library types don't match
   const lineConstructor = line()
     // @ts-ignore: Library types don't match
-    .x(d => x(d.date) + x.bandwidth() / 2)
+    .x((d) => x(d.date) + x.bandwidth() / 2)
     // @ts-ignore: Library types don't match
-    .y(d => y(d.value))
+    .y((d) => y(d.faelleCovidAktuell))
+    .curve(curveMonotoneX);
+
+  // @ts-ignore: Library types don't match
+  const areaConstructor = area()
+    // @ts-ignore: Library types don't match
+    .x((d) => x(d.date))
+    // @ts-ignore: Library types don't match
+    .y0(() => innerHeight)
+    // @ts-ignore: Library types don't match
+    .y1((d) => y(d.faelleCovidAktuell))
     .curve(curveMonotoneX);
 
   return (
@@ -105,26 +114,22 @@ export const BarChart: React.FC<BarChartProps> = ({
         transform={`translate(${margin.left}, ${margin.top})`}
       />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
-        {data.map((d: DataObject, index: number) => (
-          <rect
-            key={index}
-            x={x(d.date)}
-            y={y(d.value)}
-            width={x.bandwidth()}
-            height={innerHeight - y(d.value)}
-            fill={chartColors.blue}
-          ></rect>
-        ))}
+        <path
+          // @ts-ignore: Library types don't match
+          d={lineConstructor(data)}
+          fill="none"
+          stroke={chartColors.red}
+          strokeWidth="3"
+          strokeLinecap="round"
+        ></path>
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
           // @ts-ignore: Library types don't match
-          d={lineConstructor(smoothData)}
-          fill="none"
-          stroke={chartColors.white}
-          strokeWidth="3"
-          strokeDasharray="10,10"
-          strokeLinecap="round"
+          d={areaConstructor(data)}
+          stroke="none"
+          fill={chartColors.red}
+          fillOpacity="0.5"
         ></path>
       </ChartGroup>
       <ChartHeader
@@ -134,16 +139,9 @@ export const BarChart: React.FC<BarChartProps> = ({
       />
       <ChartLegend transform={`translate(25, 90)`}>
         <ChartKey
-          text="Neuinfektionen"
+          text="Intensivpatienten"
           symbol="square"
-          symbolFill={chartColors.blue}
-        />
-        <ChartKey
-          transform={`translate(150, 0)`}
-          text="7-Tage-Mittelwert"
-          symbol="dashed-line"
-          symbolStroke={chartColors.white}
-          symbolSize={30}
+          symbolFill={chartColors.red}
         />
       </ChartLegend>
       <ChartFooter
