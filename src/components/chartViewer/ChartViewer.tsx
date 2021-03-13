@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { BarChart } from "../barChart/BarChart";
-import { LineChart } from "../lineChart/LineChart";
-import { AreaChart } from "../areaChart/AreaChart";
-import { Tiles } from "../tiles/Tiles";
-import { Map } from "../map/Map";
+import { BarChart } from "../charts/BarChart";
+import { LineChart } from "../charts/LineChart";
+import { AreaChart } from "../charts/AreaChart";
+import { Tiles } from "../charts/TileChart";
+import { Map } from "../charts/Map";
 import { ChartWrapper } from "./styles.ChartView";
 
 import { ChartObject } from "../../config/charts";

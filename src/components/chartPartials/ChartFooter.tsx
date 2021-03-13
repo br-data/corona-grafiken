@@ -17,7 +17,7 @@ export const ChartFooter: React.FC<ChartFooterProps> = ({
     <g className="footer" transform={transform}>
       <text
         fontFamily="'Open Sans', OpenSans, sans-serif"
-        fontSize="14"
+        fontSize="15"
         fontWeight="300"
         textAnchor={alignRight ? 'end' : 'start'}
         fill={chartColors.fontSecondary}
