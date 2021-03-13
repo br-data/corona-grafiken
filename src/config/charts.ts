@@ -1,6 +1,7 @@
 export interface ChartDataObject {
   key: string;
   url: string;
+  filetype?: string;
   data?: any;
 }
 
@@ -22,16 +23,19 @@ export const charts = [
     data: [
       {
         key: "cases",
+        filetype: "json",
         url:
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern",
       },
       {
         key: "recoveries",
+        filetype: "json",
         url:
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlGenesen",
       },
       {
         key: "deaths",
+        filetype: "json",
         url:
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlTodesfall",
       },
@@ -46,6 +50,7 @@ export const charts = [
     data: [
       {
         key: "cases",
+        filetype: "json",
         url:
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern",
       },
@@ -60,6 +65,7 @@ export const charts = [
     data: [
       {
         key: "currentCases",
+        filetype: "json",
         url:
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&group=Bundesland&bundesland=Bayern&currentCases=true",
       },
@@ -75,6 +81,7 @@ export const charts = [
     data: [
       {
         key: "cases",
+        filetype: "json",
         url:
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis&bundesland=Bayern",
       },
@@ -90,6 +97,7 @@ export const charts = [
     data: [
       {
         key: "vaccinations",
+        filetype: "csv",
         url:
           "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_BY.csv",
       },
@@ -105,6 +113,7 @@ export const charts = [
     data: [
       {
         key: "patients",
+        filetype: "json",
         url:
           "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=BY&indicator=Patienten",
       },

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+import { csvToJson } from "./csvToJson"
 import { ChartObject, ChartDataObject } from "../config/charts";
 
 export interface MultiFetchProps {
@@ -28,11 +30,18 @@ export const useMultiFetch = (
             .replace("${startDate}", startDate)
             .replace("${endDate}", endDate);
           const response = await fetch(realUrl);
-          const data = await response.json();
+          const data =
+            datum.filetype === "csv"
+              ? await response.text()
+              : await response.json();
+          const parsedData =
+            datum.filetype === "csv"
+              ? csvToJson(data)
+              : data;
 
           return {
             ...datum,
-            data,
+            data: parsedData,
           };
         })
       );
