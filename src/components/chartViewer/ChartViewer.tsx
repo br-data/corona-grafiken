@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { BarChart } from "../charts/BarChart";
 import { LineChart } from "../charts/LineChart";
 import { AreaChart } from "../charts/AreaChart";
-import { Tiles } from "../charts/TileChart";
+import { TileChart } from "../charts/TileChart";
+import { ProgressChart } from "../charts/ProgressChart";
 import { Map } from "../charts/Map";
 import { ChartWrapper } from "./styles.ChartView";
 
@@ -30,7 +31,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
   
 const [chartState, setChartState] = useState(chart.id);
   useEffect(() => {
-    setChartState(chart.id)
+    setChartState(chart.id);
   }, [chart]);
 
   const { error, isLoaded, chartData }: MultiFetchProps = useMultiFetch(
@@ -52,6 +53,8 @@ const [chartState, setChartState] = useState(chart.id);
       </ChartWrapper>
     );
   } else {
+    console.log(chartData);
+    
     return (
       <ChartWrapper>
         { chart.type === 'bar-chart' &&        
@@ -98,8 +101,19 @@ const [chartState, setChartState] = useState(chart.id);
             hasLogo={hasLogo}
           />
         }
-        { chart.type === 'tiles' &&        
-          <Tiles
+        { chart.type === 'tile-chart' &&        
+          <TileChart
+            chart={chart}
+            chartData={chartData}
+            startDate={startDate}
+            endDate={endDate}
+            width={width}
+            height={height}
+            hasLogo={hasLogo}
+          />
+        }
+        { chart.type === 'progress-chart' &&        
+          <ProgressChart
             chart={chart}
             chartData={chartData}
             startDate={startDate}

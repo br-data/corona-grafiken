@@ -18,7 +18,7 @@ export const charts = [
   {
     id: "bavaria-situation-tiles",
     title: "Corona-Situation in Bayern",
-    description: "Überblick der wichtigsten Kennzahlen",
+    description: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
     dataSource: "Robert Koch-Institut, BR-Analyse",
     data: [
       {
@@ -40,11 +40,26 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlTodesfall",
       },
     ],
-    type: "tiles",
+    type: "tile-chart",
+  },
+  {
+    id: "bavaria-indicators-chart",
+    title: "Corona-Situation in Bayern",
+    description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
+    dataSource: "Robert Koch-Institut, BR-Analyse",
+    data: [
+      {
+        key: "currentCases",
+        filetype: "json",
+        url:
+          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&group=Bundesland&bundesland=Bayern&currentCases=true",
+      },
+    ],
+    type: "area-chart",
   },
   {
     id: "bavaria-cases-chart",
-    title: "Corona-Neuinfektionen in Bayern",
+    title: "Neue Corona-Fälle in Bayern",
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
     dataSource: "Robert Koch-Institut, BR-Analyse",
     data: [
@@ -58,25 +73,9 @@ export const charts = [
     type: "bar-chart",
   },
   {
-    id: "bavaria-indicators-chart",
-    title: "Corona in Bayern",
-    description: "Entwicklung der wichtigsten Kennzahlen nach Erkrankungsdatum",
-    dataSource: "Robert Koch-Institut, BR-Analyse",
-    data: [
-      {
-        key: "currentCases",
-        filetype: "json",
-        url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&group=Bundesland&bundesland=Bayern&currentCases=true",
-      },
-    ],
-    type: "area-chart",
-  },
-  {
     id: "bavaria-cases-map",
     title: "7-Tage-Inzidenz in Bayern",
-    description:
-      "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
+    description: "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
     data: [
       {
@@ -89,26 +88,9 @@ export const charts = [
     type: "map",
   },
   {
-    id: "bavaria-vaccinations-chart",
-    title: "Corona-Impfungen in Bayern",
-    description:
-      "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
-    dataSource: "Robert Koch-Institut",
-    data: [
-      {
-        key: "vaccinations",
-        filetype: "csv",
-        url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_BY.csv",
-      },
-    ],
-    type: "simple-chart",
-  },
-  {
     id: "bavaria-patients-chart",
     title: "Intensivpatienten in Bayern",
-    description:
-      "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
+    description: "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
     dataSource: "DIVI-Intensivregister",
     data: [
       {
@@ -119,5 +101,27 @@ export const charts = [
       },
     ],
     type: "line-chart",
+  },
+  {
+    id: "bavaria-vaccinations-chart",
+    title: "Corona-Impfungen in Bayern und Deutschland",
+    description:
+      "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
+    dataSource: "Robert Koch-Institut",
+    data: [
+      {
+        key: "vaccinations-bavaria",
+        filetype: "csv",
+        url:
+          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_BY.csv",
+      },
+      {
+        key: "vaccinations-germany",
+        filetype: "csv",
+        url:
+          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_DE.csv",
+      },
+    ],
+    type: "progress-chart",
   },
 ];

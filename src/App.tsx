@@ -13,7 +13,7 @@ import { charts } from "./config/charts";
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
 
-  const defaultChart = charts[0];
+  const defaultChart = charts[5];
   const minStartDate = "2020-01-24";
   const defaultStartDate = "2020-02-25";
   const maxEndDate = toDateString(new Date());

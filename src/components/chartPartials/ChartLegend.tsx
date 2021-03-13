@@ -88,7 +88,7 @@ const SymbolSquare: React.FC<SymbolProps> = ({
   stroke = "none",
 }) => {
   return (
-    <rect x="0" y="2" width={size} height={size} fill={fill} stroke={stroke} />
+    <rect x="0" y="1" width={size} height={size} fill={fill} stroke={stroke} />
   );
 };
 
@@ -107,7 +107,7 @@ const SymbolLine: React.FC<SymbolProps> = ({
 }) => {
   return (
     <path
-      d={`M 0 8 L ${size} 8`}
+      d={`M 0 7 L ${size} 7`}
       fill={fill}
       stroke={stroke}
       strokeWidth="3"
@@ -123,7 +123,7 @@ const SymbolDashedLine: React.FC<SymbolProps> = ({
 }) => {
   return (
     <path
-      d={`M 0 8 L ${size} 8`}
+      d={`M 0 7 L ${size} 7`}
       fill={fill}
       stroke={stroke}
       strokeWidth="3"

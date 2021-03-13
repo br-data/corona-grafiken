@@ -13,7 +13,7 @@ import { chartColors } from "../../config/colors";
 import { germanDate } from "../../utils/date";
 import { weekTrend } from "../../utils/weekTrend";
 
-interface TilesProps {
+interface TileChartProps {
   chart: ChartObject;
   chartData: ChartDataObject[];
   startDate: string;
@@ -29,7 +29,7 @@ interface DataObject {
   [key: string]: any;
 }
 
-export const Tiles: React.FC<TilesProps> = ({
+export const TileChart: React.FC<TileChartProps> = ({
   chart,
   chartData,
   startDate,
