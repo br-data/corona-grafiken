@@ -1,5 +1,13 @@
 import React from "react";
-import { Form, Fieldset, Label, Select, Input, Checkbox } from "./styles.Settings";
+import { Switch } from '@material-ui/core';
+
+import {
+  Form,
+  Fieldset,
+  Label,
+  Select,
+  Input,
+} from "./styles.Settings";
 import { ChartObject } from "../../config/charts";
 
 interface SelectProps {
@@ -35,17 +43,20 @@ export const Settings: React.FC = ({ children }) => {
   return <Form>{children}</Form>;
 };
 
-export const ChartSelect = ({ label, value, charts, setChart }: SelectProps) => {
+export const ChartSelect = ({
+  label,
+  value,
+  charts,
+  setChart,
+}: SelectProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const chart = charts.find(
-      chart => chart.id === event.target.value
-    );
+    const chart = charts.find((chart) => chart.id === event.target.value);
     setChart(chart);
   };
 
   return (
     <Fieldset>
-      <Label>{label}: </Label>
+      <Label isBold={true} isBlock={true}>{label}: </Label>
       <Select value={value.id} onChange={handleChange}>
         {charts.map((chart, index) => (
           <option value={chart.id} key={index}>
@@ -70,7 +81,7 @@ export const DateInput = ({
 
   return (
     <Fieldset>
-      <Label>{label}: </Label>
+      <Label isBold={true} isBlock={true}>{label}: </Label>
       <Input
         type="date"
         value={value}
@@ -95,7 +106,7 @@ export const NumberInput = ({
 
   return (
     <Fieldset>
-      <Label>{label}: </Label>
+      <Label isBold={true} isBlock={true}>{label}: </Label>
       <Input
         type="number"
         value={value}
@@ -118,8 +129,8 @@ export const CheckboxInput = ({
 
   return (
     <Fieldset isInline={true}>
-      <Checkbox type="checkbox" checked={isChecked} onChange={handleChange} />
-      <Label> {label}</Label>
+      <Switch checked={isChecked} onChange={handleChange} color="primary"/>
+      <Label>{label}</Label>
     </Fieldset>
   );
 };

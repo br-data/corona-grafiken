@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { GlobalStyle } from "./styles/globalStyles";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
+import { GlobalStyle } from "./styles.index";
+import { Header, Footer, ButtonWrapper } from "./styles.App"; 
 import { ChartViewer } from "./components/chartViewer/ChartViewer";
 import {
   Settings,
@@ -8,8 +11,21 @@ import {
   NumberInput,
   CheckboxInput,
 } from "./components/settings/Settings";
-import { charts } from "./config/charts";
 import { DownloadButton } from "./components/downloadButton/DownloadButton";
+
+import { appColors } from "./config/colors";
+import { charts } from "./config/charts";
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: "'Open Sans', OpenSans, sans-serif",
+  },
+  palette: {
+    primary: {
+      main: appColors.highlight,
+    },
+  }
+});
 
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
@@ -18,8 +34,8 @@ export default function App() {
   const minStartDate = "2020-01-24";
   const defaultStartDate = "2020-02-25";
   const maxEndDate = toDateString(new Date());
-  const defaultWidth = 800;
-  const defaultHeight = 450;
+  const defaultWidth = 960;
+  const defaultHeight = 540;
   const defaultLogoVisibility = false;
 
   const [chart, setChart] = useState(defaultChart);
@@ -28,53 +44,50 @@ export default function App() {
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
-  
+
   const [svgDom, setSvgDom] = useState<HTMLInputElement | null>(null);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Settings>
-        <ChartSelect
-          label="Grafik auswählen"
-          value={chart}
-          charts={charts}
-          setChart={setChart}
-        />
-        <DateInput
-          label="Startdatum"
-          value={startDate}
-          min={minStartDate}
-          max={maxEndDate}
-          setDate={setStartDate}
-        />
-        <DateInput
-          label="Enddatum"
-          value={endDate}
-          min={minStartDate}
-          max={maxEndDate}
-          setDate={setEndDate}
-        />
-        <NumberInput
-          label="Breite"
-          value={width}
-          min={0}
-          max={2560}
-          setNumber={setWidth}
-        />
-        <NumberInput
-          label="Höhe"
-          value={height}
-          min={0}
-          max={1440}
-          setNumber={setHeight}
-        />
-        <CheckboxInput
-          label="BR24-Logo"
-          isChecked={hasLogo}
-          setIsChecked={setHasLogo}
-        />
-      </Settings>
+      <Header>
+        <Settings>
+          <ChartSelect
+            label="Grafik auswählen"
+            value={chart}
+            charts={charts}
+            setChart={setChart}
+          />
+          <DateInput
+            label="Startdatum"
+            value={startDate}
+            min={minStartDate}
+            max={maxEndDate}
+            setDate={setStartDate}
+          />
+          <DateInput
+            label="Enddatum"
+            value={endDate}
+            min={minStartDate}
+            max={maxEndDate}
+            setDate={setEndDate}
+          />
+          <NumberInput
+            label="Breite"
+            value={width}
+            min={0}
+            max={2560}
+            setNumber={setWidth}
+          />
+          <NumberInput
+            label="Höhe"
+            value={height}
+            min={0}
+            max={1440}
+            setNumber={setHeight}
+          />
+        </Settings>
+      </Header>
       <ChartViewer
         chart={chart}
         startDate={startDate}
@@ -84,16 +97,17 @@ export default function App() {
         hasLogo={hasLogo}
         setSvgDom={setSvgDom}
       />
-      <DownloadButton
-        type="svg"
-        text="SVG herunterladen"
-        svgDom={svgDom}
-      />
-      <DownloadButton
-        type="png"
-        text="PNG herunterladen"
-        svgDom={svgDom}
-      />
-    </>
+      <Footer>
+        <CheckboxInput
+          label="BR24-Logo anzeigen"
+          isChecked={hasLogo}
+          setIsChecked={setHasLogo}
+        />
+        <ButtonWrapper>
+          <DownloadButton type="svg" text="SVG herunterladen" svgDom={svgDom} />
+          <DownloadButton type="png" text="PNG herunterladen" svgDom={svgDom} />
+        </ButtonWrapper>
+      </Footer>
+    </ThemeProvider>
   );
 }

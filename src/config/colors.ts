@@ -24,6 +24,8 @@ export const appColors = {
   font: ciColors.black,
   foreground: ciColors.white,
   background: ciColors.veryLightGrey,
+  highlight: ciColors.blue,
+  inputOutline: ciColors.lightGrey,
   buttonFont: ciColors.white,
   buttonBackground: ciColors.blue,
 };
