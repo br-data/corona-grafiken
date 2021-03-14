@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "./styles.index";
-import { Header, Footer, ButtonWrapper } from "./styles.App"; 
+import { Header, Footer, Content } from "./styles.App"; 
 import { ChartViewer } from "./components/chartViewer/ChartViewer";
 import {
   Settings,
@@ -88,25 +88,27 @@ export default function App() {
           />
         </Settings>
       </Header>
-      <ChartViewer
-        chart={chart}
-        startDate={startDate}
-        endDate={endDate}
-        width={width}
-        height={height}
-        hasLogo={hasLogo}
-        setSvgDom={setSvgDom}
-      />
+      <Content>
+        <ChartViewer
+          chart={chart}
+          startDate={startDate}
+          endDate={endDate}
+          width={width}
+          height={height}
+          hasLogo={hasLogo}
+          setSvgDom={setSvgDom}
+        />
+      </Content>
       <Footer>
         <CheckboxInput
           label="BR24-Logo anzeigen"
           isChecked={hasLogo}
           setIsChecked={setHasLogo}
         />
-        <ButtonWrapper>
+        <div>
           <DownloadButton type="svg" text="SVG herunterladen" svgDom={svgDom} />
           <DownloadButton type="png" text="PNG herunterladen" svgDom={svgDom} />
-        </ButtonWrapper>
+        </div>
       </Footer>
     </ThemeProvider>
   );

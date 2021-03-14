@@ -4,12 +4,13 @@ import { appColors } from "../../config/colors";
 
 export const Form = styled.form`
   display: flex;
+  padding-bottom: .5rem;
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
   border: 0;
   padding: 0;
-  margin: 0.5em;
+  margin: .5rem 1rem;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 `;
 
@@ -55,8 +56,8 @@ export const Button = styled.button`
   box-sizing: border-box;
   vertical-align: middle;
   font-size: 1rem;
-  padding: 0.5rem 0.75rem;
-  margin: 0.5em;
+  padding: .5rem .75rem;
+  margin: .5em;
   border: 0;
   color: ${appColors.buttonFont};
   background: ${appColors.buttonBackground};

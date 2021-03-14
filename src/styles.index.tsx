@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    height: 100%;
   }
 
   html {
@@ -15,5 +16,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: #f2f2f2;
+  }
+
+  main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 `;

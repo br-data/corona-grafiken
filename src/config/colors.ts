@@ -21,7 +21,8 @@ export const ciColors = {
 };
 
 export const appColors = {
-  font: ciColors.black,
+  fontPrimary: ciColors.black,
+  fontSecondary: ciColors.mediumGrey,
   foreground: ciColors.white,
   background: ciColors.veryLightGrey,
   highlight: ciColors.blue,
