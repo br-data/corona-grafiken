@@ -7,6 +7,7 @@ export interface ChartDataObject {
 
 export interface ChartObject {
   id: string;
+  name: string;
   title: string;
   description: string;
   dataSource: string;
@@ -18,6 +19,7 @@ export const charts = [
   {
     id: "bavaria-situation-tiles",
     title: "Corona-Situation in Bayern",
+    name: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
     description: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
     dataSource: "Robert Koch-Institut, BR-Analyse",
     data: [
@@ -44,6 +46,7 @@ export const charts = [
   },
   {
     id: "bavaria-indicators-chart",
+    name: "Corona-Situation in Bayern",
     title: "Corona-Situation in Bayern",
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
@@ -59,6 +62,7 @@ export const charts = [
   },
   {
     id: "bavaria-cases-chart",
+    name: "Neue Corona-Fälle in Bayern",
     title: "Neue Corona-Fälle in Bayern",
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
     dataSource: "Robert Koch-Institut, BR-Analyse",
@@ -74,6 +78,7 @@ export const charts = [
   },
   {
     id: "bavaria-cases-map",
+    name: "7-Tage-Inzidenz in Bayern",
     title: "7-Tage-Inzidenz in Bayern",
     description: "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
@@ -89,6 +94,7 @@ export const charts = [
   },
   {
     id: "bavaria-patients-chart",
+    name: "Intensivpatienten in Bayern",
     title: "Intensivpatienten in Bayern",
     description: "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
     dataSource: "DIVI-Intensivregister",
@@ -104,6 +110,7 @@ export const charts = [
   },
   {
     id: "bavaria-vaccinations-chart",
+    name: "Corona-Impfungen in Bayern und Deutschland",
     title: "Corona-Impfungen in Bayern und Deutschland",
     description:
       "Prozentualer Anteil der geimpften Personen an der Bevölkerung",

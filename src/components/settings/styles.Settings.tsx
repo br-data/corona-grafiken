@@ -2,9 +2,22 @@ import styled from "styled-components";
 
 import { appColors } from "../../config/colors";
 
-export const Form = styled.form`
+export const Form = styled.form<{
+  isCollabsible?: boolean;
+  hasCollapsed?: boolean;
+}>`
   display: flex;
-  padding-bottom: .5rem;
+  overflow: hidden;
+  max-height: ${({ isCollabsible, hasCollapsed }) =>
+    isCollabsible && hasCollapsed ? "0" : "100%"};
+`;
+
+export const FormCollapseButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .5rem 1rem 0 auto;
+  font-size: 2rem;
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
@@ -17,7 +30,7 @@ export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
 export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
   font-size: 1rem;
   font-weight: ${({ isBold }) => (isBold ? 600 : 400)};
-  display: ${({ isBlock }) => (isBlock ? 'block' : 'inline')};
+  display: ${({ isBlock }) => (isBlock ? "block" : "inline")};
   vertical-align: middle;
 `;
 
@@ -25,6 +38,7 @@ export const Select = styled.select`
   font-family: "Open Sans", OpenSans, sans-serif;
   box-sizing: border-box;
   font-size: 1rem;
+  max-width: 16rem;
   padding-left: .125rem;
   padding-right: .25rem;
   border: 2px solid ${appColors.inputOutline};
@@ -69,5 +83,5 @@ export const Button = styled.button`
 
   > svg {
     vertical-align: bottom;
-  } 
+  }
 `;

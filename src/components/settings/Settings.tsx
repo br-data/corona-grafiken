@@ -1,20 +1,31 @@
 import React from "react";
-import { Switch } from '@material-ui/core';
+import { Switch } from "@material-ui/core";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import {
   Form,
+  FormCollapseButton,
   Fieldset,
   Label,
   Select,
   Input,
 } from "./styles.Settings";
+
 import { ChartObject } from "../../config/charts";
+import { FormatObject } from "../../config/formats";
+import { appColors } from "../../config/colors";
+
+interface SettingsProps {
+  isCollabsible?: boolean;
+  hasCollapsed?: boolean;
+  setHasCollapsed?: any;
+}
 
 interface SelectProps {
   label: string;
-  value: ChartObject;
-  charts: ChartObject[];
-  setChart: any;
+  value: any;
+  options: any;
+  setOption: any;
 }
 
 interface DateInputProps {
@@ -39,28 +50,55 @@ interface CheckboxInputProps {
   setIsChecked: any;
 }
 
-export const Settings: React.FC = ({ children }) => {
-  return <Form>{children}</Form>;
+export const Settings: React.FC<SettingsProps> = ({
+  isCollabsible,
+  hasCollapsed,
+  children,
+}) => {
+  return (
+    <Form isCollabsible={isCollabsible} hasCollapsed={hasCollapsed}>
+      {children}
+    </Form>
+  );
+};
+
+export const SettingsButton: React.FC<SettingsProps> = ({
+  hasCollapsed,
+  setHasCollapsed,
+}) => {
+  const handleClick = () => {
+    setHasCollapsed(!hasCollapsed);
+  };
+  return (
+    <FormCollapseButton title="Weitere Einstellungen anzeigen" onClick={handleClick}>
+      {hasCollapsed && <FiChevronDown color={appColors.inputOutline} size="3rem" />}
+      {!hasCollapsed && <FiChevronUp color={appColors.inputOutline} size="3rem" />}
+    </FormCollapseButton>
+  );
 };
 
 export const ChartSelect = ({
   label,
   value,
-  charts,
-  setChart,
+  options,
+  setOption,
 }: SelectProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const chart = charts.find((chart) => chart.id === event.target.value);
-    setChart(chart);
+    const option = options.find(
+      (option: ChartObject | FormatObject) => option.id === event.target.value
+    );
+    setOption(option);
   };
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>{label}: </Label>
+      <Label isBold={true} isBlock={true}>
+        {label}:{" "}
+      </Label>
       <Select value={value.id} onChange={handleChange}>
-        {charts.map((chart, index) => (
-          <option value={chart.id} key={index}>
-            {chart.title}
+        {options.map((option: ChartObject | FormatObject, index: number) => (
+          <option value={option.id} key={index}>
+            {option.name}
           </option>
         ))}
       </Select>
@@ -81,7 +119,9 @@ export const DateInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>{label}: </Label>
+      <Label isBold={true} isBlock={true}>
+        {label}:{" "}
+      </Label>
       <Input
         type="date"
         value={value}
@@ -106,7 +146,9 @@ export const NumberInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>{label}: </Label>
+      <Label isBold={true} isBlock={true}>
+        {label}:{" "}
+      </Label>
       <Input
         type="number"
         value={value}
@@ -129,7 +171,7 @@ export const CheckboxInput = ({
 
   return (
     <Fieldset isInline={true}>
-      <Switch checked={isChecked} onChange={handleChange} color="primary"/>
+      <Switch checked={isChecked} onChange={handleChange} color="primary" />
       <Label>{label}</Label>
     </Fieldset>
   );

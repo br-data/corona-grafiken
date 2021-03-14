@@ -1,8 +1,8 @@
 import React from "react";
 // @ts-ignore: No types available
 import { saveSvg, saveSvgAsPng, } from "../../../node_modules/save-svg-as-png/lib/saveSvgAsPng.js";
-
 import { FiDownload } from "react-icons/fi";
+
 import { Button } from "../settings/styles.Settings";
 
 interface DownloadButtonProps {

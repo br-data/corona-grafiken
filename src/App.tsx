@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "./styles.index";
-import { Header, Footer, Content } from "./styles.App"; 
+import { Header, Footer, Content } from "./styles.App";
 import { ChartViewer } from "./components/chartViewer/ChartViewer";
 import {
   Settings,
+  SettingsButton,
   ChartSelect,
   DateInput,
   NumberInput,
@@ -15,6 +16,7 @@ import { DownloadButton } from "./components/downloadButton/DownloadButton";
 
 import { appColors } from "./config/colors";
 import { charts } from "./config/charts";
+import { formats } from "./config/formats";
 
 const theme = createMuiTheme({
   typography: {
@@ -24,28 +26,40 @@ const theme = createMuiTheme({
     primary: {
       main: appColors.highlight,
     },
-  }
+  },
 });
 
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
 
-  const defaultChart = charts[5];
+  const defaultChart = charts[0];
+  const defaultFormat = formats[0];
+
+  const defaultWidth = defaultFormat.width;
+  const defaultHeight = defaultFormat.height;
+  const defaultLogoVisibility = false;
+
   const minStartDate = "2020-01-24";
   const defaultStartDate = "2020-02-25";
   const maxEndDate = toDateString(new Date());
-  const defaultWidth = 960;
-  const defaultHeight = 540;
-  const defaultLogoVisibility = false;
 
   const [chart, setChart] = useState(defaultChart);
-  const [startDate, setStartDate] = useState(defaultStartDate);
-  const [endDate, setEndDate] = useState(maxEndDate);
+  const [format, setFormat] = useState(defaultFormat);
+
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
+  const [hasCollapsed, setHasCollapsed] = useState(true);
+
+  const [startDate, setStartDate] = useState(defaultStartDate);
+  const [endDate, setEndDate] = useState(maxEndDate);
 
   const [svgDom, setSvgDom] = useState<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    setWidth(format.width);
+    setHeight(format.height);
+  }, [format]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -55,9 +69,25 @@ export default function App() {
           <ChartSelect
             label="Grafik auswählen"
             value={chart}
-            charts={charts}
-            setChart={setChart}
+            options={charts}
+            setOption={setChart}
           />
+          <ChartSelect
+            label="Format auswählen"
+            value={format}
+            options={formats}
+            setOption={setFormat}
+          />
+          <SettingsButton
+            hasCollapsed={hasCollapsed}
+            setHasCollapsed={setHasCollapsed}
+          />
+        </Settings>
+        <Settings
+          isCollabsible={true}
+          hasCollapsed={hasCollapsed}
+          setHasCollapsed={setHasCollapsed}
+        >
           <DateInput
             label="Startdatum"
             value={startDate}
