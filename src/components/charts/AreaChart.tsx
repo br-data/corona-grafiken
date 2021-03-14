@@ -1,7 +1,7 @@
 import React from "react";
 import { max, min } from "d3-array";
 import { scaleLinear, scaleBand } from "d3-scale";
-import { line, area, curveMonotoneX } from "d3-shape";
+import { area, curveMonotoneX } from "d3-shape";
 
 import { ChartSvg } from "../chartPartials/ChartSvg";
 import { ChartGroup } from "../chartPartials/ChartGroup";
@@ -42,8 +42,9 @@ export const AreaChart: React.FC<AreaChartProps> = ({
   height,
   hasLogo,
 }) => {
-  const data: DataObject[] = chartData.find((datum) => datum.key === "currentCases")
-    ?.data;
+  const data: DataObject[] = chartData.find(
+    (datum) => datum.key === "currentCases"
+  )?.data;
 
   const margin = {
     top: 140,
@@ -86,7 +87,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
     // @ts-ignore: Library types don't match
     .y1(d => y(d.currentlyRecovered + d.currentlyInfected + d.deathSum))
     .curve(curveMonotoneX);
-  
+    
   // @ts-ignore: Library types don't match
   const activeCasesArea = area()
     // @ts-ignore: Library types don't match
@@ -96,7 +97,7 @@ export const AreaChart: React.FC<AreaChartProps> = ({
     // @ts-ignore: Library types don't match
     .y1(d => y(d.currentlyInfected + d.deathSum) - 1)
     .curve(curveMonotoneX);
-  
+
   // @ts-ignore: Library types don't match
   const deathsArea = area()
     // @ts-ignore: Library types don't match

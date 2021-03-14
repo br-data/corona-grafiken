@@ -1,7 +1,5 @@
 import React from "react";
-import { max, min } from "d3-array";
-import { scaleLinear, scaleBand } from "d3-scale";
-import { line, area, curveMonotoneX } from "d3-shape";
+import { scaleLinear } from "d3-scale";
 
 import { ChartSvg } from "../chartPartials/ChartSvg";
 import { ChartGroup } from "../chartPartials/ChartGroup";
@@ -10,12 +8,10 @@ import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend";
 import { ChartBackground } from "../chartPartials/ChartBackground";
 import { ChartFooter } from "../chartPartials/ChartFooter";
 import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
-import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom";
-import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
 
 import { ChartObject, ChartDataObject } from "../../config/charts";
 import { chartColors } from "../../config/colors";
-import { germanDate, germanDateShort, dateRange } from "../../utils/date";
+import { germanDate } from "../../utils/date";
 
 interface ProgressChartProps {
   chart: ChartObject;

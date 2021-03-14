@@ -10,12 +10,10 @@ import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend";
 import { ChartBackground } from "../chartPartials/ChartBackground";
 import { ChartFooter } from "../chartPartials/ChartFooter";
 import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
-import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom";
-import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
 
 import { ChartObject, ChartDataObject } from "../../config/charts";
 import { chartColors, getMapColor } from "../../config/colors";
-import { germanDate, germanDateShort, dateRange } from "../../utils/date";
+import { germanDate } from "../../utils/date";
 import { incidence } from "../../utils/incidence";
 
 import geoData from "../../data/topo/bavaria-county-topo.json";

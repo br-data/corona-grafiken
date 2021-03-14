@@ -2,6 +2,13 @@ import React from "react";
 import { Form, Fieldset, Label, Select, Input } from "./styles.Settings";
 import { ChartObject } from "../../config/charts";
 
+interface SelectProps {
+  label: string;
+  value: ChartObject;
+  charts: ChartObject[];
+  setChart: any;
+}
+
 interface DateInputProps {
   label: string;
   value: string;
@@ -28,10 +35,10 @@ export const Settings: React.FC = ({ children }) => {
   return <Form>{children}</Form>;
 };
 
-export const ChartSelect = ({ label, value, charts, setChart }: any) => {
+export const ChartSelect = ({ label, value, charts, setChart }: SelectProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const chart = charts.find(
-      (chart: ChartObject) => chart.id === event.target.value
+      chart => chart.id === event.target.value
     );
     setChart(chart);
   };
@@ -40,7 +47,7 @@ export const ChartSelect = ({ label, value, charts, setChart }: any) => {
     <Fieldset>
       <Label>{label}: </Label>
       <Select value={value.id} onChange={handleChange}>
-        {charts.map((chart: ChartObject, index: number) => (
+        {charts.map((chart, index) => (
           <option value={chart.id} key={index}>
             {chart.title}
           </option>
