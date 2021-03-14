@@ -18,6 +18,7 @@ interface ChartViewerProps {
   width: number;
   height: number;
   hasLogo: boolean;
+  setSvgDom: any;
 }
 
 export const ChartViewer: React.FC<ChartViewerProps> = ({
@@ -26,10 +27,10 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
   endDate,
   width,
   height,
-  hasLogo
+  hasLogo,
+  setSvgDom
 }) => {
-  
-const [chartState, setChartState] = useState(chart.id);
+  const [chartState, setChartState] = useState(chart.id);
   useEffect(() => {
     setChartState(chart.id);
   }, [chart]);
@@ -53,11 +54,9 @@ const [chartState, setChartState] = useState(chart.id);
       </ChartWrapper>
     );
   } else {
-    console.log(chartData);
-    
     return (
-      <ChartWrapper>
-        { chart.type === 'bar-chart' &&        
+      <ChartWrapper ref={setSvgDom}>
+        {chart.type === "bar-chart" && (
           <BarChart
             chart={chart}
             chartData={chartData}
@@ -67,8 +66,8 @@ const [chartState, setChartState] = useState(chart.id);
             height={height}
             hasLogo={hasLogo}
           />
-        }
-        { chart.type === 'line-chart' &&        
+        )}
+        {chart.type === "line-chart" && (
           <LineChart
             chart={chart}
             chartData={chartData}
@@ -78,8 +77,8 @@ const [chartState, setChartState] = useState(chart.id);
             height={height}
             hasLogo={hasLogo}
           />
-        }
-        { chart.type === 'area-chart' &&        
+        )}
+        {chart.type === "area-chart" && (
           <AreaChart
             chart={chart}
             chartData={chartData}
@@ -89,8 +88,8 @@ const [chartState, setChartState] = useState(chart.id);
             height={height}
             hasLogo={hasLogo}
           />
-        }
-        { chart.type === 'map' &&        
+        )}
+        {chart.type === "map" && (
           <Map
             chart={chart}
             chartData={chartData}
@@ -100,8 +99,8 @@ const [chartState, setChartState] = useState(chart.id);
             height={height}
             hasLogo={hasLogo}
           />
-        }
-        { chart.type === 'tile-chart' &&        
+        )}
+        {chart.type === "tile-chart" && (
           <TileChart
             chart={chart}
             chartData={chartData}
@@ -111,8 +110,8 @@ const [chartState, setChartState] = useState(chart.id);
             height={height}
             hasLogo={hasLogo}
           />
-        }
-        { chart.type === 'progress-chart' &&        
+        )}
+        {chart.type === "progress-chart" && (
           <ProgressChart
             chart={chart}
             chartData={chartData}
@@ -122,7 +121,7 @@ const [chartState, setChartState] = useState(chart.id);
             height={height}
             hasLogo={hasLogo}
           />
-        }
+        )}
       </ChartWrapper>
     );
   }

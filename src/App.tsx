@@ -9,6 +9,7 @@ import {
   CheckboxInput,
 } from "./components/settings/Settings";
 import { charts } from "./config/charts";
+import { DownloadButton } from "./components/downloadButton/DownloadButton";
 
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
@@ -27,6 +28,8 @@ export default function App() {
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
+  
+  const [svgDom, setSvgDom] = useState<HTMLInputElement | null>(null);
 
   return (
     <>
@@ -79,6 +82,17 @@ export default function App() {
         width={width}
         height={height}
         hasLogo={hasLogo}
+        setSvgDom={setSvgDom}
+      />
+      <DownloadButton
+        type="svg"
+        text="SVG herunterladen"
+        svgDom={svgDom}
+      />
+      <DownloadButton
+        type="png"
+        text="PNG herunterladen"
+        svgDom={svgDom}
       />
     </>
   );

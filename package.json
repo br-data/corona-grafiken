@@ -19,6 +19,7 @@
     "d3-shape": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "save-svg-as-png": "^1.4.17",
     "styled-components": "^5.2.1",
     "topojson-client": "^3.1.0"
   },

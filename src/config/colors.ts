@@ -17,12 +17,15 @@ export const ciColors = {
   green: "#3ad29f",
   red: "#e64242",
   yellow: "#fbb800",
+  violet: "#D20DE2",
 };
 
 export const appColors = {
   font: ciColors.black,
   foreground: ciColors.white,
   background: ciColors.veryLightGrey,
+  buttonFont: ciColors.white,
+  buttonBackground: ciColors.blue,
 };
 
 export const chartColors = {
