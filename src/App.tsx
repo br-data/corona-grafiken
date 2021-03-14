@@ -70,7 +70,7 @@ export default function App() {
           setNumber={setHeight}
         />
         <CheckboxInput
-          label="BR24-Logo anzeigen"
+          label="BR24-Logo"
           isChecked={hasLogo}
           setIsChecked={setHasLogo}
         />

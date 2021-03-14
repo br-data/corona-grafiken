@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  background: white;
   display: flex;
 `;
 
-export const Fieldset = styled.fieldset`
+export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
   border: 0;
+  padding: 0;
+  margin: .5em;
+  white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 `;
 
 export const Label = styled.label`
@@ -31,4 +33,9 @@ export const Input = styled.input`
   padding: 0 0.5rem;
   border: 1px solid black;
   border-radius: 5px;
+`;
+
+export const Checkbox = styled.input`
+  font-family: "Open Sans", OpenSans, sans-serif;
+  box-sizing: border-box;
 `;

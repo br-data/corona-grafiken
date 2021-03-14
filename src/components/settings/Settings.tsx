@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Fieldset, Label, Select, Input } from "./styles.Settings";
+import { Form, Fieldset, Label, Select, Input, Checkbox } from "./styles.Settings";
 import { ChartObject } from "../../config/charts";
 
 interface SelectProps {
@@ -117,9 +117,9 @@ export const CheckboxInput = ({
   };
 
   return (
-    <Fieldset>
-      <input type="checkbox" checked={isChecked} onChange={handleChange} />
-      <label> {label}</label>
+    <Fieldset isInline={true}>
+      <Checkbox type="checkbox" checked={isChecked} onChange={handleChange} />
+      <Label> {label}</Label>
     </Fieldset>
   );
 };

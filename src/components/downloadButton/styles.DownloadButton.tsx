@@ -8,7 +8,7 @@ export const Button = styled.button`
   font-size: 1rem;
   height: 1.75rem;
   padding: 0 0.5rem;
-  margin-right: .5em;
+  margin: .5em;
   border: 0;
   color: ${appColors.buttonFont};
   background: ${appColors.buttonBackground};
