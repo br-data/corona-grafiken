@@ -136,8 +136,8 @@ export default function App() {
           setIsChecked={setHasLogo}
         />
         <div>
-          <DownloadButton type="svg" text="SVG herunterladen" svgDom={svgDom} />
-          <DownloadButton type="png" text="PNG herunterladen" svgDom={svgDom} />
+          <DownloadButton type="svg" text="SVG herunterladen" chart={chart} svgDom={svgDom} />
+          <DownloadButton type="png" text="PNG herunterladen" chart={chart} svgDom={svgDom} />
         </div>
       </Footer>
     </ThemeProvider>
