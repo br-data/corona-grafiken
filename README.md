@@ -1,39 +1,44 @@
-# Google Cloud Deployment Template
+# Corona-Grafiken
 
-Use this template for easily deploy project within the repo to google cloud.
+Jeden Tag gibt es neue Corona-Zahlen und Statistiken. Mit dieser Web-Anwendung können die wichtigsten Corona-Grafiken einfach im Browser erstellt werden. Die verschieden Grafiken können in verschiedenen Formaten (Instagram, Twitter, BR24-Artikel) angezeigt und als SVG- oder PNG-Datei exportiert werden.
 
-## How to
+Anwendung: <https://interaktiv.br.de/corona-grafiken>
 
-Just push your changes to develop or live branch and see your application 
-running on [Google Cloud](https://console.cloud.google.com/kubernetes/ingresses?project=brdata-dev&supportedpurview=project&pageState=(%22savedViews%22:(%22i%22:%220ccc310c55074400ad028e9f7cc3f960%22,%22c%22:%5B%5D,%22n%22:%5B%5D)))
+## Verwendung
 
-## ⚠️ Caution:
+1. Repository klonen `git clone https://...`
+2. Erforderliche Module installieren `npm install`
+3. Entwicklungsserver starten `npm start`
+4. Projekt bauen mit `npm run build`
 
-- Don't change files in `.github` folder
-- Please don't change repo name when using this template!!!
-- Check, if `config.yaml` is configured properly
-- You can delete values from `config.yaml`, which you don't want to set (except required ones)
+Um die Module installieren und die Entwicklerwerkzeuge nutzen zu können, muss vorher die JavaScript-Runtime [Node.js](https://nodejs.org/en/download/) installiert werden.
 
-## config.yaml
+## Diagramme
 
-```yaml
-isEnabled: # [REQUIRED] Whether to trigger deployments on push
-docker:
-  preset: # [OPTIONAL] Environment to build and run application: yarn, java, python
-  preparationCommand: # [OPTIONAL] used for additional downloads before building and running your app
-  imageFrom:  #  [OPTIONAL/REQUIRED]  If no preset is used this is required
-  ignore: # Ignore some files / Folders which are not used for running the app
-build:
-  command: # [OPTIONAL] Command for building your app, If just upload eg. static files, this can be skipped -- If isWebsite is true, just node runtime is available
-  outputFolder: # [OPTIONAL] Folder of your application. Empty for using all of root folder. If set, all other folders/files will be ignored
-run:
-  command: # [OPTIONAL/REQUIRED] Command for running your app, not required if isWebsite
-  envs: # [OPTIONAL] Environment Variables to inject
-    - name: # [REQUIRED] Environment Variable name
-      value: # [REQUIRED] Environment Variable value
-settings:
-  projectName: # [OPTIONAL] Use different name as repository name (will be linked to repoName within metaData to prevent multiple project with same name)
-  isWebsite: # [OPTIONAL] Just serves static content in outputFolder (absolute path) or root folder (if no outputPath is defined)
-  firestore: # [OPTIONAL] Inject Credentials for firestore
-  inSecure: # [OPTIONAL] Disable basic auth on DEV
-```
+`src/config/charts`
+
+## Formate
+
+`src/config/formats`
+
+## Farben
+
+`src/config/colors`
+
+## Deployment
+
+Die Anwendung wird automatisch mit Github Action gebaut und über die Google Cloud ausgeliefert. Jeder Commit auf den `develop` oder `live`-Branch des Repositories startet einen neuen Build. Statische Builds (`isWebsite=true`) werden automatisch über folgende URLs ausgeliefert:
+
+- **live:** `https://interaktiv.br.de/${repoName}`
+- **develop:** `https://interaktiv.brdata-dev.de/${repoName}`
+
+Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration für den Github-Workflow in `.github/workflow` sollte nicht angefasst werden. Für mehr Informationen, siehe [br-data/cloud-deploy-template](https://github.com/br-data/cloud-deploy-template).
+
+## Verbesserungen
+
+- Überschrift und Beschreibung editierbar machen
+- Schriftgröße und Abstände konfigurierbar machen
+- Deutschland-Karte hinzufügen
+- Karten automatisch annotieren
+- TileChart hübscher machen
+- Progress-Chart hübscher machen
