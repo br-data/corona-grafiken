@@ -1,9 +1,9 @@
 import React from "react";
 // @ts-ignore: No types available
-import { saveSvg, saveSvgAsPng, } from "../../../node_modules/save-svg-as-png/lib/saveSvgAsPng.js";
+import { saveSvg, saveSvgAsPng, } from "save-svg-as-png";
 import { FiDownload } from "react-icons/fi";
 
-import { Button } from "../settings/styles.Settings";
+import { Button } from "../chartSettings/styles.ChartSettings";
 
 interface DownloadButtonProps {
   type: string;

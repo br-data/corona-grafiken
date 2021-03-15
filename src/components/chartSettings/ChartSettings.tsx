@@ -9,7 +9,7 @@ import {
   Label,
   Select,
   Input,
-} from "./styles.Settings";
+} from "./styles.ChartSettings";
 
 import { ChartObject } from "../../config/charts";
 import { FormatObject } from "../../config/formats";

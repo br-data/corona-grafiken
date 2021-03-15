@@ -11,8 +11,8 @@ import {
   DateInput,
   NumberInput,
   CheckboxInput,
-} from "./components/settings/Settings";
-import { DownloadButton } from "./components/downloadButton/DownloadButton";
+} from "./components/chartSettings/ChartSettings";
+import { DownloadButton } from "./components/chartDownload/ChartDowload";
 
 import { appColors } from "./config/colors";
 import { charts } from "./config/charts";
