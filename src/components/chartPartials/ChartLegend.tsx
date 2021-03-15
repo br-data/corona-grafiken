@@ -70,7 +70,8 @@ export const ChartKey: React.FC<ChartKeyProps> = ({
       )}
       <text
         x={symbol ? (symbol === "circle" ? symbolSize * 2 : symbolSize) + 7 : 0}
-        dominantBaseline="hanging"
+        // dominantBaseline="hanging"
+        dy="13"
         fontFamily="'Open Sans', sans-serif"
         fontSize="15"
         fontWeight="300"

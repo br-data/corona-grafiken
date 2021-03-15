@@ -16,7 +16,7 @@ interface DownloadButtonProps {
 export const DownloadButton = ({ type, text, chart, svgDom }: DownloadButtonProps) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (type === "svg") {
-      saveSvg(svgDom.firstChild, `${chart.id}.svg`);
+      saveSvg(svgDom.firstChild, `${chart.id}.svg`, { excludeCss: true });
     }
     if (type === "png") {
       saveSvgAsPng(svgDom.firstChild, `${chart.id}.png`, { scale: 2 });

@@ -26,7 +26,7 @@ export const appColors = {
   foreground: ciColors.white,
   background: ciColors.veryLightGrey,
   highlight: ciColors.blue,
-  inputOutline: ciColors.lightGrey,
+  inputOutline: ciColors.veryLightGrey,
   buttonFont: ciColors.white,
   buttonBackground: ciColors.blue,
 };

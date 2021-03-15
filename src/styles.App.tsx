@@ -16,6 +16,7 @@ export const Content = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
   padding: 1rem;
 `;
 

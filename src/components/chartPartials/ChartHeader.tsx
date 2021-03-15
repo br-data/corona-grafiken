@@ -20,7 +20,7 @@ export const ChartHeader: React.FC<ChartHeaderProps> = ({
         y="0"
         fontFamily="'Open Sans', OpenSans, sans-serif"
         fontSize="24"
-        fontWeight="600"
+        fontWeight="400"
         fill={chartColors.fontPrimary}
       >
         {title}

@@ -8,24 +8,6 @@ export interface FormatObject {
 
 export const formats = [
   {
-    id: "br24",
-    name: "BR24-Artikel (16:9)",
-    width: 960,
-    height: 540,
-  },
-  {
-    id: "hd-tv",  
-    name: "HD-Fernsehen (16:9)",
-    width: 960,
-    height: 540,
-  },
-  {
-    id: "facebook",   
-    name: "Facebook (1.9:1)",
-    width: 600,
-    height: 315,
-  },
-  {
     id: "instagram",
     name: "Instagram (1:1)",
     width: 540,
@@ -36,5 +18,23 @@ export const formats = [
     name: "Twitter (2:1)",
     width: 600,
     height: 300,
+  },
+  {
+    id: "facebook",   
+    name: "Facebook (1.9:1)",
+    width: 600,
+    height: 315,
+  },
+  {
+    id: "br24",
+    name: "BR24-Artikel (16:9)",
+    width: 800,
+    height: 450,
+  },
+  {
+    id: "hd-tv",  
+    name: "HD-Fernsehen (16:9)",
+    width: 960,
+    height: 540,
   },
 ];
