@@ -13,52 +13,37 @@ import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
 import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom";
 import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
 
-import { ChartObject, ChartDataObject } from "../../config/charts";
+import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
 import { germanDate, germanDateShort, dateRange } from "../../utils/date";
 
-interface LineChartProps {
-  chart: ChartObject;
-  chartData: ChartDataObject[];
-  startDate: string;
-  endDate: string;
-  width: number;
-  height: number;
-  hasLogo: boolean;
-}
-
-interface DataObject {
-  date: string;
-  value: number;
-  [key: string]: any;
-}
-
-export const LineChart: React.FC<LineChartProps> = ({
+export const LineChart: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,
   endDate,
-  width,
-  height,
-  hasLogo,
+  width = 800,
+  height = 450,
+  scalingFactor = 1,
+  hasLogo = false,
 }) => {
-  const data: DataObject[] = chartData.find((datum) => datum.key === "patients")
-    ?.data;
-
   const margin = {
-    top: 140,
+    top: 120 * scalingFactor,
     right: 25,
-    bottom: hasLogo ? chartLogoSize + 60 : 75,
+    bottom: hasLogo ? (chartLogoSize + 55) * scalingFactor : 75,
     left: 25,
   };
   const padding = 25;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
-  const xMin = min(data, (d: DataObject) => new Date(d.date))!;
+  const data: ChartData[] = chartData.find((datum) => datum.key === "patients")
+    ?.data!;
+
+  const xMin = min(data, (d: ChartData) => new Date(d.date))!;
   const xMinBracket = new Date(xMin);
   xMinBracket.setDate(xMinBracket.getDate() - 8);
-  const xMax = max(data, (d: DataObject) => new Date(d.date))!;
+  const xMax = max(data, (d: ChartData) => new Date(d.date))!;
   const xMaxBracket = new Date(xMax);
   xMaxBracket.setDate(xMaxBracket.getDate() + 8);
   const xValues = dateRange(xMinBracket, xMaxBracket, 1);
@@ -69,11 +54,14 @@ export const LineChart: React.FC<LineChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
 
-  const yMax = max(data, (d: DataObject): number => d.faelleCovidAktuell)!;
+  const yMax = max(data, (d: ChartData): number => d.faelleCovidAktuell)!;
   const y = scaleLinear()
-    .domain([0, yMax * 1.1])
+    .domain([0, yMax * 1.2])
     .range([innerHeight, 0]);
-  const yTicks = y.copy().nice().ticks(5);
+  const yTicks = y
+    .copy()
+    .nice()
+    .ticks(height < 350 ? 3 : 5);
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
@@ -103,6 +91,7 @@ export const LineChart: React.FC<LineChartProps> = ({
         ticks={xTicks}
         tickFormatter={germanDateShort}
         showTickMarks={false}
+        scalingFactor={scalingFactor}
         transform={`translate(${margin.right}, ${height - margin.bottom})`}
       />
       <ChartAxisGrid
@@ -111,6 +100,7 @@ export const LineChart: React.FC<LineChartProps> = ({
         tickFormatter={germanNumber}
         tickMarkLength={innerWidth}
         stroke={chartColors.lineSecondary}
+        scalingFactor={scalingFactor}
         transform={`translate(${margin.left}, ${margin.top})`}
       />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
@@ -135,27 +125,30 @@ export const LineChart: React.FC<LineChartProps> = ({
       <ChartHeader
         title={chart.title}
         description={chart.description}
-        transform={`translate(${margin.right}, 40)`}
+        scalingFactor={scalingFactor}
+        transform={`translate(${margin.right}, ${padding})`}
       />
-      <ChartLegend transform={`translate(25, 90)`}>
+      <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
         <ChartKey
           text="Intensivpatienten"
           symbol="square"
           symbolFill={chartColors.red}
+          scalingFactor={scalingFactor}
         />
       </ChartLegend>
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
+        alignRight={hasLogo}
+        scalingFactor={scalingFactor}
         transform={`translate(${
           hasLogo ? width - margin.right : margin.right
         }, ${height - padding})`}
-        alignRight={hasLogo}
       />
       {hasLogo && (
         <ChartLogo
           transform={`translate(${margin.right}, ${
-            height - chartLogoSize - padding + 5
-          })`}
+            height - chartLogoSize * Math.pow(scalingFactor, 2) - padding + 5
+          }) scale(${Math.pow(scalingFactor, 2)})`}
         />
       )}
     </ChartSvg>

@@ -1,4 +1,5 @@
 import React from "react";
+import { scaleBand } from "d3-scale";
 
 import { ChartSvg } from "../chartPartials/ChartSvg";
 import { ChartGroup } from "../chartPartials/ChartGroup";
@@ -8,55 +9,57 @@ import { ChartFooter } from "../chartPartials/ChartFooter";
 import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
 import { ChartTile } from "../chartPartials/ChartTile";
 
-import { ChartObject, ChartDataObject } from "../../config/charts";
+import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
 import { germanDate } from "../../utils/date";
 import { weekTrend } from "../../utils/weekTrend";
 
-interface TileChartProps {
-  chart: ChartObject;
-  chartData: ChartDataObject[];
-  startDate: string;
-  endDate: string;
-  width: number;
-  height: number;
-  hasLogo: boolean;
-}
-
-interface DataObject {
-  date: string;
-  value: number;
-  [key: string]: any;
-}
-
-export const TileChart: React.FC<TileChartProps> = ({
+export const TileChart: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,
   endDate,
-  width,
-  height,
-  hasLogo,
+  width = 800,
+  height = 450,
+  scalingFactor = 1,
+  hasLogo = false,
 }) => {
-  const caseData: DataObject[] = chartData.find((datum) => datum.key === "cases")
-    ?.data;
-  const recoveredData: DataObject[] = chartData.find((datum) => datum.key === "recoveries")
-    ?.data;
-  const deathData: DataObject[] = chartData.find((datum) => datum.key === "deaths")
-    ?.data;
+  const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")
+    ?.data!;
+  const recoveredData: ChartData[] = chartData.find(
+    (datum) => datum.key === "recoveries"
+  )?.data!;
+  const deathData: ChartData[] = chartData.find(
+    (datum) => datum.key === "deaths"
+  )?.data!;
 
   const margin = {
-    top: 100,
+    top: 90 * scalingFactor,
     right: 25,
-    bottom: hasLogo ? chartLogoSize + 60 : 75,
+    bottom: hasLogo ? (chartLogoSize + 35) * scalingFactor : 55,
     left: 25,
   };
   const padding = 25;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
-  const tileWidth = (innerWidth / 2) - 15
-  const tileHeight = (innerHeight / 2) - 15
+  const xGrid = height >= width ? ["A"] : ["A", "B"];
+  const xPadding =
+    height >= width ? 0 : ((0.1 * height) / width) * scalingFactor;
+  const x = scaleBand()
+    .domain(xGrid)
+    .range([0, innerWidth])
+    .paddingInner(xPadding);
+
+  const yGrid = height >= width ? ["1", "2", "3", "4"] : ["1", "2"];
+  const yPadding =
+    (((height >= width ? 0.2 : 0.1) * width) / height) * scalingFactor;
+  const y = scaleBand()
+    .domain(yGrid)
+    .range([0, innerHeight])
+    .paddingInner(yPadding);
+
+  const grid = xGrid.map((x) => yGrid.map((y) => ({ x, y }))).flat();
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
@@ -65,57 +68,72 @@ export const TileChart: React.FC<TileChartProps> = ({
       <ChartBackground width={width} height={height} />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <ChartTile
-          width={tileWidth}
-          height={tileHeight}
-          bigIndicator={germanNumber(caseData[caseData.length-1].sumValue)}
-          smallIndicator={germanNumber(caseData[caseData.length-1].sumNewCases)}
+          width={x.bandwidth()}
+          height={y.bandwidth()}
+          bigIndicator={germanNumber(caseData[caseData.length - 1].sumValue)}
+          smallIndicator={germanNumber(
+            caseData[caseData.length - 1].sumNewCases
+          )}
           indicatorDescription="bestä­tigte Fälle"
           indicatorColor={chartColors.blue}
+          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          transform={`translate(${x(grid[0].x) || 0}, ${y(grid[0].y) || 0})`}
         />
         <ChartTile
-          transform={`translate(${tileWidth + 30}, 0)`}
-          width={tileWidth}
-          height={tileHeight}
+          width={x.bandwidth()}
+          height={y.bandwidth()}
           bigIndicator={germanNumber(weekTrend(caseData) || 0)}
           indicatorDescription="neue Fälle im Vergleich zur Vorwoche"
           indicatorColor={chartColors.tileFont}
+          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          transform={`translate(${x(grid[1].x) || 0}, ${y(grid[1].y) || 0})`}
         />
         <ChartTile
-          transform={`translate(0, ${tileHeight + 30})`}
-          width={tileWidth}
-          height={tileHeight}
-          bigIndicator={germanNumber(recoveredData[recoveredData.length-1].sumValue)}
-          smallIndicator={germanNumber(recoveredData[recoveredData.length-1].sumNewCases)}
+          width={x.bandwidth()}
+          height={y.bandwidth()}
+          bigIndicator={germanNumber(
+            recoveredData[recoveredData.length - 1].sumValue
+          )}
+          smallIndicator={germanNumber(
+            recoveredData[recoveredData.length - 1].sumNewCases
+          )}
           indicatorDescription="geschätzte Genesungen"
           indicatorColor={chartColors.green}
+          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          transform={`translate(${x(grid[2].x) || 0}, ${y(grid[2].y) || 0})`}
         />
         <ChartTile
-          transform={`translate(${tileWidth + 30}, ${tileHeight + 30})`}
-          width={tileWidth}
-          height={tileHeight}
-          bigIndicator={germanNumber(deathData[deathData.length-1].sumValue)}
-          smallIndicator={germanNumber(deathData[deathData.length-1].sumNewCases)}
+          width={x.bandwidth()}
+          height={y.bandwidth()}
+          bigIndicator={germanNumber(deathData[deathData.length - 1].sumValue)}
+          smallIndicator={germanNumber(
+            deathData[deathData.length - 1].sumNewCases
+          )}
           indicatorDescription="gemeldete Todesfälle"
           indicatorColor={chartColors.yellow}
+          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          transform={`translate(${x(grid[3].x) || 0}, ${y(grid[3].y) || 0})`}
         />
       </ChartGroup>
       <ChartHeader
         title={chart.title}
         description={chart.description}
-        transform={`translate(${margin.right}, 40)`}
+        scalingFactor={scalingFactor}
+        transform={`translate(${margin.right}, ${padding})`}
       />
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
+        alignRight={hasLogo}
+        scalingFactor={scalingFactor}
         transform={`translate(${
           hasLogo ? width - margin.right : margin.right
         }, ${height - padding})`}
-        alignRight={hasLogo}
       />
       {hasLogo && (
         <ChartLogo
           transform={`translate(${margin.right}, ${
-            height - chartLogoSize - padding + 5
-          })`}
+            height - chartLogoSize * Math.pow(scalingFactor, 2) - padding + 5
+          }) scale(${Math.pow(scalingFactor, 2)})`}
         />
       )}
     </ChartSvg>

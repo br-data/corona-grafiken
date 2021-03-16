@@ -9,53 +9,37 @@ import { ChartBackground } from "../chartPartials/ChartBackground";
 import { ChartFooter } from "../chartPartials/ChartFooter";
 import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
 
-import { ChartObject, ChartDataObject } from "../../config/charts";
+import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
 import { germanDate } from "../../utils/date";
 
-interface ProgressChartProps {
-  chart: ChartObject;
-  chartData: ChartDataObject[];
-  startDate: string;
-  endDate: string;
-  width: number;
-  height: number;
-  hasLogo: boolean;
-}
-
-interface DataObject {
-  date: string;
-  value: number;
-  [key: string]: any;
-}
-
-export const ProgressChart: React.FC<ProgressChartProps> = ({
+export const ProgressChart: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,
   endDate,
-  width,
-  height,
-  hasLogo,
+  width = 800,
+  height = 450,
+  scalingFactor = 1,
+  hasLogo = false,
 }) => {
-  const bavariaData: DataObject[] = chartData.find(
-    (datum) => datum.key === "vaccinations-bavaria"
-  )?.data;
-
-  const germanyData: DataObject[] = chartData.find(
-    (datum) => datum.key === "vaccinations-germany"
-  )?.data;
-
   const margin = {
-    top: 150,
+    top: 130 * scalingFactor,
     right: 25,
-    bottom: hasLogo ? chartLogoSize + 60 : 90,
+    bottom: hasLogo ? (chartLogoSize + 55) * scalingFactor : 75,
     left: 25,
   };
   const padding = 25;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
-  const barHeight = innerHeight / 4;
+  const barHeight = (innerHeight / 4) * scalingFactor;
+
+  const bavariaData: ChartData[] = chartData.find(
+    (datum) => datum.key === "vaccinations-bavaria"
+  )?.data!;
+  const germanyData: ChartData[] = chartData.find(
+    (datum) => datum.key === "vaccinations-germany"
+  )?.data!;
 
   const x = scaleLinear().domain([0, 100]).range([0, innerWidth]);
   const xTicks = x.ticks(5);
@@ -95,8 +79,8 @@ export const ProgressChart: React.FC<ProgressChartProps> = ({
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <text
           fontFamily='"Open Sans", sans-serif'
-          fontSize="20"
-          fontWeight="600"
+          fontSize={20 * scalingFactor}
+          fontWeight="400"
           fill={chartColors.fontPrimary}
         >
           Bayern:
@@ -139,27 +123,27 @@ export const ProgressChart: React.FC<ProgressChartProps> = ({
           </rect>
           <text
             x={x(100)}
-            y={(barHeight / 2) + 5}
-            dx="-7"
+            y={barHeight / 2 + 5}
+            dx={-7 * scalingFactor}
             textAnchor="end"
             fontFamily='"Open Sans", sans-serif'
-            fontSize="15"
+            fontSize={15 * scalingFactor}
             fontWeight="300"
             fill={chartColors.fontPrimary}
           >
             Herdenimmunität erreicht
           </text>
         </ChartGroup>
-        <ChartGroup transform={`translate(0, ${ 10 + barHeight })`}>
+        <ChartGroup transform={`translate(0, ${10 + barHeight})`}>
           {xTicks.map((tick: any, index: number) => (
             <g key={tick} transform={`translate(${x(tick)}, 0)`}>
               <text
                 fontFamily="'Open Sans', OpenSans, sans-serif"
-                fontSize="14"
+                fontSize={14 * scalingFactor}
                 fill={chartColors.fontPrimary}
                 textAnchor="middle"
-                dy="17"
-                dx={(index === 0) ? 12 : ((index === xTicks.length - 1) ? -20 : 0)}
+                dy={17 * scalingFactor}
+                dx={index === 0 ? 12 : index === xTicks.length - 1 ? -20 : 0}
               >
                 {xFormatter(tick)}
               </text>
@@ -168,12 +152,14 @@ export const ProgressChart: React.FC<ProgressChartProps> = ({
         </ChartGroup>
       </ChartGroup>
       <ChartGroup
-        transform={`translate(${margin.right}, ${margin.top + (innerHeight / 2) + 20})`}
+        transform={`translate(${margin.right}, ${
+          margin.top + innerHeight / 2 + 20
+        })`}
       >
         <text
           fontFamily='"Open Sans", sans-serif'
-          fontSize="20"
-          fontWeight="600"
+          fontSize={20 * scalingFactor}
+          fontWeight="400"
           fill={chartColors.fontPrimary}
         >
           Deutschland:
@@ -216,26 +202,26 @@ export const ProgressChart: React.FC<ProgressChartProps> = ({
           </rect>
           <text
             x={x(100)}
-            y={(barHeight / 2) + 5}
-            dx="-7"
+            y={barHeight / 2 + 5}
+            dx={-7 * scalingFactor}
             textAnchor="end"
             fontFamily='"Open Sans", sans-serif'
-            fontSize="15"
+            fontSize={15 * scalingFactor}
             fontWeight="300"
             fill={chartColors.fontPrimary}
           >
             Herdenimmunität erreicht
           </text>
         </ChartGroup>
-        <ChartGroup transform={`translate(0, ${ 10 + barHeight })`}>
+        <ChartGroup transform={`translate(0, ${10 + barHeight})`}>
           {xTicks.map((tick: any, index: number) => (
             <g key={tick} transform={`translate(${x(tick)}, 0)`}>
               <text
                 fontFamily="'Open Sans', OpenSans, sans-serif"
-                fontSize="14"
+                fontSize={14 * scalingFactor}
                 fill={chartColors.fontPrimary}
                 textAnchor="middle"
-                dy="17"
+                dy={17 * scalingFactor}
                 dx={index === 0 ? 12 : index === xTicks.length - 1 ? -24 : 0}
               >
                 {xFormatter(tick)}
@@ -247,40 +233,45 @@ export const ProgressChart: React.FC<ProgressChartProps> = ({
       <ChartHeader
         title={chart.title}
         description={chart.description}
-        transform={`translate(${margin.right}, 40)`}
+        scalingFactor={scalingFactor}
+        transform={`translate(${margin.right}, ${padding})`}
       />
-      <ChartLegend transform={`translate(25, 90)`}>
+      <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
         <ChartKey
           text="Zweitimpfung erhalten"
           symbol="square"
           symbolFill={chartColors.green}
+          scalingFactor={scalingFactor}
         />
         <ChartKey
-          transform={`translate(200, 0)`}
           text="Erstimpfung erhalten"
           symbol="square"
           symbolFill="url(#diagonal-hatching)"
+          scalingFactor={scalingFactor}
+          transform={`translate(${200 * scalingFactor}, 0)`}
         />
         <ChartKey
-          transform={`translate(390, 0)`}
           text="Gesamtbevölkerung"
           symbol="square"
           symbolFill="none"
           symbolStroke={chartColors.lineSecondary}
+          scalingFactor={scalingFactor}
+          transform={`translate(${390 * scalingFactor}, 0)`}
         />
       </ChartLegend>
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
+        alignRight={hasLogo}
+        scalingFactor={scalingFactor}
         transform={`translate(${
           hasLogo ? width - margin.right : margin.right
         }, ${height - padding})`}
-        alignRight={hasLogo}
       />
       {hasLogo && (
         <ChartLogo
           transform={`translate(${margin.right}, ${
-            height - chartLogoSize - padding + 5
-          })`}
+            height - chartLogoSize * Math.pow(scalingFactor, 2) - padding + 5
+          }) scale(${Math.pow(scalingFactor, 2)})`}
         />
       )}
     </ChartSvg>

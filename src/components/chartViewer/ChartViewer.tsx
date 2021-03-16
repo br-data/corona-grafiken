@@ -6,7 +6,7 @@ import { AreaChart } from "../charts/AreaChart";
 import { TileChart } from "../charts/TileChart";
 import { ProgressChart } from "../charts/ProgressChart";
 import { Map } from "../charts/Map";
-import { ChartWrapper, ChartDimensions } from "./styles.ChartView";
+import { ChartWrapper, ChartDimensions } from "./styles.ChartViewer";
 
 import { ChartObject } from "../../config/charts";
 import { useMultiFetch, MultiFetchProps } from "../../utils/useMultiFetch";
@@ -79,6 +79,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
               endDate={endDate}
               width={width}
               height={height}
+              scalingFactor={scalingFactor}
               hasLogo={hasLogo}
             />
           )}
@@ -90,6 +91,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
               endDate={endDate}
               width={width}
               height={height}
+              scalingFactor={scalingFactor}
               hasLogo={hasLogo}
             />
           )}
@@ -101,6 +103,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
               endDate={endDate}
               width={width}
               height={height}
+              scalingFactor={scalingFactor}
               hasLogo={hasLogo}
             />
           )}
@@ -112,6 +115,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
               endDate={endDate}
               width={width}
               height={height}
+              scalingFactor={scalingFactor}
               hasLogo={hasLogo}
             />
           )}
@@ -123,6 +127,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
               endDate={endDate}
               width={width}
               height={height}
+              scalingFactor={scalingFactor}
               hasLogo={hasLogo}
             />
           )}

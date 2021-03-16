@@ -1,8 +1,13 @@
+export interface ChartDatumObject {
+  date: string;
+  value: number;
+}
+
 export interface ChartDataObject {
   key: string;
   url: string;
   filetype?: string;
-  data?: any;
+  data?: ChartDatumObject[];
 }
 
 export interface ChartObject {
