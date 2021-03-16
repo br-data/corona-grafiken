@@ -7,7 +7,8 @@ export const Form = styled.form<{
   hasCollapsed?: boolean;
 }>`
   display: flex;
-  overflow: hidden;
+  overflow: ${({ isCollabsible, hasCollapsed }) =>
+    isCollabsible && hasCollapsed ? "hidden" : "visible"};
   max-height: ${({ isCollabsible, hasCollapsed }) =>
     isCollabsible && hasCollapsed ? "0" : "100%"};
 `;
@@ -16,14 +17,14 @@ export const FormCollapseButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: .5rem 1rem 0 auto;
+  margin: 0.5rem 1rem 0 auto;
   font-size: 2rem;
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
   border: 0;
   padding: 0;
-  margin: .5rem 1rem;
+  margin: 0.5rem 1rem;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 `;
 
@@ -39,8 +40,8 @@ export const Select = styled.select`
   box-sizing: border-box;
   font-size: 1rem;
   max-width: 16rem;
-  padding-left: .125rem;
-  padding-right: .25rem;
+  padding-left: 0.125rem;
+  padding-right: 0.25rem;
   border: 2px solid ${appColors.inputOutline};
   border-radius: 5px;
 `;
@@ -49,19 +50,19 @@ export const Input = styled.input`
   font-family: "Open Sans", OpenSans, sans-serif;
   box-sizing: border-box;
   font-size: 1rem;
-  padding-left: .35rem;
-  padding-right: .25rem;
-  border: 1px solid ${appColors.inputOutline};
+  padding-left: 0.35rem;
+  padding-right: 0.25rem;
+  border: 2px solid ${appColors.inputOutline};
   border-radius: 5px;
 
   &[type="number"] {
-    padding-left: .35rem;
-    padding-right: .25rem;
+    padding-left: 0.35rem;
+    padding-right: 0.25rem;
   }
 
   &[type="date"] {
-    padding-left: .35rem;
-    padding-right: .25rem;
+    padding-left: 0.35rem;
+    padding-right: 0.25rem;
   }
 `;
 
@@ -70,8 +71,8 @@ export const Button = styled.button`
   box-sizing: border-box;
   vertical-align: middle;
   font-size: 1rem;
-  padding: .5rem .75rem;
-  margin: .5em;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5em;
   border: 0;
   color: ${appColors.buttonFont};
   background: ${appColors.buttonBackground};

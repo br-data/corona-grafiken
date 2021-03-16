@@ -13,6 +13,7 @@ interface ChartKeyProps {
   symbolSize?: number;
   symbolFill?: string;
   symbolStroke?: string;
+  scalingFactor?: number;
   transform?: string;
 }
 
@@ -40,6 +41,7 @@ export const ChartKey: React.FC<ChartKeyProps> = ({
   symbolSize = 12,
   symbolFill,
   symbolStroke,
+  scalingFactor = 1,
   transform,
 }) => {
   return (
@@ -70,10 +72,9 @@ export const ChartKey: React.FC<ChartKeyProps> = ({
       )}
       <text
         x={symbol ? (symbol === "circle" ? symbolSize * 2 : symbolSize) + 7 : 0}
-        // dominantBaseline="hanging"
-        dy="13"
+        dy={13 * Math.sqrt(scalingFactor)}
         fontFamily="'Open Sans', sans-serif"
-        fontSize="15"
+        fontSize={15 * scalingFactor}
         fontWeight="300"
         fill={textFill}
       >

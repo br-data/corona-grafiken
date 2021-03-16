@@ -8,6 +8,7 @@ interface ChartAxisBottomProps {
   tickFormatter?: any;
   showTickMarks?: boolean;
   tickMarkLength?: number;
+  scalingFactor?: number;
   transform?: string;
   stroke?: string;
   fill?: string;
@@ -19,6 +20,7 @@ export const ChartAxisBottom: React.FC<ChartAxisBottomProps> = ({
   tickFormatter = (t: any) => t,
   showTickMarks = true,
   tickMarkLength = 5,
+  scalingFactor = 1,
   transform = "",
   stroke = chartColors.linePrimary,
   fill = chartColors.fontPrimary,
@@ -33,13 +35,13 @@ export const ChartAxisBottom: React.FC<ChartAxisBottomProps> = ({
       />
       {ticks.map((tick: any) => (
         <g key={tick} transform={`translate(${scale(tick)}, 0)`}>
-          {showTickMarks && <line y2={tickMarkLength} stroke={stroke} />}
+          {showTickMarks && <line y2={tickMarkLength * scalingFactor} stroke={stroke} />}
           <text
             fontFamily="'Open Sans', OpenSans, sans-serif"
-            fontSize="14"
+            fontSize={14 * scalingFactor}
             fill={fill}
             textAnchor="middle"
-            dy={showTickMarks ? "23" : "17"}
+            dy={showTickMarks ? (23 * scalingFactor) : 17 * Math.sqrt(scalingFactor)}
           >
             {tickFormatter(tick)}
           </text>

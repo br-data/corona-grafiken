@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import { appColors } from "./config/colors"
+import { appColors } from "./config/colors";
 
 export const Header = styled.header`
   flex: 0 0 auto;
-  padding: 0 0 .5rem;
-  background: ${ appColors.foreground };
+  padding: 0 0 0.5rem;
+  background: ${appColors.foreground};
   box-shadow: 0 0 5px rgb(0 0 0 / 30%);
 `;
 
@@ -24,6 +24,6 @@ export const Footer = styled.footer`
   display: flex;
   flex: 0 0 auto;
   justify-content: space-between;
-  background: ${ appColors.foreground };
+  background: ${appColors.foreground};
   box-shadow: 0 0 5px rgb(0 0 0 / 30%);
 `;

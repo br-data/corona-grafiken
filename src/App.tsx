@@ -10,6 +10,7 @@ import {
   ChartSelect,
   DateInput,
   NumberInput,
+  SliderInput,
   CheckboxInput,
 } from "./components/chartSettings/ChartSettings";
 import { DownloadButton } from "./components/chartDownload/ChartDowload";
@@ -32,12 +33,13 @@ const theme = createMuiTheme({
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
 
-  const defaultChart = charts[0];
-  const defaultFormat = formats[0];
+  const defaultChart = charts[2];
+  const defaultFormat = formats[1];
 
   const defaultWidth = defaultFormat.width;
   const defaultHeight = defaultFormat.height;
-  const defaultLogoVisibility = false;
+  const defaultScalingFactor = 1;
+  const defaultLogoVisibility = true;
 
   const minStartDate = "2020-01-24";
   const defaultStartDate = "2020-02-25";
@@ -48,6 +50,7 @@ export default function App() {
 
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
+  const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
   const [hasCollapsed, setHasCollapsed] = useState(true);
 
@@ -116,6 +119,14 @@ export default function App() {
             max={1440}
             setNumber={setHeight}
           />
+          <SliderInput
+            label="Skalierung"
+            value={1}
+            min={0.75}
+            max={1.25}
+            step={0.05}
+            setNumber={setScalingFactor}
+          />
         </Settings>
       </Header>
       <Content>
@@ -125,6 +136,7 @@ export default function App() {
           endDate={endDate}
           width={width}
           height={height}
+          scalingFactor={scalingFactor}
           hasLogo={hasLogo}
           setSvgDom={setSvgDom}
         />

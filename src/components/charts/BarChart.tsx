@@ -25,6 +25,7 @@ interface BarChartProps {
   endDate: string;
   width: number;
   height: number;
+  scalingFactor: number;
   hasLogo: boolean;
 }
 
@@ -39,18 +40,19 @@ export const BarChart: React.FC<BarChartProps> = ({
   chartData,
   startDate,
   endDate,
-  width,
-  height,
-  hasLogo,
+  width = 800,
+  height = 450,
+  scalingFactor = 1,
+  hasLogo = false,
 }) => {
   const data: DataObject[] = chartData.find((datum) => datum.key === "cases")
     ?.data;
   const smoothData: DataObject[] = sma(data);
 
   const margin = {
-    top: 140,
+    top: 120 * scalingFactor,
     right: 25,
-    bottom: hasLogo ? chartLogoSize + 60 : 75,
+    bottom: hasLogo ? ((chartLogoSize + 55) * scalingFactor) : 75,
     left: 25,
   };
   const padding = 25;
@@ -75,7 +77,8 @@ export const BarChart: React.FC<BarChartProps> = ({
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
-  const yTicks = y.copy().nice().ticks(5);
+    
+  const yTicks = y.copy().nice().ticks(height < 350 ? 3 : 5 );
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
@@ -94,6 +97,7 @@ export const BarChart: React.FC<BarChartProps> = ({
         ticks={xTicks}
         tickFormatter={germanDateShort}
         showTickMarks={false}
+        scalingFactor={scalingFactor}
         transform={`translate(${margin.right}, ${height - margin.bottom})`}
       />
       <ChartAxisGrid
@@ -102,6 +106,7 @@ export const BarChart: React.FC<BarChartProps> = ({
         tickFormatter={germanNumber}
         tickMarkLength={innerWidth}
         stroke={chartColors.lineSecondary}
+        scalingFactor={scalingFactor}
         transform={`translate(${margin.left}, ${margin.top})`}
       />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
@@ -130,24 +135,28 @@ export const BarChart: React.FC<BarChartProps> = ({
       <ChartHeader
         title={chart.title}
         description={chart.description}
-        transform={`translate(${margin.right}, 40)`}
+        scalingFactor={scalingFactor}
+        transform={`translate(${margin.right}, ${padding})`}
       />
-      <ChartLegend transform={`translate(25, 90)`}>
+      <ChartLegend transform={`translate(25, ${(80 * scalingFactor)})`}>
         <ChartKey
           text="Neuinfektionen"
           symbol="square"
           symbolFill={chartColors.blue}
+          scalingFactor={scalingFactor}
         />
         <ChartKey
-          transform={`translate(150, 0)`}
+          transform={`translate(${150 * scalingFactor}, 0)`}
           text="7-Tage-Mittelwert"
           symbol="dashed-line"
           symbolStroke={chartColors.white}
           symbolSize={30}
+          scalingFactor={scalingFactor}
         />
       </ChartLegend>
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
+        scalingFactor={scalingFactor}
         transform={`translate(${
           hasLogo ? width - margin.right : margin.right
         }, ${height - padding})`}
@@ -156,8 +165,8 @@ export const BarChart: React.FC<BarChartProps> = ({
       {hasLogo && (
         <ChartLogo
           transform={`translate(${margin.right}, ${
-            height - chartLogoSize - padding + 5
-          })`}
+            height - (chartLogoSize * Math.pow(scalingFactor, 2)) - padding + 5
+          }) scale(${Math.pow(scalingFactor, 2)})`}
         />
       )}
     </ChartSvg>

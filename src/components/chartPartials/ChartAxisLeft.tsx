@@ -8,6 +8,7 @@ interface ChartAxisLeftProps {
   tickFormatter?: any;
   showTickMarks?: boolean;
   tickMarkLength?: number;
+  scalingFactor?: number;
   transform?: string;
   stroke?: string;
   fill?: string;
@@ -19,6 +20,7 @@ export const ChartAxisLeft: React.FC<ChartAxisLeftProps> = ({
   tickFormatter = (t: any) => t,
   showTickMarks = true,
   tickMarkLength = 5,
+  scalingFactor = 1,
   transform = "",
   stroke = chartColors.linePrimary,
   fill = chartColors.fontPrimary,
@@ -36,11 +38,11 @@ export const ChartAxisLeft: React.FC<ChartAxisLeftProps> = ({
           {showTickMarks && <line x2={-tickMarkLength} stroke={stroke} />}
           <text
             fontFamily="'Open Sans', OpenSans, sans-serif"
-            fontSize="14"
+            fontSize={14 * scalingFactor}
             fill={fill}
             textAnchor="end"
             dx={showTickMarks ? "-10" : "-5"}
-            dy="5"
+            dy={5 * Math.sqrt(scalingFactor)}
           >
             {tickFormatter(tick)}
           </text>

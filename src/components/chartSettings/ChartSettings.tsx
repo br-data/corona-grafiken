@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch } from "@material-ui/core";
+import { Switch, Slider } from "@material-ui/core";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import {
@@ -41,6 +41,7 @@ interface NumberInputProps {
   value: number;
   min: number;
   max: number;
+  step: number;
   setNumber: any;
 }
 
@@ -70,9 +71,16 @@ export const SettingsButton: React.FC<SettingsProps> = ({
     setHasCollapsed(!hasCollapsed);
   };
   return (
-    <FormCollapseButton title="Weitere Einstellungen anzeigen" onClick={handleClick}>
-      {hasCollapsed && <FiChevronDown color={appColors.inputOutline} size="3rem" />}
-      {!hasCollapsed && <FiChevronUp color={appColors.inputOutline} size="3rem" />}
+    <FormCollapseButton
+      title="Weitere Einstellungen anzeigen"
+      onClick={handleClick}
+    >
+      {hasCollapsed && (
+        <FiChevronDown color={appColors.inputOutline} size="3rem" />
+      )}
+      {!hasCollapsed && (
+        <FiChevronUp color={appColors.inputOutline} size="3rem" />
+      )}
     </FormCollapseButton>
   );
 };
@@ -128,7 +136,7 @@ export const DateInput = ({
         min={min}
         max={max}
         onChange={handleChange}
-      ></Input>
+      />
     </Fieldset>
   );
 };
@@ -155,7 +163,36 @@ export const NumberInput = ({
         min={min}
         max={max}
         onChange={handleChange}
-      ></Input>
+      />
+    </Fieldset>
+  );
+};
+
+export const SliderInput = ({
+  label,
+  value,
+  min,
+  max,
+  step,
+  setNumber,
+}: NumberInputProps) => {
+  const handleChange = (event: any, newValue: number | number[]) => {
+    setNumber(newValue);
+  };
+
+  return (
+    <Fieldset>
+      <Label isBold={true} isBlock={true}>
+        {label}:{" "}
+      </Label>
+      <Slider
+        defaultValue={value}
+        valueLabelDisplay="auto"
+        step={step}
+        min={min}
+        max={max}
+        onChange={handleChange}
+      />
     </Fieldset>
   );
 };

@@ -4,12 +4,14 @@ import { chartColors } from "../../config/colors";
 
 interface ChartFooterProps {
   text: string;
-  transform: string;
-  alignRight: boolean;
+  scalingFactor?: number;
+  transform?: string;
+  alignRight?: boolean;
 }
 
 export const ChartFooter: React.FC<ChartFooterProps> = ({
   text,
+  scalingFactor = 1,
   transform = "",
   alignRight = false,
 }) => {
@@ -17,7 +19,7 @@ export const ChartFooter: React.FC<ChartFooterProps> = ({
     <g className="footer" transform={transform}>
       <text
         fontFamily="'Open Sans', OpenSans, sans-serif"
-        fontSize="15"
+        fontSize={15 * scalingFactor}
         fontWeight="300"
         textAnchor={alignRight ? 'end' : 'start'}
         fill={chartColors.fontSecondary}
