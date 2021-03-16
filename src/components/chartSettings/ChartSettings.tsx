@@ -1,5 +1,12 @@
 import React from "react";
-import { Switch, Slider } from "@material-ui/core";
+import {
+  InputLabel,
+  TextField,
+  Select,
+  MenuItem,
+  Switch,
+  Slider,
+} from "@material-ui/core";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import {
@@ -7,7 +14,7 @@ import {
   FormCollapseButton,
   Fieldset,
   Label,
-  Select,
+  // Select,
   Input,
 } from "./styles.ChartSettings";
 
@@ -91,7 +98,7 @@ export const ChartSelect = ({
   options,
   setOption,
 }: SelectProps) => {
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = (event: any) => {
     const option = options.find(
       (option: ChartObject | FormatObject) => option.id === event.target.value
     );
@@ -100,14 +107,12 @@ export const ChartSelect = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
-        {label}:{" "}
-      </Label>
+      <InputLabel shrink>{label}</InputLabel>
       <Select value={value.id} onChange={handleChange}>
         {options.map((option: ChartObject | FormatObject, index: number) => (
-          <option value={option.id} key={index}>
+          <MenuItem value={option.id} key={index}>
             {option.name}
-          </option>
+          </MenuItem>
         ))}
       </Select>
     </Fieldset>
@@ -127,14 +132,12 @@ export const DateInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
-        {label}:{" "}
-      </Label>
-      <Input
+      <TextField
         type="date"
         value={value}
-        min={min}
-        max={max}
+        label={label}
+        // min={min}
+        // max={max}
         onChange={handleChange}
       />
     </Fieldset>
@@ -154,14 +157,12 @@ export const NumberInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
-        {label}:{" "}
-      </Label>
-      <Input
+      <TextField
         type="number"
         value={value}
-        min={min}
-        max={max}
+        label={label}
+        // min={min}
+        // max={max}
         onChange={handleChange}
       />
     </Fieldset>
@@ -182,12 +183,9 @@ export const SliderInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
-        {label}:{" "}
-      </Label>
+      <InputLabel shrink>{label}</InputLabel>
       <Slider
         value={value}
-        defaultValue={value}
         valueLabelDisplay="auto"
         step={step}
         min={min}
