@@ -41,7 +41,7 @@ interface NumberInputProps {
   value: number;
   min: number;
   max: number;
-  step: number;
+  step?: number;
   setNumber: any;
 }
 
@@ -186,6 +186,7 @@ export const SliderInput = ({
         {label}:{" "}
       </Label>
       <Slider
+        value={value}
         defaultValue={value}
         valueLabelDisplay="auto"
         step={step}

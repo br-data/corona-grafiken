@@ -24,8 +24,8 @@ export const charts = [
   {
     id: "bavaria-situation-tiles",
     name: "Bayern: Übersicht heute",
-    title: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
-    description: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
+    title: "Corona-Situation in Bayern",
+    description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
     dataSource: "Robert Koch-Institut, BR-Analyse",
     data: [
       {
@@ -139,8 +139,8 @@ export const charts = [
     {
     id: "germany-situation-tiles",
     name: "Deutschland: Übersicht heute",
-    title: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
-    description: "Der wichtigsten Kennzahlen im Vergleich zum Vortag",
+    title: "Corona-Situation in Deutschland",
+    description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
     dataSource: "Robert Koch-Institut, BR-Analyse",
     data: [
       {

@@ -61,6 +61,11 @@ export const TileChart: React.FC<ChartProps> = ({
 
   const grid = xGrid.map((x) => yGrid.map((y) => ({ x, y }))).flat();
 
+  const germanFormatter = new Intl.NumberFormat("de-DE", {
+    style: "decimal",
+    signDisplay: "always",
+  });
+  const germanNumberPrefixed = (value: number) => germanFormatter.format(value);
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
   return (
@@ -71,21 +76,23 @@ export const TileChart: React.FC<ChartProps> = ({
           width={x.bandwidth()}
           height={y.bandwidth()}
           bigIndicator={germanNumber(caseData[caseData.length - 1].sumValue)}
-          smallIndicator={germanNumber(
+          smallIndicator={germanNumberPrefixed(
             caseData[caseData.length - 1].sumNewCases
           )}
           indicatorDescription="bestä­tigte Fälle"
           indicatorColor={chartColors.blue}
-          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          scalingFactor={scalingFactor}
           transform={`translate(${x(grid[0].x) || 0}, ${y(grid[0].y) || 0})`}
         />
         <ChartTile
           width={x.bandwidth()}
           height={y.bandwidth()}
-          bigIndicator={germanNumber(weekTrend(caseData) || 0)}
-          indicatorDescription="neue Fälle im Vergleich zur Vorwoche"
+          bigIndicator={`${germanNumberPrefixed(
+            Math.round(weekTrend(caseData) || 0)
+          )} %`}
+          indicatorDescription={`${(weekTrend(caseData) || 0) < 0 ? 'weniger' : 'mehr' } Fälle im Wochenvergleich`}
           indicatorColor={chartColors.tileFont}
-          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          scalingFactor={scalingFactor}
           transform={`translate(${x(grid[1].x) || 0}, ${y(grid[1].y) || 0})`}
         />
         <ChartTile
@@ -94,24 +101,24 @@ export const TileChart: React.FC<ChartProps> = ({
           bigIndicator={germanNumber(
             recoveredData[recoveredData.length - 1].sumValue
           )}
-          smallIndicator={germanNumber(
+          smallIndicator={germanNumberPrefixed(
             recoveredData[recoveredData.length - 1].sumNewCases
           )}
           indicatorDescription="geschätzte Genesungen"
           indicatorColor={chartColors.green}
-          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          scalingFactor={scalingFactor}
           transform={`translate(${x(grid[2].x) || 0}, ${y(grid[2].y) || 0})`}
         />
         <ChartTile
           width={x.bandwidth()}
           height={y.bandwidth()}
           bigIndicator={germanNumber(deathData[deathData.length - 1].sumValue)}
-          smallIndicator={germanNumber(
+          smallIndicator={germanNumberPrefixed(
             deathData[deathData.length - 1].sumNewCases
           )}
           indicatorDescription="gemeldete Todesfälle"
           indicatorColor={chartColors.yellow}
-          scalingFactor={height >= width ? scalingFactor * 1.4 : scalingFactor}
+          scalingFactor={scalingFactor}
           transform={`translate(${x(grid[3].x) || 0}, ${y(grid[3].y) || 0})`}
         />
       </ChartGroup>

@@ -34,11 +34,11 @@ export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
 
   const defaultChart = charts[0];
-  const defaultFormat = formats[1];
+  const defaultFormat = formats[0];
 
   const defaultWidth = defaultFormat.width;
   const defaultHeight = defaultFormat.height;
-  const defaultScalingFactor = 1;
+  const defaultScalingFactor = defaultFormat.scalingFactor;
   const defaultLogoVisibility = true;
 
   const minStartDate = "2020-01-24";
@@ -62,6 +62,7 @@ export default function App() {
   useEffect(() => {
     setWidth(format.width);
     setHeight(format.height);
+    setScalingFactor(format.scalingFactor);
   }, [format]);
 
   return (
@@ -121,7 +122,7 @@ export default function App() {
           />
           <SliderInput
             label="Skalierung"
-            value={1}
+            value={scalingFactor}
             min={0.75}
             max={1.25}
             step={0.05}
@@ -148,8 +149,18 @@ export default function App() {
           setIsChecked={setHasLogo}
         />
         <div>
-          <DownloadButton type="svg" text="SVG herunterladen" chart={chart} svgDom={svgDom} />
-          <DownloadButton type="png" text="PNG herunterladen" chart={chart} svgDom={svgDom} />
+          <DownloadButton
+            type="svg"
+            text="SVG herunterladen"
+            chart={chart}
+            svgDom={svgDom}
+          />
+          <DownloadButton
+            type="png"
+            text="PNG herunterladen"
+            chart={chart}
+            svgDom={svgDom}
+          />
         </div>
       </Footer>
     </ThemeProvider>

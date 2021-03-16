@@ -1,6 +1,7 @@
 import React from "react";
 import { scaleSqrt } from "d3-scale";
 import { geoPath, geoMercator, geoCentroid } from "d3-geo";
+import { geoArea, geoBounds, geoLength } from "d3-geo";
 import { feature } from "topojson-client";
 
 import { ChartSvg } from "../chartPartials/ChartSvg";
@@ -67,9 +68,10 @@ export const Map: React.FC<MapProps> = ({
   // @ts-ignore: Library types don't match
   const geoFeature = feature(geoData, geoData.objects.counties);
   const geoCenter = geoCentroid(geoFeature);
+  const geoScale = height * 7 * scalingFactor;
   const projection = geoMercator()
     .translate([innerWidth / 2, innerHeight / 2])
-    .scale(height * 7 * scalingFactor)
+    .scale(geoScale)
     .center(geoCenter);
   const path = geoPath().projection(projection);
 
