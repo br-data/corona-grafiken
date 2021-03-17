@@ -73,6 +73,7 @@ export const SettingsButton: React.FC<SettingsProps> = ({
   };
   return (
     <FormCollapseButton
+      tabIndex={0}
       title="Weitere Einstellungen anzeigen"
       onClick={handleClick}
     >

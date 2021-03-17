@@ -6,6 +6,7 @@ import { appColors } from "../../config/colors";
 const InputFontSettings = css`
   box-sizing: border-box;
   font-family: "Open Sans", OpenSans, sans-serif;
+  color: ${appColors.fontPrimary};
   vertical-align: middle;
   font-size: 1rem;
   line-height: 1;
@@ -18,6 +19,10 @@ const InputBoxSetting = css`
   border-radius: 5px;
   border-bottom: 2px solid ${appColors.inputOutline};
   background: ${appColors.background};
+
+  &:focus {
+    outline-color: ${appColors.highlight};
+  }
 `;
 
 export const Form = styled.form<{
@@ -36,8 +41,16 @@ export const FormCollapseButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem 1rem 0 auto;
+  align-self: center;
+  margin: 0 1rem 0 auto;
   font-size: 2rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  
+  &:focus {
+    outline: 0;
+    background: ${appColors.background};
+  }
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
@@ -89,8 +102,10 @@ export const Button = styled.button`
   border-bottom: 2px solid ${darken(0.15, appColors.buttonBackground)};
   background: ${appColors.buttonBackground};
   color: ${appColors.buttonFont};
+  transition: background 0.3s ease;
 
-  &:hover {
+  &:focus {
+    outline: 0;
     background: ${lighten(0.15, appColors.buttonBackground)};
   }
 

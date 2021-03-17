@@ -40,6 +40,4 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 
 ## Verbesserungen
 
-- Anzahl der Achsenlabels programmatisch bestimmen
-- Überschrift und Beschreibung editierbar machen
 - Karten automatisch annotieren

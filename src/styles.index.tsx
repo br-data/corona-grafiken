@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { appColors } from "./config/colors"
 
 export const GlobalStyle = createGlobalStyle`
   html,
@@ -8,14 +9,12 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  html {
+  body {
     font-family: "Open Sans", OpenSans, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-  }
-
-  body {
-    background: #f2f2f2;
+    color: ${appColors.fontPrimary};
+    background: ${appColors.background};
   }
 
   main {
