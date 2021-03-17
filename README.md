@@ -37,8 +37,8 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 ## Verbesserungen
 
 - Überschrift und Beschreibung editierbar machen
-- Schriftgröße und Abstände konfigurierbar machen
 - Deutschland-Karte hinzufügen
 - Karten automatisch annotieren
-- TileChart hübscher machen
 - Progress-Chart hübscher machen
+- Datum für bestimmte Charts deaktivieren
+- Anzahl der Achsenlabels programmatisch bestimmen

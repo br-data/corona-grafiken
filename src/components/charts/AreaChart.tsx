@@ -28,7 +28,7 @@ export const AreaChart: React.FC<ChartProps> = ({
   hasLogo = false,
 }) => {
   const margin = {
-    top: 120 * scalingFactor,
+    top: 140 * scalingFactor,
     right: 25,
     bottom: hasLogo ? (chartLogoSize + 55) * scalingFactor : 75,
     left: 25,

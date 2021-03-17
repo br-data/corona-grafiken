@@ -2,6 +2,7 @@ export const ciColors = {
   white: "#ffffff",
   black: "#323232",
 
+  superLightGrey: "#f2f2f2",
   veryLightGrey: "#ced3d9",
   lightGrey: "#9da1a5",
   mediumGrey: "#8f9399",
@@ -24,7 +25,7 @@ export const appColors = {
   fontPrimary: ciColors.black,
   fontSecondary: ciColors.mediumGrey,
   foreground: ciColors.white,
-  background: ciColors.veryLightGrey,
+  background: ciColors.superLightGrey,
   highlight: ciColors.blue,
   inputOutline: ciColors.veryLightGrey,
   buttonFont: ciColors.white,

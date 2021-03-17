@@ -1,6 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { darken, lighten } from "polished";
 
 import { appColors } from "../../config/colors";
+
+const InputFontSettings = css`
+  box-sizing: border-box;
+  font-family: "Open Sans", OpenSans, sans-serif;
+  vertical-align: middle;
+  font-size: 1rem;
+  line-height: 1;
+`;
+
+const InputBoxSetting = css`
+  margin-top: 0.15rem;
+  padding: 0.1rem;
+  border: 0;
+  border-radius: 5px;
+  border-bottom: 2px solid ${appColors.inputOutline};
+  background: ${appColors.background};
+`;
 
 export const Form = styled.form<{
   isCollabsible?: boolean;
@@ -22,9 +40,9 @@ export const FormCollapseButton = styled.div`
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
-  border: 0;
-  padding: 0;
   margin: 0.5rem 1rem;
+  padding: 0;
+  border: 0;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 `;
 
@@ -36,50 +54,39 @@ export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
 `;
 
 export const Select = styled.select`
-  font-family: "Open Sans", OpenSans, sans-serif;
-  box-sizing: border-box;
-  font-size: 1rem;
+  ${InputFontSettings}
+  ${InputBoxSetting}
+  
   max-width: 16rem;
-  padding-left: 0.125rem;
-  padding-right: 0.25rem;
-  border: 2px solid ${appColors.inputOutline};
-  border-radius: 5px;
+  text-indent: 0.15rem;
 `;
 
 export const Input = styled.input`
-  font-family: "Open Sans", OpenSans, sans-serif;
-  box-sizing: border-box;
-  font-size: 1rem;
-  padding-left: 0.35rem;
-  padding-right: 0.25rem;
-  border: 2px solid ${appColors.inputOutline};
-  border-radius: 5px;
+  ${InputFontSettings}
+  ${InputBoxSetting}
 
   &[type="number"] {
-    padding-left: 0.35rem;
-    padding-right: 0.25rem;
+    text-indent: 0.35rem;
   }
 
   &[type="date"] {
-    padding-left: 0.35rem;
-    padding-right: 0.25rem;
+    text-indent: 0.15rem;
   }
 `;
 
 export const Button = styled.button`
-  font-family: "Open Sans", OpenSans, sans-serif;
-  box-sizing: border-box;
-  vertical-align: middle;
-  font-size: 1rem;
-  padding: 0.5rem 0.75rem;
+  ${InputFontSettings}
+
   margin: 0.5em;
+  padding: 0.5rem 0.75rem;
   border: 0;
-  color: ${appColors.buttonFont};
-  background: ${appColors.buttonBackground};
   border-radius: 5px;
+  border-bottom: 2px solid ${darken(0.15, appColors.buttonBackground)};
+  background: ${appColors.buttonBackground};
+  color: ${appColors.buttonFont};
 
   &:hover {
-    filter: brightness(1.25);
+    background: ${lighten(0.15, appColors.buttonBackground)};
   }
 
   > svg {

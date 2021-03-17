@@ -47,6 +47,7 @@ export const ChartTile: React.FC<ChartTileProps> = ({
           height / 2 + 20 * scalingFactor
         })`}
         fontFamily="'Open Sans', OpenSans, sans-serif"
+        fontWeight="300"
         fontSize={15 * scalingFactor}
         fill={fontColor}
       >
