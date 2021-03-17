@@ -250,14 +250,14 @@ export const ProgressChart: React.FC<ChartProps> = ({
           scalingFactor={scalingFactor}
           transform={`translate(${200 * scalingFactor}, 0)`}
         />
-        <ChartKey
+        {/* <ChartKey
           text="Gesamtbevölkerung"
           symbol="square"
           symbolFill="none"
           symbolStroke={chartColors.lineSecondary}
           scalingFactor={scalingFactor}
           transform={`translate(${390 * scalingFactor}, 0)`}
-        />
+        /> */}
       </ChartLegend>
       <ChartFooter
         text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}

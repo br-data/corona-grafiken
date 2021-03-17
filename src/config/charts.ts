@@ -100,7 +100,7 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis&bundesland=Bayern",
       },
     ],
-    type: "map",
+    type: "bavaria-map",
   },
   {
     id: "bavaria-patients-chart",
@@ -221,7 +221,7 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis",
       },
     ],
-    type: "map",
+    type: "germany-map",
   },
   {
     id: "germany-patients-chart",
