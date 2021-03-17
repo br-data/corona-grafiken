@@ -49,7 +49,7 @@ export const useMultiFetch = (
       const hasLoaded =
         data.length &&
         data.reduce(
-          (acc, curr: ChartDataObject) => acc && !!curr.data.length,
+          (acc, curr: ChartDataObject) => acc && !!curr.data?.length,
           true
         );
 

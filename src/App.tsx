@@ -33,7 +33,7 @@ const theme = createMuiTheme({
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
 
-  const defaultChart = charts[0];
+  const defaultChart = charts[3];
   const defaultFormat = formats[0];
 
   const defaultWidth = defaultFormat.width;

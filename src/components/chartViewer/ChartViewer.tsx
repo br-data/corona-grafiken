@@ -5,8 +5,7 @@ import { LineChart } from "../charts/LineChart";
 import { AreaChart } from "../charts/AreaChart";
 import { TileChart } from "../charts/TileChart";
 import { ProgressChart } from "../charts/ProgressChart";
-import { GermanyMap } from "../charts/GermanyMap";
-import { BavariaMap } from "../charts/BavariaMap";
+import { Map } from "../charts/Map";
 import { ChartWrapper, ChartDimensions } from "./styles.ChartViewer";
 
 import { ChartObject } from "../../config/charts";
@@ -96,20 +95,8 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
               hasLogo={hasLogo}
             />
           )}
-          {chart.type === "bavaria-map" && (
-            <BavariaMap
-              chart={chart}
-              chartData={chartData}
-              startDate={startDate}
-              endDate={endDate}
-              width={width}
-              height={height}
-              scalingFactor={scalingFactor}
-              hasLogo={hasLogo}
-            />
-          )}
-          {chart.type === "germany-map" && (
-            <GermanyMap
+          {chart.type === "map" && (
+            <Map
               chart={chart}
               chartData={chartData}
               startDate={startDate}

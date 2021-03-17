@@ -24,6 +24,7 @@ const config = {
   output: {
     path: resolve(__dirname, "build"),
     filename: "[name].js",
+    chunkFilename: 'js/[name].chunk.js',
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -73,7 +74,7 @@ if (isProd) {
 } else {
   // for more information, see https://webpack.js.org/configuration/dev-server
   config.devServer = {
-    contentBase: resolve("public"),
+    contentBase: resolve("src/assets"),
     port: 8080,
     open: true,
     hot: true,

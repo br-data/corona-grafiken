@@ -19,6 +19,7 @@ export interface ChartObject {
   dataHasDate: boolean;
   data: ChartDataObject[];
   type: string;
+  subType?: string;
 }
 
 export const charts = [
@@ -100,7 +101,8 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis&bundesland=Bayern",
       },
     ],
-    type: "bavaria-map",
+    type: "map",
+    subType: "map-bavaria",
   },
   {
     id: "bavaria-patients-chart",
@@ -221,7 +223,8 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis",
       },
     ],
-    type: "germany-map",
+    type: "map",
+    subType: "map-germany",
   },
   {
     id: "germany-patients-chart",
