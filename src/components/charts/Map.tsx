@@ -208,7 +208,13 @@ export const Map: React.FC<MapProps> = ({
       </ChartSvg>
     );
   } else {
-    return <div>Lade Karte ...</div>;
+    return (
+      <ChartSvg id={chart.id} width={width} height={height}>
+        <text dy="1.5rem" textAnchor="middle" transform={`translate(${width/2}, ${height/2})`}>
+          Lade Karte ...
+        </text>
+      </ChartSvg>
+    );
   }
 };
 
