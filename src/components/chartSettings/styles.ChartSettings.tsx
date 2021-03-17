@@ -25,6 +25,7 @@ export const Form = styled.form<{
   hasCollapsed?: boolean;
 }>`
   display: flex;
+  flex-wrap: wrap;
   overflow: ${({ isCollabsible, hasCollapsed }) =>
     isCollabsible && hasCollapsed ? "hidden" : "visible"};
   max-height: ${({ isCollabsible, hasCollapsed }) =>

@@ -1,5 +1,5 @@
 export const germanDate = (dateString: string) => {
-  const options: any = { year: "numeric", month: "long", day: "numeric" };
+  const options: any = { year: "numeric", month: "numeric", day: "numeric" };
   const date = new Date(dateString);
 
   return date.toLocaleDateString("de-DE", options);

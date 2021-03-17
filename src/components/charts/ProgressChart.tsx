@@ -79,13 +79,13 @@ export const ProgressChart: React.FC<ChartProps> = ({
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <text
           fontFamily='"Open Sans", sans-serif'
-          fontSize={20 * scalingFactor}
+          fontSize={18 * scalingFactor}
           fontWeight="400"
           fill={chartColors.fontPrimary}
         >
           Bayern:
         </text>
-        <ChartGroup transform="translate(0, 10)">
+        <ChartGroup transform="translate(0, 8)">
           <rect
             width={x(100)}
             height={barHeight}
@@ -158,13 +158,13 @@ export const ProgressChart: React.FC<ChartProps> = ({
       >
         <text
           fontFamily='"Open Sans", sans-serif'
-          fontSize={20 * scalingFactor}
+          fontSize={18 * scalingFactor}
           fontWeight="400"
           fill={chartColors.fontPrimary}
         >
           Deutschland:
         </text>
-        <ChartGroup transform={`translate(0, 10)`}>
+        <ChartGroup transform={`translate(0, 7)`}>
           <rect
             width={x(100)}
             height={barHeight}
