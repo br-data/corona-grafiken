@@ -72,6 +72,10 @@ export const Input = styled.input`
   &[type="date"] {
     text-indent: 0.15rem;
   }
+
+  &:disabled {
+    color: ${appColors.fontSecondary};
+  }
 `;
 
 export const Button = styled.button`

@@ -33,6 +33,7 @@ interface DateInputProps {
   value: string;
   min: string;
   max: string;
+  disabled?: boolean;
   setDate: any;
 }
 
@@ -119,6 +120,7 @@ export const DateInput = ({
   value,
   min,
   max,
+  disabled = false,
   setDate,
 }: DateInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -135,6 +137,7 @@ export const DateInput = ({
         value={value}
         min={min}
         max={max}
+        disabled={disabled}
         onChange={handleChange}
       />
     </Fieldset>

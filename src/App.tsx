@@ -39,6 +39,7 @@ export default function App() {
   const defaultWidth = defaultFormat.width;
   const defaultHeight = defaultFormat.height;
   const defaultScalingFactor = defaultFormat.scalingFactor;
+  const defaultDateDisabled = !defaultChart.dataHasDate;
   const defaultLogoVisibility = true;
 
   const minStartDate = "2020-01-24";
@@ -51,6 +52,7 @@ export default function App() {
   const [width, setWidth] = useState(defaultWidth);
   const [height, setHeight] = useState(defaultHeight);
   const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
+  const [dateDisabled, setDateDisabled] = useState(defaultDateDisabled);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
   const [hasCollapsed, setHasCollapsed] = useState(true);
 
@@ -64,6 +66,10 @@ export default function App() {
     setHeight(format.height);
     setScalingFactor(format.scalingFactor);
   }, [format]);
+
+  useEffect(() => {
+    setDateDisabled(!chart.dataHasDate);
+  }, [chart]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -97,6 +103,7 @@ export default function App() {
             value={startDate}
             min={minStartDate}
             max={maxEndDate}
+            disabled={dateDisabled}
             setDate={setStartDate}
           />
           <DateInput
@@ -104,6 +111,7 @@ export default function App() {
             value={endDate}
             min={minStartDate}
             max={maxEndDate}
+            disabled={dateDisabled}
             setDate={setEndDate}
           />
           <NumberInput

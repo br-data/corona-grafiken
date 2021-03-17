@@ -16,6 +16,7 @@ export interface ChartObject {
   title: string;
   description: string;
   dataSource: string;
+  dataHasDate: boolean;
   data: ChartDataObject[];
   type: string;
 }
@@ -27,6 +28,7 @@ export const charts = [
     title: "Corona-Situation in Bayern",
     description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "cases",
@@ -55,6 +57,7 @@ export const charts = [
     title: "Corona-Situation in Bayern",
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "currentCases",
@@ -71,6 +74,7 @@ export const charts = [
     title: "Neue Corona-Fälle in Bayern",
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "cases",
@@ -87,6 +91,7 @@ export const charts = [
     title: "7-Tage-Inzidenz in Bayern",
     description: "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "cases",
@@ -103,6 +108,7 @@ export const charts = [
     title: "Intensivpatienten in Bayern",
     description: "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
     dataSource: "DIVI-Intensivregister",
+    dataHasDate: false,
     data: [
       {
         key: "patients",
@@ -120,6 +126,7 @@ export const charts = [
     description:
       "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
     dataSource: "Robert Koch-Institut",
+    dataHasDate: false,
     data: [
       {
         key: "vaccinations-bavaria",
@@ -142,6 +149,7 @@ export const charts = [
     title: "Corona-Situation in Deutschland",
     description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "cases",
@@ -170,6 +178,7 @@ export const charts = [
     title: "Corona-Situation in Deutschland",
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "currentCases",
@@ -186,6 +195,7 @@ export const charts = [
     title: "Neue Corona-Fälle in Deutschland",
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "cases",
@@ -202,6 +212,7 @@ export const charts = [
     title: "7-Tage-Inzidenz in Deutschland",
     description: "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
     dataSource: "Robert Koch-Institut, BR-Analyse",
+    dataHasDate: true,
     data: [
       {
         key: "cases",
@@ -218,6 +229,7 @@ export const charts = [
     title: "Intensivpatienten in Deutschland",
     description: "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
     dataSource: "DIVI-Intensivregister",
+    dataHasDate: false,
     data: [
       {
         key: "patients",
