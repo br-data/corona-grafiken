@@ -9,6 +9,7 @@ import { Map } from "../charts/Map";
 import {
   ChartWrapper,
   ChartEditable,
+  ChartHint,
   ChartDimensions,
 } from "./styles.ChartViewer";
 
@@ -63,6 +64,9 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
     return (
       <>
         <ChartWrapper>
+          <ChartHint>
+           Texte und Labels anklicken, um diese zu bearbeiten
+          </ChartHint>
           <ChartEditable
             ref={setSvgDom}
             contentEditable={true}
