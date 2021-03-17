@@ -8,7 +8,7 @@ docker:
   ignore: "node_modules"
 build:
   command: "npm install && npm run build"
-  outputFolder: "dist"
+  outputFolder: "build"
 settings:
   isWebsite: true
   firestore: false
