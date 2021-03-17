@@ -1,52 +1,84 @@
-const { resolve } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const isProd = process.env.NODE_ENV === 'production';
+const app = require("./src/config/app.json");
+
+const isProd = process.env.NODE_ENV === "production";
+
+function modify(buffer) {
+  const manifest = JSON.parse(buffer.toString());
+  manifest.name = app.title;
+  manifest.description = app.description;
+
+  return JSON.stringify(manifest, null, 2);
+}
 
 const config = {
-  mode: isProd ? 'production' : 'development',
+  mode: isProd ? "production" : "development",
   entry: {
-    index: './src/index.tsx',
+    index: "./src/index.tsx",
   },
   output: {
-    path: resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    path: resolve(__dirname, "build"),
+    filename: "[name].js",
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'babel-loader',
+        use: "babel-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'BR24 – Corona-Grafiken erstellen',
-      template: 'src/index.html',
+      title: app.title,
+      description: app.description,
+      previewImage: app.previewImage,
+      template: "src/index.ejs",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "./src/assets", to: "./assets" },
+        {
+          from: "./src/assets/manifest.json",
+          to: "./assets/manifest.json",
+          transform(content) {
+            return modify(content);
+          },
+        },
+      ],
     }),
   ],
 };
 
 if (isProd) {
   config.optimization = {
-    minimizer: [
-      new TerserWebpackPlugin(),
-    ],
+    usedExports: true,
+    minimizer: [new TerserWebpackPlugin({ extractComments: false })],
   };
 } else {
   // for more information, see https://webpack.js.org/configuration/dev-server
   config.devServer = {
+    contentBase: resolve("public"),
     port: 8080,
     open: true,
     hot: true,
     compress: true,
-    stats: 'errors-only',
+    stats: "errors-only",
     overlay: true,
   };
 }

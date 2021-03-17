@@ -13,6 +13,10 @@ Anwendung: <https://interaktiv.br.de/corona-grafiken>
 
 Um die Module installieren und die Entwicklerwerkzeuge nutzen zu können, muss vorher die JavaScript-Runtime [Node.js](https://nodejs.org/en/download/) installiert werden.
 
+## App
+
+`src/config/app`
+
 ## Diagramme
 
 `src/config/charts`
@@ -36,9 +40,9 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 
 ## Verbesserungen
 
-- Überschrift und Beschreibung editierbar machen
-- Deutschland-Karte hinzufügen
-- Karten automatisch annotieren
-- Progress-Chart hübscher machen
-- Datum für bestimmte Charts deaktivieren
 - Anzahl der Achsenlabels programmatisch bestimmen
+- Überschrift und Beschreibung editierbar machen
+- Karten automatisch annotieren
+- Karten-Skalierung automatisch berechnen
+- Karten-Komponenten zusammenführen und Geo-Daten als Chunk laden
+

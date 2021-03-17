@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link rel="manifest" href="assets/manifest.json" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png"/>
+
+    <!-- General SEO -->
+    <meta name="author" content="<%= htmlWebpackPlugin.options.author %>" />
+    <meta name="title" content="<%= htmlWebpackPlugin.options.title %>" />
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>" />
+
+    <!-- Facebook / Open Graph -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>" />
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.siteUrl %>" />
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.previewUrl %>" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="<%= htmlWebpackPlugin.options.twitterCard %>" />
+    <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.twitterHandle %>" />
+    <meta name="twitter:creator" content="<%= htmlWebpackPlugin.options.twitterHandle %>" />
+    <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.title %>" />
+    <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.description %>" />
+    <meta name="twitter:url" content="<%= htmlWebpackPlugin.options.siteUrl %>" />
+    <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.previewUrl %>" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <main id="app"></main>
+  </body>
+</html>
