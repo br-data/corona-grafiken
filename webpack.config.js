@@ -46,9 +46,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: app.title,
-      description: app.description,
-      previewImage: app.previewImage,
+      ...app,
       template: "src/index.ejs",
     }),
     new CopyWebpackPlugin({
