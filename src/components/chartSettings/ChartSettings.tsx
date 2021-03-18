@@ -22,6 +22,7 @@ interface SettingsProps {
 }
 
 interface SelectProps {
+  id: string;
   label: string;
   value: any;
   options: any;
@@ -29,6 +30,7 @@ interface SelectProps {
 }
 
 interface DateInputProps {
+  id: string;
   label: string;
   value: string;
   min: string;
@@ -38,6 +40,7 @@ interface DateInputProps {
 }
 
 interface NumberInputProps {
+  id: string;
   label: string;
   value: number;
   min: number;
@@ -47,6 +50,7 @@ interface NumberInputProps {
 }
 
 interface CheckboxInputProps {
+  id: string;
   label: string;
   isChecked: boolean;
   setIsChecked: any;
@@ -88,6 +92,7 @@ export const SettingsButton: React.FC<SettingsProps> = ({
 };
 
 export const ChartSelect = ({
+  id,
   label,
   value,
   options,
@@ -102,10 +107,10 @@ export const ChartSelect = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
+      <Label htmlFor={id} isBold={true} isBlock={true}>
         {label}:{" "}
       </Label>
-      <Select value={value.id} onChange={handleChange}>
+      <Select id={id} value={value.id} onChange={handleChange}>
         {options.map((option: ChartObject | FormatObject, index: number) => (
           <option value={option.id} key={index}>
             {option.name}
@@ -117,6 +122,7 @@ export const ChartSelect = ({
 };
 
 export const DateInput = ({
+  id,
   label,
   value,
   min,
@@ -130,10 +136,11 @@ export const DateInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
+      <Label htmlFor={id} isBold={true} isBlock={true}>
         {label}:{" "}
       </Label>
       <Input
+        id={id}
         type="date"
         value={value}
         min={min}
@@ -146,6 +153,7 @@ export const DateInput = ({
 };
 
 export const NumberInput = ({
+  id,
   label,
   value,
   min,
@@ -158,10 +166,11 @@ export const NumberInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
+      <Label htmlFor={id} isBold={true} isBlock={true}>
         {label}:{" "}
       </Label>
       <Input
+        id={id}
         type="number"
         value={value}
         min={min}
@@ -173,6 +182,7 @@ export const NumberInput = ({
 };
 
 export const SliderInput = ({
+  id,
   label,
   value,
   min,
@@ -186,13 +196,15 @@ export const SliderInput = ({
 
   return (
     <Fieldset>
-      <Label isBold={true} isBlock={true}>
+      <Label htmlFor={id} isBold={true} isBlock={true}>
         {label}:{" "}
       </Label>
       <Slider
+        id={id}
         value={value}
         defaultValue={value}
         valueLabelDisplay="auto"
+        aria-label="label"
         step={step}
         min={min}
         max={max}
@@ -203,6 +215,7 @@ export const SliderInput = ({
 };
 
 export const CheckboxInput = ({
+  id,
   label,
   isChecked,
   setIsChecked,
@@ -213,8 +226,13 @@ export const CheckboxInput = ({
 
   return (
     <Fieldset isInline={true}>
-      <Switch checked={isChecked} onChange={handleChange} color="primary" />
-      <Label>{label}</Label>
+      <Switch
+        id={id}
+        checked={isChecked}
+        onChange={handleChange}
+        color="primary"
+      />
+      <Label htmlFor={id}>{label}</Label>
     </Fieldset>
   );
 };

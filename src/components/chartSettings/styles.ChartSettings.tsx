@@ -48,7 +48,7 @@ export const FormCollapseButton = styled.div`
   border-radius: 5px;
   transition: background 0.3s ease;
   cursor: pointer;
-  
+
   &:focus {
     outline: 0;
     background: ${appColors.background};

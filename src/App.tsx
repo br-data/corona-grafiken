@@ -77,12 +77,14 @@ export default function App() {
       <Header>
         <Settings>
           <ChartSelect
+            id="chart-select"
             label="Grafik auswählen"
             value={chart}
             options={charts}
             setOption={setChart}
           />
           <ChartSelect
+            id="format-select"
             label="Format auswählen"
             value={format}
             options={formats}
@@ -99,6 +101,7 @@ export default function App() {
           setHasCollapsed={setHasCollapsed}
         >
           <DateInput
+            id="start-date-input"
             label="Startdatum"
             value={startDate}
             min={minStartDate}
@@ -107,6 +110,7 @@ export default function App() {
             setDate={setStartDate}
           />
           <DateInput
+            id="end-date-input"
             label="Enddatum"
             value={endDate}
             min={minStartDate}
@@ -115,6 +119,7 @@ export default function App() {
             setDate={setEndDate}
           />
           <NumberInput
+            id="width-input"
             label="Breite"
             value={width}
             min={0}
@@ -122,6 +127,7 @@ export default function App() {
             setNumber={setWidth}
           />
           <NumberInput
+            id="height-input"
             label="Höhe"
             value={height}
             min={0}
@@ -129,6 +135,7 @@ export default function App() {
             setNumber={setHeight}
           />
           <SliderInput
+            id="scaling-factor-input"
             label="Skalierung"
             value={scalingFactor}
             min={0.75}
@@ -152,6 +159,7 @@ export default function App() {
       </Content>
       <Footer>
         <CheckboxInput
+          id="logo-checkbox"
           label="BR24-Logo anzeigen"
           isChecked={hasLogo}
           setIsChecked={setHasLogo}

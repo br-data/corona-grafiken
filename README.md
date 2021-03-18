@@ -41,6 +41,5 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 ## Verbesserungen
 
 - Karten automatisch annotieren
-- ARIA-Labels hinzufügen
 - Code-Splitting mit Lazy-Load
 - `useMultiFetch` in React HOC umwandeln
