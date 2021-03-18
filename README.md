@@ -2,7 +2,7 @@
 
 Jeden Tag gibt es neue Corona-Zahlen und Statistiken. Mit dieser Web-Anwendung können die wichtigsten Corona-Grafiken einfach im Browser erstellt werden. Die verschieden Grafiken können in verschiedenen Formaten (Instagram, Twitter, BR24-Artikel) angezeigt und als SVG- oder PNG-Datei exportiert werden.
 
-Anwendung: <https://interaktiv.br.de/corona-grafiken>
+Anwendung: <https://interaktiv.br.de/corona-grafiken/>
 
 ## Verwendung
 
@@ -41,3 +41,6 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 ## Verbesserungen
 
 - Karten automatisch annotieren
+- ARIA-Labels hinzufügen
+- Code-Splitting mit Lazy-Load
+- `useMultiFetch` in React HOC umwandeln

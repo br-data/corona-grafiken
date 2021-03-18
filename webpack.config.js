@@ -24,7 +24,7 @@ const config = {
   output: {
     path: resolve(__dirname, "build"),
     filename: "[name].js",
-    chunkFilename: 'js/[name].chunk.js',
+    chunkFilename: "js/[name].chunk.js",
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -55,8 +55,8 @@ const config = {
       patterns: [
         { from: "./src/assets", to: "./assets" },
         {
-          from: "./src/assets/manifest.json",
-          to: "./assets/manifest.json",
+          from: "./src/manifest.json",
+          to: "./manifest.json",
           transform(content) {
             return modify(content);
           },

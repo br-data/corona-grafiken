@@ -1,9 +1,9 @@
 {
-  "title": "BR24 – Corona-Grafiken",
+  "title": "BR24 – Corona-Grafiken erstellen",
   "description": "Tagesaktuelle Grafiken zur Corona-Pandemie in verschieden Formaten erstellen",
   "author": "Bayerischer Rundfunk",
   "keywords": "Corona, Grafiken, Neuinfektionen, Inzidenz, Karte, Impfungen",
-  "siteUrl": "https://interaktiv.br.de/corona-grafiken",
+  "siteUrl": "https://interaktiv.br.de/corona-grafiken/",
   "previewUrl": "https://interaktiv.br.de/corona-grafiken/assets/preview.jpg",
   "twitterHandle": "@br24",
   "twitterCard": "summary_large_image"
