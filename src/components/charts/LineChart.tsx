@@ -64,21 +64,14 @@ export const LineChart: React.FC<ChartProps> = ({
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
-  // @ts-ignore: Library types don't match
-  const lineConstructor = line()
-    // @ts-ignore: Library types don't match
-    .x((d) => x(d.date) + x.bandwidth() / 2)
-    // @ts-ignore: Library types don't match
+  const lineConstructor = line<ChartData>()
+    .x((d) => x(d.date)! + x.bandwidth() / 2)
     .y((d) => y(d.faelleCovidAktuell))
     .curve(curveMonotoneX);
 
-  // @ts-ignore: Library types don't match
-  const areaConstructor = area()
-    // @ts-ignore: Library types don't match
-    .x((d) => x(d.date))
-    // @ts-ignore: Library types don't match
+  const areaConstructor = area<ChartData>()
+    .x((d) => x(d.date)!)
     .y0(() => innerHeight)
-    // @ts-ignore: Library types don't match
     .y1((d) => y(d.faelleCovidAktuell))
     .curve(curveMonotoneX);
 
@@ -104,8 +97,7 @@ export const LineChart: React.FC<ChartProps> = ({
       />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          // @ts-ignore: Library types don't match
-          d={lineConstructor(data)}
+          d={lineConstructor(data)!}
           fill="none"
           stroke={chartColors.red}
           strokeWidth="3"
@@ -114,8 +106,7 @@ export const LineChart: React.FC<ChartProps> = ({
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          // @ts-ignore: Library types don't match
-          d={areaConstructor(data)}
+          d={areaConstructor(data)!}
           stroke="none"
           fill={chartColors.red}
           fillOpacity="0.5"

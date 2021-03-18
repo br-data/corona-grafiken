@@ -67,10 +67,8 @@ export const BarChart: React.FC<ChartProps> = ({
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
-  const lineConstructor = line()
-    // @ts-ignore: Library types don't match
-    .x((d) => x(d.date) + x.bandwidth() / 2)
-    // @ts-ignore: Library types don't match
+  const lineConstructor = line<ChartData>()
+    .x((d) => x(d.date)! + x.bandwidth() / 2)
     .y((d) => y(d.value))
     .curve(curveMonotoneX);
 
@@ -108,8 +106,7 @@ export const BarChart: React.FC<ChartProps> = ({
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          // @ts-ignore: Library types don't match
-          d={lineConstructor(smoothData)}
+          d={lineConstructor(smoothData)!}
           fill="none"
           stroke={chartColors.white}
           strokeWidth="3"

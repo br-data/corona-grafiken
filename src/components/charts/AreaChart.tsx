@@ -65,32 +65,21 @@ export const AreaChart: React.FC<ChartProps> = ({
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
-  // @ts-ignore: Library types don't match
-  const recoveredCasesArea = area()
-    // @ts-ignore: Library types don't match
-    .x((d) => x(d.date))
-    // @ts-ignore: Library types don't match
+  const recoveredCasesArea = area<ChartData>()
+    .x(d => x(d.date)!)
     .y0((d) => y(d.currentlyInfected + d.deathSum))
-    // @ts-ignore: Library types don't match
     .y1((d) => y(d.currentlyRecovered + d.currentlyInfected + d.deathSum))
     .curve(curveMonotoneX);
 
-  // @ts-ignore: Library types don't match
-  const activeCasesArea = area()
-    // @ts-ignore: Library types don't match
-    .x((d) => x(d.date))
-    // @ts-ignore: Library types don't match
+  const activeCasesArea = area<ChartData>()
+    .x((d) => x(d.date)!)
     .y0((d) => y(d.deathSum) + 1)
-    // @ts-ignore: Library types don't match
     .y1((d) => y(d.currentlyInfected + d.deathSum) - 1)
     .curve(curveMonotoneX);
 
-  // @ts-ignore: Library types don't match
-  const deathsArea = area()
-    // @ts-ignore: Library types don't match
-    .x((d) => x(d.date))
+  const deathsArea = area<ChartData>()
+    .x((d) => x(d.date)!)
     .y0(y(0))
-    // @ts-ignore: Library types don't match
     .y1((d) => y(d.deathSum))
     .curve(curveMonotoneX);
 
@@ -116,24 +105,21 @@ export const AreaChart: React.FC<ChartProps> = ({
       />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          // @ts-ignore: Library types don't match
-          d={recoveredCasesArea(data)}
+          d={recoveredCasesArea(data)!}
           stroke="none"
           fill={chartColors.green}
         ></path>
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          // @ts-ignore: Library types don't match
-          d={activeCasesArea(data)}
+          d={activeCasesArea(data)!}
           stroke="none"
           fill={chartColors.blue}
         ></path>
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          // @ts-ignore: Library types don't match
-          d={deathsArea(data)}
+          d={deathsArea(data)!}
           stroke="none"
           fill={chartColors.yellow}
         ></path>

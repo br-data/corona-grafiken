@@ -77,7 +77,7 @@ export const Map: React.FC<MapProps> = ({
     // );
 
     const mapFactor = height > 350 ? 1.1 : 1.3;
-    // @ts-ignore: Library types don't match
+    // @ts-ignore: No definition for geoData
     const mapFeatures = feature(geoData, geoData.objects.counties);
     const mapProjection = geoMercator().translate([0, 0]).scale(1);
     const mapPath = geoPath().projection(mapProjection);
@@ -105,8 +105,7 @@ export const Map: React.FC<MapProps> = ({
         <ChartBackground width={width} height={height} />
         <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
           <path
-            // @ts-ignore: Library types don't match
-            d={mapPath(mapFeatures)}
+            d={mapPath(mapFeatures)!}
             stroke={chartColors.mapOutline}
             strokeWidth={1.25 / (1 / radiusFactor)}
             strokeOpacity="0.75"
@@ -214,7 +213,6 @@ export const Map: React.FC<MapProps> = ({
         <ChartBackground width={width} height={height} />
         <text
           fill="white"
-          dy="1.5rem"
           textAnchor="middle"
           transform={`translate(${width / 2}, ${height / 2})`}
         >

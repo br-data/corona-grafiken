@@ -48,6 +48,17 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
     endDate
   );
 
+  const chartProps = {
+    chart,
+    chartData,
+    startDate,
+    endDate,
+    width,
+    height,
+    scalingFactor,
+    hasLogo,
+  };
+
   if (error) {
     return (
       <ChartWrapper>
@@ -65,85 +76,19 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
       <>
         <ChartWrapper>
           <ChartHint>
-           Texte und Labels anklicken, um diese zu bearbeiten
+            Texte und Labels anklicken, um diese zu bearbeiten
           </ChartHint>
           <ChartEditable
             ref={setSvgDom}
             contentEditable={true}
             suppressContentEditableWarning={true}
           >
-            {chart.type === "bar-chart" && (
-              <BarChart
-                chart={chart}
-                chartData={chartData}
-                startDate={startDate}
-                endDate={endDate}
-                width={width}
-                height={height}
-                scalingFactor={scalingFactor}
-                hasLogo={hasLogo}
-              />
-            )}
-            {chart.type === "line-chart" && (
-              <LineChart
-                chart={chart}
-                chartData={chartData}
-                startDate={startDate}
-                endDate={endDate}
-                width={width}
-                height={height}
-                scalingFactor={scalingFactor}
-                hasLogo={hasLogo}
-              />
-            )}
-            {chart.type === "area-chart" && (
-              <AreaChart
-                chart={chart}
-                chartData={chartData}
-                startDate={startDate}
-                endDate={endDate}
-                width={width}
-                height={height}
-                scalingFactor={scalingFactor}
-                hasLogo={hasLogo}
-              />
-            )}
-            {chart.type === "map" && (
-              <Map
-                chart={chart}
-                chartData={chartData}
-                startDate={startDate}
-                endDate={endDate}
-                width={width}
-                height={height}
-                scalingFactor={scalingFactor}
-                hasLogo={hasLogo}
-              />
-            )}
-            {chart.type === "tile-chart" && (
-              <TileChart
-                chart={chart}
-                chartData={chartData}
-                startDate={startDate}
-                endDate={endDate}
-                width={width}
-                height={height}
-                scalingFactor={scalingFactor}
-                hasLogo={hasLogo}
-              />
-            )}
-            {chart.type === "progress-chart" && (
-              <ProgressChart
-                chart={chart}
-                chartData={chartData}
-                startDate={startDate}
-                endDate={endDate}
-                width={width}
-                height={height}
-                scalingFactor={scalingFactor}
-                hasLogo={hasLogo}
-              />
-            )}
+            {chart.type === "bar-chart" && <BarChart {...chartProps} />}
+            {chart.type === "line-chart" && <LineChart {...chartProps} />}
+            {chart.type === "area-chart" && <AreaChart {...chartProps} />}
+            {chart.type === "map" && <Map {...chartProps} />}
+            {chart.type === "tile-chart" && <TileChart {...chartProps} />}
+            {chart.type === "progress-chart" && <ProgressChart {...chartProps} />}
           </ChartEditable>
           <ChartDimensions>
             Größe: {width} × {height} (Auflösung: {width * 2} × {height * 2})

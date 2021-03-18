@@ -16,16 +16,8 @@ export interface ChartProps {
 }
 
 export interface MapProps extends ChartProps {
-  chart: ChartObject;
-  chartData: ChartDataObject[];
-  startDate: string;
-  endDate: string;
-  width: number;
-  height: number;
   maxValue?: number;
   minValue?: number;
   minRadius?: number;
   maxRadius?: number;
-  scalingFactor?: number;
-  hasLogo?: boolean;
 }
