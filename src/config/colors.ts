@@ -41,7 +41,7 @@ export const chartColors = {
   lineSecondary: ciColors.darkGrey,
   mapBackground: ciColors.mediumGrey,
   mapOutline: ciColors.mediumBlueGrey,
-  tileBackground: ciColors.darkBlueGrey,
+  tileBackground: ciColors.mediumBlueGrey,
   tileFont: ciColors.white,
   white: ciColors.white,
   blue: ciColors.blue,
