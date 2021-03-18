@@ -12,13 +12,13 @@ export const ChartWrapper = styled.div`
 
 export const ChartHint = styled.div`
   color: ${appColors.fontSecondary};
-  margin: 0.25rem 0;
+  margin: 0.25rem;
   text-align: left;
 `;
 
 export const ChartDimensions = styled.div`
   color: ${appColors.fontSecondary};
-  margin: 0.25rem 0;
+  margin: 0.25rem;
   text-align: right;
 `;
 

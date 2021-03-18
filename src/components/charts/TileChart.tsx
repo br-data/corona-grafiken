@@ -36,7 +36,7 @@ export const TileChart: React.FC<ChartProps> = ({
   const margin = {
     top: 90 * scalingFactor,
     right: 25,
-    bottom: hasLogo ? (chartLogoSize + 35) * scalingFactor : 55,
+    bottom: hasLogo ? (chartLogoSize + 45) * scalingFactor : 65,
     left: 25,
   };
   const padding = 25;
@@ -90,7 +90,7 @@ export const TileChart: React.FC<ChartProps> = ({
           bigIndicator={`${germanNumberPrefixed(
             Math.round(weekTrend(caseData) || 0)
           )} %`}
-          indicatorDescription={`${(weekTrend(caseData) || 0) < 0 ? 'weniger' : 'mehr' } Fälle im Wochenvergleich`}
+          indicatorDescription={`${(weekTrend(caseData) || 0) < 0 ? 'weniger' : 'mehr' } Fälle im Vergleich zur Vorwoche`}
           indicatorColor={chartColors.tileFont}
           scalingFactor={scalingFactor}
           transform={`translate(${x(grid[1].x) || 0}, ${y(grid[1].y) || 0})`}

@@ -60,7 +60,6 @@ export const LineChart: React.FC<ChartProps> = ({
     .range([innerHeight, 0]);
   const yTicks = y
     .copy()
-    .nice()
     .ticks(height < 350 ? 3 : 5);
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");

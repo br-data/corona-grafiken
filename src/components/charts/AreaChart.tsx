@@ -28,7 +28,7 @@ export const AreaChart: React.FC<ChartProps> = ({
   hasLogo = false,
 }) => {
   const margin = {
-    top: 140 * scalingFactor,
+    top: 120 * scalingFactor,
     right: 25,
     bottom: hasLogo ? (chartLogoSize + 55) * scalingFactor : 75,
     left: 25,
@@ -61,7 +61,6 @@ export const AreaChart: React.FC<ChartProps> = ({
     .range([innerHeight, 0]);
   const yTicks = y
     .copy()
-    .nice()
     .ticks(height < 350 ? 3 : 5);
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");

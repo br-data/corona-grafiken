@@ -124,7 +124,7 @@ export const charts = [
   {
     id: "bavaria-vaccinations-chart",
     name: "Bayern & Deutschland: Impffortschritt",
-    title: "Corona-Impfungen in Bayern und Deutschland",
+    title: "Corona-Impfungen",
     description:
       "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
     dataSource: "Robert Koch-Institut",

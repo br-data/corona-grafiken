@@ -10,6 +10,7 @@ const InputFontSettings = css`
   vertical-align: middle;
   font-size: 1rem;
   line-height: 1;
+  cursor: pointer;
 `;
 
 const InputBoxSetting = css`
@@ -46,6 +47,7 @@ export const FormCollapseButton = styled.div`
   font-size: 2rem;
   border-radius: 5px;
   transition: background 0.3s ease;
+  cursor: pointer;
   
   &:focus {
     outline: 0;

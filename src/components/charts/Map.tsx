@@ -94,7 +94,8 @@ export const Map: React.FC<MapProps> = ({
     ];
     mapProjection.translate(mapTranslate).scale(mapScale);
 
-    const radiusFactor = mapScale / (chart.subType === "map-bavaria" ? 7000 : 5000);    
+    const radiusFactor =
+      mapScale / (chart.subType === "map-bavaria" ? 7000 : 5000);
     const radiusScale = scaleSqrt()
       .domain([minValue, maxValue])
       .range([minRadius * radiusFactor, maxRadius * radiusFactor]);
@@ -209,8 +210,14 @@ export const Map: React.FC<MapProps> = ({
     );
   } else {
     return (
-      <ChartSvg id={chart.id} width={width} height={height}>
-        <text dy="1.5rem" textAnchor="middle" transform={`translate(${width/2}, ${height/2})`}>
+      <ChartSvg width={width} height={height}>
+        <ChartBackground width={width} height={height} />
+        <text
+          fill="white"
+          dy="1.5rem"
+          textAnchor="middle"
+          transform={`translate(${width / 2}, ${height / 2})`}
+        >
           Lade Karte ...
         </text>
       </ChartSvg>

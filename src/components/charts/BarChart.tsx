@@ -56,13 +56,13 @@ export const BarChart: React.FC<ChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
 
+  
   const yMax = max(data, (d: ChartData): number => d.value)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
   const yTicks = y
     .copy()
-    .nice()
     .ticks(height < 350 ? 3 : 5);
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
