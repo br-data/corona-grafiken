@@ -77,8 +77,8 @@ export const SettingsButton: React.FC<SettingsProps> = ({
   };
   return (
     <FormCollapseButton
-      tabIndex={0}
       title="Weitere Einstellungen anzeigen"
+      tabIndex={0}
       onClick={handleClick}
     >
       {hasCollapsed && (
@@ -146,6 +146,7 @@ export const DateInput = ({
         min={min}
         max={max}
         disabled={disabled}
+        tabIndex={0}
         onChange={handleChange}
       />
     </Fieldset>
@@ -175,6 +176,7 @@ export const NumberInput = ({
         value={value}
         min={min}
         max={max}
+        tabIndex={0}
         onChange={handleChange}
       />
     </Fieldset>
@@ -208,6 +210,7 @@ export const SliderInput = ({
         step={step}
         min={min}
         max={max}
+        tabIndex={0}
         onChange={handleChange}
       />
     </Fieldset>
@@ -230,6 +233,7 @@ export const CheckboxInput = ({
         id={id}
         checked={isChecked}
         onChange={handleChange}
+        tabIndex={0}
         color="primary"
       />
       <Label htmlFor={id}>{label}</Label>
