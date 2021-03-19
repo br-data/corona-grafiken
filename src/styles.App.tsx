@@ -18,7 +18,6 @@ export const Content = styled.section`
   align-items: center;
   overflow: scroll;
   padding: 1rem;
-  background: ${appColors.background};
 `;
 
 export const Footer = styled.footer`
