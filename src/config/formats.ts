@@ -9,17 +9,38 @@ export interface FormatObject {
 
 export const formats = [
   {
-    id: "instagram",
+    id: "instagram-1-1",
     name: "Instagram (1:1)",
     width: 540,
     height: 540,
     scalingFactor: 1,
   },
   {
-    id: "twitter",
-    name: "Twitter (2:1)",
+    id: "instagram-5-4",
+    name: "Instagram (5:4)",
+    width: 675,
+    height: 540,
+    scalingFactor: 1,
+  },
+  {
+    id: "twitter-16-9",
+    name: "Twitter, 1 Bild (16:9)",
     width: 600,
-    height: 300,
+    height: 337.5,
+    scalingFactor: 0.85,
+  },
+  {
+    id: "twitter-7-8",
+    name: "Twitter, 2 Bilder (7:8)",
+    width: 600,
+    height: 685.7,
+    scalingFactor: 1,
+  },
+  {
+    id: "twitter-2-1",
+    name: "Twitter, 4 Bilder (16:9)",
+    width: 600,
+    height: 337.5,
     scalingFactor: 0.85,
   },
   {

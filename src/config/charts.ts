@@ -122,30 +122,6 @@ export const charts = [
     type: "line-chart",
   },
   {
-    id: "bavaria-vaccinations-chart",
-    name: "Bayern & Deutschland: Impffortschritt",
-    title: "Corona-Impfungen",
-    description:
-      "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
-    dataSource: "Robert Koch-Institut",
-    dataHasDate: false,
-    data: [
-      {
-        key: "vaccinations-bavaria",
-        filetype: "csv",
-        url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_BY.csv",
-      },
-      {
-        key: "vaccinations-germany",
-        filetype: "csv",
-        url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_DE.csv",
-      },
-    ],
-    type: "progress-chart",
-  },
-    {
     id: "germany-situation-tiles",
     name: "Deutschland: Übersicht heute",
     title: "Corona-Situation in Deutschland",
@@ -242,5 +218,29 @@ export const charts = [
       },
     ],
     type: "line-chart",
+  },
+  {
+    id: "bavaria-vaccinations-chart",
+    name: "Bayern & Deutschland: Impffortschritt",
+    title: "Corona-Impfungen",
+    description:
+      "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
+    dataSource: "Robert Koch-Institut",
+    dataHasDate: false,
+    data: [
+      {
+        key: "vaccinations-bavaria",
+        filetype: "csv",
+        url:
+          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_BY.csv",
+      },
+      {
+        key: "vaccinations-germany",
+        filetype: "csv",
+        url:
+          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_DE.csv",
+      },
+    ],
+    type: "progress-chart",
   },
 ];

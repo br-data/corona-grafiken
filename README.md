@@ -40,6 +40,8 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 
 ## Verbesserungen
 
+- Hilfe-Button
+- Webfont „The Sans C4“ einbauen
 - Karten automatisch annotieren
 - Code-Splitting mit Lazy-Load
 - `useMultiFetch` in React HOC umwandeln
