@@ -11,13 +11,15 @@ export const ChartWrapper = styled.div`
 `;
 
 export const ChartHint = styled.div`
-  color: ${appColors.fontSecondary};
+  color: ${appColors.fontPrimary};
+  font-size: 0.85rem;
   margin: 0.25rem;
   text-align: left;
 `;
 
 export const ChartDimensions = styled.div`
-  color: ${appColors.fontSecondary};
+  color: ${appColors.fontPrimary};
+  font-size: 0.85rem;
   margin: 0.25rem;
   text-align: right;
 `;

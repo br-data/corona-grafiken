@@ -2,7 +2,7 @@ export const ciColors = {
   white: "#ffffff",
   black: "#323232",
 
-  superLightGrey: "#f2f2f2",
+  superLightGrey: "#ededf3",
   veryLightGrey: "#ced3d9",
   lightGrey: "#9da1a5",
   mediumGrey: "#8f9399",

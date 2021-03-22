@@ -2,6 +2,14 @@ import { createGlobalStyle } from "styled-components";
 import { appColors } from "./config/colors"
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
   html,
   body {
     margin: 0;
@@ -22,5 +30,13 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     background: ${appColors.background};
+  }
+
+  p {
+    margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;

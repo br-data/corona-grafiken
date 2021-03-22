@@ -4,69 +4,59 @@ import { darken, lighten } from "polished";
 import { appColors } from "../../config/colors";
 
 const InputFontSettings = css`
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: "Open Sans", OpenSans, sans-serif;
-  color: ${appColors.fontPrimary};
-  vertical-align: middle;
   font-size: 1rem;
-  line-height: 1;
+  color: ${appColors.fontPrimary};
+  min-height: 1.5rem;
   cursor: pointer;
 `;
 
 const InputBoxSetting = css`
-  margin-top: 0.15rem;
-  padding: 0.1rem;
+  text-indent: 0.25rem;
+  padding: 0;
   border: 0;
-  border-radius: 5px;
+  border-radius: 3px;
   border-bottom: 2px solid ${appColors.inputOutline};
   background: ${appColors.background};
 
   &:focus {
-    outline-color: ${appColors.highlight};
+    outline: 0;
+    border-bottom: 2px solid ${appColors.highlight};
   }
 `;
 
 export const Form = styled.form<{
-  isCollabsible?: boolean;
+  isCollapsible?: boolean;
   hasCollapsed?: boolean;
 }>`
   display: flex;
   flex-wrap: wrap;
-  overflow: ${({ isCollabsible, hasCollapsed }) =>
-    isCollabsible && hasCollapsed ? "hidden" : "visible"};
-  max-height: ${({ isCollabsible, hasCollapsed }) =>
-    isCollabsible && hasCollapsed ? "0" : "100%"};
-`;
-
-export const FormCollapseButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  margin: 0 1rem 0 auto;
-  font-size: 2rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-  cursor: pointer;
-
-  &:focus {
-    outline: 0;
-    background: ${appColors.background};
-  }
+  overflow: ${({ isCollapsible, hasCollapsed }) =>
+    isCollapsible && hasCollapsed ? "hidden" : "visible"};
+  max-height: ${({ isCollapsible, hasCollapsed }) =>
+    isCollapsible && hasCollapsed ? "0" : "100%"};
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
-  margin: 0.5rem 1rem;
+  margin: .25rem 1rem .25rem 0;
   padding: 0;
   border: 0;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 `;
 
+export const FlexibleFieldset = styled(Fieldset)<{ alignRight?: boolean }>`
+  display: flex;
+  margin-left: ${({ alignRight }) => (alignRight ? "auto" : "1rem")};
+  margin-right: ${({ alignRight }) => (alignRight ? "0" : "0.5rem")};
+`;
+
 export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
-  font-size: 1rem;
+  color: ${appColors.fontSecondary};
+  font-size: 0.85rem;
+  margin: 0.1rem;
   font-weight: ${({ isBold }) => (isBold ? 600 : 400)};
   display: ${({ isBlock }) => (isBlock ? "block" : "inline")};
-  vertical-align: middle;
 `;
 
 export const Select = styled.select`
@@ -82,6 +72,7 @@ export const Input = styled.input`
   ${InputBoxSetting}
 
   &[type="number"] {
+    min-width: 5rem;
     text-indent: 0.35rem;
   }
 
@@ -97,14 +88,18 @@ export const Input = styled.input`
 export const Button = styled.button`
   ${InputFontSettings}
 
-  margin: 0.5em;
+  margin: 0 .5rem;
   padding: 0.5rem 0.75rem;
   border: 0;
-  border-radius: 5px;
+  border-radius: 4px;
   border-bottom: 2px solid ${darken(0.15, appColors.buttonBackground)};
   background: ${appColors.buttonBackground};
   color: ${appColors.buttonFont};
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &:focus {
     outline: 0;
@@ -113,5 +108,19 @@ export const Button = styled.button`
 
   > svg {
     vertical-align: bottom;
+  }
+`;
+
+export const SymbolButton = styled.div`
+  display: flex;
+  align-self: center;
+  margin-left: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    background: ${appColors.background};
   }
 `;

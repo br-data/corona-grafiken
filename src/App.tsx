@@ -13,7 +13,9 @@ import {
   SliderInput,
   CheckboxInput,
 } from "./components/chartSettings/ChartSettings";
+import { FlexibleFieldset } from "./components/chartSettings/styles.ChartSettings";
 import { DownloadButton } from "./components/chartDownload/ChartDowload";
+import { HelpButton } from "./components/helpDialog/HelpDialog";
 
 import { appColors } from "./config/colors";
 import { charts } from "./config/charts";
@@ -90,13 +92,16 @@ export default function App() {
             options={formats}
             setOption={setFormat}
           />
-          <SettingsButton
-            hasCollapsed={hasCollapsed}
-            setHasCollapsed={setHasCollapsed}
-          />
+          <FlexibleFieldset isInline={true} alignRight={true}>
+            <SettingsButton
+              hasCollapsed={hasCollapsed}
+              setHasCollapsed={setHasCollapsed}
+            />
+            <HelpButton />
+          </FlexibleFieldset>
         </Settings>
         <Settings
-          isCollabsible={true}
+          isCollapsible={true}
           hasCollapsed={hasCollapsed}
           setHasCollapsed={setHasCollapsed}
         >
@@ -164,7 +169,7 @@ export default function App() {
           isChecked={hasLogo}
           setIsChecked={setHasLogo}
         />
-        <div>
+        <FlexibleFieldset isInline={true} alignRight={true}>
           <DownloadButton
             type="svg"
             text="SVG herunterladen"
@@ -177,7 +182,7 @@ export default function App() {
             chart={chart}
             svgDom={svgDom}
           />
-        </div>
+        </FlexibleFieldset>
       </Footer>
     </ThemeProvider>
   );

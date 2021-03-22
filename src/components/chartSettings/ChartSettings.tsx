@@ -1,14 +1,14 @@
 import React from "react";
 import { Switch, Slider } from "@material-ui/core";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { IoIosSettings } from "react-icons/io";
 
 import {
   Form,
-  FormCollapseButton,
   Fieldset,
   Label,
   Select,
   Input,
+  SymbolButton,
 } from "./styles.ChartSettings";
 
 import { ChartObject } from "../../config/charts";
@@ -16,7 +16,7 @@ import { FormatObject } from "../../config/formats";
 import { appColors } from "../../config/colors";
 
 interface SettingsProps {
-  isCollabsible?: boolean;
+  isCollapsible?: boolean;
   hasCollapsed?: boolean;
   setHasCollapsed?: any;
 }
@@ -57,12 +57,12 @@ interface CheckboxInputProps {
 }
 
 export const Settings: React.FC<SettingsProps> = ({
-  isCollabsible,
+  isCollapsible,
   hasCollapsed,
   children,
 }) => {
   return (
-    <Form isCollabsible={isCollabsible} hasCollapsed={hasCollapsed}>
+    <Form isCollapsible={isCollapsible} hasCollapsed={hasCollapsed}>
       {children}
     </Form>
   );
@@ -76,18 +76,18 @@ export const SettingsButton: React.FC<SettingsProps> = ({
     setHasCollapsed(!hasCollapsed);
   };
   return (
-    <FormCollapseButton
+    <SymbolButton
       title="Weitere Einstellungen anzeigen"
       tabIndex={0}
       onClick={handleClick}
     >
-      {hasCollapsed && (
-        <FiChevronDown color={appColors.inputOutline} size="3rem" />
-      )}
-      {!hasCollapsed && (
-        <FiChevronUp color={appColors.inputOutline} size="3rem" />
-      )}
-    </FormCollapseButton>
+      <IoIosSettings
+        color={
+          hasCollapsed ? appColors.inputOutline : appColors.buttonBackground
+        }
+        size="2.5rem"
+      />
+    </SymbolButton>
   );
 };
 
@@ -107,8 +107,8 @@ export const ChartSelect = ({
 
   return (
     <Fieldset>
-      <Label htmlFor={id} isBold={true} isBlock={true}>
-        {label}:{" "}
+      <Label htmlFor={id} isBold={false} isBlock={true}>
+        {label}
       </Label>
       <Select id={id} value={value.id} onChange={handleChange}>
         {options.map((option: ChartObject | FormatObject, index: number) => (
@@ -136,8 +136,8 @@ export const DateInput = ({
 
   return (
     <Fieldset>
-      <Label htmlFor={id} isBold={true} isBlock={true}>
-        {label}:{" "}
+      <Label htmlFor={id} isBold={false} isBlock={true}>
+        {label}
       </Label>
       <Input
         id={id}
@@ -167,8 +167,8 @@ export const NumberInput = ({
 
   return (
     <Fieldset>
-      <Label htmlFor={id} isBold={true} isBlock={true}>
-        {label}:{" "}
+      <Label htmlFor={id} isBold={false} isBlock={true}>
+        {label}
       </Label>
       <Input
         id={id}
@@ -197,9 +197,9 @@ export const SliderInput = ({
   };
 
   return (
-    <Fieldset>
-      <Label htmlFor={id} isBold={true} isBlock={true}>
-        {label}:{" "}
+    <Fieldset style={{ maxHeight: "3.25rem" }}>
+      <Label htmlFor={id} isBold={false} isBlock={true}>
+        {label}
       </Label>
       <Slider
         id={id}
@@ -236,7 +236,9 @@ export const CheckboxInput = ({
         tabIndex={0}
         color="primary"
       />
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} isBold={false}>
+        {label}
+      </Label>
     </Fieldset>
   );
 };
