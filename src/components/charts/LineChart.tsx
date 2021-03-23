@@ -99,7 +99,7 @@ export const LineChart: React.FC<ChartProps> = ({
         <path
           d={lineConstructor(data)!}
           fill="none"
-          stroke={chartColors.red}
+          stroke={chartColors.pink}
           strokeWidth="3"
           strokeLinecap="round"
         ></path>
@@ -108,7 +108,7 @@ export const LineChart: React.FC<ChartProps> = ({
         <path
           d={areaConstructor(data)!}
           stroke="none"
-          fill={chartColors.red}
+          fill={chartColors.pink}
           fillOpacity="0.5"
         ></path>
       </ChartGroup>
@@ -122,7 +122,7 @@ export const LineChart: React.FC<ChartProps> = ({
         <ChartKey
           text="Intensivpatienten"
           symbol="square"
-          symbolFill={chartColors.red}
+          symbolFill={chartColors.pink}
           scalingFactor={scalingFactor}
         />
       </ChartLegend>

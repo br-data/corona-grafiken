@@ -18,7 +18,7 @@ export const ciColors = {
   green: "#3ad29f",
   red: "#e64242",
   yellow: "#fbb800",
-  violet: "#D20DE2",
+  pink: "#e20d67",
 };
 
 export const appColors = {
@@ -49,6 +49,7 @@ export const chartColors = {
   green: ciColors.green,
   red: ciColors.red,
   yellow: ciColors.yellow,
+  pink: ciColors.pink,
 };
 
 export const getMapColor = (value: number) => {
