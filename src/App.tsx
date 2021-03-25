@@ -118,6 +118,7 @@ export default function App() {
             max={maxEndDate}
             disabled={dateDisabled}
             setDate={setStartDate}
+            isFocusable={!hasCollapsed}
           />
           <DateInput
             id="end-date-input"
@@ -127,6 +128,7 @@ export default function App() {
             max={maxEndDate}
             disabled={dateDisabled}
             setDate={setEndDate}
+            isFocusable={!hasCollapsed}
           />
           <NumberInput
             id="width-input"
@@ -135,6 +137,7 @@ export default function App() {
             min={0}
             max={2560}
             setNumber={setWidth}
+            isFocusable={!hasCollapsed}
           />
           <NumberInput
             id="height-input"
@@ -143,6 +146,7 @@ export default function App() {
             min={0}
             max={1440}
             setNumber={setHeight}
+            isFocusable={!hasCollapsed}
           />
           <SliderInput
             id="scaling-factor-input"
@@ -152,6 +156,7 @@ export default function App() {
             max={1.25}
             step={0.05}
             setNumber={setScalingFactor}
+            isFocusable={!hasCollapsed}
           />
         </Settings>
       </Header>

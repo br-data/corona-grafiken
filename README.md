@@ -126,10 +126,7 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 ## Verbesserungen
 
 - Status-API integrieren
-- Karten automatisch annotieren
-- Versteckte Einstellungen nicht fokussieren
 - Webfont *Thesis Sans C4* einbauen
 - `useMultiFetch` in React HOC umwandeln
 - Code-Splitting mit Lazy-Load
-- Abhängigkeit *cross-env* entfernen
 - Routing einbauen, um bestimmte Zustände teilen zu können

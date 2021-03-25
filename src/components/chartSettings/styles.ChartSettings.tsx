@@ -121,6 +121,9 @@ export const SymbolButton = styled.div`
 
   &:focus {
     outline: 0;
-    background: ${appColors.background};
+
+    > svg {
+      color: #0b9fd8 !important;
+    }
   }
 `;

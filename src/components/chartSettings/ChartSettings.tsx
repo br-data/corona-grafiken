@@ -35,8 +35,9 @@ interface DateInputProps {
   value: string;
   min: string;
   max: string;
-  disabled?: boolean;
   setDate: any;
+  disabled?: boolean;
+  isFocusable?: boolean;
 }
 
 interface NumberInputProps {
@@ -47,14 +48,16 @@ interface NumberInputProps {
   max: number;
   step?: number;
   setNumber: any;
+  isFocusable?: boolean;
 }
 
 interface CheckboxInputProps {
   id: string;
   label: string;
-  disabled?: boolean;
   isChecked: boolean;
   setIsChecked: any;
+  disabled?: boolean;
+  isFocusable?: boolean;
 }
 
 export const Settings: React.FC<SettingsProps> = ({
@@ -76,6 +79,7 @@ export const SettingsButton: React.FC<SettingsProps> = ({
   const handleClick = () => {
     setHasCollapsed(!hasCollapsed);
   };
+
   return (
     <SymbolButton
       title="Weitere Einstellungen anzeigen"
@@ -128,8 +132,9 @@ export const DateInput = ({
   value,
   min,
   max,
-  disabled = false,
   setDate,
+  disabled = false,
+  isFocusable = true,
 }: DateInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDate(event.target.value);
@@ -147,7 +152,7 @@ export const DateInput = ({
         min={min}
         max={max}
         disabled={disabled}
-        tabIndex={0}
+        tabIndex={isFocusable ? 0 : -1}
         onChange={handleChange}
       />
     </Fieldset>
@@ -161,6 +166,7 @@ export const NumberInput = ({
   min,
   max,
   setNumber,
+  isFocusable = true,
 }: NumberInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNumber(event.target.value);
@@ -177,7 +183,7 @@ export const NumberInput = ({
         value={value}
         min={min}
         max={max}
-        tabIndex={0}
+        tabIndex={isFocusable ? 0 : -1}
         onChange={handleChange}
       />
     </Fieldset>
@@ -192,6 +198,7 @@ export const SliderInput = ({
   max,
   step,
   setNumber,
+  isFocusable = true,
 }: NumberInputProps) => {
   const handleChange = (event: any, newValue: number | number[]) => {
     setNumber(newValue);
@@ -211,7 +218,7 @@ export const SliderInput = ({
         step={step}
         min={min}
         max={max}
-        tabIndex={0}
+        disabled={!isFocusable}
         onChange={handleChange}
       />
     </Fieldset>
