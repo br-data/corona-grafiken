@@ -52,6 +52,7 @@ interface NumberInputProps {
 interface CheckboxInputProps {
   id: string;
   label: string;
+  disabled?: boolean;
   isChecked: boolean;
   setIsChecked: any;
 }
@@ -220,6 +221,7 @@ export const SliderInput = ({
 export const CheckboxInput = ({
   id,
   label,
+  disabled = false,
   isChecked,
   setIsChecked,
 }: CheckboxInputProps) => {
@@ -235,6 +237,7 @@ export const CheckboxInput = ({
         onChange={handleChange}
         tabIndex={0}
         color="primary"
+        disabled={disabled}
       />
       <Label htmlFor={id} isBold={false}>
         {label}

@@ -15,11 +15,12 @@ export interface ChartObject {
   name: string;
   title: string;
   description: string;
+  type: string;
+  subType?: string;
+  hasAnnotation?: boolean;
   dataSource: string;
   dataHasDate: boolean;
   data: ChartDataObject[];
-  type: string;
-  subType?: string;
 }
 
 export const charts = [
@@ -28,6 +29,8 @@ export const charts = [
     name: "Bayern: Übersicht heute",
     title: "Corona-Situation in Bayern",
     description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
+    type: "tile-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -50,13 +53,14 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlTodesfall",
       },
     ],
-    type: "tile-chart",
   },
   {
     id: "bavaria-indicators-chart",
     name: "Bayern: Übersicht Entwicklung",
     title: "Corona-Situation in Bayern",
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
+    type: "area-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -67,13 +71,14 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&group=Bundesland&bundesland=Bayern&currentCases=true",
       },
     ],
-    type: "area-chart",
   },
   {
     id: "bavaria-cases-chart",
     name: "Bayern: Neuinfektionen",
     title: "Neue Corona-Fälle in Bayern",
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
+    type: "bar-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -84,13 +89,16 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern",
       },
     ],
-    type: "bar-chart",
   },
   {
     id: "bavaria-cases-map",
     name: "Bayern: Inzidenzkarte",
     title: "7-Tage-Inzidenz in Bayern",
-    description: "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
+    description:
+      "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
+    type: "map",
+    subType: "map-bavaria",
+    hasAnnotation: true,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -101,14 +109,15 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis&bundesland=Bayern",
       },
     ],
-    type: "map",
-    subType: "map-bavaria",
   },
   {
     id: "bavaria-patients-chart",
     name: "Bayern: Intensivpatienten",
     title: "Intensivpatienten in Bayern",
-    description: "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
+    description:
+      "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
+    type: "line-chart",
+    hasAnnotation: false,
     dataSource: "DIVI-Intensivregister",
     dataHasDate: false,
     data: [
@@ -119,13 +128,14 @@ export const charts = [
           "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=BY&indicator=Patienten",
       },
     ],
-    type: "line-chart",
   },
   {
     id: "germany-situation-tiles",
     name: "Deutschland: Übersicht heute",
     title: "Corona-Situation in Deutschland",
     description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
+    type: "tile-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -148,13 +158,14 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&sumField=AnzahlTodesfall",
       },
     ],
-    type: "tile-chart",
   },
   {
     id: "germany-indicators-chart",
     name: "Deutschland: Übersicht Entwicklung",
     title: "Corona-Situation in Deutschland",
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
+    type: "area-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -165,13 +176,14 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&currentCases=true",
       },
     ],
-    type: "area-chart",
   },
   {
     id: "germany-cases-chart",
     name: "Deutschland: Neuinfektionen",
     title: "Neue Corona-Fälle in Deutschland",
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
+    type: "bar-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -182,13 +194,16 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true",
       },
     ],
-    type: "bar-chart",
   },
   {
     id: "germany-cases-map",
     name: "Deutschland: Inzidenzkarte",
     title: "7-Tage-Inzidenz in Deutschland",
-    description: "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
+    description:
+      "Neuinfektionen pro 100.000 Einwohner in den letzten sieben Tagen",
+    type: "map",
+    subType: "map-germany",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -199,14 +214,15 @@ export const charts = [
           "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis",
       },
     ],
-    type: "map",
-    subType: "map-germany",
   },
   {
     id: "germany-patients-chart",
     name: "Deutschland: Intensivpatienten",
     title: "Intensivpatienten in Deutschland",
-    description: "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
+    description:
+      "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
+    type: "line-chart",
+    hasAnnotation: false,
     dataSource: "DIVI-Intensivregister",
     dataHasDate: false,
     data: [
@@ -217,7 +233,6 @@ export const charts = [
           "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=DE&indicator=Patienten",
       },
     ],
-    type: "line-chart",
   },
   {
     id: "bavaria-vaccinations-chart",
@@ -225,6 +240,8 @@ export const charts = [
     title: "Corona-Impfungen",
     description:
       "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
+    type: "progress-chart",
+    hasAnnotation: false,
     dataSource: "Robert Koch-Institut",
     dataHasDate: false,
     data: [
@@ -241,6 +258,5 @@ export const charts = [
           "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_DE.csv",
       },
     ],
-    type: "progress-chart",
   },
 ];

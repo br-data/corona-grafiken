@@ -23,6 +23,7 @@ interface ChartViewerProps {
   width: number;
   height: number;
   scalingFactor: number;
+  hasAnnotation: boolean;
   hasLogo: boolean;
   setSvgDom: any;
 }
@@ -34,6 +35,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
   width,
   height,
   scalingFactor,
+  hasAnnotation,
   hasLogo,
   setSvgDom,
 }) => {
@@ -56,6 +58,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
     width,
     height,
     scalingFactor,
+    hasAnnotation,
     hasLogo,
   };
 

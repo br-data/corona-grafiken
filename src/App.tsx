@@ -35,13 +35,15 @@ const theme = createMuiTheme({
 export default function App() {
   const toDateString = (date: Date) => date.toISOString().split("T")[0];
 
-  const defaultChart = charts[0];
+  const defaultChart = charts[3];
   const defaultFormat = formats[0];
 
   const defaultWidth = defaultFormat.width;
   const defaultHeight = defaultFormat.height;
   const defaultScalingFactor = defaultFormat.scalingFactor;
   const defaultDateDisabled = !defaultChart.dataHasDate;
+  const defaultAnnotationDisabled = !defaultChart.hasAnnotation;
+  const defaultAnnotationVisibility = true;
   const defaultLogoVisibility = true;
 
   const minStartDate = "2020-01-24";
@@ -55,6 +57,8 @@ export default function App() {
   const [height, setHeight] = useState(defaultHeight);
   const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
   const [dateDisabled, setDateDisabled] = useState(defaultDateDisabled);
+  const [annotationDisabled, setAnnotationDisabled] = useState(defaultAnnotationDisabled);
+  const [hasAnnotation, setHasAnnotation] = useState(defaultAnnotationVisibility);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
   const [hasCollapsed, setHasCollapsed] = useState(true);
 
@@ -71,6 +75,7 @@ export default function App() {
 
   useEffect(() => {
     setDateDisabled(!chart.dataHasDate);
+    setAnnotationDisabled(!chart.hasAnnotation);
   }, [chart]);
 
   return (
@@ -158,6 +163,7 @@ export default function App() {
           width={width}
           height={height}
           scalingFactor={scalingFactor}
+          hasAnnotation={hasAnnotation}
           hasLogo={hasLogo}
           setSvgDom={setSvgDom}
         />
@@ -168,6 +174,13 @@ export default function App() {
           label="BR24-Logo anzeigen"
           isChecked={hasLogo}
           setIsChecked={setHasLogo}
+        />
+        <CheckboxInput
+          id="annotation-checkbox"
+          label="Auswertung anzeigen"
+          disabled={annotationDisabled}
+          isChecked={hasAnnotation}
+          setIsChecked={setHasAnnotation}
         />
         <FlexibleFieldset isInline={true} alignRight={true}>
           <DownloadButton
