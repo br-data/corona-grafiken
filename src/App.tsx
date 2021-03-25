@@ -116,7 +116,7 @@ export default function App() {
             value={startDate}
             min={minStartDate}
             max={maxEndDate}
-            disabled={dateDisabled}
+            isDisabled={dateDisabled}
             setDate={setStartDate}
             isFocusable={!hasCollapsed}
           />
@@ -126,7 +126,7 @@ export default function App() {
             value={endDate}
             min={minStartDate}
             max={maxEndDate}
-            disabled={dateDisabled}
+            isDisabled={dateDisabled}
             setDate={setEndDate}
             isFocusable={!hasCollapsed}
           />
@@ -183,7 +183,7 @@ export default function App() {
         <CheckboxInput
           id="annotation-checkbox"
           label="Auswertung anzeigen"
-          disabled={annotationDisabled}
+          isDisabled={annotationDisabled}
           isChecked={hasAnnotation}
           setIsChecked={setHasAnnotation}
         />

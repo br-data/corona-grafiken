@@ -11,8 +11,6 @@ import {
   SymbolButton,
 } from "./styles.ChartSettings";
 
-import { ChartObject } from "../../config/charts";
-import { FormatObject } from "../../config/formats";
 import { appColors } from "../../config/colors";
 
 interface SettingsProps {
@@ -21,43 +19,41 @@ interface SettingsProps {
   setHasCollapsed?: any;
 }
 
-interface SelectProps {
+interface InputProps {
   id: string;
   label: string;
-  value: any;
-  options: any;
+  value?: any;
+  isDisabled?: boolean;
+  isFocusable?: boolean;
+}
+
+interface SelectOptionProps {
+  id: string;
+  name: string;
+  [key: string]: any;
+}
+
+interface SelectInputProps extends InputProps {
+  options: SelectOptionProps[];
   setOption: any;
 }
 
-interface DateInputProps {
-  id: string;
-  label: string;
-  value: string;
-  min: string;
-  max: string;
+interface DateInputProps extends InputProps {
+  min?: string;
+  max?: string;
   setDate: any;
-  disabled?: boolean;
-  isFocusable?: boolean;
 }
 
-interface NumberInputProps {
-  id: string;
-  label: string;
-  value: number;
-  min: number;
-  max: number;
+interface NumberInputProps extends InputProps {
+  min?: number;
+  max?: number;
   step?: number;
   setNumber: any;
-  isFocusable?: boolean;
 }
 
-interface CheckboxInputProps {
-  id: string;
-  label: string;
+interface CheckboxInputProps extends InputProps {
   isChecked: boolean;
   setIsChecked: any;
-  disabled?: boolean;
-  isFocusable?: boolean;
 }
 
 export const Settings: React.FC<SettingsProps> = ({
@@ -102,10 +98,12 @@ export const ChartSelect = ({
   value,
   options,
   setOption,
-}: SelectProps) => {
+  isDisabled = false,
+  isFocusable = true,
+}: SelectInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const option = options.find(
-      (option: ChartObject | FormatObject) => option.id === event.target.value
+      option => option.id === event.target.value
     );
     setOption(option);
   };
@@ -115,8 +113,14 @@ export const ChartSelect = ({
       <Label htmlFor={id} isBold={false} isBlock={true}>
         {label}
       </Label>
-      <Select id={id} value={value.id} onChange={handleChange}>
-        {options.map((option: ChartObject | FormatObject, index: number) => (
+      <Select
+        id={id}
+        value={value.id}
+        onChange={handleChange}
+        disabled={isDisabled}
+        tabIndex={isFocusable ? 0 : -1}
+      >
+        {options.map((option: SelectOptionProps, index: number) => (
           <option value={option.id} key={index}>
             {option.name}
           </option>
@@ -133,7 +137,7 @@ export const DateInput = ({
   min,
   max,
   setDate,
-  disabled = false,
+  isDisabled = false,
   isFocusable = true,
 }: DateInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -148,12 +152,12 @@ export const DateInput = ({
       <Input
         id={id}
         type="date"
-        value={value}
         min={min}
         max={max}
-        disabled={disabled}
-        tabIndex={isFocusable ? 0 : -1}
+        value={value}
         onChange={handleChange}
+        disabled={isDisabled}
+        tabIndex={isFocusable ? 0 : -1}
       />
     </Fieldset>
   );
@@ -166,6 +170,7 @@ export const NumberInput = ({
   min,
   max,
   setNumber,
+  isDisabled = false,
   isFocusable = true,
 }: NumberInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -181,10 +186,11 @@ export const NumberInput = ({
         id={id}
         type="number"
         value={value}
+        onChange={handleChange}
         min={min}
         max={max}
+        disabled={isDisabled}
         tabIndex={isFocusable ? 0 : -1}
-        onChange={handleChange}
       />
     </Fieldset>
   );
@@ -228,9 +234,10 @@ export const SliderInput = ({
 export const CheckboxInput = ({
   id,
   label,
-  disabled = false,
   isChecked,
   setIsChecked,
+  isDisabled = false,
+  isFocusable = true,
 }: CheckboxInputProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
@@ -240,11 +247,11 @@ export const CheckboxInput = ({
     <Fieldset isInline={true}>
       <Switch
         id={id}
+        color="primary"
         checked={isChecked}
         onChange={handleChange}
-        tabIndex={0}
-        color="primary"
-        disabled={disabled}
+        disabled={isDisabled}
+        tabIndex={isFocusable ? 0 : -1}
       />
       <Label htmlFor={id} isBold={false}>
         {label}
