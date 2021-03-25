@@ -53,12 +53,20 @@ export const Map: React.FC<MapProps> = ({
     const margin = {
       top: 130 * scalingFactor,
       right: 25,
-      bottom: hasLogo ? (chartLogoSize + 15) * scalingFactor : 35,
+      bottom: hasLogo
+        ? (chartLogoSize + 15) * scalingFactor
+        : 65 * scalingFactor,
       left: 25,
     };
     const padding = 25;
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
+
+    const showAnnotation = true;
+    const mapOffset = showAnnotation ? 60 : 0;
+    const maxLength = width / height > 1.5 ? 20 : 12;
+    const maxLabels = height > 350 ? labelData.length : 4;
+    const labels = labelData.slice(0, maxLabels);
 
     const caseData: ChartData[] = chartData.find(
       (datum) => datum.key === "cases"
@@ -72,11 +80,12 @@ export const Map: React.FC<MapProps> = ({
         incidence: incidence(caseDataDistrict, metaInfoCounty!.pop),
       });
     });
-    // const worstCounties = mergedCounties.sort(
-    //   (a, b) => b.incidence - a.incidence
-    // );
 
-    const mapFactor = height > 350 ? 1.1 : 1.3;
+    const worstCounties = mergedCounties
+      .sort((a, b) => b.incidence - a.incidence)
+      .slice(0, height > 350 ? 5 : 3);
+
+    const mapFactor = height > width ? 0.9 : 1.1;
     // @ts-ignore: No definition for geoData
     const mapFeatures = feature(geoData, geoData.objects.counties);
     const mapProjection = geoMercator().translate([0, 0]).scale(1);
@@ -103,7 +112,9 @@ export const Map: React.FC<MapProps> = ({
     return (
       <ChartSvg id={chart.id} width={width} height={height}>
         <ChartBackground width={width} height={height} />
-        <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
+        <ChartGroup
+          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
+        >
           <path
             d={mapPath(mapFeatures)!}
             stroke={chartColors.mapOutline}
@@ -112,7 +123,9 @@ export const Map: React.FC<MapProps> = ({
             fill={chartColors.mapBackground}
           ></path>
         </ChartGroup>
-        <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
+        <ChartGroup
+          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
+        >
           {mergedCounties.map((d: any, index: number) => (
             <circle
               key={index}
@@ -122,35 +135,117 @@ export const Map: React.FC<MapProps> = ({
               fill={getMapColor(d.incidence)}
               style={{ mixBlendMode: "hard-light" }}
             >
-              <title>{`${d.name} (${d.type}): ${Math.round(
-                d.incidence
-              )}`}</title>
+              <title>
+                {d.name} (${d.type}): {Math.round(d.incidence)}
+              </title>
             </circle>
           ))}
         </ChartGroup>
-        {height > 350 && width > 350 && (
-          <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
-            {labelData.map((d: any, index: number) => (
-              <text
+        <ChartGroup
+          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
+        >
+          {labels.map((d: any, index: number) => (
+            <text
+              key={index}
+              fontFamily="'Open Sans', OpenSans, Arial"
+              fontSize={15 * scalingFactor}
+              fontWeight="300"
+              fill={chartColors.white}
+              stroke={chartColors.mapBackground}
+              strokeWidth="3"
+              strokeLinejoin="round"
+              paintOrder="stroke"
+              textAnchor="middle"
+              x={Math.round(mapProjection([d.long, d.lat])![0])}
+              y={Math.round(mapProjection([d.long, d.lat])![1])}
+              dy={13 * scalingFactor}
+            >
+              {d.name}
+            </text>
+          ))}
+        </ChartGroup>
+        <ChartGroup
+          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
+        >
+          {worstCounties.map((d: any, index: number) => (
+            <text
+              key={index}
+              x={Math.round(mapProjection([d.long, d.lat])![0])}
+              y={Math.round(mapProjection([d.long, d.lat])![1])}
+              dy={4 * scalingFactor}
+              fontFamily="'Open Sans', OpenSans, sans-serif"
+              fontSize={12 * scalingFactor}
+              fontWeight="600"
+              textAnchor="middle"
+              fill={chartColors.fontPrimary}
+            >
+              {index + 1}
+            </text>
+          ))}
+        </ChartGroup>
+        <ChartGroup
+          transform={`translate(${padding}, ${
+            height - (height > 350 ? 300 : 200) + (hasLogo ? 0 : chartLogoSize) * scalingFactor
+          })`}
+        >
+          <text
+            fontFamily="'Open Sans', OpenSans, sans-serif"
+            fontSize={15 * scalingFactor}
+            fontWeight="300"
+            dy={-27 * scalingFactor}
+            fill={chartColors.fontPrimary}
+          >
+            Höchste Inzidenz:
+          </text>
+          {worstCounties.map((d: any, index: number) => (
+            <g
+              key={index}
+              transform={`translate(${Math.round(radiusScale(maxValue))}, ${
+                index * 42 * scalingFactor
+              })`}
+            >
+              <circle
                 key={index}
-                fontFamily="'Open Sans', OpenSans, Arial"
+                y={Math.round(radiusScale(d.incidence) / 2)}
+                r={Math.round(radiusScale(d.incidence))}
+                fill={getMapColor(d.incidence)}
+                // style={{ mixBlendMode: "hard-light" }}
+              />
+              <text
+                dy={4 * scalingFactor}
+                fontFamily="'Open Sans', OpenSans, sans-serif"
+                fontSize={12 * scalingFactor}
+                fontWeight="600"
+                textAnchor="middle"
+                fill={chartColors.fontPrimary}
+              >
+                {index + 1}
+              </text>
+              <text
+                fontFamily="'Open Sans', OpenSans, sans-serif"
                 fontSize={15 * scalingFactor}
                 fontWeight="300"
-                fill={chartColors.white}
-                stroke={chartColors.mapBackground}
-                strokeWidth="3"
-                strokeLinejoin="round"
-                paintOrder="stroke"
-                textAnchor="middle"
-                x={Math.round(mapProjection([d.long, d.lat])![0])}
-                y={Math.round(mapProjection([d.long, d.lat])![1])}
-                dy={13 * scalingFactor}
+                fill={chartColors.fontPrimary}
               >
-                {d.name}
+                <tspan
+                  x={Math.round(radiusScale(maxValue)) + 10}
+                  fontWeight="600"
+                >
+                  {d.name.length > maxLength
+                    ? d.name.substring(0, maxLength - 2) + "…"
+                    : d.name}{" "}
+                  ({d.type === "Landkreis" ? "Lkr." : d.type})
+                </tspan>
+                <tspan
+                  x={Math.round(radiusScale(maxValue)) + 10}
+                  dy={16 * scalingFactor}
+                >
+                  {Math.round(d.incidence)}
+                </tspan>
               </text>
-            ))}
-          </ChartGroup>
-        )}
+            </g>
+          ))}
+        </ChartGroup>
         <ChartHeader
           title={chart.title}
           description={chart.description}
@@ -159,10 +254,10 @@ export const Map: React.FC<MapProps> = ({
         />
         <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
           <ChartKey
-            text="> 200 Fälle"
+            text="> 100 Fälle"
             symbol="circle"
-            symbolSize={radiusScale(200)}
-            symbolFill={getMapColor(200)}
+            symbolSize={radiusScale(100)}
+            symbolFill={getMapColor(100)}
             scalingFactor={scalingFactor}
           />
           <ChartKey

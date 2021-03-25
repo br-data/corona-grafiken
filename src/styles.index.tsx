@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.6;
     color: ${appColors.fontPrimary};
-    background: "${appColors.foreground}";
+    background: ${appColors.foreground};
   }
 
   main {

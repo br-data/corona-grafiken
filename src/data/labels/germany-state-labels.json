@@ -1,8 +1,13 @@
 [
   {
-    "name": "Schleswig-Holstein",
-    "lat": 54.188,
-    "long": 9.8061
+    "name": "Bayern",
+    "lat": 48.946,
+    "long": 11.422
+  },
+  {
+    "name": "Berlin",
+    "lat": 52.498,
+    "long": 13.409
   },
   {
     "name": "Hamburg",
@@ -10,14 +15,19 @@
     "long": 10.026
   },
   {
+    "name": "Hessen",
+    "lat": 50.602,
+    "long": 9.0394
+  },
+  {
     "name": "Niedersachsen",
     "lat": 52.57,
     "long": 9.17
   },
   {
-    "name": "Bremen",
-    "lat": 53.111,
-    "long": 8.7868
+    "name": "Sachsen",
+    "lat": 51.051,
+    "long": 13.353
   },
   {
     "name": "Nordrhein-Westfalen",
@@ -25,9 +35,24 @@
     "long": 7.5664
   },
   {
-    "name": "Hessen",
-    "lat": 50.602,
-    "long": 9.0394
+    "name": "Baden-Württemberg",
+    "lat": 48.148,
+    "long": 9.0491
+  },
+  {
+    "name": "Thüringen",
+    "lat": 50.903,
+    "long": 11.03
+  },
+  {
+    "name": "Schleswig-Holstein",
+    "lat": 54.188,
+    "long": 9.8061
+  },
+  {
+    "name": "Bremen",
+    "lat": 53.111,
+    "long": 8.7868
   },
   {
     "name": "Rheinland-Pfalz",
@@ -35,24 +60,9 @@
     "long": 7.4542
   },
   {
-    "name": "Baden-Württemberg",
-    "lat": 48.548,
-    "long": 9.0491
-  },
-  {
-    "name": "Bayern",
-    "lat": 48.946,
-    "long": 11.422
-  },
-  {
     "name": "Saarland",
     "lat": 49.386,
     "long": 6.9575
-  },
-  {
-    "name": "Berlin",
-    "lat": 52.498,
-    "long": 13.409
   },
   {
     "name": "Brandenburg",
@@ -65,18 +75,8 @@
     "long": 12.536
   },
   {
-    "name": "Sachsen",
-    "lat": 51.051,
-    "long": 13.353
-  },
-  {
     "name": "Sachsen-Anhalt",
     "lat": 52.012,
     "long": 11.705
-  },
-  {
-    "name": "Thüringen",
-    "lat": 50.903,
-    "long": 11.03
   }
 ]
