@@ -6,8 +6,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const app = require("./src/config/app.json");
 
-const isProd = process.env.NODE_ENV === "production";
-
 function modify(buffer) {
   const manifest = JSON.parse(buffer.toString());
   manifest.name = app.title;
@@ -16,70 +14,73 @@ function modify(buffer) {
   return JSON.stringify(manifest, null, 2);
 }
 
-const config = {
-  mode: isProd ? "production" : "development",
-  entry: {
-    index: "./src/index.tsx",
-  },
-  output: {
-    path: resolve(__dirname, "build"),
-    filename: "[name].js",
-    chunkFilename: "js/[name].chunk.js",
-  },
-  resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: "babel-loader",
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.js$/,
-        enforce: "pre",
-        use: ["source-map-loader"],
-      },
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      ...app,
-      template: "src/index.ejs",
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "./src/assets", to: "./assets" },
+module.exports = (env, options) => {
+  const isProd = options.mode === "production";
+  const config = {
+    mode: options.mode,
+    entry: {
+      index: "./src/index.tsx",
+    },
+    output: {
+      path: resolve(__dirname, "build"),
+      filename: "[name].js",
+      chunkFilename: "data/[name].chunk.js",
+    },
+    resolve: {
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+    },
+    module: {
+      rules: [
         {
-          from: "./src/manifest.json",
-          to: "./manifest.json",
-          transform(content) {
-            return modify(content);
-          },
+          test: /\.tsx?$/,
+          use: "babel-loader",
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.js$/,
+          enforce: "pre",
+          use: ["source-map-loader"],
         },
       ],
-    }),
-  ],
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        ...app,
+        template: "src/index.ejs",
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: "./src/assets", to: "./assets" },
+          {
+            from: "./src/manifest.json",
+            to: "./manifest.json",
+            transform(content) {
+              return modify(content);
+            },
+          },
+        ],
+      }),
+    ],
+  };
+
+  if (isProd) {
+    config.optimization = {
+      usedExports: true,
+      minimizer: [new TerserWebpackPlugin({ extractComments: false })],
+    };
+  } else {
+    // for more information, see https://webpack.js.org/configuration/dev-server
+    config.devServer = {
+      contentBase: resolve("src/assets"),
+      port: 8080,
+      open: true,
+      hot: true,
+      compress: true,
+      stats: "errors-only",
+      overlay: true,
+    };
+  }
+
+  return config;
 };
-
-if (isProd) {
-  config.optimization = {
-    usedExports: true,
-    minimizer: [new TerserWebpackPlugin({ extractComments: false })],
-  };
-} else {
-  // for more information, see https://webpack.js.org/configuration/dev-server
-  config.devServer = {
-    contentBase: resolve("src/assets"),
-    port: 8080,
-    open: true,
-    hot: true,
-    compress: true,
-    stats: "errors-only",
-    overlay: true,
-  };
-}
-
-module.exports = config;
