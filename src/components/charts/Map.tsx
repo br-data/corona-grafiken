@@ -249,13 +249,6 @@ export const Map: React.FC<MapProps> = ({
               </g>
             ))}
           </ChartGroup>
-        
-        
-        
-        
-        
-        
-        
         }
         <ChartHeader
           title={chart.title}
@@ -265,14 +258,14 @@ export const Map: React.FC<MapProps> = ({
         />
         <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
           <ChartKey
-            text="> 100 Fälle"
+            text="≥ 100 Fälle"
             symbol="circle"
             symbolSize={radiusScale(100)}
             symbolFill={getMapColor(100)}
             scalingFactor={scalingFactor}
           />
           <ChartKey
-            text="> 50 Fälle"
+            text="≥ 50 Fälle"
             symbol="circle"
             symbolSize={radiusScale(50)}
             symbolFill={getMapColor(50)}
@@ -280,7 +273,7 @@ export const Map: React.FC<MapProps> = ({
             transform={`translate(${130 * scalingFactor}, 0)`}
           />
           <ChartKey
-            text="> 35 Fälle"
+            text="≥ 35 Fälle"
             symbol="circle"
             symbolSize={radiusScale(35)}
             symbolFill={getMapColor(35)}
@@ -288,7 +281,7 @@ export const Map: React.FC<MapProps> = ({
             transform={`translate(${240 * scalingFactor}, 0)`}
           />
           <ChartKey
-            text="> 1 Fall"
+            text="≥ 1 Fall"
             symbol="circle"
             symbolSize={radiusScale(1)}
             symbolFill={getMapColor(1)}

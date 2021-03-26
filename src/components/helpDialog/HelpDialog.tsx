@@ -102,7 +102,7 @@ export const HelpButton: React.FC = ({}) => {
             <strong>Weitere Einstellungen:</strong> Mit einem Klick auf das Zahnrad (<IoIosSettings style={{ verticalAlign: "middle" }}/>) kann man sich weitere Grafikeinstellungen anzeigen lassen. Hier kann man die <em>Höhe</em> und die <em>Größe</em> einer Grafik ändern, wenn man mit den Voreinstellungen nicht zufrieden ist. Außerdem kann man die <em>Skalierung</em> einer Grafik verändern. Die Skalierung beeinflusst gleichzeitig die Schrift-, Logo- und Diagrammgröße.
           </p>
           <p>
-            Bei manchen Grafiken lässt sich auch der Zeitraum (<em>Start-/Enddatum</em>) verändern. Dadurch kann man in die Vergangenheit reisen, um zum Beispiel eine Karte mit den Corona-Inzidenzen des vergangen Jahres zu erstellen.
+            Bei manchen Grafiken lässt sich auch der Zeitraum (<em>Start-/Enddatum</em>) verändern. Dadurch kann man in die Vergangenheit reisen, um zum Beispiel eine Karte mit den Corona-Inzidenzen des vergangenen Jahres zu erstellen.
           </p>
         </DialogContent>
       </Dialog>
