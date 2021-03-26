@@ -16,10 +16,10 @@ export const formats = [
     scalingFactor: 1,
   },
   {
-    id: "instagram-5-4",
-    name: "Instagram (5:4)",
-    width: 675,
-    height: 540,
+    id: "instagram-4-5",
+    name: "Instagram (4:5)",
+    width: 540,
+    height: 675,
     scalingFactor: 1,
   },
   {
