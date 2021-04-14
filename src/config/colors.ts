@@ -53,17 +53,20 @@ export const chartColors = {
 };
 
 export const getMapColor = (value: number) => {
-  if (value >= 100) {
+  if (value >= 200) {
     // dark red
-    return "#bd0026";
+    return '#bb212f';
+  } else if (value >= 100) {
+    // dark orange
+    return '#ed4834';
   } else if (value >= 50) {
-    // red
-    return "#f03b20";
-  } else if (value >= 35) {
     // orange
-    return "#feb24c";
+    return '#fb8e4e';
+  } else if (value >= 35) {
+    // light orange
+    return '#fdc96c';
   } else {
-    // yellow
-    return "#ffeda0";
+    // light yellow
+    return '#fffbb9';
   }
 };
