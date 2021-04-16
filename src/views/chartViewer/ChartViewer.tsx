@@ -11,7 +11,7 @@ import {
   ChartEditable,
   ChartHint,
   ChartDimensions,
-} from "./styles.Charts";
+} from "./styles.ChartViewer";
 
 import { ChartObject } from "../../config/charts";
 import { useMultiFetch, MultiFetchProps } from "../../utils/useMultiFetch";
