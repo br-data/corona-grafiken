@@ -1,8 +1,8 @@
 import React from "react";
 
-import { chartColors } from "../../config/colors";
+import { chartColors } from "../../../config/colors";
 
-interface ChartAxisRightProps {
+interface ChartAxisGridProps {
   scale: any;
   ticks: any[];
   tickFormatter?: any;
@@ -14,7 +14,7 @@ interface ChartAxisRightProps {
   fill?: string;
 }
 
-export const ChartAxisRight: React.FC<ChartAxisRightProps> = ({
+export const ChartAxisGrid: React.FC<ChartAxisGridProps> = ({
   scale,
   ticks,
   tickFormatter = (t: any) => t,
@@ -26,23 +26,17 @@ export const ChartAxisRight: React.FC<ChartAxisRightProps> = ({
   fill = chartColors.fontPrimary,
 }) => {
   return (
-    <g className="axis-right" transform={transform}>
-      <line
-        y1={scale.range()[0]}
-        y2={scale.range()[1]}
-        fill="none"
-        stroke={stroke}
-      />
+    <g className="axis-grid" transform={transform}>
       {ticks.map((tick: any) => (
         <g key={tick} transform={`translate(0, ${scale(tick)})`}>
           {showTickMarks && <line x2={tickMarkLength} stroke={stroke} />}
           <text
-            fontSize={14 * scalingFactor}
             fontFamily="'Open Sans', OpenSans, sans-serif"
+            fontSize={14 * scalingFactor}
             fill={fill}
             textAnchor="start"
-            dx={showTickMarks ? "10" : "5"}
-            dy={5 * Math.sqrt(scalingFactor)}
+            dx="0"
+            dy={-4 * Math.sqrt(scalingFactor)}
           >
             {tickFormatter(tick)}
           </text>

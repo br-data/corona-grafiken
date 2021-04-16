@@ -3,13 +3,13 @@ import { scaleSqrt } from "d3-scale";
 import { geoPath, geoMercator } from "d3-geo";
 import { feature } from "topojson-client";
 
-import { ChartSvg } from "../chartPartials/ChartSvg";
-import { ChartGroup } from "../chartPartials/ChartGroup";
-import { ChartHeader } from "../chartPartials/ChartHeader";
-import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend";
-import { ChartBackground } from "../chartPartials/ChartBackground";
-import { ChartFooter } from "../chartPartials/ChartFooter";
-import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
+import { ChartSvg } from "./partials/ChartSvg";
+import { ChartGroup } from "./partials/ChartGroup";
+import { ChartHeader } from "./partials/ChartHeader";
+import { ChartLegend, ChartKey } from "./partials/ChartLegend";
+import { ChartBackground } from "./partials/ChartBackground";
+import { ChartFooter } from "./partials/ChartFooter";
+import { ChartLogo, chartLogoSize } from "./partials/ChartLogo";
 
 import { MapProps, ChartData } from "./ChartProps";
 import { chartColors, getMapColor } from "../../config/colors";

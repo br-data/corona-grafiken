@@ -15,7 +15,7 @@ import { IoIosSettings, IoIosHelpCircle } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
 import { FiDownload } from "react-icons/fi";
 
-import { SymbolButton } from "../chartSettings/styles.ChartSettings";
+import { SymbolButton } from "../settings/styles.Settings";
 import { appColors } from "../../config/colors";
 
 const styles = (theme: Theme) =>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { appColors } from "./config/colors";
+import { appColors } from "../../config/colors";
 
 export const Header = styled.header`
   flex: 0 0 auto;

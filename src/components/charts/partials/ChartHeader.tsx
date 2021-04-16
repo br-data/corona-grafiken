@@ -1,6 +1,6 @@
 import React from "react";
 
-import { chartColors } from "../../config/colors";
+import { chartColors } from "../../../config/colors";
 
 interface ChartHeaderProps {
   title: string;

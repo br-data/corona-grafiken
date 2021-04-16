@@ -9,7 +9,7 @@ import {
   Select,
   Input,
   SymbolButton,
-} from "./styles.ChartSettings";
+} from "./styles.Settings";
 
 import { appColors } from "../../config/colors";
 
