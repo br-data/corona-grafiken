@@ -1,13 +1,13 @@
 import React from "react";
 import { scaleBand } from "d3-scale";
 
-import { ChartSvg } from "../chartPartials/ChartSvg";
-import { ChartGroup } from "../chartPartials/ChartGroup";
-import { ChartHeader } from "../chartPartials/ChartHeader";
-import { ChartBackground } from "../chartPartials/ChartBackground";
-import { ChartFooter } from "../chartPartials/ChartFooter";
-import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
-import { ChartTile } from "../chartPartials/ChartTile";
+import { ChartSvg } from "./partials/ChartSvg";
+import { ChartGroup } from "./partials/ChartGroup";
+import { ChartHeader } from "./partials/ChartHeader";
+import { ChartBackground } from "./partials/ChartBackground";
+import { ChartFooter } from "./partials/ChartFooter";
+import { ChartLogo, chartLogoSize } from "./partials/ChartLogo";
+import { ChartTile } from "./partials/ChartTile";
 
 import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";

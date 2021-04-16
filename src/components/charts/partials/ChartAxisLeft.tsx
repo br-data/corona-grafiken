@@ -1,8 +1,8 @@
 import React from "react";
 
-import { chartColors } from "../../config/colors";
+import { chartColors } from "../../../config/colors";
 
-interface ChartAxisBottomProps {
+interface ChartAxisLeftProps {
   scale: any;
   ticks: any[];
   tickFormatter?: any;
@@ -14,7 +14,7 @@ interface ChartAxisBottomProps {
   fill?: string;
 }
 
-export const ChartAxisBottom: React.FC<ChartAxisBottomProps> = ({
+export const ChartAxisLeft: React.FC<ChartAxisLeftProps> = ({
   scale,
   ticks,
   tickFormatter = (t: any) => t,
@@ -26,22 +26,23 @@ export const ChartAxisBottom: React.FC<ChartAxisBottomProps> = ({
   fill = chartColors.fontPrimary,
 }) => {
   return (
-    <g className="axis-bottom" transform={transform}>
+    <g className="axis-left" transform={transform}>
       <line
-        x1={scale.range()[0]}
-        x2={scale.range()[1]}
+        y1={scale.range()[0]}
+        y2={scale.range()[1]}
         fill="none"
         stroke={stroke}
       />
       {ticks.map((tick: any) => (
-        <g key={tick} transform={`translate(${scale(tick)}, 0)`}>
-          {showTickMarks && <line y2={tickMarkLength * scalingFactor} stroke={stroke} />}
+        <g key={tick} transform={`translate(0, ${scale(tick)})`}>
+          {showTickMarks && <line x2={-tickMarkLength} stroke={stroke} />}
           <text
             fontFamily="'Open Sans', OpenSans, sans-serif"
             fontSize={14 * scalingFactor}
             fill={fill}
-            textAnchor="middle"
-            dy={showTickMarks ? (23 * scalingFactor) : 17 * Math.sqrt(scalingFactor)}
+            textAnchor="end"
+            dx={showTickMarks ? "-10" : "-5"}
+            dy={5 * Math.sqrt(scalingFactor)}
           >
             {tickFormatter(tick)}
           </text>
