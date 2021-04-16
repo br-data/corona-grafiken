@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-import { GlobalStyle } from "./styles.index";
+import { GlobalStyle } from "../../styles.index";
 import { Header, Footer, Content } from "./styles.App";
-import { ChartViewer } from "./components/chartViewer/ChartViewer";
+import { ChartViewer } from "../charts/Charts";
 import {
   Settings,
   SettingsButton,
@@ -12,14 +12,14 @@ import {
   NumberInput,
   SliderInput,
   CheckboxInput,
-} from "./components/chartSettings/ChartSettings";
-import { FlexibleFieldset } from "./components/chartSettings/styles.ChartSettings";
-import { DownloadButton } from "./components/chartDownload/ChartDowload";
-import { HelpButton } from "./components/helpDialog/HelpDialog";
+} from "../settings/Settings";
+import { FlexibleFieldset } from "../settings/styles.Settings";
+import { DownloadButton } from "../../components/downloadButton/DownloadButton";
+import { HelpButton } from "../../components/helpDialog/HelpDialog";
 
-import { appColors } from "./config/colors";
-import { charts } from "./config/charts";
-import { formats } from "./config/formats";
+import { appColors } from "../../config/colors";
+import { charts } from "../../config/charts";
+import { formats } from "../../config/formats";
 
 const theme = createMuiTheme({
   typography: {
