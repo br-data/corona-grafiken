@@ -1,6 +1,6 @@
 import React from "react";
 
-import { chartColors, ciColors } from "../../config/colors";
+import { chartColors, ciColors } from "../../../config/colors";
 
 interface ChartLegendProps {
   transform?: string;

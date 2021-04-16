@@ -3,15 +3,15 @@ import { max, min } from "d3-array";
 import { scaleLinear, scaleBand } from "d3-scale";
 import { line, curveMonotoneX } from "d3-shape";
 
-import { ChartSvg } from "../chartPartials/ChartSvg";
-import { ChartGroup } from "../chartPartials/ChartGroup";
-import { ChartHeader } from "../chartPartials/ChartHeader";
-import { ChartLegend, ChartKey } from "../chartPartials/ChartLegend";
-import { ChartBackground } from "../chartPartials/ChartBackground";
-import { ChartFooter } from "../chartPartials/ChartFooter";
-import { ChartLogo, chartLogoSize } from "../chartPartials/ChartLogo";
-import { ChartAxisBottom } from "../chartPartials/ChartAxisBottom";
-import { ChartAxisGrid } from "../chartPartials/ChartAxisGrid";
+import { ChartSvg } from "./partials/ChartSvg";
+import { ChartGroup } from "./partials/ChartGroup";
+import { ChartHeader } from "./partials/ChartHeader";
+import { ChartLegend, ChartKey } from "./partials/ChartLegend";
+import { ChartBackground } from "./partials/ChartBackground";
+import { ChartFooter } from "./partials/ChartFooter";
+import { ChartLogo, chartLogoSize } from "./partials/ChartLogo";
+import { ChartAxisBottom } from "./partials/ChartAxisBottom";
+import { ChartAxisGrid } from "./partials/ChartAxisGrid";
 
 import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
