@@ -3,7 +3,7 @@ import React from "react";
 import { saveSvg, saveSvgAsPng, } from "save-svg-as-png";
 import { FiDownload } from "react-icons/fi";
 
-import { Button } from "../../views/settings/styles.Settings";
+import { Button } from "../settings/styles.Settings";
 import { ChartObject } from "../../config/charts";
 
 interface DownloadButtonProps {

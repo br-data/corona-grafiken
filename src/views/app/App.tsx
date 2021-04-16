@@ -3,7 +3,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "../../styles.index";
 import { Header, Footer, Content } from "./styles.App";
-import { ChartViewer } from "../charts/Charts";
+import { ChartViewer } from "../chartViewer/ChartViewer";
 import {
   Settings,
   SettingsButton,
@@ -12,8 +12,8 @@ import {
   NumberInput,
   SliderInput,
   CheckboxInput,
-} from "../settings/Settings";
-import { FlexibleFieldset } from "../settings/styles.Settings";
+} from "../../components/settings/Settings";
+import { FlexibleFieldset } from "../../components/settings/styles.Settings";
 import { DownloadButton } from "../../components/downloadButton/DownloadButton";
 import { HelpButton } from "../../components/helpDialog/HelpDialog";
 
