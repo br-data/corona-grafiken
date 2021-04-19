@@ -46,7 +46,7 @@ Der `name` eines Diagramms wird ausschließlich in der Diagrammauswahl der App a
 
 `title` und `description` werden jeweils in der Kopfzeile des Diagramms angezeigt. Auch wenn beide Texte in der App überschrieben werden können, sollten sie sinnvoll gewählt sein und den Inhalt eines Diagramms möglichst gut zu beschreiben.
 
-`type` legt fest, welche Diagramm geladen werden soll. Die finale Zuordnung zur jeweiligen Komponente erfolgt im [ChartViewer](src/components/chartViewer/ChartViewer.tsx). Dabei ist zu beachten, dass sich die Diagrammtypen in den meisten Fällen nicht beliebig austauschen lassen, da jedes Diagramm auf ein bestimmtes Datenformate zugeschnitten ist.
+`type` legt fest, welche Diagramm geladen werden soll. Die finale Zuordnung zur jeweiligen Komponente erfolgt im [ChartViewer](src/views/chartViewer/ChartViewer.tsx). Dabei ist zu beachten, dass sich die Diagrammtypen in den meisten Fällen nicht beliebig austauschen lassen, da jedes Diagramm auf ein bestimmtes Datenformate zugeschnitten ist.
 
 Manche Chart-Komponenten (z.B. `Map`) unterstützen das Attribut `hasAnnotation` und können zusätzliche Anmerkungen, Informationen oder Auswertungen anzeigen. Ist das Attribut `false` wird der entsprechende Schalter in der Menüleiste deaktiviert.
 
@@ -55,7 +55,6 @@ Die `dataSource` beschreibt die Datenquelle(n) und wird zusammen mit einem autom
 `dataHasDate` gibt an, ob der Zeitraum der Daten angepasst werden kann. Ist der Wert dafür `false`, wird die Datumseingabe in den erweiterten Einstellung der App deaktiviert. Ein variables Datum muss jedoch von der Datenquelle unterstützt werden (siehe unten).
 
 `data` muss eine Array mit mindestens einem Objekt sein und definiert welche Daten für ein jeweiliges Diagramm benötigt werden. Die einzelnen Datenquellen haben einen `key`, eine Dateityp `filetype`, welcher entweder `json` oder `csv` sein kann und eine `url`. Die URL kann die Template-String `${startDate}` und `${endDate}` enthalten, über die der Zeitraum der Daten verändert werden kann. Das jeweilige Datum wird dann als ISO-String, zum Beispiel `2021-03-22` in der URL an der entsprechenden Stelle eingefügt. Das Laden der Daten erfolgt in einem eigenen Hook [useMultiFetch](src/utils/useMultiFetch.ts).
-
 
 ## Formate
 
@@ -91,7 +90,7 @@ Die App-Konfiguration in [src/config/app.json](src/config/app.json) enthält ver
 
 Die Diagramme sind, wie der Rest der Anwendung auch, als React-Komponenten geschrieben. Zudem verwenden die Diagramme [D3.js](https://d3js.org/), um bestimmte Berechnungen und das Zeichnen von komplexen SVG-Pfaden zu erleichtern.
 
-Das Erstellen von neuen Diagrammen ist relativ einfach, da es für viele Bestandteile eines Diagramms schon fertige Komponenten gibt. Grundgerüst, Hintergrund, Legende und die Kopf- und Fußzeile können einfach aus [src/components/chartPartials](src/components/chartPartials) importiert werden.
+Das Erstellen von neuen Diagrammen ist relativ einfach, da es für viele Bestandteile eines Diagramms schon fertige Komponenten gibt. Grundgerüst, Hintergrund, Legende und die Kopf- und Fußzeile können einfach aus [src/components/charts/partials](src/components/charts/partials) importiert werden.
 
 Beispiel für den Aufbau eines einfachen Diagramms:
 
