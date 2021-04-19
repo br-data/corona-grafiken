@@ -40,7 +40,7 @@ export const BarChart: React.FC<ChartProps> = ({
 
   const data: ChartData[] = chartData.find((datum) => datum.key === "cases")
     ?.data!;
-  const smoothData: ChartData[] = sma(data);
+  const smoothData: ChartData[] = sma(data.slice(0, data.length - 2), 7, 'value');
 
   const xMin = min(data, (d: ChartData) => new Date(d.date))!;
   const xMinBracket = new Date(xMin);
