@@ -4,7 +4,7 @@
 
 isEnabled: true
 build:
-  command: "npm install && npm run build"
+  command: "yarn && yarn build"
   outputFolder: "build"
 settings:
   type: website
