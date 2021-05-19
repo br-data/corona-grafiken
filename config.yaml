@@ -3,13 +3,9 @@
 ########################
 
 isEnabled: true
-docker:
-  preset: "npm"
-  ignore: "node_modules"
 build:
   command: "npm install && npm run build"
   outputFolder: "build"
 settings:
-  isWebsite: true
-  firestore: false
+  type: website
   inSecure: true

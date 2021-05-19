@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "build": {
+            "properties": {
+                "command": {
+                    "type": "string"
+                },
+                "outputFolder": {
+                    "type": "string"
+                }
+            },
+            "required": ["command"],
+            "type": "object"
+        },
+        "docker": {
+            "properties": {
+                "cache": {
+                    "type": "string"
+                },
+                "ignore": {
+                    "type": "string"
+                },
+                "imageFrom": {
+                    "type": "string"
+                },
+                "preparationCommand": {
+                    "type": "string"
+                },
+                "preset": {
+                    "enum": ["java-mvn", "python", "yarn"],
+                    "type": "string"
+                },
+                "replicas": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "isEnabled": {
+            "type": "boolean"
+        },
+        "run": {
+            "properties": {
+                "command": {
+                    "type": "string"
+                },
+                "envs": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["name", "value"],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": ["command"],
+            "type": "object"
+        },
+        "settings": {
+            "properties": {
+                "database": {
+                    "properties": {
+                        "frontend": {
+                            "type": "boolean"
+                        },
+                        "type": {
+                            "enum": ["elasticsearch", "postgresql"],
+                            "type": "string"
+                        }
+                    },
+                    "required": ["type"],
+                    "type": "object"
+                },
+                "inSecure": {
+                    "type": "boolean"
+                },
+                "persistentBucket": {
+                    "type": "string"
+                },
+                "projectName": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": ["service", "website"],
+                    "type": "string"
+                }
+            },
+            "required": ["type"],
+            "type": "object"
+        }
+    },
+    "required": ["isEnabled", "settings"],
+    "type": "object"
+}
