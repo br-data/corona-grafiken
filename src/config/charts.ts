@@ -249,13 +249,13 @@ export const charts = [
         key: "vaccinations-bavaria",
         filetype: "csv",
         url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_BY.csv",
+          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_BY.csv",
       },
       {
         key: "vaccinations-germany",
         filetype: "csv",
         url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v2/region_DE.csv",
+          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_DE.csv",
       },
     ],
   },

@@ -41,6 +41,9 @@ export const ProgressChart: React.FC<ChartProps> = ({
     (datum) => datum.key === "vaccinations-germany"
   )?.data!;
 
+  console.log(bavariaData);
+  
+
   const x = scaleLinear().domain([0, 100]).range([0, innerWidth]);
   const xTicks = x.ticks(5);
   const xFormatter = (d: number) => `${d} %`;
@@ -94,14 +97,14 @@ export const ProgressChart: React.FC<ChartProps> = ({
             fill="url(#linear-gradient)"
           ></rect>
           <rect
-            width={x(bavariaData[bavariaData.length - 1]["impf_quote_erst"])}
+            width={x(bavariaData[bavariaData.length - 1]["impf_quote_min1"])}
             height={barHeight}
             fill="url(#diagonal-hatching)"
           >
             <title>{`${germanNumber(
-              bavariaData[bavariaData.length - 1]["personen_erst_kumulativ"]
+              bavariaData[bavariaData.length - 1]["personen_min1_kumulativ"]
             )} (${germanNumber(
-              bavariaData[bavariaData.length - 1]["impf_quote_erst"]
+              bavariaData[bavariaData.length - 1]["impf_quote_min1"]
             )} %)`}</title>
           </rect>
           <rect
@@ -121,7 +124,7 @@ export const ProgressChart: React.FC<ChartProps> = ({
               %)`
             </title>
           </rect>
-          <text
+          {/* <text
             x={x(100)}
             y={barHeight / 2 + 5}
             dx={-7 * scalingFactor}
@@ -132,7 +135,7 @@ export const ProgressChart: React.FC<ChartProps> = ({
             fill={chartColors.fontPrimary}
           >
             Herdenimmunität erreicht
-          </text>
+          </text> */}
         </ChartGroup>
         <ChartGroup transform={`translate(0, ${10 + barHeight})`}>
           {xTicks.map((tick: any, index: number) => (
@@ -173,14 +176,14 @@ export const ProgressChart: React.FC<ChartProps> = ({
             fill="url(#linear-gradient)"
           ></rect>
           <rect
-            width={x(germanyData[germanyData.length - 1]["impf_quote_erst"])}
+            width={x(germanyData[germanyData.length - 1]["impf_quote_min1"])}
             height={barHeight}
             fill="url(#diagonal-hatching)"
           >
             <title>{`${germanNumber(
-              germanyData[germanyData.length - 1]["personen_erst_kumulativ"]
+              germanyData[germanyData.length - 1]["personen_min1_kumulativ"]
             )} (${germanNumber(
-              germanyData[germanyData.length - 1]["impf_quote_erst"]
+              germanyData[germanyData.length - 1]["impf_quote_min1"]
             )} %)`}</title>
           </rect>
           <rect
@@ -200,7 +203,7 @@ export const ProgressChart: React.FC<ChartProps> = ({
               %)`
             </title>
           </rect>
-          <text
+          {/* <text
             x={x(100)}
             y={barHeight / 2 + 5}
             dx={-7 * scalingFactor}
@@ -211,7 +214,7 @@ export const ProgressChart: React.FC<ChartProps> = ({
             fill={chartColors.fontPrimary}
           >
             Herdenimmunität erreicht
-          </text>
+          </text> */}
         </ChartGroup>
         <ChartGroup transform={`translate(0, ${10 + barHeight})`}>
           {xTicks.map((tick: any, index: number) => (
