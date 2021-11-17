@@ -114,8 +114,6 @@ export const Button = styled.button`
 export const SymbolButton = styled.div`
   display: flex;
   align-self: center;
-  margin-left: 1rem;
-  border-radius: 4px;
   transition: all 0.3s ease;
   cursor: pointer;
 

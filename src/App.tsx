@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "./styles.index";
-import { Header, Footer, Content } from "./styles.App";
+import { Footer, Content } from "./styles.App";
+import { Header } from "./components/header/Header";
 import { ChartViewer } from "./views/chartViewer/ChartViewer";
 import {
   Settings,
@@ -57,8 +58,12 @@ export default function App() {
   const [height, setHeight] = useState(defaultHeight);
   const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
   const [dateDisabled, setDateDisabled] = useState(defaultDateDisabled);
-  const [annotationDisabled, setAnnotationDisabled] = useState(defaultAnnotationDisabled);
-  const [hasAnnotation, setHasAnnotation] = useState(defaultAnnotationVisibility);
+  const [annotationDisabled, setAnnotationDisabled] = useState(
+    defaultAnnotationDisabled
+  );
+  const [hasAnnotation, setHasAnnotation] = useState(
+    defaultAnnotationVisibility
+  );
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
   const [hasCollapsed, setHasCollapsed] = useState(true);
 
@@ -81,85 +86,83 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header>
-        <Settings>
-          <ChartSelect
-            id="chart-select"
-            label="Grafik auswählen"
-            value={chart}
-            options={charts}
-            setOption={setChart}
-          />
-          <ChartSelect
-            id="format-select"
-            label="Format auswählen"
-            value={format}
-            options={formats}
-            setOption={setFormat}
-          />
-          <FlexibleFieldset isInline={true} alignRight={true}>
-            <SettingsButton
-              hasCollapsed={hasCollapsed}
-              setHasCollapsed={setHasCollapsed}
-            />
-            <HelpButton />
-          </FlexibleFieldset>
-        </Settings>
-        <Settings
-          isCollapsible={true}
+      <Header title="Corona Grafiken" description="Editor">
+        <SettingsButton
           hasCollapsed={hasCollapsed}
           setHasCollapsed={setHasCollapsed}
-        >
-          <DateInput
-            id="start-date-input"
-            label="Startdatum"
-            value={startDate}
-            min={minStartDate}
-            max={maxEndDate}
-            isDisabled={dateDisabled}
-            setDate={setStartDate}
-            isFocusable={!hasCollapsed}
-          />
-          <DateInput
-            id="end-date-input"
-            label="Enddatum"
-            value={endDate}
-            min={minStartDate}
-            max={maxEndDate}
-            isDisabled={dateDisabled}
-            setDate={setEndDate}
-            isFocusable={!hasCollapsed}
-          />
-          <NumberInput
-            id="width-input"
-            label="Breite"
-            value={width}
-            min={0}
-            max={2560}
-            setNumber={setWidth}
-            isFocusable={!hasCollapsed}
-          />
-          <NumberInput
-            id="height-input"
-            label="Höhe"
-            value={height}
-            min={0}
-            max={1440}
-            setNumber={setHeight}
-            isFocusable={!hasCollapsed}
-          />
-          <SliderInput
-            id="scaling-factor-input"
-            label="Skalierung"
-            value={scalingFactor}
-            min={0.75}
-            max={1.25}
-            step={0.05}
-            setNumber={setScalingFactor}
-            isFocusable={!hasCollapsed}
-          />
-        </Settings>
+        />
+        <HelpButton />
       </Header>
+      <Settings>
+        <ChartSelect
+          id="chart-select"
+          label="Grafik auswählen"
+          value={chart}
+          options={charts}
+          setOption={setChart}
+        />
+        <ChartSelect
+          id="format-select"
+          label="Format auswählen"
+          value={format}
+          options={formats}
+          setOption={setFormat}
+        />
+      </Settings>
+      <Settings
+        isCollapsible={true}
+        hasCollapsed={hasCollapsed}
+        setHasCollapsed={setHasCollapsed}
+      >
+        <DateInput
+          id="start-date-input"
+          label="Startdatum"
+          value={startDate}
+          min={minStartDate}
+          max={maxEndDate}
+          isDisabled={dateDisabled}
+          setDate={setStartDate}
+          isFocusable={!hasCollapsed}
+        />
+        <DateInput
+          id="end-date-input"
+          label="Enddatum"
+          value={endDate}
+          min={minStartDate}
+          max={maxEndDate}
+          isDisabled={dateDisabled}
+          setDate={setEndDate}
+          isFocusable={!hasCollapsed}
+        />
+        <NumberInput
+          id="width-input"
+          label="Breite"
+          value={width}
+          min={0}
+          max={2560}
+          setNumber={setWidth}
+          isFocusable={!hasCollapsed}
+        />
+        <NumberInput
+          id="height-input"
+          label="Höhe"
+          value={height}
+          min={0}
+          max={1440}
+          setNumber={setHeight}
+          isFocusable={!hasCollapsed}
+        />
+        <SliderInput
+          id="scaling-factor-input"
+          label="Skalierung"
+          value={scalingFactor}
+          min={0.75}
+          max={1.25}
+          step={0.05}
+          setNumber={setScalingFactor}
+          isFocusable={!hasCollapsed}
+        />
+      </Settings>
       <Content>
         <ChartViewer
           chart={chart}

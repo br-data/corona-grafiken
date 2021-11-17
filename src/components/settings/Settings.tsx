@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Slider } from "@material-ui/core";
-import { IoIosSettings } from "react-icons/io";
+import { AiOutlineSetting } from "react-icons/ai";
 
 import {
   Form,
@@ -82,11 +82,11 @@ export const SettingsButton: React.FC<SettingsProps> = ({
       tabIndex={0}
       onClick={handleClick}
     >
-      <IoIosSettings
+      <AiOutlineSetting
         color={
-          hasCollapsed ? appColors.inputOutline : appColors.buttonBackground
+          hasCollapsed ? appColors.headerFontPrimary : appColors.buttonBackground
         }
-        size="2.5rem"
+        size="28px"
       />
     </SymbolButton>
   );
