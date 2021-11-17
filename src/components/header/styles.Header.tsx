@@ -24,6 +24,9 @@ export const Title = styled.h1`
   font-size: 18px;
   font-weight: 600;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Description = styled.span`
@@ -36,7 +39,7 @@ export const TabGroup = styled.div`
   justify-content: center;
   margin-left: auto;
   height: 100%;
-`
+`;
 
 export const Tab = styled.div`
   display: flex;
@@ -50,4 +53,4 @@ export const Tab = styled.div`
   &:last-child {
     border-right: none;
   }
-`
+`;

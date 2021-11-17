@@ -11,11 +11,17 @@ export const Content = styled.section`
 `;
 
 export const Controls = styled.section`
-  margin: 2rem 2rem 0;
-  display: flex; 
+  margin: .5rem 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
 `
 
 export const Footer = styled.footer`
-  margin: 0 2rem 2rem;
+  margin: 0 1rem 1rem;
   display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 900px)  {
+    justify-content: space-around;
+  }
 `;

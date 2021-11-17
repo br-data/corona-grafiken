@@ -39,24 +39,45 @@ export const Form = styled.form<{
   max-height: ${({ isCollapsible, hasCollapsed }) =>
     isCollapsible && hasCollapsed ? "0" : "100%"};
   margin-left: ${({ alignRight }) => (alignRight ? "auto" : "0")};
+
+  @media (max-width: 1100px) {
+    margin-left: 0;
+  }
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
-  margin: .25rem 1rem .25rem 0;
+  margin: 0.25rem 1rem 0.25rem 0;
   padding: 0;
   border: 0;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 
   &:last-child {
-    margin-right: 0
+    margin-right: 0;
   }
 `;
 
 export const FlexibleFieldset = styled(Fieldset)<{ alignRight?: boolean }>`
   display: flex;
   align-items: center;
-  margin-left: ${({ alignRight }) => (alignRight ? "auto" : "1rem")};
-  margin-right: ${({ alignRight }) => (alignRight ? "0" : "0.5rem")};
+  margin: 0;
+  margin-left: ${({ alignRight }) => (alignRight ? "auto" : "0")};
+
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    > fieldset {
+      margin: 0.5rem 0.5rem 0;
+    }
+
+    > button {
+      margin-top: 0.5rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    justify-content: space-around;
+  }
 `;
 
 export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
@@ -97,17 +118,13 @@ export const Button = styled.button`
   ${InputFontSettings}
 
   font-size: 1rem;
-  margin: 0 .5rem;
+  margin-left: 1rem;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 4px;
   background: ${appColors.buttonBackground};
   color: ${appColors.buttonFont};
   transition: all 0.3s ease;
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   &:focus {
     outline: 0;
