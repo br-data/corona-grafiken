@@ -39,8 +39,9 @@ export const Form = styled.form<{
   max-height: ${({ isCollapsible, hasCollapsed }) =>
     isCollapsible && hasCollapsed ? "0" : "100%"};
   margin-left: ${({ alignRight }) => (alignRight ? "auto" : "0")};
+  margin-right: ${({ alignRight }) => (alignRight ? "0" : "1rem")};
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1050px) {
     margin-left: 0;
   }
 `;
@@ -62,7 +63,7 @@ export const FlexibleFieldset = styled(Fieldset)<{ alignRight?: boolean }>`
   margin: 0;
   margin-left: ${({ alignRight }) => (alignRight ? "auto" : "0")};
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     flex-wrap: wrap;
     margin-left: 0;
 
