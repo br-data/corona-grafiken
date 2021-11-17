@@ -1,7 +1,7 @@
 import React from "react";
 import { max, min } from "d3-array";
 import { scaleLinear, scaleBand } from "d3-scale";
-import { line, curveMonotoneX } from "d3-shape";
+import { area, curveMonotoneX } from "d3-shape";
 
 import { ChartSvg } from "./partials/ChartSvg";
 import { ChartGroup } from "./partials/ChartGroup";
@@ -15,10 +15,9 @@ import { ChartAxisGrid } from "./partials/ChartAxisGrid";
 
 import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
-import { sma } from "../../utils/sma";
 import { germanDate, germanDateShort, dateRange } from "../../utils/date";
 
-export const BarChart: React.FC<ChartProps> = ({
+export const OverviewChart: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,
@@ -38,9 +37,9 @@ export const BarChart: React.FC<ChartProps> = ({
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
-  const data: ChartData[] = chartData.find((datum) => datum.key === "cases")
-    ?.data!;
-  const smoothData: ChartData[] = sma(data.slice(0, data.length - 2), 7, 'value');
+  const data: ChartData[] = chartData.find(
+    (datum) => datum.key === "currentCases"
+  )?.data!;
 
   const xMin = min(data, (d: ChartData) => new Date(d.date))!;
   const xMinBracket = new Date(xMin);
@@ -56,8 +55,7 @@ export const BarChart: React.FC<ChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
 
-  
-  const yMax = max(data, (d: ChartData): number => d.value)!;
+  const yMax = max(data, (d: ChartData): number => d.sumValue)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
@@ -67,9 +65,22 @@ export const BarChart: React.FC<ChartProps> = ({
 
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
-  const lineConstructor = line<ChartData>()
-    .x((d) => x(d.date)! + x.bandwidth() / 2)
-    .y((d) => y(d.value))
+  const recoveredCasesArea = area<ChartData>()
+    .x(d => x(d.date)!)
+    .y0((d) => y(d.currentlyInfected + d.deathSum))
+    .y1((d) => y(d.currentlyRecovered + d.currentlyInfected + d.deathSum))
+    .curve(curveMonotoneX);
+
+  const activeCasesArea = area<ChartData>()
+    .x((d) => x(d.date)!)
+    .y0((d) => y(d.deathSum) + 1)
+    .y1((d) => y(d.currentlyInfected + d.deathSum) - 1)
+    .curve(curveMonotoneX);
+
+  const deathsArea = area<ChartData>()
+    .x((d) => x(d.date)!)
+    .y0(y(0))
+    .y1((d) => y(d.deathSum))
     .curve(curveMonotoneX);
 
   return (
@@ -93,25 +104,24 @@ export const BarChart: React.FC<ChartProps> = ({
         transform={`translate(${margin.left}, ${margin.top})`}
       />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
-        {data.map((d: ChartData, index: number) => (
-          <rect
-            key={index}
-            x={x(d.date)}
-            y={y(d.value)}
-            width={x.bandwidth()}
-            height={innerHeight - y(d.value)}
-            fill={chartColors.blue}
-          ></rect>
-        ))}
+        <path
+          d={recoveredCasesArea(data)!}
+          stroke="none"
+          fill={chartColors.green}
+        ></path>
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
-          d={lineConstructor(smoothData)!}
-          fill="none"
-          stroke={chartColors.white}
-          strokeWidth="3"
-          strokeDasharray="10,10"
-          strokeLinecap="round"
+          d={activeCasesArea(data)!}
+          stroke="none"
+          fill={chartColors.blue}
+        ></path>
+      </ChartGroup>
+      <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
+        <path
+          d={deathsArea(data)!}
+          stroke="none"
+          fill={chartColors.yellow}
         ></path>
       </ChartGroup>
       <ChartHeader
@@ -120,20 +130,26 @@ export const BarChart: React.FC<ChartProps> = ({
         scalingFactor={scalingFactor}
         transform={`translate(${margin.right}, ${padding})`}
       />
-      <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
+      <ChartLegend transform={`translate(25, ${80 * scalingFactor})`}>
         <ChartKey
-          text="Neuinfektionen"
+          text="Erkrankte"
           symbol="square"
           symbolFill={chartColors.blue}
           scalingFactor={scalingFactor}
         />
         <ChartKey
-          text="7-Tage-Mittelwert"
-          symbol="dashed-line"
-          symbolStroke={chartColors.white}
-          symbolSize={30}
+          text="Genesene"
+          symbol="square"
+          symbolFill={chartColors.green}
           scalingFactor={scalingFactor}
-          transform={`translate(${150 * scalingFactor}, 0)`}
+          transform={`translate(${110 * scalingFactor}, 0)`}
+        />
+        <ChartKey
+          text="Todesfälle"
+          symbol="square"
+          symbolFill={chartColors.yellow}
+          scalingFactor={scalingFactor}
+          transform={`translate(${220 * scalingFactor}, 0)`}
         />
       </ChartLegend>
       <ChartFooter

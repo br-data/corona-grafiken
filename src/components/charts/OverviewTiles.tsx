@@ -14,7 +14,7 @@ import { chartColors } from "../../config/colors";
 import { germanDate } from "../../utils/date";
 import { weekTrend } from "../../utils/weekTrend";
 
-export const TileChart: React.FC<ChartProps> = ({
+export const OverviewTiles: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,

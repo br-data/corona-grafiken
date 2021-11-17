@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { BarChart } from "../../components/charts/BarChart";
-import { LineChart } from "../../components/charts/LineChart";
-import { AreaChart } from "../../components/charts/AreaChart";
-import { TileChart } from "../../components/charts/TileChart";
-import { ProgressChart } from "../../components/charts/ProgressChart";
-import { Map } from "../../components/charts/Map";
+import { InfectionChart } from "../../components/charts/InfectionChart";
+import { IntensiveCareChart } from "../../components/charts/IntensiveCareChart";
+import { OverviewChart } from "../../components/charts/OverviewChart";
+import { OverviewTiles } from "../../components/charts/OverviewTiles";
+import { VaccinationChart } from "../../components/charts/VaccinationChart";
+import { IncidenceMap } from "../../components/charts/IncidenceMap";
 import {
   ChartWrapper,
   ChartEditable,
@@ -86,12 +86,12 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
             contentEditable={true}
             suppressContentEditableWarning={true}
           >
-            {chart.type === "bar-chart" && <BarChart {...chartProps} />}
-            {chart.type === "line-chart" && <LineChart {...chartProps} />}
-            {chart.type === "area-chart" && <AreaChart {...chartProps} />}
-            {chart.type === "map" && <Map {...chartProps} />}
-            {chart.type === "tile-chart" && <TileChart {...chartProps} />}
-            {chart.type === "progress-chart" && <ProgressChart {...chartProps} />}
+            {chart.type === "incidence-map" && <IncidenceMap {...chartProps} />}
+            {chart.type === "infection-chart" && <InfectionChart {...chartProps} />}
+            {chart.type === "intensive-care-chart" && <IntensiveCareChart {...chartProps} />}
+            {chart.type === "overview-chart" && <OverviewChart {...chartProps} />}
+            {chart.type === "overview-tiles" && <OverviewTiles {...chartProps} />}
+            {chart.type === "vaccination-chart" && <VaccinationChart {...chartProps} />}
           </ChartEditable>
           <ChartDimensions>
             Größe: {width} × {height} (Auflösung: {width * 2} × {height * 2})

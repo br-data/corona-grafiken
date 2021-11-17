@@ -16,7 +16,7 @@ import { chartColors, getMapColor } from "../../config/colors";
 import { germanDate } from "../../utils/date";
 import { incidence } from "../../utils/incidence";
 
-export const Map: React.FC<MapProps> = ({
+export const IncidenceMap: React.FC<MapProps> = ({
   chart,
   chartData,
   startDate,
