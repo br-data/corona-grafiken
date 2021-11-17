@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
-import { darken, lighten } from "polished";
+import { lighten } from "polished";
 
 import { appColors } from "../../config/colors";
 
 const InputFontSettings = css`
   box-sizing: content-box;
   font-family: "Open Sans", OpenSans, sans-serif;
-  font-size: 1rem;
-  color: ${appColors.fontPrimary};
-  min-height: 1.5rem;
+  font-size: 0.85rem;
+  color: ${appColors.fontSecondary};
+  min-height: 1.85rem;
   cursor: pointer;
 `;
 
@@ -17,16 +17,18 @@ const InputBoxSetting = css`
   padding: 0;
   border: 0;
   border-radius: 3px;
-  border-bottom: 2px solid ${appColors.inputOutline};
-  background: ${appColors.background};
+  border: 1px solid ${appColors.inputOutline};
+  background: ${appColors.inputBackground};
 
   &:focus {
     outline: 0;
-    border-bottom: 2px solid ${appColors.highlight};
+    color: ${appColors.fontPrimary};
+    border: 1px solid ${appColors.highlight};
   }
 `;
 
 export const Form = styled.form<{
+  alignRight?: boolean;
   isCollapsible?: boolean;
   hasCollapsed?: boolean;
 }>`
@@ -36,6 +38,7 @@ export const Form = styled.form<{
     isCollapsible && hasCollapsed ? "hidden" : "visible"};
   max-height: ${({ isCollapsible, hasCollapsed }) =>
     isCollapsible && hasCollapsed ? "0" : "100%"};
+  margin-left: ${({ alignRight }) => (alignRight ? "auto" : "0")};
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
@@ -43,16 +46,21 @@ export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
   padding: 0;
   border: 0;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
+
+  &:last-child {
+    margin-right: 0
+  }
 `;
 
 export const FlexibleFieldset = styled(Fieldset)<{ alignRight?: boolean }>`
   display: flex;
+  align-items: center;
   margin-left: ${({ alignRight }) => (alignRight ? "auto" : "1rem")};
   margin-right: ${({ alignRight }) => (alignRight ? "0" : "0.5rem")};
 `;
 
 export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
-  color: ${appColors.fontSecondary};
+  color: ${appColors.fontPrimary};
   font-size: 0.85rem;
   margin: 0.1rem;
   font-weight: ${({ isBold }) => (isBold ? 600 : 400)};
@@ -88,11 +96,11 @@ export const Input = styled.input`
 export const Button = styled.button`
   ${InputFontSettings}
 
+  font-size: 1rem;
   margin: 0 .5rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
   border: 0;
   border-radius: 4px;
-  border-bottom: 2px solid ${darken(0.15, appColors.buttonBackground)};
   background: ${appColors.buttonBackground};
   color: ${appColors.buttonFont};
   transition: all 0.3s ease;
@@ -107,7 +115,8 @@ export const Button = styled.button`
   }
 
   > svg {
-    vertical-align: bottom;
+    margin-right: 0.25rem;
+    vertical-align: text-top;
   }
 `;
 

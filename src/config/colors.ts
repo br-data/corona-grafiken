@@ -32,7 +32,8 @@ export const appColors = {
   headerTabBackground: ciColors.black,
   headerTabSeparator: ciColors.veryDarkGrey,
   highlight: ciColors.blue,
-  inputOutline: ciColors.mediumGrey,
+  inputOutline: ciColors.lightGrey,
+  inputBackground: ciColors.white,
   buttonFont: ciColors.white,
   buttonBackground: ciColors.blue,
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "./styles.index";
-import { Footer, Content } from "./styles.App";
+import { Content, Controls, Footer } from "./styles.App";
 import { Header } from "./components/header/Header";
 import { ChartViewer } from "./views/chartViewer/ChartViewer";
 import {
@@ -86,83 +86,86 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header title="Corona Grafiken" description="Editor">
+      <Header title="Corona-Grafiken" description="Editor">
         <SettingsButton
           hasCollapsed={hasCollapsed}
           setHasCollapsed={setHasCollapsed}
         />
         <HelpButton />
       </Header>
-      <Settings>
-        <ChartSelect
-          id="chart-select"
-          label="Grafik auswählen"
-          value={chart}
-          options={charts}
-          setOption={setChart}
-        />
-        <ChartSelect
-          id="format-select"
-          label="Format auswählen"
-          value={format}
-          options={formats}
-          setOption={setFormat}
-        />
-      </Settings>
-      <Settings
-        isCollapsible={true}
-        hasCollapsed={hasCollapsed}
-        setHasCollapsed={setHasCollapsed}
-      >
-        <DateInput
-          id="start-date-input"
-          label="Startdatum"
-          value={startDate}
-          min={minStartDate}
-          max={maxEndDate}
-          isDisabled={dateDisabled}
-          setDate={setStartDate}
-          isFocusable={!hasCollapsed}
-        />
-        <DateInput
-          id="end-date-input"
-          label="Enddatum"
-          value={endDate}
-          min={minStartDate}
-          max={maxEndDate}
-          isDisabled={dateDisabled}
-          setDate={setEndDate}
-          isFocusable={!hasCollapsed}
-        />
-        <NumberInput
-          id="width-input"
-          label="Breite"
-          value={width}
-          min={0}
-          max={2560}
-          setNumber={setWidth}
-          isFocusable={!hasCollapsed}
-        />
-        <NumberInput
-          id="height-input"
-          label="Höhe"
-          value={height}
-          min={0}
-          max={1440}
-          setNumber={setHeight}
-          isFocusable={!hasCollapsed}
-        />
-        <SliderInput
-          id="scaling-factor-input"
-          label="Skalierung"
-          value={scalingFactor}
-          min={0.75}
-          max={1.25}
-          step={0.05}
-          setNumber={setScalingFactor}
-          isFocusable={!hasCollapsed}
-        />
-      </Settings>
+      <Controls>
+        <Settings>
+          <ChartSelect
+            id="chart-select"
+            label="Grafik auswählen"
+            value={chart}
+            options={charts}
+            setOption={setChart}
+          />
+          <ChartSelect
+            id="format-select"
+            label="Format auswählen"
+            value={format}
+            options={formats}
+            setOption={setFormat}
+          />
+        </Settings>
+        <Settings
+          isCollapsible={true}
+          hasCollapsed={hasCollapsed}
+          setHasCollapsed={setHasCollapsed}
+          alignRight={true}
+        >
+          <DateInput
+            id="start-date-input"
+            label="Startdatum"
+            value={startDate}
+            min={minStartDate}
+            max={maxEndDate}
+            isDisabled={dateDisabled}
+            setDate={setStartDate}
+            isFocusable={!hasCollapsed}
+          />
+          <DateInput
+            id="end-date-input"
+            label="Enddatum"
+            value={endDate}
+            min={minStartDate}
+            max={maxEndDate}
+            isDisabled={dateDisabled}
+            setDate={setEndDate}
+            isFocusable={!hasCollapsed}
+          />
+          <NumberInput
+            id="width-input"
+            label="Breite"
+            value={width}
+            min={0}
+            max={2560}
+            setNumber={setWidth}
+            isFocusable={!hasCollapsed}
+          />
+          <NumberInput
+            id="height-input"
+            label="Höhe"
+            value={height}
+            min={0}
+            max={1440}
+            setNumber={setHeight}
+            isFocusable={!hasCollapsed}
+          />
+          <SliderInput
+            id="scaling-factor-input"
+            label="Skalierung"
+            value={scalingFactor}
+            min={0.75}
+            max={1.25}
+            step={0.05}
+            setNumber={setScalingFactor}
+            isFocusable={!hasCollapsed}
+          />
+        </Settings>
+      </Controls>
       <Content>
         <ChartViewer
           chart={chart}
@@ -177,19 +180,21 @@ export default function App() {
         />
       </Content>
       <Footer>
-        <CheckboxInput
-          id="logo-checkbox"
-          label="BR24-Logo anzeigen"
-          isChecked={hasLogo}
-          setIsChecked={setHasLogo}
-        />
-        <CheckboxInput
-          id="annotation-checkbox"
-          label="Auswertung anzeigen"
-          isDisabled={annotationDisabled}
-          isChecked={hasAnnotation}
-          setIsChecked={setHasAnnotation}
-        />
+        <FlexibleFieldset isInline={true}>
+          <CheckboxInput
+            id="annotation-checkbox"
+            label="Auswertung anzeigen"
+            isDisabled={annotationDisabled}
+            isChecked={hasAnnotation}
+            setIsChecked={setHasAnnotation}
+          />
+          <CheckboxInput
+            id="logo-checkbox"
+            label="BR24-Logo anzeigen"
+            isChecked={hasLogo}
+            setIsChecked={setHasLogo}
+          />
+        </FlexibleFieldset>
         <FlexibleFieldset isInline={true} alignRight={true}>
           <DownloadButton
             type="svg"

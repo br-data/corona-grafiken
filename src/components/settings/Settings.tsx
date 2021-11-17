@@ -16,6 +16,7 @@ import { appColors } from "../../config/colors";
 interface SettingsProps {
   isCollapsible?: boolean;
   hasCollapsed?: boolean;
+  alignRight?: boolean;
   setHasCollapsed?: any;
 }
 
@@ -59,10 +60,11 @@ interface CheckboxInputProps extends InputProps {
 export const Settings: React.FC<SettingsProps> = ({
   isCollapsible,
   hasCollapsed,
+  alignRight,
   children,
 }) => {
   return (
-    <Form isCollapsible={isCollapsible} hasCollapsed={hasCollapsed}>
+    <Form isCollapsible={isCollapsible} hasCollapsed={hasCollapsed} alignRight={alignRight}>
       {children}
     </Form>
   );
@@ -245,6 +247,9 @@ export const CheckboxInput = ({
 
   return (
     <Fieldset isInline={true}>
+      <Label htmlFor={id} isBold={false}>
+        {label}
+      </Label>
       <Switch
         id={id}
         color="primary"
@@ -253,9 +258,6 @@ export const CheckboxInput = ({
         disabled={isDisabled}
         tabIndex={isFocusable ? 0 : -1}
       />
-      <Label htmlFor={id} isBold={false}>
-        {label}
-      </Label>
     </Fieldset>
   );
 };

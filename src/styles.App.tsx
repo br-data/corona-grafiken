@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { appColors } from "./config/colors";
-
 export const Content = styled.section`
   position: relative;
   display: flex;
@@ -12,11 +10,12 @@ export const Content = styled.section`
   overflow: scroll;
 `;
 
+export const Controls = styled.section`
+  margin: 2rem 2rem 0;
+  display: flex; 
+`
+
 export const Footer = styled.footer`
+  margin: 0 2rem 2rem;
   display: flex;
-  flex: 0 0 auto;
-  justify-content: space-between;
-  padding: 0.25rem 0.5rem 0.25rem 0.25rem;
-  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
-  background: ${appColors.foreground};
 `;
