@@ -59,9 +59,12 @@ export const chartColors = {
 };
 
 export const getMapColor = (value: number) => {
-  if (value >= 200) {
+  if (value >= 500) {
+    // very dark red
+    return '#800026';
+  } else if (value >= 300) {
     // dark red
-    return '#bb212f';
+    return '#bd0026';
   } else if (value >= 100) {
     // dark orange
     return '#ed4834';

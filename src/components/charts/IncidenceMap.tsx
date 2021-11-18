@@ -26,7 +26,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
   minValue = 0,
   maxValue = 300,
   minRadius = 5,
-  maxRadius = 20,
+  maxRadius = 15,
   scalingFactor = 1,
   hasLogo = false,
   hasAnnotation = false,
@@ -75,6 +75,10 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const mergedCounties = uniqueCounties.map((name) => {
       const caseDataDistrict = caseData.filter((c) => c.Landkreis === name);
       const metaInfoCounty = metaData.find((m) => m.rkiName === name);
+
+      if (metaInfoCounty === undefined) {
+        console.log(name);
+      }
 
       return Object.assign(metaInfoCounty, {
         incidence: incidence(caseDataDistrict, metaInfoCounty!.pop),
@@ -257,35 +261,44 @@ export const IncidenceMap: React.FC<MapProps> = ({
           transform={`translate(${margin.right}, ${padding})`}
         />
         <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
-          {/* <ChartKey
-            text="≥ 200 Fälle"
-            symbol="circle"
-            symbolSize={radiusScale(200)}
-            symbolFill={getMapColor(200)}
-            scalingFactor={scalingFactor}
-          /> */}
           <ChartKey
-            text="≥ 100 Fälle"
+            text="≥ 500"
+            symbol="circle"
+            symbolSize={radiusScale(500)}
+            symbolFill={getMapColor(500)}
+            scalingFactor={scalingFactor}
+          />
+          <ChartKey
+            text="≥ 300"
+            symbol="circle"
+            symbolSize={radiusScale(300)}
+            symbolFill={getMapColor(300)}
+            scalingFactor={scalingFactor}
+            transform={`translate(${82 * scalingFactor}, 0)`}
+          />
+          <ChartKey
+            text="≥ 100"
             symbol="circle"
             symbolSize={radiusScale(100)}
             symbolFill={getMapColor(100)}
             scalingFactor={scalingFactor}
+            transform={`translate(${160 * scalingFactor}, 0)`}
           />
           <ChartKey
-            text="≥ 50 Fälle"
+            text="≥ 50"
             symbol="circle"
             symbolSize={radiusScale(50)}
             symbolFill={getMapColor(50)}
             scalingFactor={scalingFactor}
-            transform={`translate(${120 * scalingFactor}, 0)`}
+            transform={`translate(${232 * scalingFactor}, 0)`}
           />
           <ChartKey
-            text="≥ 35 Fälle"
+            text="≥ 35"
             symbol="circle"
             symbolSize={radiusScale(35)}
             symbolFill={getMapColor(35)}
             scalingFactor={scalingFactor}
-            transform={`translate(${235 * scalingFactor}, 0)`}
+            transform={`translate(${295 * scalingFactor}, 0)`}
           />
           <ChartKey
             text="≥ 1 Fall"
@@ -293,7 +306,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             symbolSize={radiusScale(1)}
             symbolFill={getMapColor(1)}
             scalingFactor={scalingFactor}
-            transform={`translate(${340 * scalingFactor}, 0)`}
+            transform={`translate(${357 * scalingFactor}, 0)`}
           />
         </ChartLegend>
         <ChartFooter
