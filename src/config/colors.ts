@@ -65,12 +65,12 @@ export const getMapColor = (value: number) => {
   } else if (value >= 500) {
     // medium red
     return '#bd0026';
-  } else if (value >= 300) {
+  } else if (value >= 200) {
     // dark orange
     return '#f03b20';
   } else if (value >= 100) {
     // medium orange
-    return '#fd8d3c';
+    return '#fd7c3c';
   } else if (value >= 50) {
     // light orange
     return '#feb24c';
