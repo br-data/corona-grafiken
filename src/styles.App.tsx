@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-import { appColors } from "./config/colors";
-
-export const Header = styled.header`
-  flex: 0 0 auto;
-  padding: 0.25rem 0.75rem 0.75rem 1rem;
-  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
-  background: ${appColors.foreground};
-`;
-
 export const Content = styled.section`
   position: relative;
   display: flex;
@@ -19,11 +10,18 @@ export const Content = styled.section`
   overflow: scroll;
 `;
 
-export const Footer = styled.footer`
+export const Controls = styled.section`
+  margin: .5rem 1rem 2rem;
   display: flex;
-  flex: 0 0 auto;
-  justify-content: space-between;
-  padding: 0.25rem 0.5rem 0.25rem 0.25rem;
-  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
-  background: ${appColors.foreground};
+  flex-wrap: wrap;
+`
+
+export const Footer = styled.footer`
+  margin: 2rem 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 1050px)  {
+    justify-content: space-around;
+  }
 `;

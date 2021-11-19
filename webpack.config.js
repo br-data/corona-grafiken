@@ -72,13 +72,15 @@ module.exports = (env, options) => {
   } else {
     // for more information, see https://webpack.js.org/configuration/dev-server
     config.devServer = {
-      contentBase: resolve("src/assets"),
       port: 8080,
       open: true,
       hot: true,
-      compress: true,
-      stats: "errors-only",
-      overlay: true,
+      client: {
+        overlay: {
+          errors: true,
+          warnings: false,
+        },
+      },
     };
   }
 

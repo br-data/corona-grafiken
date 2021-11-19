@@ -17,7 +17,7 @@ import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
 import { germanDate, germanDateShort, dateRange } from "../../utils/date";
 
-export const LineChart: React.FC<ChartProps> = ({
+export const IntensiveCareChart: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,

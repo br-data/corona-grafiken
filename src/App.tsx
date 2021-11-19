@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "./styles.index";
-import { Header, Footer, Content } from "./styles.App";
+import { Content, Controls, Footer } from "./styles.App";
+import { Header } from "./components/header/Header";
 import { ChartViewer } from "./views/chartViewer/ChartViewer";
 import {
   Settings,
@@ -21,7 +22,7 @@ import { appColors } from "./config/colors";
 import { charts } from "./config/charts";
 import { formats } from "./config/formats";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: "'Open Sans', OpenSans, sans-serif",
   },
@@ -57,8 +58,12 @@ export default function App() {
   const [height, setHeight] = useState(defaultHeight);
   const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
   const [dateDisabled, setDateDisabled] = useState(defaultDateDisabled);
-  const [annotationDisabled, setAnnotationDisabled] = useState(defaultAnnotationDisabled);
-  const [hasAnnotation, setHasAnnotation] = useState(defaultAnnotationVisibility);
+  const [annotationDisabled, setAnnotationDisabled] = useState(
+    defaultAnnotationDisabled
+  );
+  const [hasAnnotation, setHasAnnotation] = useState(
+    defaultAnnotationVisibility
+  );
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
   const [hasCollapsed, setHasCollapsed] = useState(true);
 
@@ -81,7 +86,19 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header>
+      <Header
+        title="Corona-Grafiken"
+        description="Editor"
+        organization="AI + Automation Lab"
+        organizationLink="https://www.br.de/extra/ai-automation-lab/index.html"
+      >
+        <SettingsButton
+          hasCollapsed={hasCollapsed}
+          setHasCollapsed={setHasCollapsed}
+        />
+        <HelpButton />
+      </Header>
+      <Controls>
         <Settings>
           <ChartSelect
             id="chart-select"
@@ -97,18 +114,12 @@ export default function App() {
             options={formats}
             setOption={setFormat}
           />
-          <FlexibleFieldset isInline={true} alignRight={true}>
-            <SettingsButton
-              hasCollapsed={hasCollapsed}
-              setHasCollapsed={setHasCollapsed}
-            />
-            <HelpButton />
-          </FlexibleFieldset>
         </Settings>
         <Settings
           isCollapsible={true}
           hasCollapsed={hasCollapsed}
           setHasCollapsed={setHasCollapsed}
+          alignRight={true}
         >
           <DateInput
             id="start-date-input"
@@ -159,7 +170,7 @@ export default function App() {
             isFocusable={!hasCollapsed}
           />
         </Settings>
-      </Header>
+      </Controls>
       <Content>
         <ChartViewer
           chart={chart}
@@ -174,19 +185,21 @@ export default function App() {
         />
       </Content>
       <Footer>
-        <CheckboxInput
-          id="logo-checkbox"
-          label="BR24-Logo anzeigen"
-          isChecked={hasLogo}
-          setIsChecked={setHasLogo}
-        />
-        <CheckboxInput
-          id="annotation-checkbox"
-          label="Auswertung anzeigen"
-          isDisabled={annotationDisabled}
-          isChecked={hasAnnotation}
-          setIsChecked={setHasAnnotation}
-        />
+        <FlexibleFieldset isInline={true}>
+          <CheckboxInput
+            id="annotation-checkbox"
+            label="Auswertung anzeigen"
+            isDisabled={annotationDisabled}
+            isChecked={hasAnnotation}
+            setIsChecked={setHasAnnotation}
+          />
+          <CheckboxInput
+            id="logo-checkbox"
+            label="BR24-Logo anzeigen"
+            isChecked={hasLogo}
+            setIsChecked={setHasLogo}
+          />
+        </FlexibleFieldset>
         <FlexibleFieldset isInline={true} alignRight={true}>
           <DownloadButton
             type="svg"

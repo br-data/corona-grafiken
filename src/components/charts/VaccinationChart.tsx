@@ -13,7 +13,7 @@ import { ChartProps, ChartData } from "./ChartProps";
 import { chartColors } from "../../config/colors";
 import { germanDate } from "../../utils/date";
 
-export const ProgressChart: React.FC<ChartProps> = ({
+export const VaccinationChart: React.FC<ChartProps> = ({
   chart,
   chartData,
   startDate,

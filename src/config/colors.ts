@@ -1,11 +1,11 @@
 export const ciColors = {
   white: "#ffffff",
-  black: "#323232",
+  black: "#222222",
+  almostBlack: "#333333",
 
-  superLightGrey: "#ededf3",
-  veryLightGrey: "#ced3d9",
-  lightGrey: "#9da1a5",
-  mediumGrey: "#8f9399",
+  veryLightGrey: "#f7f7f7",
+  lightGrey: "#c4cad0",
+  mediumGrey: "#8c8c91",
   darkGrey: "#6a727c",
   veryDarkGrey: "#464b5a",
 
@@ -25,9 +25,15 @@ export const appColors = {
   fontPrimary: ciColors.black,
   fontSecondary: ciColors.mediumGrey,
   foreground: ciColors.white,
-  background: ciColors.superLightGrey,
+  background: ciColors.veryLightGrey,
+  headerFontPrimary: ciColors.white,
+  headerFontSecondary: ciColors.mediumGrey,
+  headerBackground: ciColors.almostBlack,
+  headerTabBackground: ciColors.black,
+  headerTabSeparator: ciColors.veryDarkGrey,
   highlight: ciColors.blue,
-  inputOutline: ciColors.veryLightGrey,
+  inputOutline: ciColors.lightGrey,
+  inputBackground: ciColors.white,
   buttonFont: ciColors.white,
   buttonBackground: ciColors.blue,
 };
@@ -53,9 +59,12 @@ export const chartColors = {
 };
 
 export const getMapColor = (value: number) => {
-  if (value >= 200) {
+  if (value >= 500) {
+    // very dark red
+    return '#800026';
+  } else if (value >= 300) {
     // dark red
-    return '#bb212f';
+    return '#bd0026';
   } else if (value >= 100) {
     // dark orange
     return '#ed4834';
