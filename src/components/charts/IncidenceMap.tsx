@@ -168,7 +168,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             </text>
           ))}
         </ChartGroup>
-        { hasAnnotation &&
+        {hasAnnotation && (
           <ChartGroup
             transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
           >
@@ -188,11 +188,13 @@ export const IncidenceMap: React.FC<MapProps> = ({
               </text>
             ))}
           </ChartGroup>
-        }
-        { hasAnnotation && 
+        )}
+        {hasAnnotation && (
           <ChartGroup
             transform={`translate(${padding}, ${
-              height - (height > 350 ? 300 : 200) + (hasLogo ? 0 : chartLogoSize) * scalingFactor
+              height -
+              (height > 350 ? 300 : 200) +
+              (hasLogo ? 0 : chartLogoSize) * scalingFactor
             })`}
           >
             <text
@@ -253,7 +255,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
               </g>
             ))}
           </ChartGroup>
-        }
+        )}
         <ChartHeader
           title={chart.title}
           description={chart.description}
@@ -277,10 +279,10 @@ export const IncidenceMap: React.FC<MapProps> = ({
             transform={`translate(${92 * scalingFactor}, 0)`}
           />
           <ChartKey
-            text="≥ 300"
+            text="≥ 200"
             symbol="circle"
-            symbolSize={radiusScale(300)}
-            symbolFill={getMapColor(300)}
+            symbolSize={radiusScale(200)}
+            symbolFill={getMapColor(200)}
             scalingFactor={scalingFactor}
             transform={`translate(${170 * scalingFactor}, 0)`}
           />
