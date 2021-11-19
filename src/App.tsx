@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle } from "./styles.index";
 import { Content, Controls, Footer } from "./styles.App";
@@ -22,7 +22,7 @@ import { appColors } from "./config/colors";
 import { charts } from "./config/charts";
 import { formats } from "./config/formats";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: "'Open Sans', OpenSans, sans-serif",
   },
