@@ -6,6 +6,7 @@ import {
   LogoWrapper,
   Title,
   Description,
+  OrganizationLink,
   TabGroup,
   Tab,
 } from "./styles.Header";
@@ -13,11 +14,15 @@ import {
 interface HeaderProps {
   title?: string;
   description?: string;
+  organization?: string;
+  organizationLink?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   title,
   description,
+  organization,
+  organizationLink,
   children,
 }) => {
   return (
@@ -30,6 +35,9 @@ export const Header: React.FC<HeaderProps> = ({
         <Description>| {description}</Description>
       </Title>
       <TabGroup>
+        <OrganizationLink href={organizationLink}>
+          {organization}
+        </OrganizationLink>
         {React.Children.map(children, (child) => (
           <Tab>{child}</Tab>
         ))}

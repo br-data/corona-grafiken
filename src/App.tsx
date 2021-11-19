@@ -86,7 +86,12 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header title="Corona-Grafiken" description="Editor">
+      <Header
+        title="Corona-Grafiken"
+        description="Editor"
+        organization="AI + Automation Lab"
+        organizationLink="https://www.br.de/extra/ai-automation-lab/index.html"
+      >
         <SettingsButton
           hasCollapsed={hasCollapsed}
           setHasCollapsed={setHasCollapsed}

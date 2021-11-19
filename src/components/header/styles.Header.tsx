@@ -16,14 +16,13 @@ export const LogoWrapper = styled.div`
   justify-content: center;
   width: 75px;
   height: 100%;
-  margin-right: 25px;
   background: ${appColors.headerTabBackground};
 `;
 
 export const Title = styled.h1`
   font-size: 18px;
   font-weight: 600;
-  margin: 0;
+  margin: 0 2rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -31,6 +30,20 @@ export const Title = styled.h1`
 
 export const Description = styled.span`
   font-weight: 300;
+`;
+
+export const OrganizationLink = styled.a`
+  color: ${appColors.fontSecondary};
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const TabGroup = styled.div`
