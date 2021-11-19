@@ -6,7 +6,7 @@ export const germanDate = (dateString: string) => {
 };
 
 export const germanDateShort = (dateString: string) => {
-  const options: any = { month: "numeric", day: "numeric" };
+  const options: any = { year: '2-digit', month: 'short' };
   const date = new Date(dateString);
 
   return date.toLocaleDateString("de-DE", options);

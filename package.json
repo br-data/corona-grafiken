@@ -12,6 +12,9 @@
     "start": "webpack serve --mode development --color --progress",
     "build": "webpack --color --mode production --progress"
   },
+  "peerDependencies": {
+    "react-is": "^16.8.6"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "d3-array": "^2.11.0",

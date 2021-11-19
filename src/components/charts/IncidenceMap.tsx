@@ -262,11 +262,19 @@ export const IncidenceMap: React.FC<MapProps> = ({
         />
         <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
           <ChartKey
+            text="≥ 1000"
+            symbol="circle"
+            symbolSize={radiusScale(1000)}
+            symbolFill={getMapColor(1000)}
+            scalingFactor={scalingFactor}
+          />
+          <ChartKey
             text="≥ 500"
             symbol="circle"
             symbolSize={radiusScale(500)}
             symbolFill={getMapColor(500)}
             scalingFactor={scalingFactor}
+            transform={`translate(${92 * scalingFactor}, 0)`}
           />
           <ChartKey
             text="≥ 300"
@@ -274,7 +282,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             symbolSize={radiusScale(300)}
             symbolFill={getMapColor(300)}
             scalingFactor={scalingFactor}
-            transform={`translate(${82 * scalingFactor}, 0)`}
+            transform={`translate(${170 * scalingFactor}, 0)`}
           />
           <ChartKey
             text="≥ 100"
@@ -282,7 +290,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             symbolSize={radiusScale(100)}
             symbolFill={getMapColor(100)}
             scalingFactor={scalingFactor}
-            transform={`translate(${160 * scalingFactor}, 0)`}
+            transform={`translate(${242 * scalingFactor}, 0)`}
           />
           <ChartKey
             text="≥ 50"
@@ -290,7 +298,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             symbolSize={radiusScale(50)}
             symbolFill={getMapColor(50)}
             scalingFactor={scalingFactor}
-            transform={`translate(${232 * scalingFactor}, 0)`}
+            transform={`translate(${310 * scalingFactor}, 0)`}
           />
           <ChartKey
             text="≥ 35"
@@ -298,7 +306,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             symbolSize={radiusScale(35)}
             symbolFill={getMapColor(35)}
             scalingFactor={scalingFactor}
-            transform={`translate(${295 * scalingFactor}, 0)`}
+            transform={`translate(${370 * scalingFactor}, 0)`}
           />
           <ChartKey
             text="≥ 1 Fall"
@@ -306,7 +314,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             symbolSize={radiusScale(1)}
             symbolFill={getMapColor(1)}
             scalingFactor={scalingFactor}
-            transform={`translate(${357 * scalingFactor}, 0)`}
+            transform={`translate(${430 * scalingFactor}, 0)`}
           />
         </ChartLegend>
         <ChartFooter
