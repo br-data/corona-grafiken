@@ -85,7 +85,7 @@ export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
   color: ${appColors.fontPrimary};
   font-size: 0.85rem;
   margin: 0.1rem;
-  font-weight: ${({ isBold }) => (isBold ? 600 : 400)};
+  font-weight: ${({ isBold }) => (isBold ? 700 : 400)};
   display: ${({ isBlock }) => (isBlock ? "block" : "inline")};
 `;
 

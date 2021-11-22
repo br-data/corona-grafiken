@@ -21,7 +21,7 @@ export const LogoWrapper = styled.div`
 
 export const Title = styled.h1`
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 2rem;
   white-space: nowrap;
   overflow: hidden;

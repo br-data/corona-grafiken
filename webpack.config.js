@@ -23,8 +23,9 @@ module.exports = (env, options) => {
     },
     output: {
       path: resolve(__dirname, "build"),
-      filename: "[name].js",
-      chunkFilename: "data/[name].chunk.js",
+      filename: "[name].[contenthash].js",
+      chunkFilename: "data/[name].[contenthash].chunk.js",
+      assetModuleFilename: "assets/fonts/[name].[ext]",
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -37,9 +38,8 @@ module.exports = (env, options) => {
           exclude: /node_modules/,
         },
         {
-          test: /\.js$/,
-          enforce: "pre",
-          use: ["source-map-loader"],
+          test: /\.(woff|woff2)(\?.*)?$/,
+          type: "asset/resource",
         },
       ],
     },
@@ -65,12 +65,13 @@ module.exports = (env, options) => {
   };
 
   if (isProd) {
+    config.devtool = "source-map";
     config.optimization = {
       usedExports: true,
       minimizer: [new TerserWebpackPlugin({ extractComments: false })],
     };
   } else {
-    // for more information, see https://webpack.js.org/configuration/dev-server
+    config.devtool = "eval-source-map";
     config.devServer = {
       port: 8080,
       open: true,
