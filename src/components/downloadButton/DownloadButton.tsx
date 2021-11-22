@@ -1,7 +1,7 @@
 import React from "react";
 // @ts-ignore: No types available
 import { saveSvg, saveSvgAsPng, } from "save-svg-as-png";
-import { FiDownload } from "react-icons/fi";
+import { AiOutlineDownload } from "react-icons/ai";
 
 import { Button } from "../settings/styles.Settings";
 import { ChartObject } from "../../config/charts";
@@ -25,7 +25,7 @@ export const DownloadButton = ({ type, text, chart, svgDom }: DownloadButtonProp
 
   return (
     <Button onClick={handleClick}>
-      <FiDownload size="1.2rem" /> {text}
+      <AiOutlineDownload size="1.5rem" /> {text}
     </Button>
   );
 };

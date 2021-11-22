@@ -11,9 +11,12 @@ import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { AiOutlineSetting, AiOutlineQuestionCircle } from "react-icons/ai";
-import { CgClose } from "react-icons/cg";
-import { FiDownload } from "react-icons/fi";
+import {
+  AiOutlineSetting,
+  AiOutlineQuestionCircle,
+  AiOutlineClose,
+  AiOutlineDownload,
+} from "react-icons/ai";
 
 import { SymbolButton } from "../../components/settings/styles.Settings";
 import { appColors } from "../../config/colors";
@@ -49,7 +52,7 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
           className={classes.closeButton}
           onClick={onClose}
         >
-          <CgClose color={appColors.inputOutline} />
+          <AiOutlineClose color={appColors.inputOutline} />
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -93,16 +96,35 @@ export const HelpButton: React.FC = ({}) => {
         </DialogTitle>
         <DialogContent>
           <p>
-            <em>Dieses Online-Werkzeug hilft dir dabei, Corona-Grafiken in verschiedenen Formaten zu erstellen. Die Web-Anwendung funktioniert am besten in Google Chrome oder Mozilla Firefox.</em>
+            <em>
+              Dieses Online-Werkzeug hilft dir dabei, Corona-Grafiken in
+              verschiedenen Formaten zu erstellen. Die Web-Anwendung
+              funktioniert am besten in Google Chrome oder Mozilla Firefox.
+            </em>
           </p>
           <p>
-            <strong>Download:</strong> Die Grafiken lassen sich im PNG- und SVG-Format herunterladen (<FiDownload style={{ verticalAlign: "middle" }}/>). <em>PNG-Grafiken</em> können direkt im CMS oder auf verschiedenen Social-Media-Plattformen verwendet werden. Das <em>SVG-Format</em> eignet sich, um eine Grafik in Adobe Illustrator oder After Effects zu bearbeiten. 
+            <strong>Download:</strong> Die Grafiken lassen sich im PNG- und
+            SVG-Format herunterladen (
+            <AiOutlineDownload style={{ verticalAlign: "middle" }} />
+            ). <em>PNG-Grafiken</em> können direkt im CMS oder auf verschiedenen
+            Social-Media-Plattformen verwendet werden. Das <em>SVG-Format</em>{" "}
+            eignet sich, um eine Grafik in Adobe Illustrator oder After Effects
+            zu bearbeiten.
           </p>
           <p>
-            <strong>Weitere Einstellungen:</strong> Mit einem Klick auf das Zahnrad (<AiOutlineSetting style={{ verticalAlign: "middle" }}/>) kann man sich weitere Grafikeinstellungen anzeigen lassen. Hier kann man die <em>Höhe</em> und die <em>Größe</em> einer Grafik ändern, wenn man mit den Voreinstellungen nicht zufrieden ist. Außerdem kann man die <em>Skalierung</em> einer Grafik verändern. Die Skalierung beeinflusst gleichzeitig die Schrift-, Logo- und Diagrammgröße.
+            <strong>Weitere Einstellungen:</strong> Mit einem Klick auf das
+            Zahnrad (<AiOutlineSetting style={{ verticalAlign: "middle" }} />)
+            kann man sich weitere Grafikeinstellungen anzeigen lassen. Hier kann
+            man die <em>Höhe</em> und die <em>Größe</em> einer Grafik ändern,
+            wenn man mit den Voreinstellungen nicht zufrieden ist. Außerdem kann
+            man die <em>Skalierung</em> einer Grafik verändern. Die Skalierung
+            beeinflusst gleichzeitig die Schrift-, Logo- und Diagrammgröße.
           </p>
           <p>
-            Bei manchen Grafiken lässt sich auch der Zeitraum (<em>Start-/Enddatum</em>) verändern. Dadurch kann man in die Vergangenheit reisen, um zum Beispiel eine Karte mit den Corona-Inzidenzen des vergangenen Jahres zu erstellen.
+            Bei manchen Grafiken lässt sich auch der Zeitraum (
+            <em>Start-/Enddatum</em>) verändern. Dadurch kann man in die
+            Vergangenheit reisen, um zum Beispiel eine Karte mit den
+            Corona-Inzidenzen des vergangenen Jahres zu erstellen.
           </p>
         </DialogContent>
       </Dialog>
