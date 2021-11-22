@@ -1,6 +1,6 @@
 {
   "name": "corona-grafiken",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Steffen Kühne",
   "license": "MIT",
   "private": true,
@@ -12,11 +12,13 @@
     "start": "webpack serve --mode development --color --progress",
     "build": "webpack --color --mode production --progress"
   },
+  "browserslist": "last 2 versions, > 5%, ie >= 11",
   "peerDependencies": {
     "react-is": "^16.8.6"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "core-js": "^3.19.1",
     "d3-array": "^2.11.0",
     "d3-geo": "^2.0.1",
     "d3-scale": "^3.2.3",
@@ -31,7 +33,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
-    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",

@@ -1,11 +1,14 @@
 {
   "presets": [
-    "@babel/env",
-    "@babel/react",
-    "@babel/typescript"
+    "@babel/preset-typescript",
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
   ],
-  "plugins": [
-    "babel-plugin-styled-components",
-    "@babel/plugin-transform-runtime"
-  ]
+  "plugins": ["babel-plugin-styled-components"]
 }

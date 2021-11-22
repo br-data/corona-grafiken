@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
-import { GlobalStyle } from "./styles.index";
-import { Content, Controls, Footer } from "./styles.App";
+import { GlobalStyle, Content, Controls, Footer } from "./styles.App";
 import { Header } from "./components/header/Header";
 import { ChartViewer } from "./views/chartViewer/ChartViewer";
 import {

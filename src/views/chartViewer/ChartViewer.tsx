@@ -85,8 +85,7 @@ export const ChartViewer: React.FC<ChartViewerProps> = ({
             ref={setSvgDom}
             contentEditable={true}
             suppressContentEditableWarning={true}
-            // @ts-ignore The div is used as a form element
-            spellcheck="false"
+            spellCheck={false}
           >
             {chart.type === "incidence-map" && <IncidenceMap {...chartProps} />}
             {chart.type === "infection-chart" && <InfectionChart {...chartProps} />}
