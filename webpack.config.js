@@ -76,6 +76,11 @@ module.exports = (env, options) => {
       port: 8080,
       open: true,
       hot: true,
+      static: {
+        directory: resolve(__dirname, "src/assets"),
+        publicPath: '/',
+        watch: true,
+      },
       client: {
         overlay: {
           errors: true,
