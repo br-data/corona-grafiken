@@ -24,7 +24,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
   hasLogo = false,
 }) => {
   const margin = {
-    top: 130 * scalingFactor,
+    top: 140 * scalingFactor,
     right: 25,
     bottom: hasLogo ? (chartLogoSize + 55) * scalingFactor : 75,
     left: 25,
@@ -37,12 +37,11 @@ export const VaccinationChart: React.FC<ChartProps> = ({
   const bavariaData: ChartData[] = chartData.find(
     (datum) => datum.key === "vaccinations-bavaria"
   )?.data!;
+  const currentBavariaData = bavariaData[bavariaData.length - 1];
   const germanyData: ChartData[] = chartData.find(
     (datum) => datum.key === "vaccinations-germany"
   )?.data!;
-
-  console.log(bavariaData);
-  
+  const currentGermanyData = germanyData[germanyData.length - 1];
 
   const x = scaleLinear().domain([0, 100]).range([0, innerWidth]);
   const xTicks = x.ticks(5);
@@ -52,7 +51,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
 
   return (
     <ChartSvg id={chart.id} width={width} height={height}>
-      <defs>
+      {/* <defs>
         <linearGradient id="linear-gradient">
           <stop
             offset=".6"
@@ -77,7 +76,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
             stopOpacity="0"
           ></path>
         </pattern>
-      </defs>
+      </defs> */}
       <ChartBackground width={width} height={height} />
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <text
@@ -88,7 +87,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
         >
           Bayern:
         </text>
-        <ChartGroup transform="translate(0, 8)">
+        <ChartGroup transform="translate(0, 12)">
           <rect
             width={x(100)}
             height={barHeight}
@@ -97,31 +96,36 @@ export const VaccinationChart: React.FC<ChartProps> = ({
             fill="url(#linear-gradient)"
           ></rect>
           <rect
-            width={x(bavariaData[bavariaData.length - 1]["impf_quote_min1"])}
+            width={x(currentBavariaData["impf_quote_min1"])}
             height={barHeight}
-            fill="url(#diagonal-hatching)"
+            fill={chartColors.darkGreen}
           >
             <title>{`${germanNumber(
-              bavariaData[bavariaData.length - 1]["personen_min1_kumulativ"]
+              currentBavariaData["personen_min1_kumulativ"]
             )} (${germanNumber(
-              bavariaData[bavariaData.length - 1]["impf_quote_min1"]
+              currentBavariaData["impf_quote_min1"]
             )} %)`}</title>
           </rect>
           <rect
-            width={x(bavariaData[bavariaData.length - 1]["impf_quote_voll"])}
+            width={x(currentBavariaData["impf_quote_voll"])}
             height={barHeight}
             fill={chartColors.green}
           >
             <title>
-              `$
-              {germanNumber(
-                bavariaData[bavariaData.length - 1]["personen_voll_kumulativ"]
-              )}{" "}
-              ($
-              {germanNumber(
-                bavariaData[bavariaData.length - 1]["impf_quote_voll"]
-              )}{" "}
-              %)`
+              {`${germanNumber(
+                currentBavariaData["personen_voll_kumulativ"]
+              )} (${germanNumber(currentBavariaData["impf_quote_voll"])} %)`}
+            </title>
+          </rect>
+          <rect
+            width={x(currentBavariaData["impf_quote_auffr"])}
+            height={barHeight}
+            fill={chartColors.lightGreen}
+          >
+            <title>
+              {`${germanNumber(
+                currentBavariaData["personen_auffr_kumulativ"]
+              )} (${germanNumber(currentBavariaData["impf_quote_auffr"])} %)`}
             </title>
           </rect>
           {/* <text
@@ -167,7 +171,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
         >
           Deutschland:
         </text>
-        <ChartGroup transform={`translate(0, 7)`}>
+        <ChartGroup transform={`translate(0, 12)`}>
           <rect
             width={x(100)}
             height={barHeight}
@@ -176,31 +180,36 @@ export const VaccinationChart: React.FC<ChartProps> = ({
             fill="url(#linear-gradient)"
           ></rect>
           <rect
-            width={x(germanyData[germanyData.length - 1]["impf_quote_min1"])}
+            width={x(currentGermanyData["impf_quote_min1"])}
             height={barHeight}
-            fill="url(#diagonal-hatching)"
+            fill={chartColors.darkGreen}
           >
-            <title>{`${germanNumber(
-              germanyData[germanyData.length - 1]["personen_min1_kumulativ"]
-            )} (${germanNumber(
-              germanyData[germanyData.length - 1]["impf_quote_min1"]
-            )} %)`}</title>
+            <title>
+              {`${germanNumber(
+                currentGermanyData["personen_min1_kumulativ"]
+              )} (${germanNumber(currentGermanyData["impf_quote_min1"])} %)`}
+            </title>
           </rect>
           <rect
-            width={x(germanyData[germanyData.length - 1]["impf_quote_voll"])}
+            width={x(currentGermanyData["impf_quote_voll"])}
             height={barHeight}
             fill={chartColors.green}
           >
             <title>
-              `$
-              {germanNumber(
-                germanyData[germanyData.length - 1]["personen_voll_kumulativ"]
-              )}{" "}
-              ($
-              {germanNumber(
-                germanyData[germanyData.length - 1]["impf_quote_voll"]
-              )}{" "}
-              %)`
+              {`${germanNumber(
+                currentGermanyData["personen_voll_kumulativ"]
+              )} (${germanNumber(currentGermanyData["impf_quote_voll"])} %)`}
+            </title>
+          </rect>
+          <rect
+            width={x(currentGermanyData["impf_quote_auffr"])}
+            height={barHeight}
+            fill={chartColors.lightGreen}
+          >
+            <title>
+              {`${germanNumber(
+                currentGermanyData["personen_auffr_kumulativ"]
+              )} (${germanNumber(currentGermanyData["impf_quote_auffr"])} %)`}
             </title>
           </rect>
           {/* <text
@@ -241,17 +250,24 @@ export const VaccinationChart: React.FC<ChartProps> = ({
       />
       <ChartLegend transform={`translate(${padding}, ${80 * scalingFactor})`}>
         <ChartKey
-          text="Zweitimpfung erhalten"
+          text="Erstimpfung"
           symbol="square"
-          symbolFill={chartColors.green}
+          symbolFill={chartColors.darkGreen}
           scalingFactor={scalingFactor}
         />
         <ChartKey
-          text="Erstimpfung erhalten"
+          text="Zweitimpfung"
           symbol="square"
-          symbolFill="url(#diagonal-hatching)"
+          symbolFill={chartColors.green}
           scalingFactor={scalingFactor}
-          transform={`translate(${200 * scalingFactor}, 0)`}
+          transform={`translate(${130 * scalingFactor}, 0)`}
+        />
+        <ChartKey
+          text="Drittimpfung"
+          symbol="square"
+          symbolFill={chartColors.lightGreen}
+          scalingFactor={scalingFactor}
+          transform={`translate(${265 * scalingFactor}, 0)`}
         />
         {/* <ChartKey
           text="Gesamtbevölkerung"
