@@ -24,9 +24,9 @@ export const IncidenceMap: React.FC<MapProps> = ({
   width = 800,
   height = 450,
   minValue = 0,
-  maxValue = 300,
+  maxValue = 1000,
   minRadius = 5,
-  maxRadius = 15,
+  maxRadius = 25,
   scalingFactor = 1,
   hasLogo = false,
   hasAnnotation = false,
@@ -78,10 +78,6 @@ export const IncidenceMap: React.FC<MapProps> = ({
       const caseDataDistrict = caseData.filter((c) => c.Landkreis === name);
       const metaInfoCounty = metaData.find((m) => m.rkiName === name);
 
-      if (metaInfoCounty === undefined) {
-        console.log(name);
-      }
-
       return Object.assign(metaInfoCounty, {
         incidence: incidence(caseDataDistrict, metaInfoCounty!.pop),
       });
@@ -113,7 +109,8 @@ export const IncidenceMap: React.FC<MapProps> = ({
       mapScale / (chart.subType === "map-bavaria" ? 7000 : 5000);
     const radiusScale = scaleSqrt()
       .domain([minValue, maxValue])
-      .range([minRadius * radiusFactor, maxRadius * radiusFactor]);
+      .range([minRadius * radiusFactor, maxRadius * radiusFactor])
+      .clamp(true);
 
     return (
       <ChartSvg id={chart.id} width={width} height={height}>
