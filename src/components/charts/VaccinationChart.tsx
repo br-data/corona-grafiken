@@ -74,7 +74,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
             d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2"
             stroke={chartColors.green}
             stopOpacity="0"
-          ></path>
+          />
         </pattern>
       </defs> */}
       <ChartBackground width={width} height={height} />

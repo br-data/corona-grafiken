@@ -102,7 +102,7 @@ export const IntensiveCareChart: React.FC<ChartProps> = ({
           stroke={chartColors.pink}
           strokeWidth="3"
           strokeLinecap="round"
-        ></path>
+        />
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
@@ -110,7 +110,7 @@ export const IntensiveCareChart: React.FC<ChartProps> = ({
           stroke="none"
           fill={chartColors.pink}
           fillOpacity="0.5"
-        ></path>
+        />
       </ChartGroup>
       <ChartHeader
         title={chart.title}

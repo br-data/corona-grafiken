@@ -108,21 +108,21 @@ export const OverviewChart: React.FC<ChartProps> = ({
           d={recoveredCasesArea(data)!}
           stroke="none"
           fill={chartColors.green}
-        ></path>
+        />
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
           d={activeCasesArea(data)!}
           stroke="none"
           fill={chartColors.blue}
-        ></path>
+        />
       </ChartGroup>
       <ChartGroup transform={`translate(${margin.right}, ${margin.top})`}>
         <path
           d={deathsArea(data)!}
           stroke="none"
           fill={chartColors.yellow}
-        ></path>
+        />
       </ChartGroup>
       <ChartHeader
         title={chart.title}
