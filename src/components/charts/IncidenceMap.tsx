@@ -208,36 +208,22 @@ export const IncidenceMap: React.FC<MapProps> = ({
             {worstCounties.map((d: any, index: number) => (
               <g
                 key={index}
-                transform={`translate(${Math.round(radiusScale(maxValue))}, ${
+                fontFamily="'Open Sans', OpenSans, sans-serif"
+                fontSize={15 * scalingFactor}
+                fontWeight="300"
+                transform={`translate(0, ${
                   index * 42 * scalingFactor
                 })`}
               >
-                <circle
-                  key={index}
-                  y={Math.round(radiusScale(d.incidence) / 2)}
-                  r={Math.round(radiusScale(d.incidence))}
-                  fill={getMapColor(d.incidence)}
-                  // style={{ mixBlendMode: "hard-light" }}
-                />
                 <text
-                  dy={4 * scalingFactor}
-                  fontFamily="'Open Sans', OpenSans, sans-serif"
-                  fontSize={12 * scalingFactor}
-                  fontWeight="600"
-                  textAnchor="middle"
                   fill={chartColors.fontPrimary}
                 >
-                  {index + 1}
-                </text>
-                <text
-                  fontFamily="'Open Sans', OpenSans, sans-serif"
-                  fontSize={15 * scalingFactor}
-                  fontWeight="300"
-                  fill={chartColors.fontPrimary}
-                >
+                  <tspan>
+                    {index + 1}{"."}
+                  </tspan>
                   <tspan
-                    x={Math.round(radiusScale(maxValue)) + 10}
                     fontWeight="600"
+                    x="20"
                   >
                     {d.name.length > maxLength
                       ? d.name.substring(0, maxLength - 2) + "…"
@@ -245,8 +231,8 @@ export const IncidenceMap: React.FC<MapProps> = ({
                     ({d.type === "Landkreis" ? "Lkr." : d.type})
                   </tspan>
                   <tspan
-                    x={Math.round(radiusScale(maxValue)) + 10}
-                    dy={16 * scalingFactor}
+                    x="20"
+                    dy={18 * scalingFactor}
                   >
                     {germanNumber(Math.round(d.incidence))}
                   </tspan>
