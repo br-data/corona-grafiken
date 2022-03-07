@@ -112,7 +112,7 @@ export const InfectionChart: React.FC<ChartProps> = ({
           strokeWidth="3"
           strokeDasharray="10,10"
           strokeLinecap="round"
-        ></path>
+        />
       </ChartGroup>
       <ChartHeader
         title={chart.title}

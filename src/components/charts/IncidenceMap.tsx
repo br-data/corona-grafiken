@@ -124,7 +124,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             strokeWidth={1.25 / (1 / radiusFactor)}
             strokeOpacity="0.75"
             fill={chartColors.mapBackground}
-          ></path>
+          />
         </ChartGroup>
         <ChartGroup
           transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
