@@ -126,7 +126,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
               style={{ mixBlendMode: "hard-light" }}
             >
               <title>
-                {d.name} (${d.type}): {germanNumber(Math.round(d.incidence))}
+                {d.name} ({d.type}): {germanNumber(Math.round(d.incidence))}
               </title>
             </circle>
           ))}
