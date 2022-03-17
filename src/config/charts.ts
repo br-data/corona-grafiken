@@ -18,6 +18,7 @@ export interface ChartObject {
   type: string;
   subType?: string;
   hasAnnotation?: boolean;
+  hasLabels?: boolean;
   dataSource: string;
   dataHasDate: boolean;
   data: ChartDataObject[];
@@ -31,6 +32,7 @@ export const charts = [
     description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
     type: "overview-tiles",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -61,6 +63,7 @@ export const charts = [
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
     type: "overview-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -79,6 +82,7 @@ export const charts = [
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
     type: "infection-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -99,6 +103,7 @@ export const charts = [
     type: "incidence-map",
     subType: "map-bavaria",
     hasAnnotation: true,
+    hasLabels: true,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -118,6 +123,7 @@ export const charts = [
       "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
     type: "intensive-care-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "DIVI-Intensivregister",
     dataHasDate: false,
     data: [
@@ -136,6 +142,7 @@ export const charts = [
     description: "Die wichtigsten Kennzahlen im Vergleich zum Vortag",
     type: "overview-tiles",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -166,6 +173,7 @@ export const charts = [
     description: "Langfristige Entwicklung der wichtigsten Kennzahlen",
     type: "overview-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -184,6 +192,7 @@ export const charts = [
     description: "Entwicklung der Neuinfektionen nach Erkrankungsdatum",
     type: "infection-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -204,6 +213,7 @@ export const charts = [
     type: "incidence-map",
     subType: "map-germany",
     hasAnnotation: false,
+    hasLabels: true,
     dataSource: "Robert Koch-Institut, BR-Analyse",
     dataHasDate: true,
     data: [
@@ -223,6 +233,7 @@ export const charts = [
       "Anzahl der gemeldeten Corona-Fälle in intensivmedizinischer Behandlung",
     type: "intensive-care-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "DIVI-Intensivregister",
     dataHasDate: false,
     data: [
@@ -242,6 +253,7 @@ export const charts = [
       "Prozentualer Anteil der geimpften Personen an der Bevölkerung",
     type: "vaccination-chart",
     hasAnnotation: false,
+    hasLabels: false,
     dataSource: "Robert Koch-Institut",
     dataHasDate: false,
     data: [

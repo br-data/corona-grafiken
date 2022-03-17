@@ -81,8 +81,8 @@ export const FlexibleFieldset = styled(Fieldset)<{ alignRight?: boolean }>`
   }
 `;
 
-export const Label = styled.label<{ isBold?: boolean; isBlock?: boolean }>`
-  color: ${appColors.fontPrimary};
+export const Label = styled.label<{ isBold?: boolean; isDisabled?: boolean; isBlock?: boolean }>`
+  color: ${({ isDisabled }) => (isDisabled ? appColors.fontSecondary : appColors.fontPrimary)};
   font-size: 0.85rem;
   margin: 0.1rem;
   font-weight: ${({ isBold }) => (isBold ? 700 : 400)};

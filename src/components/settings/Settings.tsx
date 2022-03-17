@@ -247,7 +247,7 @@ export const CheckboxInput = ({
 
   return (
     <Fieldset isInline={true}>
-      <Label htmlFor={id} isBold={false}>
+      <Label htmlFor={id} isBold={false} isDisabled={isDisabled}>
         {label}
       </Label>
       <Switch

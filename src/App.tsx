@@ -44,6 +44,8 @@ export default function App() {
   const defaultDateDisabled = !defaultChart.dataHasDate;
   const defaultAnnotationDisabled = !defaultChart.hasAnnotation;
   const defaultAnnotationVisibility = true;
+  const defaultLabelsDisabled = !defaultChart.hasLabels;
+  const defaultLabelVisibility = true;
   const defaultLogoVisibility = true;
 
   const minStartDate = "2020-01-24";
@@ -57,12 +59,10 @@ export default function App() {
   const [height, setHeight] = useState(defaultHeight);
   const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
   const [dateDisabled, setDateDisabled] = useState(defaultDateDisabled);
-  const [annotationDisabled, setAnnotationDisabled] = useState(
-    defaultAnnotationDisabled
-  );
-  const [hasAnnotation, setHasAnnotation] = useState(
-    defaultAnnotationVisibility
-  );
+  const [annotationDisabled, setAnnotationDisabled] = useState(defaultAnnotationDisabled);
+  const [hasAnnotation, setHasAnnotation] = useState(defaultAnnotationVisibility);
+  const [labelsDisabled, setLabelsDisabled] = useState(defaultLabelsDisabled);
+  const [hasLabels, setHasLabels] = useState(defaultLabelVisibility);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
   const [hasCollapsed, setHasCollapsed] = useState(true);
 
@@ -80,6 +80,7 @@ export default function App() {
   useEffect(() => {
     setDateDisabled(!chart.dataHasDate);
     setAnnotationDisabled(!chart.hasAnnotation);
+    setLabelsDisabled(!chart.hasLabels);
   }, [chart]);
 
   return (
@@ -179,12 +180,19 @@ export default function App() {
           height={height}
           scalingFactor={scalingFactor}
           hasAnnotation={hasAnnotation}
+          hasLabels={hasLabels}
           hasLogo={hasLogo}
           setSvgDom={setSvgDom}
         />
       </Content>
       <Footer>
         <FlexibleFieldset isInline={true}>
+          <CheckboxInput
+            id="logo-checkbox"
+            label="BR24-Logo anzeigen"
+            isChecked={hasLogo}
+            setIsChecked={setHasLogo}
+          />
           <CheckboxInput
             id="annotation-checkbox"
             label="Auswertung anzeigen"
@@ -193,10 +201,11 @@ export default function App() {
             setIsChecked={setHasAnnotation}
           />
           <CheckboxInput
-            id="logo-checkbox"
-            label="BR24-Logo anzeigen"
-            isChecked={hasLogo}
-            setIsChecked={setHasLogo}
+            id="labels-checkbox"
+            label="Ortsmarken anzeigen"
+            isDisabled={labelsDisabled}
+            isChecked={hasLabels}
+            setIsChecked={setHasLabels}
           />
         </FlexibleFieldset>
         <FlexibleFieldset isInline={true} alignRight={true}>
