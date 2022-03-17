@@ -30,6 +30,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
   scalingFactor = 1,
   hasLogo = false,
   hasAnnotation = false,
+  hasLabels = false,
 }) => {
   interface AnyObject {
     [key: string]: any;
@@ -56,9 +57,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const margin = {
       top: 130 * scalingFactor,
       right: 25,
-      bottom: hasLogo
-        ? (chartLogoSize + 15) * scalingFactor
-        : 65 * scalingFactor,
+      bottom: hasLogo ? (chartLogoSize + 15) * scalingFactor : 65 * scalingFactor,
       left: 25,
     };
     const padding = 25;
@@ -70,9 +69,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const maxLabels = height > 350 ? labelData.length : 4;
     const labels = labelData.slice(0, maxLabels);
 
-    const caseData: ChartData[] = chartData.find(
-      (datum) => datum.key === "cases"
-    )?.data!;
+    const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")?.data!;
     const uniqueCounties = [...new Set(caseData.map((d) => d.Landkreis))];
     const mergedCounties = uniqueCounties.map((name) => {
       const caseDataDistrict = caseData.filter((c) => c.Landkreis === name);
@@ -83,9 +80,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
       });
     });
 
-    const worstCounties = mergedCounties
-      .sort((a, b) => b.incidence - a.incidence)
-      .slice(0, height > 350 ? 5 : 3);
+    const worstCounties = mergedCounties.sort((a, b) => b.incidence - a.incidence).slice(0, height > 350 ? 5 : 3);
 
     const mapFactor = height > width ? 0.9 : 1.1;
     // @ts-ignore: No definition for geoData
@@ -95,18 +90,14 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const mapBounds = mapPath.bounds(mapFeatures);
     const mapScale: number =
       mapFactor /
-      Math.max(
-        (mapBounds[1][0] - mapBounds[0][0]) / innerWidth,
-        (mapBounds[1][1] - mapBounds[0][1]) / innerHeight
-      );
+      Math.max((mapBounds[1][0] - mapBounds[0][0]) / innerWidth, (mapBounds[1][1] - mapBounds[0][1]) / innerHeight);
     const mapTranslate: [number, number] = [
       (innerWidth - mapScale * (mapBounds[1][0] + mapBounds[0][0])) / 2,
       (innerHeight - mapScale * (mapBounds[1][1] + mapBounds[0][1])) / 2,
     ];
     mapProjection.translate(mapTranslate).scale(mapScale);
 
-    const radiusFactor =
-      mapScale / (chart.subType === "map-bavaria" ? 7000 : 5000);
+    const radiusFactor = mapScale / (chart.subType === "map-bavaria" ? 7000 : 5000);
     const radiusScale = scaleSqrt()
       .domain([minValue, maxValue])
       .range([minRadius * radiusFactor, maxRadius * radiusFactor])
@@ -115,9 +106,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
     return (
       <ChartSvg id={chart.id} width={width} height={height}>
         <ChartBackground width={width} height={height} />
-        <ChartGroup
-          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
-        >
+        <ChartGroup transform={`translate(${margin.right + mapOffset}, ${margin.top})`}>
           <path
             d={mapPath(mapFeatures)!}
             stroke={chartColors.mapOutline}
@@ -126,9 +115,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
             fill={chartColors.mapBackground}
           />
         </ChartGroup>
-        <ChartGroup
-          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
-        >
+        <ChartGroup transform={`translate(${margin.right + mapOffset}, ${margin.top})`}>
           {mergedCounties.map((d: any, index: number) => (
             <circle
               key={index}
@@ -139,38 +126,36 @@ export const IncidenceMap: React.FC<MapProps> = ({
               style={{ mixBlendMode: "hard-light" }}
             >
               <title>
-                {d.name} (${d.type}): {germanNumber(Math.round(d.incidence))}
+                {d.name} ({d.type}): {germanNumber(Math.round(d.incidence))}
               </title>
             </circle>
           ))}
         </ChartGroup>
-        <ChartGroup
-          transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
-        >
-          {labels.map((d: any, index: number) => (
-            <text
-              key={index}
-              fontFamily="'Open Sans', OpenSans, Arial"
-              fontSize={15 * scalingFactor}
-              fontWeight="300"
-              fill={chartColors.white}
-              stroke={chartColors.mapBackground}
-              strokeWidth="3"
-              strokeLinejoin="round"
-              paintOrder="stroke"
-              textAnchor="middle"
-              x={Math.round(mapProjection([d.long, d.lat])![0])}
-              y={Math.round(mapProjection([d.long, d.lat])![1])}
-              dy={13 * scalingFactor}
-            >
-              {d.name}
-            </text>
-          ))}
-        </ChartGroup>
+        {hasLabels && (
+          <ChartGroup transform={`translate(${margin.right + mapOffset}, ${margin.top})`}>
+            {labels.map((d: any, index: number) => (
+              <text
+                key={index}
+                fontFamily="'Open Sans', OpenSans, Arial"
+                fontSize={15 * scalingFactor}
+                fontWeight="300"
+                fill={chartColors.white}
+                stroke={chartColors.mapBackground}
+                strokeWidth="3"
+                strokeLinejoin="round"
+                paintOrder="stroke"
+                textAnchor="middle"
+                x={Math.round(mapProjection([d.long, d.lat])![0])}
+                y={Math.round(mapProjection([d.long, d.lat])![1])}
+                dy={13 * scalingFactor}
+              >
+                {d.name}
+              </text>
+            ))}
+          </ChartGroup>
+        )}
         {hasAnnotation && (
-          <ChartGroup
-            transform={`translate(${margin.right + mapOffset}, ${margin.top})`}
-          >
+          <ChartGroup transform={`translate(${margin.right + mapOffset}, ${margin.top})`}>
             {worstCounties.map((d: any, index: number) => (
               <text
                 key={index}
@@ -191,9 +176,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
         {hasAnnotation && (
           <ChartGroup
             transform={`translate(${padding}, ${
-              height -
-              (height > 350 ? 300 : 200) +
-              (hasLogo ? 0 : chartLogoSize) * scalingFactor
+              height - (height > 350 ? 300 : 200) + (hasLogo ? 0 : chartLogoSize) * scalingFactor
             })`}
           >
             <text
@@ -211,29 +194,18 @@ export const IncidenceMap: React.FC<MapProps> = ({
                 fontFamily="'Open Sans', OpenSans, sans-serif"
                 fontSize={15 * scalingFactor}
                 fontWeight="300"
-                transform={`translate(0, ${
-                  index * 42 * scalingFactor
-                })`}
+                transform={`translate(0, ${index * 42 * scalingFactor})`}
               >
-                <text
-                  fill={chartColors.fontPrimary}
-                >
+                <text fill={chartColors.fontPrimary}>
                   <tspan>
-                    {index + 1}{"."}
+                    {index + 1}
+                    {"."}
                   </tspan>
-                  <tspan
-                    fontWeight="600"
-                    x="20"
-                  >
-                    {d.name.length > maxLength
-                      ? d.name.substring(0, maxLength - 2) + "…"
-                      : d.name}{" "}
-                    ({d.type === "Landkreis" ? "Lkr." : d.type})
+                  <tspan fontWeight="600" x="20">
+                    {d.name.length > maxLength ? d.name.substring(0, maxLength - 2) + "…" : d.name} (
+                    {d.type === "Landkreis" ? "Lkr." : d.type})
                   </tspan>
-                  <tspan
-                    x="20"
-                    dy={18 * scalingFactor}
-                  >
+                  <tspan x="20" dy={18 * scalingFactor}>
                     {germanNumber(Math.round(d.incidence))}
                   </tspan>
                 </text>
@@ -308,9 +280,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
           text={`Quelle: ${chart.dataSource} (Stand: ${germanDate(endDate)})`}
           alignRight={hasLogo}
           scalingFactor={scalingFactor}
-          transform={`translate(${
-            hasLogo ? width - margin.right : margin.right
-          }, ${height - padding})`}
+          transform={`translate(${hasLogo ? width - margin.right : margin.right}, ${height - padding})`}
         />
         {hasLogo && (
           <ChartLogo
@@ -325,11 +295,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
     return (
       <ChartSvg width={width} height={height}>
         <ChartBackground width={width} height={height} />
-        <text
-          fill="white"
-          textAnchor="middle"
-          transform={`translate(${width / 2}, ${height / 2})`}
-        >
+        <text fill="white" textAnchor="middle" transform={`translate(${width / 2}, ${height / 2})`}>
           Lade Karte ...
         </text>
       </ChartSvg>
@@ -339,42 +305,30 @@ export const IncidenceMap: React.FC<MapProps> = ({
 
 async function loadGeoData(subType?: string) {
   if (subType === "map-bavaria") {
-    return await import(
-      /* webpackChunkName: 'bavaria-county-topo' */ "../../data/topo/bavaria-county-topo.json"
-    );
+    return await import(/* webpackChunkName: 'bavaria-county-topo' */ "../../data/topo/bavaria-county-topo.json");
   }
 
   if (subType === "map-germany") {
-    return await import(
-      /* webpackChunkName: 'germany-county-topo' */ "../../data/topo/germany-county-topo.json"
-    );
+    return await import(/* webpackChunkName: 'germany-county-topo' */ "../../data/topo/germany-county-topo.json");
   }
 }
 
 async function loadMetaData(subType?: string) {
   if (subType === "map-bavaria") {
-    return await import(
-      /* webpackChunkName: 'bavaria-county-meta' */ "../../data/meta/bavaria-county-meta.json"
-    );
+    return await import(/* webpackChunkName: 'bavaria-county-meta' */ "../../data/meta/bavaria-county-meta.json");
   }
 
   if (subType === "map-germany") {
-    return await import(
-      /* webpackChunkName: 'germany-county-meta' */ "../../data/meta/germany-county-meta.json"
-    );
+    return await import(/* webpackChunkName: 'germany-county-meta' */ "../../data/meta/germany-county-meta.json");
   }
 }
 
 async function loadLabelData(subType?: string) {
   if (subType === "map-bavaria") {
-    return await import(
-      /* webpackChunkName: 'bavaria-city-labels' */ "../../data/labels/bavaria-city-labels.json"
-    );
+    return await import(/* webpackChunkName: 'bavaria-city-labels' */ "../../data/labels/bavaria-city-labels.json");
   }
 
   if (subType === "map-germany") {
-    return await import(
-      /* webpackChunkName: 'germany-state-labels' */ "../../data/labels/germany-state-labels.json"
-    );
+    return await import(/* webpackChunkName: 'germany-state-labels' */ "../../data/labels/germany-state-labels.json");
   }
 }

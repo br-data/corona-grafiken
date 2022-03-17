@@ -21,4 +21,5 @@ export interface MapProps extends ChartProps {
   minRadius?: number;
   maxRadius?: number;
   hasAnnotation?: boolean;
+  hasLabels?: boolean;
 }
