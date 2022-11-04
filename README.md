@@ -122,9 +122,3 @@ Die Anwendung wird automatisch mit Github Action gebaut und über die Google Clo
 
 Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration für den Github-Workflow in `.github/workflow` sollte nicht angefasst werden. Für mehr Informationen, siehe [br-data/cloud-deploy-template](https://github.com/br-data/cloud-deploy-template).
 
-## Verbesserungen
-
-- Status-API integrieren
-- Settings in Komponente zusammenfassen
-- `useMultiFetch` in React HOC umwandeln
-- Code-Splitting mit Lazy-Load
