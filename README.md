@@ -128,4 +128,3 @@ Das Deployment wird in der Datei `config.yaml` konfiguriert. Die Konfiguration f
 - Settings in Komponente zusammenfassen
 - `useMultiFetch` in React HOC umwandeln
 - Code-Splitting mit Lazy-Load
-- Routing einbauen, um bestimmte Zustände teilen zu können
