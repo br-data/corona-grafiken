@@ -99,17 +99,19 @@ export const Content = styled.section`
 `;
 
 export const Controls = styled.section`
-  margin: .5rem 1rem 2rem;
+  padding: 1rem;
+  margin: 0 0 1rem;
   display: flex;
   flex-wrap: wrap;
 `
 
 export const Footer = styled.footer`
-  margin: 2rem 1rem 1rem;
+  padding: 1rem;
+  margin: 1rem 0 0;
   display: flex;
   flex-wrap: wrap;
 
-  @media (max-width: 1050px)  {
+  @media (max-width: 1100px)  {
     justify-content: space-around;
   }
 `;

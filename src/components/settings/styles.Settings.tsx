@@ -47,13 +47,17 @@ export const Form = styled.form<{
 `;
 
 export const Fieldset = styled.fieldset<{ isInline?: boolean }>`
-  margin: 0.25rem 1rem 0.25rem 0;
+  margin: 0 1rem 0 0;
   padding: 0;
   border: 0;
   white-space: ${({ isInline }) => (isInline ? "nowrap" : "normal")};
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @media (max-width: 1100px) {
+    margin: 0 1rem 0.5rem 0;
   }
 `;
 
@@ -63,21 +67,14 @@ export const FlexibleFieldset = styled(Fieldset)<{ alignRight?: boolean }>`
   margin: 0;
   margin-left: ${({ alignRight }) => (alignRight ? "auto" : "0")};
 
-  @media (max-width: 1050px) {
+  @media (max-width: 1100px) {
     flex-wrap: wrap;
-    margin-left: 0;
-
-    > fieldset {
-      margin: 0.5rem 0.5rem 0;
-    }
+    justify-content: space-around;
+    margin: 0;
 
     > button {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
-  }
-
-  @media (max-width: 500px) {
-    justify-content: space-around;
   }
 `;
 
