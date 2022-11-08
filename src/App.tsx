@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { GlobalStyle, Content, Controls, Footer } from "./styles.App";
@@ -33,10 +34,12 @@ const theme = createTheme({
 });
 
 export default function App() {
-  const toDateString = (date: Date) => date.toISOString().split("T")[0];
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const defaultChart = charts[0];
-  const defaultFormat = formats[0];
+  const defaultChart =
+    charts.filter((c) => c.id === searchParams.get("chart"))[0] || charts[0];
+  const defaultFormat =
+    formats.filter((f) => f.id === searchParams.get("format"))[0] || formats[0];
 
   const defaultWidth = defaultFormat.width;
   const defaultHeight = defaultFormat.height;
@@ -50,7 +53,7 @@ export default function App() {
 
   const minStartDate = "2020-01-24";
   const defaultStartDate = "2020-02-25";
-  const maxEndDate = toDateString(new Date());
+  const maxEndDate = new Date().toISOString().split("T")[0];
 
   const [chart, setChart] = useState(defaultChart);
   const [format, setFormat] = useState(defaultFormat);
@@ -59,8 +62,12 @@ export default function App() {
   const [height, setHeight] = useState(defaultHeight);
   const [scalingFactor, setScalingFactor] = useState(defaultScalingFactor);
   const [dateDisabled, setDateDisabled] = useState(defaultDateDisabled);
-  const [annotationDisabled, setAnnotationDisabled] = useState(defaultAnnotationDisabled);
-  const [hasAnnotation, setHasAnnotation] = useState(defaultAnnotationVisibility);
+  const [annotationDisabled, setAnnotationDisabled] = useState(
+    defaultAnnotationDisabled
+  );
+  const [hasAnnotation, setHasAnnotation] = useState(
+    defaultAnnotationVisibility
+  );
   const [labelsDisabled, setLabelsDisabled] = useState(defaultLabelsDisabled);
   const [hasLabels, setHasLabels] = useState(defaultLabelVisibility);
   const [hasLogo, setHasLogo] = useState(defaultLogoVisibility);
@@ -82,6 +89,10 @@ export default function App() {
     setAnnotationDisabled(!chart.hasAnnotation);
     setLabelsDisabled(!chart.hasLabels);
   }, [chart]);
+
+  useEffect(() => {
+    setSearchParams({ chart: chart.id, format: format.id });
+  }, [format, chart]);
 
   return (
     <ThemeProvider theme={theme}>
