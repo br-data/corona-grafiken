@@ -75,6 +75,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     background: ${appColors.background};
   }
 
@@ -87,7 +88,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 export const Content = styled.section`
   position: relative;
   display: flex;
@@ -95,7 +95,6 @@ export const Content = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
 `;
 
 export const Controls = styled.section`
