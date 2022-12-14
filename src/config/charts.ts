@@ -40,21 +40,27 @@ export const charts = [
         key: "cases",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern",
+        //  "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern",
+         "https://corona-api.interaktiv.br.de/query/infektionen-bl-aktuell?filter=bundeslandId==9",
+        //    "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundesland==Bayern",
+
       },
+
       {
         key: "recoveries",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlGenesen",
+        //  "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlGenesen",
+        "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundeslandId==9",
       },
       {
         key: "deaths",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlTodesfall",
+         // "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&group=Bundesland&bundesland=Bayern&sumField=AnzahlTodesfall",
+        "https://corona-api.interaktiv.br.de/query/infektionen-bl-aktuell?filter=bundeslandId==9",
       },
-    ],
+    ],/*
   },
   {
     id: "bavaria-indicators-chart",
@@ -269,6 +275,6 @@ export const charts = [
         url:
           "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_DE.csv",
       },
-    ],
+    ],*/
   },
 ];

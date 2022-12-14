@@ -35,6 +35,7 @@ const theme = createTheme({
 
 export default function App() {
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(charts);
 
   const defaultChart =
     charts.filter((c) => c.id === searchParams.get("chart"))[0] || charts[0];

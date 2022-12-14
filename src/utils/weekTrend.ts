@@ -6,9 +6,9 @@ export const weekTrend = <T extends { [key: string]: any; value: number }>(
   const currentWeek = data.slice(data.length - 9, data.length - 2);
   const previousWeek = data.slice(data.length - 16, data.length - 9);
 
-  const currentWeekSum = currentWeek.reduce((sum, curr) => sum + curr[key], 0);
+  const currentWeekSum = currentWeek.reduce((sum, curr) => sum + curr.anzahlFall, 0);
   const previousWeekSum = previousWeek.reduce(
-    (sum, curr) => sum + curr[key],
+    (sum, curr) => sum + curr.anzahlFall,
     0
   );
 
