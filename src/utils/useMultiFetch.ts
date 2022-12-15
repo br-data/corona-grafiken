@@ -40,11 +40,12 @@ export const useMultiFetch = (
         })
       );
 */
+    /*
     let date = new Date;
     date.setDate(date.getDate() -1);
     date.toJSON().slice(0, 10);
     let yesterday = date.toISOString().split("T")[0];
-
+*/
       // new version
           (async () => {
       const data = await Promise.all(
