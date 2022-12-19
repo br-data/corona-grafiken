@@ -80,7 +80,7 @@ export const charts = [
           // "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&group=Bundesland&bundesland=Bayern&currentCases=true",
         "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundeslandId==9",
       },
-    ],/*
+    ],
   },
   {
     id: "bavaria-cases-chart",
@@ -97,9 +97,10 @@ export const charts = [
         key: "cases",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern",
+         // "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern",
+      "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundeslandId==9",
       },
-    ],
+    ],/*
   },
   {
     id: "bavaria-cases-map",
