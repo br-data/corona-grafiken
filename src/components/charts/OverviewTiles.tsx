@@ -100,7 +100,7 @@ const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")
           width={x.bandwidth()}
           height={y.bandwidth()}
           bigIndicator={germanNumber(
-            recoveredData[recoveredData.length -1].aktuellGenesen
+            recoveredData[recoveredData.length -1].summeGenesen
           )}
           smallIndicator={germanNumberPrefixed(
               // hier Wert bewusst aus caseData gezogen, weil recoveredData den notwendigen Wert nicht bereitstellt
