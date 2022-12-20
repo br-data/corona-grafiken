@@ -145,7 +145,7 @@ export const charts = [
         //  "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=BY&indicator=Patienten",
             "https://corona-api.interaktiv.br.de/query/intensivpatienten-bl?filter=bundesland==Bayern",
       },
-    ],/*
+    ],
   },
   {
     id: "germany-situation-tiles",
@@ -162,21 +162,24 @@ export const charts = [
         key: "cases",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true",
+        //   "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true",
+         "https://corona-api.interaktiv.br.de/query/infektionen-de-aktuell",
       },
       {
         key: "recoveries",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&sumField=AnzahlGenesen",
+        //  "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&sumField=AnzahlGenesen",
+                "https://corona-api.interaktiv.br.de/query/infektionen-de",
       },
       {
         key: "deaths",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&sumField=AnzahlTodesfall",
+        //  "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&sumField=AnzahlTodesfall",
+                 "https://corona-api.interaktiv.br.de/query/infektionen-de-aktuell",
       },
-    ],
+    ],/*
   },
   {
     id: "germany-indicators-chart",
