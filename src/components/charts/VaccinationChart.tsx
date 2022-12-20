@@ -34,16 +34,6 @@ export const VaccinationChart: React.FC<ChartProps> = ({
   const innerHeight = height - margin.top - margin.bottom;
   const barHeight = (innerHeight / 4) * scalingFactor;
 
-  /*
-  const bavariaData: ChartData[] = chartData.find(
-    (datum) => datum.key === "vaccinations-bavaria"
-  )?.data!;
-  const currentBavariaData = bavariaData[bavariaData.length - 1];
-  const germanyData: ChartData[] = chartData.find(
-    (datum) => datum.key === "vaccinations-germany"
-  )?.data!;
-  const currentGermanyData = germanyData[germanyData.length - 1];
-   */
   const currentBavariaData: ChartData[] = chartData.find(
       (datum) => datum.key === "vaccinations-bavaria"
   )?.data!;
