@@ -69,7 +69,6 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const maxLabels = height > 350 ? labelData.length : 4;
     const labels = labelData.slice(0, maxLabels);
 
-
     const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")?.data!;
 
     const worstCounties = caseData.sort((a, b) => b.inzidenz - a.inzidenz).slice(0, height > 350 ? 5 : 3);

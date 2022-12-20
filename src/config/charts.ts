@@ -124,7 +124,7 @@ export const charts = [
         "https://corona-api.interaktiv.br.de/query/infektionen-lk-aktuell?filter=bundeslandId==9",
 
   },
-    ],/*
+    ],
   },
   {
     id: "bavaria-patients-chart",
@@ -142,9 +142,10 @@ export const charts = [
         key: "patients",
         filetype: "json",
         url:
-          "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=BY&indicator=Patienten",
+        //  "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=BY&indicator=Patienten",
+            "https://corona-api.interaktiv.br.de/query/intensivpatienten-bl?filter=bundesland==Bayern",
       },
-    ],
+    ],/*
   },
   {
     id: "germany-situation-tiles",
