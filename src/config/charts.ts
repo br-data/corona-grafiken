@@ -241,7 +241,7 @@ export const charts = [
         // "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis","
             "https://corona-api.interaktiv.br.de/query/infektionen-lk-aktuell",
       },
-    ],/*
+    ],
   },
   {
     id: "germany-patients-chart",
@@ -259,9 +259,10 @@ export const charts = [
         key: "patients",
         filetype: "json",
         url:
-          "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=DE&indicator=Patienten",
+        //  "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=DE&indicator=Patienten",
+            "https://corona-api.interaktiv.br.de/query/intensivpatienten-de",
       },
-    ],
+    ],/*
   },
   {
     id: "bavaria-vaccinations-chart",
