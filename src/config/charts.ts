@@ -179,7 +179,7 @@ export const charts = [
         //  "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&newCases=true&sumField=AnzahlTodesfall",
                  "https://corona-api.interaktiv.br.de/query/infektionen-de-aktuell",
       },
-    ],/*
+    ],
   },
   {
     id: "germany-indicators-chart",
@@ -196,9 +196,11 @@ export const charts = [
         key: "currentCases",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&currentCases=true",
+       //   "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&currentCases=true",
+        "https://corona-api.interaktiv.br.de/query/infektionen-de",
+
       },
-    ],
+    ],/*
   },
   {
     id: "germany-cases-chart",
