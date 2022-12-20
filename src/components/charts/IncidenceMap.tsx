@@ -68,6 +68,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const maxLength = width / height > 1.5 ? 20 : 12;
     const maxLabels = height > 350 ? labelData.length : 4;
     const labels = labelData.slice(0, maxLabels);
+    console.log(labels);
 
     const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")?.data!;
 
@@ -140,7 +141,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
                 y={Math.round(mapProjection([d.long, d.lat])![1])}
                 dy={13 * scalingFactor}
               >
-                {d.landkreis}
+                {d.name}
               </text>
             ))}
           </ChartGroup>

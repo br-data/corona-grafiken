@@ -219,7 +219,7 @@ export const charts = [
         //  "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true",
         "https://corona-api.interaktiv.br.de/query/infektionen-de",
       },
-    ],/*
+    ],
   },
   {
     id: "germany-cases-map",
@@ -238,9 +238,10 @@ export const charts = [
         key: "cases",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis",
+        // "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis","
+            "https://corona-api.interaktiv.br.de/query/infektionen-lk-aktuell",
       },
-    ],
+    ],/*
   },
   {
     id: "germany-patients-chart",
