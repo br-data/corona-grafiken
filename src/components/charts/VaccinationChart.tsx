@@ -34,6 +34,7 @@ export const VaccinationChart: React.FC<ChartProps> = ({
   const innerHeight = height - margin.top - margin.bottom;
   const barHeight = (innerHeight / 4) * scalingFactor;
 
+  /*
   const bavariaData: ChartData[] = chartData.find(
     (datum) => datum.key === "vaccinations-bavaria"
   )?.data!;
@@ -42,6 +43,14 @@ export const VaccinationChart: React.FC<ChartProps> = ({
     (datum) => datum.key === "vaccinations-germany"
   )?.data!;
   const currentGermanyData = germanyData[germanyData.length - 1];
+   */
+  const currentBavariaData: ChartData[] = chartData.find(
+      (datum) => datum.key === "vaccinations-bavaria"
+  )?.data!;
+  const currentGermanyData: ChartData[] = chartData.find(
+      (datum) => datum.key === "vaccinations-germany"
+  )?.data!;
+
 
   const x = scaleLinear().domain([0, 100]).range([0, innerWidth]);
   const xTicks = x.ticks(5);
@@ -96,36 +105,37 @@ export const VaccinationChart: React.FC<ChartProps> = ({
             fill="url(#linear-gradient)"
           ></rect>
           <rect
-            width={x(currentBavariaData["impf_quote_min1"])}
+            //width={x(currentBavariaData["impf_quote_min1"])}
+              width={x(currentBavariaData[0].impfquoteGesamtMin1)}
             height={barHeight}
             fill={chartColors.darkGreen}
           >
             <title>{`${germanNumber(
-              currentBavariaData["personen_min1_kumulativ"]
+              currentBavariaData[0].impfungenGesamtMin1
             )} (${germanNumber(
-              currentBavariaData["impf_quote_min1"]
+              currentBavariaData[0].impfquoteGesamtMin1
             )} %)`}</title>
           </rect>
           <rect
-            width={x(currentBavariaData["impf_quote_voll"])}
+            width={x(currentBavariaData[0].impfquoteGesamtGi)}
             height={barHeight}
             fill={chartColors.green}
           >
             <title>
               {`${germanNumber(
-                currentBavariaData["personen_voll_kumulativ"]
-              )} (${germanNumber(currentBavariaData["impf_quote_voll"])} %)`}
+                currentBavariaData[0].impfungenGesamtGi
+              )} (${germanNumber(currentBavariaData[0].impfquoteGesamtGi)} %)`}
             </title>
           </rect>
           <rect
-            width={x(currentBavariaData["impf_quote_auffr"])}
+            width={x(currentBavariaData[0].impfquoteGesamtBoost1)}
             height={barHeight}
             fill={chartColors.lightGreen}
           >
             <title>
               {`${germanNumber(
-                currentBavariaData["personen_auffr_kumulativ"]
-              )} (${germanNumber(currentBavariaData["impf_quote_auffr"])} %)`}
+                currentBavariaData[0].impfungenGesamtBoost1
+              )} (${germanNumber(currentBavariaData[0].impfquoteGesamtBoost1)} %)`}
             </title>
           </rect>
           {/* <text
@@ -180,36 +190,36 @@ export const VaccinationChart: React.FC<ChartProps> = ({
             fill="url(#linear-gradient)"
           ></rect>
           <rect
-            width={x(currentGermanyData["impf_quote_min1"])}
+            width={x(currentGermanyData[0].impfquoteGesamtMin1)}
             height={barHeight}
             fill={chartColors.darkGreen}
           >
             <title>
               {`${germanNumber(
-                currentGermanyData["personen_min1_kumulativ"]
-              )} (${germanNumber(currentGermanyData["impf_quote_min1"])} %)`}
+                currentGermanyData[0].impfungenGesamtMin1
+              )} (${germanNumber(currentGermanyData[0].impfquoteGesamtMin1)} %)`}
             </title>
           </rect>
           <rect
-            width={x(currentGermanyData["impf_quote_voll"])}
+            width={x(currentGermanyData[0].impfquoteGesamtGi)}
             height={barHeight}
             fill={chartColors.green}
           >
             <title>
               {`${germanNumber(
-                currentGermanyData["personen_voll_kumulativ"]
-              )} (${germanNumber(currentGermanyData["impf_quote_voll"])} %)`}
+                currentGermanyData[0].impfungenGesamtGi
+              )} (${germanNumber(currentGermanyData[0].impfquoteGesamtGi)} %)`}
             </title>
           </rect>
           <rect
-            width={x(currentGermanyData["impf_quote_auffr"])}
+            width={x(currentGermanyData[0].impfquoteGesamtBoost1)}
             height={barHeight}
             fill={chartColors.lightGreen}
           >
             <title>
               {`${germanNumber(
-                currentGermanyData["personen_auffr_kumulativ"]
-              )} (${germanNumber(currentGermanyData["impf_quote_auffr"])} %)`}
+                currentGermanyData[0].impfungenGesamtBoost1
+              )} (${germanNumber(currentGermanyData[0].impfquoteGesamtBoost1)} %)`}
             </title>
           </rect>
           {/* <text

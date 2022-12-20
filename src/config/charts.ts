@@ -262,7 +262,7 @@ export const charts = [
         //  "https://europe-west3-brdata-corona.cloudfunctions.net/diviApi/query?area=DE&indicator=Patienten",
             "https://corona-api.interaktiv.br.de/query/intensivpatienten-de",
       },
-    ],/*
+    ],
   },
   {
     id: "bavaria-vaccinations-chart",
@@ -280,14 +280,16 @@ export const charts = [
         key: "vaccinations-bavaria",
         filetype: "csv",
         url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_BY.csv",
+        //  "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_BY.csv",
+        "https://corona-api.interaktiv.br.de/query/impfungen-aktuell?filter=bundeslandId==9"
       },
       {
         key: "vaccinations-germany",
         filetype: "csv",
         url:
-          "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_DE.csv",
-      },
-    ],*/
+       //   "https://raw.githubusercontent.com/ard-data/2020-rki-impf-archive/master/data/9_csv_v3/region_DE.csv",
+      "https://corona-api.interaktiv.br.de/query/impfungen-aktuell?filter=bundeslandId==0",
+  },
+    ],
   },
 ];
