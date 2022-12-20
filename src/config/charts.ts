@@ -100,7 +100,7 @@ export const charts = [
          // "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&dateField=Refdatum&newCases=true&group=Bundesland&bundesland=Bayern",
       "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundeslandId==9",
       },
-    ],/*
+    ],
   },
   {
     id: "bavaria-cases-map",
@@ -119,9 +119,12 @@ export const charts = [
         key: "cases",
         filetype: "json",
         url:
-          "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis&bundesland=Bayern",
-      },
-    ],
+       //   "https://corona-deutschland-api.interaktiv.br.de/query?startDate=${startDate}&endDate=${endDate}&group=Landkreis&bundesland=Bayern",
+       // "https://corona-api.interaktiv.br.de/query/infektionen-lk?filter=bundeslandId==9",
+        "https://corona-api.interaktiv.br.de/query/infektionen-lk-aktuell?filter=bundeslandId==9",
+
+  },
+    ],/*
   },
   {
     id: "bavaria-patients-chart",
