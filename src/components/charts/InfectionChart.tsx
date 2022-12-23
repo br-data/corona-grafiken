@@ -41,7 +41,6 @@ export const InfectionChart: React.FC<ChartProps> = ({
   const data: ChartData[] = chartData.find((datum) => datum.key === "cases")
     ?.data!;
   const smoothData: ChartData[] = sma(data.slice(0, data.length - 2), 7, 'anzahlFall');
-
   const xMin = min(data, (d: ChartData) => new Date(d.meldedatum))!;
     const xMinBracket = new Date(xMin);
   xMinBracket.setDate(xMinBracket.getDate() - 8);
@@ -49,8 +48,8 @@ export const InfectionChart: React.FC<ChartProps> = ({
   const xMaxBracket = new Date(xMax);
   xMaxBracket.setDate(xMaxBracket.getDate() + 8);
   const xValues = dateRange(xMinBracket, xMaxBracket, 1);
-  const xTicks = dateRange(xMin, xMax, Math.floor(data.length / 6));
-  const x = scaleBand()
+    const xTicks = dateRange(xMin, xMax, Math.floor(data.length / 6));
+    const x = scaleBand()
     .paddingOuter(0)
     .paddingInner(0.4)
     .domain(xValues)

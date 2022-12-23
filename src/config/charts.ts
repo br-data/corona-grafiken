@@ -72,7 +72,7 @@ export const charts = [
                 key: "currentCases",
                 filetype: "json",
                 url:
-                    "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundeslandId==9",
+                    "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=meldedatum>=${startDate}&filter=bundeslandId==9",
             },
         ],
     },
@@ -91,7 +91,8 @@ export const charts = [
                 key: "cases",
                 filetype: "json",
                 url:
-                    "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=bundeslandId==9",
+                    "https://corona-api.interaktiv.br.de/query/infektionen-bl?filter=meldedatum>=${startDate}&filter=bundeslandId==9",
+
             },
         ],
     },
@@ -127,13 +128,13 @@ export const charts = [
         hasAnnotation: false,
         hasLabels: false,
         dataSource: "DIVI-Intensivregister",
-        dataHasDate: false,
+        dataHasDate: true,
         data: [
             {
                 key: "patients",
                 filetype: "json",
                 url:
-                    "https://corona-api.interaktiv.br.de/query/intensivpatienten-bl?filter=bundesland==Bayern",
+                    "https://corona-api.interaktiv.br.de/query/intensivpatienten-bl?filter=datum>=${startDate}&filter=bundesland==Bayern",
             },
         ],
     },
@@ -183,7 +184,7 @@ export const charts = [
                 key: "currentCases",
                 filetype: "json",
                 url:
-                    "https://corona-api.interaktiv.br.de/query/infektionen-de",
+                    "https://corona-api.interaktiv.br.de/query/infektionen-de?filter=meldedatum>=${startDate}",
             },
         ],
     },
@@ -202,7 +203,7 @@ export const charts = [
                 key: "cases",
                 filetype: "json",
                 url:
-                    "https://corona-api.interaktiv.br.de/query/infektionen-de",
+                    "https://corona-api.interaktiv.br.de/query/infektionen-de?filter=meldedatum>=${startDate}",
             },
         ],
     },
@@ -237,13 +238,13 @@ export const charts = [
         hasAnnotation: false,
         hasLabels: false,
         dataSource: "DIVI-Intensivregister",
-        dataHasDate: false,
+        dataHasDate: true,
         data: [
             {
                 key: "patients",
                 filetype: "json",
                 url:
-                    "https://corona-api.interaktiv.br.de/query/intensivpatienten-de",
+                    "https://corona-api.interaktiv.br.de/query/intensivpatienten-de?filter=datum>=${startDate}",
             },
         ],
     },

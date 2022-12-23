@@ -27,6 +27,7 @@ export const useMultiFetch = (
       const data = await Promise.all(
         chart.data.map(async (datum: ChartDataObject) => {
           const realUrl = datum.url
+                .replace("${startDate}", startDate)
           const response = await fetch(realUrl);
           const data = await response.text();
           const parsedData = csvToJson(data);
