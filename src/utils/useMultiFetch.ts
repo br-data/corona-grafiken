@@ -23,28 +23,21 @@ export const useMultiFetch = (
     setIsLoaded(false);
     setError(false);
 
-    (async () => {
+          (async () => {
       const data = await Promise.all(
         chart.data.map(async (datum: ChartDataObject) => {
           const realUrl = datum.url
-            .replace("${startDate}", startDate)
-            .replace("${endDate}", endDate);
+                .replace("${startDate}", startDate)
           const response = await fetch(realUrl);
-          const data =
-            datum.filetype === "csv"
-              ? await response.text()
-              : await response.json();
-          const parsedData =
-            datum.filetype === "csv"
-              ? csvToJson(data)
-              : data;
-
+          const data = await response.text();
+          const parsedData = csvToJson(data);
           return {
             ...datum,
             data: parsedData,
           };
         })
       );
+
 
       const hasLoaded =
         data.length &&

@@ -24,7 +24,7 @@ export const OverviewTiles: React.FC<ChartProps> = ({
   scalingFactor = 1,
   hasLogo = false,
 }) => {
-  const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")
+const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")
     ?.data!;
   const recoveredData: ChartData[] = chartData.find(
     (datum) => datum.key === "recoveries"
@@ -67,6 +67,7 @@ export const OverviewTiles: React.FC<ChartProps> = ({
   });
   const germanNumberPrefixed = (value: number) => germanFormatter.format(value);
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
+  console.log(caseData);
 
   return (
     <ChartSvg id={chart.id} width={width} height={height}>
@@ -75,9 +76,9 @@ export const OverviewTiles: React.FC<ChartProps> = ({
         <ChartTile
           width={x.bandwidth()}
           height={y.bandwidth()}
-          bigIndicator={germanNumber(caseData[caseData.length - 1].sumValue)}
+          bigIndicator={germanNumber(caseData[0].summeFall)}
           smallIndicator={germanNumberPrefixed(
-            caseData[caseData.length - 1].sumNewCases
+            caseData[0].anzahlFallNeu
           )}
           indicatorDescription="bestä­tigte Fälle"
           indicatorColor={chartColors.blue}
@@ -87,10 +88,10 @@ export const OverviewTiles: React.FC<ChartProps> = ({
         <ChartTile
           width={x.bandwidth()}
           height={y.bandwidth()}
-          bigIndicator={`${germanNumberPrefixed(
-            Math.round(weekTrend(caseData) || 0)
+          bigIndicator={`${germanNumberPrefixed( 
+            Math.round(weekTrend(recoveredData) || 0)
           )} %`}
-          indicatorDescription={`${(weekTrend(caseData) || 0) < 0 ? 'weniger' : 'mehr' } Fälle im Vergleich zur Vorwoche`}
+          indicatorDescription={`${(weekTrend(recoveredData) || 0) < 0 ? 'weniger' : 'mehr' } Fälle im Vergleich zur Vorwoche`}
           indicatorColor={chartColors.tileFont}
           scalingFactor={scalingFactor}
           transform={`translate(${x(grid[1].x) || 0}, ${y(grid[1].y) || 0})`}
@@ -99,10 +100,11 @@ export const OverviewTiles: React.FC<ChartProps> = ({
           width={x.bandwidth()}
           height={y.bandwidth()}
           bigIndicator={germanNumber(
-            recoveredData[recoveredData.length - 1].sumValue
+            recoveredData[recoveredData.length -1].summeGenesen
           )}
           smallIndicator={germanNumberPrefixed(
-            recoveredData[recoveredData.length - 1].sumNewCases
+              // hier Wert bewusst aus caseData gezogen, weil recoveredData den notwendigen Wert nicht bereitstellt
+            caseData[0].anzahlGenesenNeu
           )}
           indicatorDescription="geschätzte Genesungen"
           indicatorColor={chartColors.green}
@@ -112,9 +114,9 @@ export const OverviewTiles: React.FC<ChartProps> = ({
         <ChartTile
           width={x.bandwidth()}
           height={y.bandwidth()}
-          bigIndicator={germanNumber(deathData[deathData.length - 1].sumValue)}
+          bigIndicator={germanNumber(deathData[0].summeTodesfall)}
           smallIndicator={germanNumberPrefixed(
-            deathData[deathData.length - 1].sumNewCases
+            deathData[0].anzahlTodesfallNeu
           )}
           indicatorDescription="gemeldete Todesfälle"
           indicatorColor={chartColors.yellow}
