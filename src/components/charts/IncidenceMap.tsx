@@ -51,7 +51,7 @@ export const IncidenceMap: React.FC<MapProps> = ({
     })();
   }, []);
 
-  const germanNumber = (value: number) => value.toLocaleString("de-DE");
+  const germanNumber = (anzahlFall: number) => anzahlFall.toLocaleString("de-DE");
 
   if (isLoaded) {
     const margin = {
@@ -70,17 +70,8 @@ export const IncidenceMap: React.FC<MapProps> = ({
     const labels = labelData.slice(0, maxLabels);
 
     const caseData: ChartData[] = chartData.find((datum) => datum.key === "cases")?.data!;
-    const uniqueCounties = [...new Set(caseData.map((d) => d.Landkreis))];
-    const mergedCounties = uniqueCounties.map((name) => {
-      const caseDataDistrict = caseData.filter((c) => c.Landkreis === name);
-      const metaInfoCounty = metaData.find((m) => m.rkiName === name);
 
-      return Object.assign(metaInfoCounty, {
-        incidence: incidence(caseDataDistrict, metaInfoCounty!.pop),
-      });
-    });
-
-    const worstCounties = mergedCounties.sort((a, b) => b.incidence - a.incidence).slice(0, height > 350 ? 5 : 3);
+    const worstCounties = caseData.sort((a, b) => b.inzidenz - a.inzidenz).slice(0, height > 350 ? 5 : 3);
 
     const mapFactor = height > width ? 0.9 : 1.1;
     // @ts-ignore: No definition for geoData
@@ -116,17 +107,17 @@ export const IncidenceMap: React.FC<MapProps> = ({
           />
         </ChartGroup>
         <ChartGroup transform={`translate(${margin.right + mapOffset}, ${margin.top})`}>
-          {mergedCounties.map((d: any, index: number) => (
+          {caseData.map((d: any, index: number) => (
             <circle
               key={index}
-              r={Math.round(radiusScale(d.incidence))}
+              r={Math.round(radiusScale(d.inzidenz))}
               cx={Math.round(mapProjection([d.long, d.lat])![0])}
               cy={Math.round(mapProjection([d.long, d.lat])![1])}
-              fill={getMapColor(d.incidence)}
+              fill={getMapColor(d.inzidenz)}
               style={{ mixBlendMode: "hard-light" }}
             >
               <title>
-                {d.name} ({d.type}): {germanNumber(Math.round(d.incidence))}
+                {d.landkreis} ({d.landkreisTyp}): {germanNumber(Math.round(d.inzidenz))}
               </title>
             </circle>
           ))}
@@ -202,11 +193,11 @@ export const IncidenceMap: React.FC<MapProps> = ({
                     {"."}
                   </tspan>
                   <tspan fontWeight="600" x="20">
-                    {d.name.length > maxLength ? d.name.substring(0, maxLength - 2) + "…" : d.name} (
-                    {d.type === "Landkreis" ? "Lkr." : d.type})
+                    {d.landkreis.length > maxLength ? d.landkreis.substring(0, maxLength - 2) + "…" : d.landkreis} (
+                    {d.landkreisTyp === "landkreis" ? "Lkr." : d.landkreisTyp})
                   </tspan>
                   <tspan x="20" dy={18 * scalingFactor}>
-                    {germanNumber(Math.round(d.incidence))}
+                    {germanNumber(Math.round(d.inzidenz))}
                   </tspan>
                 </text>
               </g>

@@ -2,7 +2,7 @@
 export const sma = <T extends { [key: string]: any; value: number }>(
   data: T[],
   steps = 7,
-  key = "value"
+  key = "anzahlFall"
 ): T[] => {
   return data
     .map((obj: T, index: number) => {
@@ -10,11 +10,11 @@ export const sma = <T extends { [key: string]: any; value: number }>(
       const window = data.slice(offset, steps + offset);
 
       return Object.assign({}, obj, {
-        value:
+        anzahlFall:
           window.reduce((sum: number, curr: any) => {
             return curr[key] ? sum + curr[key] : null;
           }, 0) / window.length,
       });
     })
-    .filter((d: any) => d.value);
+    .filter((d: any) => d.anzahlFall);
 };

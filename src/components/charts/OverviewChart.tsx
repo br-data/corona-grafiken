@@ -55,7 +55,7 @@ export const OverviewChart: React.FC<ChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
 
-  const yMax = max(data, (d: ChartData): number => d.sumValue)!;
+  const yMax = max(data, (d: ChartData): number => d.summeFall)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
@@ -67,20 +67,23 @@ export const OverviewChart: React.FC<ChartProps> = ({
 
   const recoveredCasesArea = area<ChartData>()
     .x(d => x(d.date)!)
-    .y0((d) => y(d.currentlyInfected + d.deathSum))
-    .y1((d) => y(d.currentlyRecovered + d.currentlyInfected + d.deathSum))
+    .y0((d) => y(d.aktuellInfiziert + d.summeTodesfall))
+    .y1((d) => y(d.aktuellGenesen + d.aktuellInfiziert + d.summeTodesfall))
     .curve(curveMonotoneX);
+
+  // add date to meldedatum
+    data.forEach(d => d.date = d.meldedatum)
 
   const activeCasesArea = area<ChartData>()
     .x((d) => x(d.date)!)
-    .y0((d) => y(d.deathSum) + 1)
-    .y1((d) => y(d.currentlyInfected + d.deathSum) - 1)
+    .y0((d) => y(d.summeTodesfall) + 1)
+    .y1((d) => y(d.aktuellInfiziert + d.summeTodesfall) - 1)
     .curve(curveMonotoneX);
 
   const deathsArea = area<ChartData>()
     .x((d) => x(d.date)!)
     .y0(y(0))
-    .y1((d) => y(d.deathSum))
+    .y1((d) => y(d.summeTodesfall))
     .curve(curveMonotoneX);
 
   return (

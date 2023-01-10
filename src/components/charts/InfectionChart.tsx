@@ -40,24 +40,23 @@ export const InfectionChart: React.FC<ChartProps> = ({
 
   const data: ChartData[] = chartData.find((datum) => datum.key === "cases")
     ?.data!;
-  const smoothData: ChartData[] = sma(data.slice(0, data.length - 2), 7, 'value');
-
-  const xMin = min(data, (d: ChartData) => new Date(d.date))!;
-  const xMinBracket = new Date(xMin);
+  const smoothData: ChartData[] = sma(data.slice(0, data.length - 2), 7, 'anzahlFall');
+  const xMin = min(data, (d: ChartData) => new Date(d.meldedatum))!;
+    const xMinBracket = new Date(xMin);
   xMinBracket.setDate(xMinBracket.getDate() - 8);
-  const xMax = max(data, (d: ChartData) => new Date(d.date))!;
+  const xMax = max(data, (d: ChartData) => new Date(d.meldedatum))!;
   const xMaxBracket = new Date(xMax);
   xMaxBracket.setDate(xMaxBracket.getDate() + 8);
   const xValues = dateRange(xMinBracket, xMaxBracket, 1);
-  const xTicks = dateRange(xMin, xMax, Math.floor(data.length / 6));
-  const x = scaleBand()
+    const xTicks = dateRange(xMin, xMax, Math.floor(data.length / 6));
+    const x = scaleBand()
     .paddingOuter(0)
     .paddingInner(0.4)
     .domain(xValues)
     .range([0, innerWidth]);
 
-  
-  const yMax = max(data, (d: ChartData): number => d.value)!;
+
+  const yMax = max(data, (d: ChartData): number => d.anzahlFall)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.1])
     .range([innerHeight, 0]);
@@ -68,8 +67,8 @@ export const InfectionChart: React.FC<ChartProps> = ({
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
   const lineConstructor = line<ChartData>()
-    .x((d) => x(d.date)! + x.bandwidth() / 2)
-    .y((d) => y(d.value))
+    .x((d) => x(d.meldedatum)! + x.bandwidth() / 2)
+    .y((d) => y(d.anzahlFall))
     .curve(curveMonotoneX);
 
   return (
@@ -96,10 +95,10 @@ export const InfectionChart: React.FC<ChartProps> = ({
         {data.map((d: ChartData, index: number) => (
           <rect
             key={index}
-            x={x(d.date)}
-            y={y(d.value)}
+            x={x(d.meldedatum)}
+            y={y(d.anzahlFall)}
             width={x.bandwidth()}
-            height={innerHeight - y(d.value)}
+            height={innerHeight - y(d.anzahlFall)}
             fill={chartColors.blue}
           ></rect>
         ))}

@@ -40,10 +40,10 @@ export const IntensiveCareChart: React.FC<ChartProps> = ({
   const data: ChartData[] = chartData.find((datum) => datum.key === "patients")
     ?.data!;
 
-  const xMin = min(data, (d: ChartData) => new Date(d.date))!;
+  const xMin = min(data, (d: ChartData) => new Date(d.datum))!;
   const xMinBracket = new Date(xMin);
   xMinBracket.setDate(xMinBracket.getDate() - 8);
-  const xMax = max(data, (d: ChartData) => new Date(d.date))!;
+  const xMax = max(data, (d: ChartData) => new Date(d.datum))!;
   const xMaxBracket = new Date(xMax);
   xMaxBracket.setDate(xMaxBracket.getDate() + 8);
   const xValues = dateRange(xMinBracket, xMaxBracket, 1);
@@ -54,7 +54,7 @@ export const IntensiveCareChart: React.FC<ChartProps> = ({
     .domain(xValues)
     .range([0, innerWidth]);
 
-  const yMax = max(data, (d: ChartData): number => d.faelleCovidAktuell)!;
+  const yMax = max(data, (d: ChartData): number => d.anzahlIntensivpatienten)!;
   const y = scaleLinear()
     .domain([0, yMax * 1.2])
     .range([innerHeight, 0]);
@@ -65,14 +65,14 @@ export const IntensiveCareChart: React.FC<ChartProps> = ({
   const germanNumber = (value: number) => value.toLocaleString("de-DE");
 
   const lineConstructor = line<ChartData>()
-    .x((d) => x(d.date)! + x.bandwidth() / 2)
-    .y((d) => y(d.faelleCovidAktuell))
+    .x((d) => x(d.datum)! + x.bandwidth() / 2)
+    .y((d) => y(d.anzahlIntensivpatienten))
     .curve(curveMonotoneX);
 
   const areaConstructor = area<ChartData>()
-    .x((d) => x(d.date)!)
+    .x((d) => x(d.datum)!)
     .y0(() => innerHeight)
-    .y1((d) => y(d.faelleCovidAktuell))
+    .y1((d) => y(d.anzahlIntensivpatienten))
     .curve(curveMonotoneX);
 
   return (
